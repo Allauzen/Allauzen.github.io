@@ -1,13 +1,12 @@
 # Site navigation links
 
+
 - title: Research
   url: /research/
 
 - title: Teaching (fr)
   url: /cours/
 
-- title: Blog
-  url: /blog/
 
 - title: Search
   url: /search/
