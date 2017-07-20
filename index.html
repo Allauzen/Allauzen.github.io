@@ -1,12 +1,205 @@
 ---
-layout: page
-title: Home
-search_omit: true
+title: "Home"
+date: 2017-07-19
+layout: mainpage
+categories: 
+tags: 
+- home
+published: true
+comments: 
 ---
-
-
-<ul class="post-list">
-{% for post in site.posts limit:10 %}
-  <li><article><a href="{{ site.url }}{{ post.url }}">{{ post.title }} <span class="entry-date"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time></span>{% if post.excerpt %} <span class="excerpt">{{ post.excerpt | remove: '\[ ... \]' | remove: '\( ... \)' | markdownify | strip_html | strip_newlines | escape_once }}</span>{% endif %}</a></article></li>
-{% endfor %}
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org8789a89">1. Main research interest</a></li>
+<li><a href="#org9ad1a43">2. Publication</a></li>
+<li><a href="#org55a9331">3. News</a>
+<ul>
+<li><a href="#org81eaa42">3.1. Older news</a></li>
 </ul>
+</li>
+<li><a href="#org9d66871">4. Contact</a></li>
+</ul>
+</div>
+</div>
+<p>
+Maitre de Conférences (i.e. <i>Assistant Professor</i>) at the Université
+Paris-Sud XI, I'm a reseacher at <a href="http://www.limsi.fr/">LIMSI-CNRS</a> in
+the <a href="http://www.limsi.fr/Scientifique/tlp/">Spoken Language Processing
+group</a>.
+</p>
+
+<div id="outline-container-org8789a89" class="outline-2">
+<h2 id="org8789a89"><span class="section-number-2">1</span> Main research interest</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Machine learning and natural language processing, Machine Translation, Statistical language modeling, Automatic Speech Recognition.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9ad1a43" class="outline-2">
+<h2 id="org9ad1a43"><span class="section-number-2">2</span> Publication</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+<a href="https://perso.limsi.fr/Individu/allauzen/webpages/my_publication/html/index.html">publication page</a> or <a href="http://scholar.google.com/citations?hl=en&amp;user=B2-gXkkAAAAJ">my Google Scholar page</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org55a9331" class="outline-2">
+<h2 id="org55a9331"><span class="section-number-2">3</span> News</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li>Opening talk at <a href="http://seminaire-dga.gforge.inria.fr/2016/DeuxiemeJourneedefistechnologiquesdelacybersecurite_fr.html">the DGA/IRISA seminar on Artificial Intelligence and Security</a>, 25/04/17</li>
+
+<li>Our paper in Machine translation Journal on *A comparison of
+discriminative training criteria for continuous space translation
+models* is now <a href="http://link.springer.com/journal/10590">online</a></li>
+
+<li>Matthieu Labeau presents in EACL our paper :
+<a href="http://www.aclweb.org/anthology/E/E17/E17-2003.pdf">An experimental
+analysis of Noise-Contrastive Estimation: the noise distribution
+matters</a></li>
+
+<li>Invited talk at <a href="https://indico.math.cnrs.fr/event/1799/">the Workshop "Statistics/Learning at Paris-Saclay”</a>, Institut des hautes
+études scientifiques (IHES), 19/01/2017.</li>
+
+<li>Our (French) paper in the journal TAL is now online:
+<a href="http://www.atala.org/Apprentissage-discriminant-de">Apprentissage discriminant de modèles neuronaux pour la traduction automatique</a>.
+You can check the <a href="http://www.atala.org/-Numero-1-">whole issue</a>
+which contains other great papers.</li>
+
+<li>The special issue on <b>Deep Learning for Machine Translation</b> in the
+journal <b>Computer Speech and Language</b> should be online soon.</li>
+
+<li>LIMSI Papers at the conference on statistical machine translation,
+aka <a href="http://statmt.org/wmt17/">WMT17</a>.</li>
+
+<li>Check the website of the Digicosme working group on <b><a href="https://gt-deepnet.limsi.fr/">Deep Nets and learning representation</a></b> (in French).</li>
+</ul>
+</div>
+
+
+<div id="outline-container-org81eaa42" class="outline-3">
+<h3 id="org81eaa42"><span class="section-number-3">3.1</span> Older news</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>3 papers at the first conference on statistical machine translation,
+aka <a href="http://statmt.org/wmt16/">WMT16</a>.</li>
+
+<li>Special issue on <b>Deep Learning for Machine Translation</b> in the
+journal <b>Computer Speech and Language</b></li>
+</ul>
+
+<p>
+Submit a paper ! For more details see this
+<a href="http://www.journals.elsevier.com/computer-speech-and-language/call-for-papers/special-issue-on-deep-learning-for-machine-translation/">link</a>
+</p>
+
+<ul class="org-ul">
+<li>Tutorial on Deep learning and NLP applications at the
+<a href="http://www.irit.fr/cimi-machine-learning/node/9">Workshop on Learning with Structured Data and applications on Natural Language  and Biology</a>: the slides are available in
+<a href="https://perso.limsi.fr/allauzen/doc/aa_deep_nlp.pdf">pdf</a> (the file file is quite large, about 9MB).</li>
+
+<li>Two Papers at EMNLP this fall 2015
+
+<ul class="org-ul">
+<li><a href="http://www.aclweb.org/anthology/D/D15/D15-1025.pdf">Non-lexical neural architecture for fine-grained POS Tagging</a></li>
+<li><a href="http://www.aclweb.org/anthology/D/D15/D15-1121.pdf">A Discriminative Training Procedure for Continuous Translation Models</a></li>
+</ul></li>
+
+<li>Three Papers at WMT (see <a href="http://statmt.org/wmt15/papers.html">this website</a>), including one with Jan Niehues on ListNet-based MT
+Rescoring.</li>
+<li><b>Prix Ex-aequo du meilleur article à TALN 2015</b>
+<a href="http://www.atala.org/TALN-RECITAL-2015-22eme-conference">Apprentissage discriminant des modèles continus de traduction</a></li>
+
+<li>Check the website of the Digicosme working group on
+<b><a href="https://gt-deepnet.limsi.fr/">Deep Nets and learning
+representation</a></b> (in French). We will have nice invited speakers for
+the upcoming sessions:
+
+<ul class="org-ul">
+<li>April the 8th: Antoine Bordes (Facebook)</li>
+<li>April the 16th: Florence D'Alché-Buc and Romain Brault
+(Telecom-ParisTech), along with a discussion lead by Aurélien
+Decelle (LRI) on "Approximate Message Passing with Restricted
+Boltzmann Machine Priors"</li>
+<li>May the 22nd: Edward Grefenstette (Google-Deepmind)</li>
+<li>June the 18th: Stéphane Mallat (CMAP)</li>
+</ul></li>
+
+<li>The temporary web site of the future master of Paris-Saclay
+<b><a href="https://perso.limsi.fr/allauzen/aic/pmwiki.php">Machine Learning for Information and Content</a></b> exists and provides details about
+appliction.</li>
+
+<li>Think about submiting to the 3rd edition of the workshop on
+<b><a href="https://sites.google.com/site/cvscworkshop2015">Continuous Vector Space Models and their Compositionality (CVSC)</a></b>, with a nice set of
+Keynote speakers:
+
+<ul class="org-ul">
+<li>Kyunghyun Cho (Montreal)</li>
+<li>Stephen Clark (Cambridge)</li>
+<li>Yoav Goldberg (Bar Ilan)</li>
+<li>Ray Mooney (Texas)</li>
+<li>Jason Weston (Facebook AI Research)</li>
+</ul></li>
+
+<li>December 2014: Two papers at IWSLT, one of them is on
+<a href="https://perso.limsi.fr/allauzen/doc/dokhanh_iwslt14.pdf">Discriminative Adaptation of Continuous Space Translation Models</a>.</li>
+<li>There will be a third edition of our workshop on <b>Continuous Vector
+Space Models and their Compositionality (CVSC)</b>, colocated with
+<a href="http://acl2015.org/">ACL 2015</a> in Beijing.</li>
+<li>October 2014: <a href="http://amta2014.amtaweb.org/Proceedings.aspx">AMTA paper</a> <i>Combining Techniques from different NN-based Language Models
+for Machine Translation</i> with <a href="http://scholar.google.com/citations?hl=fr&amp;user=fO9cszYAAAAJ">Jan Nieheus</a> is now published</li>
+<li>July the 3rd: Two papers in  <a href="http://www.taln2014.org/site/programme/programme-detaille-sessions-orales/">TALN</a></li>
+<li>June 2014, <a href="http://www.statmt.org/wmt14/papers.html">WMT14</a>: 3 papers !</li>
+<li>June the 3rd, 2014: talk at <a href="http://www.aftal.fr/jadt2014/?page_id=13">l'atelier corpus multilingues</a>, JADT 2014 (in French)</li>
+<li>April 27th 2014: <b><a href="https://sites.google.com/site/cvscworkshop2014/">Workshop on Continuous Vector Space Models and their Compositionality</a></b>, this is the second edition.</li>
+<li>March 25th 2014: talk at the joint one day workshop on <a href="http://www.afia.asso.fr/tiki-index.php?page=Journ%C3%A9e+commune+AFIA+-+ATALA+2014">"Langue, apprentissage automatique et fouille de données"</a> (in French)</li>
+
+<li>Habilitation à diriger des recherches
+(<a href="http://fr.wikipedia.org/wiki/Habilitation_universitaire">see this page to know what does it mean)</a>:
+
+<ul class="org-ul">
+<li>January the 30th, 2014 at LIMSI</li>
+<li>Title: Statistical models for machine translation</li>
+<li>my <a href="http://perso.limsi.fr/Individu/allauzen/doc/aa_slides.pdf">slides</a></li>
+<li>my <a href="http://perso.limsi.fr/Individu/allauzen/doc/hdr_allauzen.pdf">report</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9d66871" class="outline-2">
+<h2 id="org9d66871"><span class="section-number-2">4</span> Contact</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+LIMSI-CNRS, Bâtiment S (Parc Club)
+</p>
+
+<p>
+Université Paris 11, 91403 Orsay.
+</p>
+
+<p>
+Tél : 01 69 85 80 41 (fax : 80 88)
+</p>
+
+<p>
+Mail : allauzen@limsi.fr
+</p>
+
+<p>
+Le plan d'accès à mon bureau au format
+<a href="http://perso.limsi.fr/Individu/allauzen/doc/plan_limsi.pdf">pdf</a>. 
+</p>
+
+<p>
+<img src="http://perso.limsi.fr/Individu/allauzen/doc/plan_limsi.png" alt="plan_limsi.png" />
+<b>Venir au bâtiment S</b>
+</p>
+</div>
+</div>
