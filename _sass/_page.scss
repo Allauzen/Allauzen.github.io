@@ -188,7 +188,7 @@ span + .entry-title {
 /* main content block */
 
 .entry-content {
-	@include span-columns(12);
+	@include span-columns(14);
 
 	p:first-child {
 		margin-top: 0;
@@ -252,6 +252,17 @@ span + .entry-title {
 /*
    Kramdown generated table of contents
    ========================================================================== */
+
+/* AA text-table-of-contents */
+
+
+#text-table-of-contents{
+	@include font-size(10);
+	background-color: #E6E6E6;
+	border: 1px solid $border-color;
+	border-radius: $border-radius;
+	width: 50%;
+}
 
 #markdown-toc {
 	font-family: $alt-font;
