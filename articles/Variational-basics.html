@@ -1,0 +1,148 @@
+---
+title: "Variational Bayes : some basics"
+date: 2017-07-21
+layout: post
+categories: 
+tags: 
+- article 
+- bayes 
+- variation 
+- EM
+published: true
+comments: 
+---
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org983e099">1. The E.M view</a>
+<ul>
+<li><a href="#orgefdcc8d">1.1. E step</a></li>
+<li><a href="#org7d7fbe8">1.2. M step</a></li>
+<li><a href="#org8267418">1.3. A summary</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<hr>
+<p>
+\(\newcommand{\X}{\mathbf{X}}\)
+\(\newcommand{\Z}{\mathbf{Z}}\)
+\(\newcommand{\pa}{\mathbf{\theta}}\)
+\(\newcommand{\paold}{\pa^{old}}\)
+\(\newcommand{\panew}{\pa^{new}}\)
+</p>
+
+<p>
+\(\newcommand{\lb}{\mathcal{L}(q;\pa)}\) 
+</p>
+
+<p>
+\(\newcommand{\dkl}{D_{kl}}\)
+</p>
+
+
+<p>
+Consider a probabilistic model in which we denote all of the observed variables by \(\X\) and all and all of the hidden variables by \(\Z\). The joint distribution \(P(\X, \Z|\pa)\) is defined by a set of parameters denoted \(\pa\). The goal is to maximize the likelihood function \(P(\X|\pa)\) to learn the parameters \(\pa\). The problem is that this maximization problem is in most of the case intractable.  This likelihood can be expressed in two ways: \(P(\X|\pa)= \sum_{\Z} P(\X,\Z|\pa)= \frac{P(\X,\Z|\pa)}{P(\Z|\X,\pa)}\). Let us consider the second one in this log formulation:
+</p>
+
+<div class="org-center">
+<p>
+\(log(P(\X|\pa)= log(\frac{P(\X,\Z|\pa)}{P(\Z|\X,\pa)})\)
+</p>
+</div>
+
+<p>
+Next we introduce a distribution \(q(\Z)\) defined over the latent variables by multliplying both parts, and we can also sum over \(\Z\) 
+</p>
+<div class="org-center">
+<p>
+\(\sum_{\Z} q(\Z) log(P(\X|\pa)= \sum_{\Z}log(\frac{P(\X,\Z|\pa)}{P(\Z|\X,\pa)})q(\Z)\)
+</p>
+</div>
+
+<p>
+The right hand side is just \(P(\X|\pa)\) and remains unchanged. The second trick is to introduce \(q(\Z)\) in the fraction:
+</p>
+<div class="org-center">
+<p>
+\(log(P(\X|\pa))= \sum_{\Z}q(\Z) log(\frac{P(\X,\Z|\pa)q(\Z)}{P(\Z|\X,\pa)q(\Z)})\)
+</p>
+</div>
+
+<p>
+Then reformulate it a little bit: 
+</p>
+<div class="org-center">
+<p>
+\(log(P(\X|\pa))= \sum_{\Z}q(\Z) log(\frac{P(\X,\Z|\pa)}{q(\Z)}) - \sum_{\Z}q(\Z) log(\frac{P(\Z|\X,\pa)}{q(\Z)})\) 
+</p>
+</div>
+
+<p>
+Two terms appear. The second one is the Kullback-Leibler divergence between \(P(\Z|\X,\pa)\) and \(q(\Z)\) and the first one is denoted \(\lb\). 
+</p>
+<div class="org-center">
+<p>
+\(log(P(\X|\pa))=  \lb + \dkl(q(\Z)||P(\Z|\X,\pa))\)
+</p>
+</div>
+
+
+
+<div id="outline-container-org983e099" class="outline-2">
+<h2 id="org983e099"><span class="section-number-2">1</span> The E.M view</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Recall that the Kullback-Leibler divergence satisfies \(\dkl(q|p)\ge 0\), with equality if, and only if \(q(Z) = p(Z|X,\pa)\). Therefore \(P(\X|\pa) \ge \lb\) which means that \(\lb\) is a lower bound of \(P(\X|\pa)\) we want to maximize. The EM algorithm is a two-stage iterative optimization technique for finding maximum likelihood solutions.  Suppose that the current value of the parameter vector is \(\paold\)
+</p>
+</div>
+
+<div id="outline-container-orgefdcc8d" class="outline-3">
+<h3 id="orgefdcc8d"><span class="section-number-3">1.1</span> E step</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+In the E step, the lower bound \(\lb\) <b>is maximized with respect to \(q(\Z)\)</b> while holding \(\pa\) fixed to \(\paold\). If you remember that: 
+</p>
+<ul class="org-ul">
+<li>\(P(\X,\Z|\paold)=P(\Z|\X,\paold)P(\X|\paold)\),</li>
+<li>so the solution is when \(q(\Z) = P(\Z|\X,\paold)\).</li>
+<li>Therefore, the Kullback-Leibler divergence vanishes.</li>
+</ul>
+<p>
+Since the KL divergence is zero, we have \(\lb=P(\X|\paold)\). In fact, the E-step consists in computing the posterior distribution over \(\Z\) with the parameters fixed at \(\paold\). Then you just set <i>theoritically</i> \(q(\Z) = P(\Z|\X,\paold)\). 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7d7fbe8" class="outline-3">
+<h3 id="org7d7fbe8"><span class="section-number-3">1.2</span> M step</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+The distribution \(q(Z)\) is now fixed and the <b>lower bound \(\lb\) is now maximized with respect to \(\pa\)</b>.  The maximization process yields a new value for the parameters \(\panew\) and increases the lower bound (except if we are already at the maximum). Since the distribution \(q\) is fixed to \(P(\Z|\X,\paold)\), \(q(Z) \neq P(\Z|\X,\panew)\) and now the KL divergence term is nonzero. The increase in the log likelihood function is therefore greater than the increase in the lower bound. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8267418" class="outline-3">
+<h3 id="org8267418"><span class="section-number-3">1.3</span> A summary</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+You can see the EM algorith as pushing two functions. 
+</p>
+<ul class="org-ul">
+<li>With fixed parameters (\(\paold\)), push \(\lb\) to stick \(P(\X|\paold)\) by setting \(q(Z)=P(\Z|\X,\paold)\)</li>
+<li>Then recompute the parameters to get \(\panew\) with a fixed \(q(\Z)=P(\Z|\X,\paold)\). The criterion is to maximize \(\lb\) w.r.t \(\pa\). In fact you are moving in the parameter space in order to push \(\lb\), but by doing this you also push the likelihood even further: \(P(\X|\panew) \ge \lb\) because \(P(\Z|\X,\pa)\) has changed to  \(P(\Z|\X,\panew)\) while \(q(\Z)\) has not.</li>
+</ul>
+
+<p>
+For graphical illustration, you look at the book of Christopher Bishop  called <a href="http://research.microsoft.com/en-us/um/people/cmbishop/prml/">Pattern Recognition and Machine Learning</a>. 
+</p>
+
+<p>
+Note that for implementation, \(q(\Z)\) does not really exist or is not a quantity of interest. It acts more like a temporary variable to perform this two steps game. 
+</p>
+</div>
+</div>
+</div>
