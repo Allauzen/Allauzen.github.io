@@ -15,7 +15,7 @@ comments:
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org983e099">1. The E.M view</a>
+<li><a href="#orgd9deebe">1. The EM view</a>
 <ul>
 <li><a href="#orgefdcc8d">1.1. E step</a></li>
 <li><a href="#org7d7fbe8">1.2. M step</a></li>
@@ -89,13 +89,23 @@ Two terms appear. The second one is the Kullback-Leibler divergence between \(P(
 </p>
 </div>
 
+<p>
+Recall that the Kullback-Leibler divergence satisfies \(\dkl(q|p)\ge 0\), with equality if, and only if \(q(Z) = p(Z|X,\pa)\). Therefore \(P(\X|\pa) \ge \lb\) which means that \(\lb\) is a lower bound of \(P(\X|\pa)\) we want to maximize.
+</p>
 
-
-<div id="outline-container-org983e099" class="outline-2">
-<h2 id="org983e099"><span class="section-number-2">1</span> The E.M view</h2>
+<div id="outline-container-orgd9deebe" class="outline-2">
+<h2 id="orgd9deebe"><span class="section-number-2">1</span> The EM view</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-Recall that the Kullback-Leibler divergence satisfies \(\dkl(q|p)\ge 0\), with equality if, and only if \(q(Z) = p(Z|X,\pa)\). Therefore \(P(\X|\pa) \ge \lb\) which means that \(\lb\) is a lower bound of \(P(\X|\pa)\) we want to maximize. The EM algorithm is a two-stage iterative optimization technique for finding maximum likelihood solutions.  Suppose that the current value of the parameter vector is \(\paold\)
+The EM algorithm aims at estimating the parameters \(\pa\) of a generative model that relies on latent variables \(\Z\) to explain the observed data \(\X\). In the example of mixture of gaussians, \(\Z\) represents the affectation of each observation to a gaussian. If \(\Z\) could be observed, it becomes therefore a <i>simple</i> and easy to solve classification problem. We can call \((\X, \Z)\) the complete data set, while  \((\X)\) is the  incomplete one.  In other words, \(P(\X,\Z|\pa)\) is easy to optimize, while \(P(\X|\pa)\) is untractable (a logsum). 
+</p>
+
+<p>
+However, in practice \(\Z\) is unknown, but for a given set of parameters we can compute \(P(\Z|\X,\pa)\) and also the <b>expected</b> value of \(\Z|\X,\pa\). This is the <b>E(xpectation) step</b>. In a second step, the classification task can be carried out: <b>maximizing</b> \(\pa\) knowing \(\Z\) (or the expected value). This is the <b>M(aximization) step</b>. 
+</p>
+
+<p>
+Now we can go back to the lower bound to explain the EM algorithm. This is a two-stage iterative optimization technique for finding maximum likelihood solutions.
 </p>
 </div>
 
@@ -103,7 +113,7 @@ Recall that the Kullback-Leibler divergence satisfies \(\dkl(q|p)\ge 0\), with e
 <h3 id="orgefdcc8d"><span class="section-number-3">1.1</span> E step</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
-In the E step, the lower bound \(\lb\) <b>is maximized with respect to \(q(\Z)\)</b> while holding \(\pa\) fixed to \(\paold\). If you remember that: 
+Suppose that the current value of the parameter vector is \(\paold\). In the E step, the lower bound \(\lb\) <b>is maximized with respect to \(q(\Z)\)</b> while holding \(\pa\) fixed to \(\paold\). If you remember that: 
 </p>
 <ul class="org-ul">
 <li>\(P(\X,\Z|\paold)=P(\Z|\X,\paold)P(\X|\paold)\),</li>
@@ -120,7 +130,16 @@ Since the KL divergence is zero, we have \(\lb=P(\X|\paold)\). In fact, the E-st
 <h3 id="org7d7fbe8"><span class="section-number-3">1.2</span> M step</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
-The distribution \(q(Z)\) is now fixed and the <b>lower bound \(\lb\) is now maximized with respect to \(\pa\)</b>.  The maximization process yields a new value for the parameters \(\panew\) and increases the lower bound (except if we are already at the maximum). Since the distribution \(q\) is fixed to \(P(\Z|\X,\paold)\), \(q(Z) \neq P(\Z|\X,\panew)\) and now the KL divergence term is nonzero. The increase in the log likelihood function is therefore greater than the increase in the lower bound. 
+The distribution \(q(Z)\) is now fixed and the <b>lower bound \(\lb\) is now maximized with respect to \(\pa\)</b>.  The maximization process yields a new value for the parameters \(\panew\) and increases the lower bound (except if we are already at the maximum). Note that \(q(Z)=P(\Z|\X,\paold)\) acts as a constant in the maximization process: 
+</p>
+<ul class="org-ul">
+<li>$\lb =  &sum;<sub>\Z</sub> P(\Z|\X,\paold) log(\frac{P(\X,\Z|\pa)}{P(\Z|\X,\paold)}) = &sum;<sub>\Z</sub> P(\Z|\X,\paold) log(P(\X,\Z|\pa)) - &sum;<sub>\Z</sub> P(\Z|\X,\paold) log(P(\Z|\X,\paold)) $</li>
+</ul>
+
+
+
+<p>
+Since the distribution \(q\) is fixed to \(P(\Z|\X,\paold)\), \(q(Z) \neq P(\Z|\X,\panew)\) and now the KL divergence term is nonzero. The increase in the log likelihood function is therefore greater than the increase in the lower bound. 
 </p>
 </div>
 </div>
