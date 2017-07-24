@@ -58,10 +58,11 @@ If we consider \(P(\X, \Z,\pa)\), there are different level of bayesian inferenc
 <ul class="org-ul">
 <li>infer  \(P(\pa|\X)\) which also implies a summation of \(\Z\)</li>
 <li>infer \(P(\X)\) for prediction purpose</li>
+<li>infer \(P(\Z|\X,\pa)\), the posterior distribution of the latent variable to better analyse new data.</li>
 </ul>
 
 <p>
-In all cases, the inference is untractable and requires approximate inference approach, such as MCMC or Variational one. 
+In all cases, the inference is untractable because we need to estimate \(P(\X|\pa)\) or even marginalize parameters. This requires approximate inference approach, such as MCMC or Variational one.
 </p>
 
 <div id="outline-container-org9560d9a" class="outline-2">
