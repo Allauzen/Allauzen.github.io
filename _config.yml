@@ -19,6 +19,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
+  - json
 
 kramdown:
   input: GFM

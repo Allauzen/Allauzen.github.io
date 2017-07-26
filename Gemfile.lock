@@ -4,7 +4,7 @@ GEM
     addressable (2.5.1)
       public_suffix (~> 2.0, >= 2.0.2)
     colorator (1.1.0)
-    faraday (0.12.1)
+    faraday (0.12.2)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.18)
     ffi (1.9.18-x64-mingw32)
@@ -30,6 +30,7 @@ GEM
       jekyll (~> 3.3)
     jekyll-watch (1.5.0)
       listen (~> 3.0, < 3.1)
+    json (2.1.0)
     kramdown (1.14.0)
     liquid (4.0.0)
     listen (3.0.8)
@@ -65,6 +66,7 @@ DEPENDENCIES
   jekyll-feed
   jekyll-gist
   jekyll-sitemap
+  json
   rb-fsevent (<= 0.9.4)
 
 BUNDLED WITH

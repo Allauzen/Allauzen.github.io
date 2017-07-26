@@ -5,22 +5,23 @@ excerpt: "An archive of posts sorted by tag."
 search_omit: true
 ---
 
-{% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
-{% assign tags_list = site_tags | split:',' | sort %}
+{% capture site_tags %}{% for page in site.pages %}  {% for tag in page.tags %}  {{ tag }} , {% endfor %} {% endfor %} {% endcapture %}
+{% assign tags_list = site_tags | strip | rstrip | lstrip | split:',' | sort  | uniq %}
 
-<ul class="tag-box inline">
-  {% for item in (0..site.tags.size) %}{% unless forloop.last %}
-    {% capture this_word %}{{ tags_list[item] | strip_newlines }}{% endcapture %}
-    <li><a href="#{{ this_word }}">{{ this_word }} <span>{{ site.tags[this_word].size }}</span></a></li>
-  {% endunless %}{% endfor %}
-</ul>
 
-{% for item in (0..site.tags.size) %}{% unless forloop.last %}
-  {% capture this_word %}{{ tags_list[item] | strip_newlines }}{% endcapture %}
-  <h2 id="{{ this_word }}">{{ this_word }}</h2>
-  <ul class="post-list">
-  {% for post in site.tags[this_word] %}{% if post.title != null %}
-    <li><a href="{{ site.url }}{{ post.url }}">{{ post.title }}<span class="entry-date"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time></span></a></li>
-  {% endif %}{% endfor %}
+
+{% for tag in tags_list %}
+  <h3>{{ tag }}</h3>
+  <ul>
+  {% for page in site.pages %}
+	{%capture bfoo%}{{ page.tags | join: ' ' }}{%endcapture%}
+	{%capture sfoo%}{{ tag | lstrip | rstrip }}{%endcapture%}
+	{% unless  bfoo.size > 1 %}
+		{% assign bfoo = "michelsardou" %}
+	{% endunless%}
+    {% if bfoo contains sfoo %}
+		<li><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a></li>
+    {% endif %}
+	{% endfor %}
   </ul>
-{% endunless %}{% endfor %}
+{% endfor %}
