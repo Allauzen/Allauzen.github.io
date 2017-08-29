@@ -118,7 +118,7 @@ Now, we merge the two terms, rearrange a bit to get :
 </p>
 
 <p>
-\[\frac{\partial \loss}{\partial w_{kj}} = - (1-\delta_{k,\gold})x_j\]
+\[\frac{\partial \loss}{\partial w_{kj}} = - (\delta_{k,\gold} - P(k|\x))x_j\]
 </p>
 </div>
 </div>
