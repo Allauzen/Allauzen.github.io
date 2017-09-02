@@ -190,8 +190,8 @@ The distribution \(q(Z)\) is now fixed and the <b>lower bound \(\lb\) is now max
 </p>
 
 \begin{align}
-$\lb &=  \sum_{\Z} P(\Z|\X,\paold) \log(\frac{P(\X,\Z|\pa)}{P(\Z|\X,\paold)}) \\
-&= \sum_{\Z} P(\Z|\X,\paold) \log(P(\X,\Z|\pa)) - \sum_{\Z} P(\Z|\X,\paold) \log(P(\Z|\X,\paold))$
+\lb &=  \sum_{\Z} P(\Z|\X,\paold) \log(\frac{P(\X,\Z|\pa)}{P(\Z|\X,\paold)}) \\
+&= \sum_{\Z} P(\Z|\X,\paold) \log(P(\X,\Z|\pa)) - \sum_{\Z} P(\Z|\X,\paold) \log(P(\Z|\X,\paold))
 \end{align}
 <p>
 The second term is a positive constant, since it depends only on \(\paold\). This is the entropy of the posterior distribution \(H(P(\Z|\X,\paold))\). The first we want to maximize is the expectation under the posterior \(P(\Z|\X,\paold)\) of the log-likelihood of complete data. This means in practice, that we optimize a classifier of \(\X\) into \(\Z\), with the supervision of  \(P(\Z|\X,\paold)\) that provides the pseudo-affectation. 
@@ -208,7 +208,7 @@ Since the distribution \(q\) is fixed to \(P(\Z|\X,\paold)\), \(q(Z) \neq P(\Z|\
 <h3 id="org163e935"><span class="section-number-3">2.3</span> A summary of EM</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
-You can see the EM algorith as pushing two functions. 
+You can see the EM algorithm as pushing two functions. 
 </p>
 <ul class="org-ul">
 <li>With fixed parameters (\(\paold\)), push \(\lb\) to stick \(P(\X|\paold)\) by setting \(q(Z)=P(\Z|\X,\paold)\)</li>
