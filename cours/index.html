@@ -12,17 +12,23 @@ comments:
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orga6a3cef">Misc</a>
+<li><a href="#org44bcc79">Cours 2017-18</a>
 <ul>
-<li><a href="#org6c33859">Python, ipython, notebook, &#x2026;</a></li>
-<li><a href="#orge65009f">The MNIST database</a>
-<ul>
-<li><a href="#org3198f1b">Java</a></li>
-<li><a href="#org3c9ce2f">In python</a></li>
-<li><a href="#orgd0e0d1f">In Matlab/Octave</a></li>
+<li><a href="#org709e3a2">Master AIC</a></li>
+<li><a href="#orgefcbf11">M1 Informatique</a></li>
 </ul>
 </li>
-<li><a href="#org686bc76">Random en python</a></li>
+<li><a href="#org34967f0">Misc</a>
+<ul>
+<li><a href="#orge562f1d">Python, ipython, notebook, &#x2026;</a></li>
+<li><a href="#org43882e5">The MNIST database</a>
+<ul>
+<li><a href="#orgdfb25ec">Java</a></li>
+<li><a href="#org899268e">In python</a></li>
+<li><a href="#orgf2191ce">In Matlab/Octave</a></li>
+</ul>
+</li>
+<li><a href="#org8a79fbf">Random en python</a></li>
 </ul>
 </li>
 </ul>
@@ -32,14 +38,39 @@ comments:
 
 
 
+<div id="outline-container-org44bcc79" class="outline-2">
+<h2 id="org44bcc79">Cours 2017-18</h2>
+<div class="outline-text-2" id="text-org44bcc79">
+</div><div id="outline-container-org709e3a2" class="outline-3">
+<h3 id="org709e3a2">Master AIC</h3>
+<div class="outline-text-3" id="text-org709e3a2">
+<ul class="org-ul">
+<li><a href="https://allauzen.github.io/cours/AIC/">la page du master</a></li>
+<li><a href="https://allauzen.github.io/cours/TC1/">Cours TC1</a></li>
+<li><a href="https://allauzen.github.io/cours/TC1/">Cours TC4</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgefcbf11" class="outline-3">
+<h3 id="orgefcbf11">M1 Informatique</h3>
+<div class="outline-text-3" id="text-orgefcbf11">
+<ul class="org-ul">
+<li>TER</li>
+<li>TER Réseau de neurones</li>
+<li>Cours Probabilité et Statistique</li>
+</ul>
+</div>
+</div>
+</div>
 
 
-<div id="outline-container-orga6a3cef" class="outline-2">
-<h2 id="orga6a3cef">Misc</h2>
-<div class="outline-text-2" id="text-orga6a3cef">
-</div><div id="outline-container-org6c33859" class="outline-3">
-<h3 id="org6c33859">Python, ipython, notebook, &#x2026;</h3>
-<div class="outline-text-3" id="text-org6c33859">
+<div id="outline-container-org34967f0" class="outline-2">
+<h2 id="org34967f0">Misc</h2>
+<div class="outline-text-2" id="text-org34967f0">
+</div><div id="outline-container-orge562f1d" class="outline-3">
+<h3 id="orge562f1d">Python, ipython, notebook, &#x2026;</h3>
+<div class="outline-text-3" id="text-orge562f1d">
 <p>
 Here are a few links to learn python. The best is the free book <a href="http://www.diveintopython.net/toc/index.html">Dive in python</a> that covers the basics and essentials.
 </p>
@@ -68,17 +99,17 @@ Using python can be easier with ipython, look at this tutorial: <a href="http://
 </div>
 </div>
 
-<div id="outline-container-orge65009f" class="outline-3">
-<h3 id="orge65009f">The MNIST database</h3>
-<div class="outline-text-3" id="text-orge65009f">
+<div id="outline-container-org43882e5" class="outline-3">
+<h3 id="org43882e5">The MNIST database</h3>
+<div class="outline-text-3" id="text-org43882e5">
 <p>
 The <a href="http://yann.lecun.com/exdb/mnist/">official web page</a> of this corpus provides more details. A specific version of the database that is suited for python can be <a href="http://perso.limsi.fr/Individu/allauzen/data/mnist.pkl.gz">downloaded</a> as well.
 </p>
 </div>
 
-<div id="outline-container-org3198f1b" class="outline-4">
-<h4 id="org3198f1b">Java</h4>
-<div class="outline-text-4" id="text-org3198f1b">
+<div id="outline-container-orgdfb25ec" class="outline-4">
+<h4 id="orgdfb25ec">Java</h4>
+<div class="outline-text-4" id="text-orgdfb25ec">
 <p>
 To read this data, you will find below an example and you can download
 this <i>jar</i> file
@@ -130,9 +161,9 @@ If you want to convert an image which is a matrix in a simple array:
 </div>
 </div>
 
-<div id="outline-container-org3c9ce2f" class="outline-4">
-<h4 id="org3c9ce2f">In python</h4>
-<div class="outline-text-4" id="text-org3c9ce2f">
+<div id="outline-container-org899268e" class="outline-4">
+<h4 id="org899268e">In python</h4>
+<div class="outline-text-4" id="text-org899268e">
 <pre class="example">
 import cPickle, gzip, numpy
 </pre>
@@ -173,9 +204,9 @@ plt.imshow(im.reshape(28,28) , plt.cm.gray)
 </div>
 </div>
 
-<div id="outline-container-orgd0e0d1f" class="outline-4">
-<h4 id="orgd0e0d1f">In Matlab/Octave</h4>
-<div class="outline-text-4" id="text-orgd0e0d1f">
+<div id="outline-container-orgf2191ce" class="outline-4">
+<h4 id="orgf2191ce">In Matlab/Octave</h4>
+<div class="outline-text-4" id="text-orgf2191ce">
 <p>
 See the following web page for a detailed
 <a href="http://ufldl.stanford.edu/wiki/index.php/Using_the_MNIST_Dataset">example</a>.
@@ -184,9 +215,9 @@ See the following web page for a detailed
 </div>
 </div>
 
-<div id="outline-container-org686bc76" class="outline-3">
-<h3 id="org686bc76">Random en python</h3>
-<div class="outline-text-3" id="text-org686bc76">
+<div id="outline-container-org8a79fbf" class="outline-3">
+<h3 id="org8a79fbf">Random en python</h3>
+<div class="outline-text-3" id="text-org8a79fbf">
 <p>
 Les bases du tirage alÃ©atoire en python: 
 </p>
