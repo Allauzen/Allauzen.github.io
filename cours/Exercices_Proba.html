@@ -25,7 +25,7 @@ comments:
 </li>
 <li><a href="#orgb4b5c7a">2. Le problèmes des urnes</a>
 <ul>
-<li><a href="#org96cbf0d">2.1. En théorie</a>
+<li><a href="#org58e6ac2">2.1. En théorie</a>
 <ul>
 <li><a href="#orgf87df4a">2.1.1. En pratique</a></li>
 </ul>
@@ -49,7 +49,7 @@ comments:
 </li>
 <li><a href="#orgd8ccb44">3.4. Introduction au cas continu</a>
 <ul>
-<li><a href="#org58e6ac2">3.4.1. En théorie</a></li>
+<li><a href="#org1e622d2">3.4.1. En théorie</a></li>
 <li><a href="#org9332e0b">3.4.2. Point de vue empirique</a></li>
 </ul>
 </li>
@@ -162,8 +162,8 @@ expliquez la.</li>
 <div id="outline-container-orgb4b5c7a" class="outline-2">
 <h2 id="orgb4b5c7a"><span class="section-number-2">2</span> Le problèmes des urnes</h2>
 <div class="outline-text-2" id="text-2">
-</div><div id="outline-container-org96cbf0d" class="outline-3">
-<h3 id="org96cbf0d"><span class="section-number-3">2.1</span> En théorie</h3>
+</div><div id="outline-container-org58e6ac2" class="outline-3">
+<h3 id="org58e6ac2"><span class="section-number-3">2.1</span> En théorie</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 Soient deux urnes \(u_1\) et \(u_2\) contenant respectivement :
@@ -750,31 +750,15 @@ prennent les valeurs OUI, NON et NSP (pour une absence de vote). Il y a
 <li>Les tables ci-dessus représentent les votes de chaque parti aux 16
 propositions. Quelles grandeurs nécessaires à la mise en oeuvre d'un
 classifieur bayésien naïf peuvent être évaluées grâce à cette table ?</li>
-<li><p>
-Soit un représentant ayant voté selon le vecteur de réponse V
-suivant :
-</p>
+<li>Soit un représentant ayant voté selon le vecteur de réponse V
+suivant :</li>
+</ul>
+
 
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
-<col  class="org-left" />
-
-<col  class="org-left" />
-
-<col  class="org-left" />
-
-<col  class="org-left" />
-
-<col  class="org-left" />
-
-<col  class="org-left" />
-
-<col  class="org-left" />
-
-<col  class="org-left" />
-
 <col  class="org-left" />
 
 <col  class="org-left" />
@@ -801,14 +785,6 @@ suivant :
 <th scope="col" class="org-left">V6</th>
 <th scope="col" class="org-left">V7</th>
 <th scope="col" class="org-left">V8</th>
-<th scope="col" class="org-left">V9</th>
-<th scope="col" class="org-left">V10</th>
-<th scope="col" class="org-left">V11</th>
-<th scope="col" class="org-left">V12</th>
-<th scope="col" class="org-left">V13</th>
-<th scope="col" class="org-left">V14</th>
-<th scope="col" class="org-left">V15</th>
-<th scope="col" class="org-left">V16</th>
 </tr>
 </thead>
 <tbody>
@@ -821,6 +797,47 @@ suivant :
 <td class="org-left">OUI</td>
 <td class="org-left">OUI</td>
 <td class="org-left">OUI</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+et puis 
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">V9</th>
+<th scope="col" class="org-left">V10</th>
+<th scope="col" class="org-left">V11</th>
+<th scope="col" class="org-left">V12</th>
+<th scope="col" class="org-left">V13</th>
+<th scope="col" class="org-left">V14</th>
+<th scope="col" class="org-left">V15</th>
+<th scope="col" class="org-left">V16</th>
+</tr>
+</thead>
+<tbody>
+<tr>
 <td class="org-left">NON</td>
 <td class="org-left">NON</td>
 <td class="org-left">OUI</td>
@@ -839,8 +856,7 @@ Donner le rapport de probabilités
    V)}{P(\text{Républicain}\mid V)},\] tel qu'estimé par le classifieur
 bayésien naïf. On rappelle qu'il y 267 représentants démocrates et
 168 représentants républicains.
-</p></li>
-</ul>
+</p>
 </div>
 </div>
 </div>
@@ -850,8 +866,8 @@ bayésien naïf. On rappelle qu'il y 267 représentants démocrates et
 <div id="outline-container-orgd8ccb44" class="outline-3">
 <h3 id="orgd8ccb44"><span class="section-number-3">3.4</span> Introduction au cas continu</h3>
 <div class="outline-text-3" id="text-3-4">
-</div><div id="outline-container-org58e6ac2" class="outline-4">
-<h4 id="org58e6ac2"><span class="section-number-4">3.4.1</span> En théorie</h4>
+</div><div id="outline-container-org1e622d2" class="outline-4">
+<h4 id="org1e622d2"><span class="section-number-4">3.4.1</span> En théorie</h4>
 <div class="outline-text-4" id="text-3-4-1">
 <p>
 On considère deux populations, les hommes H de taille moyenne 1,74m
