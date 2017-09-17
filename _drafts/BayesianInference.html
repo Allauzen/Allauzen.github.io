@@ -1,0 +1,156 @@
+---
+title: "[PREVIEW] Bayesian inference at different levels"
+date: 2017-09-13
+layout: post
+categories: 
+tags: 
+- cours
+published: false
+comments: 
+---
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org56b85af">1. Classification inference (Bayesian inference 1)</a>
+<ul>
+<li><a href="#org49fd292">1.1. Warning</a></li>
+<li><a href="#orgc292dc2">1.2. Problem Set-up</a></li>
+<li><a href="#orgd2120f1">1.3. Maximum A Posteriori (MAP)</a></li>
+<li><a href="#orgddbd50d">1.4. No inference without assumptions</a></li>
+<li><a href="#org6003863">1.5. Bernoulli Naive Bayes</a></li>
+</ul>
+</li>
+<li><a href="#orgc730144">2. Bayesian inference of parameters, the second level</a></li>
+</ul>
+</div>
+</div>
+<span style="background: red;">PREVIEW</span><hr>
+<p>
+\(\newcommand{\Y}{{Y}}\)
+\(\newcommand{\X}{\mathbf{X}}\)
+\(\newcommand{\pa}{{\theta}}\)
+\(\newcommand{\params}{\mathbf{\pa}}\)
+\(\newcommand{\paa}{\pa_{iy}}\)
+</p>
+
+
+<div id="outline-container-org56b85af" class="outline-2">
+<h2 id="org56b85af"><span class="section-number-2">1</span> Classification inference (Bayesian inference 1)</h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="outline-container-org49fd292" class="outline-3">
+<h3 id="org49fd292"><span class="section-number-3">1.1</span> Warning</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Notes on the different levels of Bayesian inferences:  
+</p>
+<ul class="org-ul">
+<li>The running example is a Bernoulli Naive Bayes Classifier.</li>
+<li>These notes are sparse (very)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgc292dc2" class="outline-3">
+<h3 id="orgc292dc2"><span class="section-number-3">1.2</span> Problem Set-up</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Given a random variable (RV) and a random vector such as:
+</p>
+<ul class="org-ul">
+<li>\(\Y\) represents de the class to assign and is a categorical RV with \(K\) possiblities.</li>
+<li>\(\X\)  is a vector gathering the observation about the object to classify</li>
+</ul>
+<p>
+\(\X = (X_i)_{i=1}^d\), where each of the \(d\) component is a RV, a feature.  
+</p>
+</div>
+
+<ol class="org-ol"><li><a id="org01e64b9"></a>The <b>Bayesian decision</b><br /><div class="outline-text-4" id="text-1-2-1">
+<p>
+predict the class \(y\) such as to maximize :
+\[
+P(\Y=y | \X) = \frac{P(\X|\Y) P(\Y)}{P(\X)}
+\]
+</p>
+</div></li></ol>
+</div>
+
+<div id="outline-container-orgd2120f1" class="outline-3">
+<h3 id="orgd2120f1"><span class="section-number-3">1.3</span> Maximum A Posteriori (MAP)</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+\[
+P(\Y=y | \X) \propto P(\X|\Y) P(\Y) = P(\X,\Y)
+\]
+</p>
+
+<ul class="org-ul">
+<li>Maximizing the class posterior distribution wrt to y allows us to drop \(P(\X)\). This is a constant in this optimisation problem.</li>
+<li>To setup such decision, a classifier has to know, or to estimate,  the both distributions: 
+<ul class="org-ul">
+<li>P(\Y) : a categorical distribution over the classes (trivial)</li>
+<li>P(\X|\Y) : the likelihood of the class, needs further assumption</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orgddbd50d" class="outline-3">
+<h3 id="orgddbd50d"><span class="section-number-3">1.4</span> No inference without assumptions</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+As said in MacKay's book: 
+</p>
+<div class="org-center">
+<p>
+<b>you cannot do inference without making assumptions.</b>
+</p>
+</div>
+</div>
+<ol class="org-ol"><li><a id="org2207933"></a>First: the naive or independance assumption<br /><div class="outline-text-4" id="text-1-4-1">
+<p>
+\[
+P(\X|\Y) = \prod_{i=1}^d P(X_i|\Y)
+\]
+</p>
+</div></li>
+
+<li><a id="org79c0ffe"></a>Second: the law of P(X<sub>i</sub>|\Y)<br /><div class="outline-text-4" id="text-1-4-2">
+<p>
+depends on \(X_i\)
+</p>
+<ul class="org-ul">
+<li>real feature : Gaussian \((\mu_{iy},\sigma_{iy})\),</li>
+<li>binary feature : Bernoulli \((\paa)\)</li>
+<li>word counts : Multinomial</li>
+</ul>
+</div></li></ol>
+</div>
+
+<div id="outline-container-org6003863" class="outline-3">
+<h3 id="org6003863"><span class="section-number-3">1.5</span> Bernoulli Naive Bayes</h3>
+<div class="outline-text-3" id="text-1-5">
+\begin{align*}
+P(\Y=y | \X) &\propto P(\X|\Y=y;\pa) P(\Y=y) \\
+&\propto \prod_i^{d} P(X_i=x_i | Y=y; \paa ) P(\Y=y) \\
+P(X_i=x_i | Y=y; \paa ) &= \paa^{x_i} (1-\paa)^{1-x_i}
+\end{align*}
+</div>
+<ol class="org-ol"><li><a id="orgb1e806c"></a>Maximum Likelihood Estimation (MLE)<br /><div class="outline-text-4" id="text-1-5-1">
+<p>
+\[\paa = N_1 / N\]
+</p>
+<ul class="org-ul">
+<li>\(N_1\): the number of positive examples of \(X_i\)</li>
+<li>\(N\) : the number of total examples</li>
+</ul>
+</div></li></ol>
+</div>
+</div>
+
+
+<div id="outline-container-orgc730144" class="outline-2">
+<h2 id="orgc730144"><span class="section-number-2">2</span> Bayesian inference of parameters, the second level</h2>
+</div>

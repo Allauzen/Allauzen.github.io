@@ -15,7 +15,7 @@ comments:
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org9560d9a">1. Variational Bayes: approximate inference</a></li>
+<li><a href="#org219055f">1. Variational Bayes: Bayesian "approximate (or not)" inference</a></li>
 <li><a href="#orgd9deebe">2. The EM view</a>
 <ul>
 <li><a href="#orgefdcc8d">2.1. E step</a></li>
@@ -55,18 +55,18 @@ comments:
 
 
 <p>
-Consider a probabilistic model in which we denote all of the observed variables by \(\X\) and all and all of the hidden variables by \(\Z\). In general, the probabilistic model is designed by a generative story which implies a definition of the joint probability \(P(\X, \Z|\pa)\) or \(P(\X, \Z,\pa)\) in the real bayesian view. 
+Consider a probabilistic model in which we denote all the observed variables by \(\X\) and all the hidden variables by \(\Z\). In general, the probabilistic model is designed by a generative story which implies a definition of the joint probability \(P(\X, \Z|\pa)\) or \(P(\X, \Z,\pa)\) in the real bayesian view.
 </p>
 
 <p>
-If we consider the joint distribution \(P(\X, \Z|\pa)\), it is defined by a set of parameters denoted \(\pa\). The goal is to maximize the likelihood function \(P(\X|\pa)\) to learn the parameters \(\pa\). The problem is that this maximization problem is in most of the case intractable.  
+If we consider the joint distribution \(P(\X, \Z|\pa)\), it is defined by a set of parameters denoted \(\pa\). The goal is to maximize the likelihood function \(P(\X|\pa)\) to learn the parameters \(\pa\). The problem is that this maximization problem is in most of the case intractable.
 </p>
 
 <p>
-If we consider \(P(\X, \Z,\pa)\), there are different level of bayesian inference: 
+If we consider \(P(\X, \Z,\pa)\), there are different levels of bayesian inference: 
 </p>
 <ul class="org-ul">
-<li>infer  \(P(\pa|\X)\) which also implies a summation of \(\Z\)</li>
+<li>infer  \(P(\pa|\X)\) which also implies a summation over \(\Z\)</li>
 <li>infer \(P(\X)\) for prediction purpose</li>
 <li>infer \(P(\Z|\X,\pa)\), the posterior distribution of the latent variable to better analyse new data.</li>
 </ul>
@@ -75,14 +75,18 @@ If we consider \(P(\X, \Z,\pa)\), there are different level of bayesian inferenc
 In all cases, the inference is untractable because we need to estimate \(P(\X|\pa)\) or even marginalize parameters. This requires approximate inference approach, such as MCMC or Variational one.
 </p>
 
-<div id="outline-container-org9560d9a" class="outline-2">
-<h2 id="org9560d9a"><span class="section-number-2">1</span> Variational Bayes: approximate inference</h2>
+<div id="outline-container-org219055f" class="outline-2">
+<h2 id="org219055f"><span class="section-number-2">1</span> Variational Bayes: Bayesian "approximate (or not)" inference</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-This likelihood can be expressed in two ways: \(P(\X|\pa)= \sum_{\Z} P(\X,\Z|\pa)= \frac{P(\X,\Z|\pa)}{P(\Z|\X,\pa)}\). Let us consider the second one in its log formulation:
+This likelihood can be expressed in two ways: 
+\[P(\X|\pa)= \sum_{\Z} P(\X,\Z|\pa)= \frac{P(\X,\Z|\pa)}{P(\Z|\X,\pa)}\]. 
 </p>
 
-
+<p>
+The "untractability" comes from marginalization: in the first case, sum over \(\Z\); while in the second case, the same issue is hidden in the latent posterior distribution \(P(\Z|\X,\pa)\). 
+Let us consider the second one in its log formulation:
+</p>
 <div class="org-center">
 <p>
 \(\log(P(\X|\pa))= \log(\frac{P(\X,\Z|\pa)}{P(\Z|\X,\pa)})\)
@@ -90,11 +94,12 @@ This likelihood can be expressed in two ways: \(P(\X|\pa)= \sum_{\Z} P(\X,\Z|\pa
 </div>
 
 <p>
-Next we introduce a distribution \(q(\Z)\) defined over the latent variables by multliplying both parts, and we can also sum over \(\Z\) 
+Next we introduce a distribution \(q(\Z)\) defined over the latent variables. This probability function is an approximate of the true posterior \(P(\Z|\X,\pa)\). 
+By multliplying both parts with \(q\), and summing  over \(\Z\): 
 </p>
 <div class="org-center">
 <p>
-\(\sum_{\Z} q(\Z) \log(P(\X|\pa)= \sum_{\Z}\log(\frac{P(\X,\Z|\pa)}{P(\Z|\X,\pa)})q(\Z)\)
+\(\sum_{\Z} q(\Z) \log(P(\X|\pa))= \sum_{\Z}\log(\frac{P(\X,\Z|\pa)}{P(\Z|\X,\pa)})q(\Z)\)
 </p>
 </div>
 
@@ -117,7 +122,7 @@ Then reformulate it a little bit:
 </div>
 
 <p>
-Two terms appear. The second one is the Kullback-Leibler divergence between \(P(\Z|\X,\pa)\) and \(q(\Z)\) and the first one is denoted \(\lb\). 
+Two terms appear. The second one is the Kullback-Leibler divergence between \(P(\Z|\X,\pa)\) and \(q(\Z)\) while the first one is for the moment denoted by \(\lb\). 
 </p>
 <div class="org-center">
 <p>
@@ -142,7 +147,7 @@ To quote Christopher Bishop (see chapter ten of <a href="http://research.microso
 </p>
 <blockquote>
 <p>
-Although there is nothing intrinsically approximate about variational methods, they do naturally lend themselves to finding approximate solutions. This is done by restricting the range of functions over which the optimization is performed, for instance by considering only quadratic functions or by considering functions com- posed of a linear combination of fixed basis functions in which only the coefficients of the linear combination can vary. In the case of applications to probabilistic in- ference, the restriction may for example take the form of factorization assumptions
+Although there is nothing intrinsically approximate about variational methods, they do naturally lend themselves to finding approximate solutions. This is done by restricting the range of functions over which the optimization is performed, for instance by considering only quadratic functions or by considering functions composed of a linear combination of fixed basis functions in which only the coefficients of the linear combination can vary. In the case of applications to probabilistic in- ference, the restriction may for example take the form of factorization assumptions
 </p>
 </blockquote>
 </div>
@@ -153,7 +158,7 @@ Although there is nothing intrinsically approximate about variational methods, t
 <h2 id="orgd9deebe"><span class="section-number-2">2</span> The EM view</h2>
 <div class="outline-text-2" id="text-2">
 <p>
-The EM algorithm aims at estimating the parameters \(\pa\) of a generative model that relies on latent variables \(\Z\) to explain the observed data \(\X\). In the example of mixture of gaussians, \(\Z\) represents the affectation of each observation to a gaussian. If \(\Z\) could be observed, it becomes therefore a <i>simple</i> and easy to solve classification problem. We can call \((\X, \Z)\) the complete data set, while  \((\X)\) is the  incomplete one.  In other words, \(P(\X,\Z|\pa)\) is easy to optimize, while \(P(\X|\pa)\) is untractable (a \logsum). 
+The EM algorithm aims at estimating the parameters \(\pa\) of a generative model that relies on latent variables \(\Z\) to explain the observed data \(\X\). In the example of mixture of gaussians, \(\Z\) represents the affectation of each observation to a gaussian. If \(\Z\) could be observed, it becomes therefore a <i>simple</i> and easy to solve classification problem. We can call \((\X, \Z)\) the complete data set, while  \((\X)\) is the  incomplete one.  In other words, \(P(\X,\Z|\pa)\) is easy to optimize, while \(P(\X|\pa)\) is untractable (the log-sum). 
 </p>
 
 <p>
@@ -263,19 +268,19 @@ Given a family of distribution, we are looking for one its member \(q(\Z)\) that
 </p>
 </div>
 <p>
-This objective is not tractable since its relies on $ p(\Z|\X)$ and hence on \(p(\X)\) : 
+This objective is not tractable since its relies on \(p(\Z|\X)\) and hence on \(p(\X)\) : 
 </p>
 \begin{align}
-\dkl(q(\Z)||p(\Z|\X)) &= E_{q}[\log q(\Z)] - E_{q}[\log p(\X,\Z)]\\
-&=  E_{q}[\log q(\Z)] - E_{q}[\log p(\X,Z)] + E_{q}[\log p(\X)]\\
+\dkl(q(\Z)||p(\Z|\X)) &= E_{q}[\log q(\Z)] - E_{q}[\log p(\Z|\X)]\\
+&=  E_{q}[\log q(\Z)] - E_{q}[\log p(\X,\Z)] + E_{q}[\log p(\X)]\\
 &=  E_{q}[\log q(\Z)] - E_{q}[\log p(\X,Z)] + \log p(\X)\\
 \end{align}
 <p>
-This shows the dependence of the objective on the data evidence, but also that \[\dkl(q(\Z)||p(\Z|\X)) \ge E_{q}[\log q(\Z)] - E_{q}[\log p(\X,\Z)].\] Minimizing the second term is equivalent to minimize the KL divergence objective (\(\log p(\X)\) is independent of \(q(\Z)\) and thus a negative constant).
+This shows the dependence of the objective on the data evidence, but also that \[\dkl(q(\Z)||p(\Z|\X)) \ge E_{q}[\log q(\Z)] - E_{q}[\log p(\X,\Z)].\] Minimizing the second term is equivalent to minimize the KL divergence objective.  The term \(\log p(\X)\) is independent of \(q(\Z)\) and thus a negative constant.
 </p>
 
 <p>
-The quantity \(E_{q}[\log p(\X,\Z)]- E_{q}[\log q(\Z)]\) is called the evidence lower bound (ELBO).  The term ELBO comes from the fact that if you reorganise the equation, you get: 
+The quantity \(E_{q}[\log p(\X,\Z)]- E_{q}[\log q(\Z)]\) is called the <b>evidence lower bound (ELBO)</b>.  The term ELBO comes from the fact that if you reorganise the equation, you get: 
 </p>
 
 \begin{align}
