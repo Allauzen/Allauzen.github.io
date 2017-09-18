@@ -4,7 +4,8 @@ date: 2017-09-13
 layout: post
 categories: 
 tags: 
-- cours
+- cours 
+- bayes
 published: false
 comments: 
 ---
@@ -19,9 +20,24 @@ comments:
 <li><a href="#orgd2120f1">1.3. Maximum A Posteriori (MAP)</a></li>
 <li><a href="#orgddbd50d">1.4. No inference without assumptions</a></li>
 <li><a href="#org6003863">1.5. Bernoulli Naive Bayes</a></li>
+<li><a href="#orga012175">1.6. MLE limitations</a></li>
 </ul>
 </li>
-<li><a href="#orgc730144">2. Bayesian inference of parameters, the second level</a></li>
+<li><a href="#orgc730144">2. Bayesian inference of parameters, the second level</a>
+<ul>
+<li><a href="#org28daa65">2.1. The Bayesian way</a></li>
+<li><a href="#org8874cab">2.2. The Bayesian way - 2</a></li>
+<li><a href="#orga5e9bc7">2.3. Beta prior for \(\paa\)</a></li>
+<li><a href="#orgbe49294">2.4. Posterior distribution  and conjugated prior</a></li>
+<li><a href="#org06ef0af">2.5. Posterior distribution analysis and MAP estimation</a></li>
+</ul>
+</li>
+<li><a href="#org7763b69">3. Bayesian prediction: the third level of inference</a>
+<ul>
+<li><a href="#org2c1dacf">3.1. The Bayesian predictive law</a></li>
+<li><a href="#orgc10a3ea">3.2. The Bayesian predictive law - 2</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -29,9 +45,13 @@ comments:
 <p>
 \(\newcommand{\Y}{{Y}}\)
 \(\newcommand{\X}{\mathbf{X}}\)
+\(\newcommand{\x}{\mathbf{x}}\)
 \(\newcommand{\pa}{{\theta}}\)
 \(\newcommand{\params}{\mathbf{\pa}}\)
 \(\newcommand{\paa}{\pa_{iy}}\)
+\(\newcommand{\data}{\mathcal{D}}\)
+\(\newcommand{\apos}{\alpha_1}\)
+\(\newcommand{\aneg}{\alpha_0}\)
 </p>
 
 
@@ -59,7 +79,7 @@ Given a random variable (RV) and a random vector such as:
 </p>
 <ul class="org-ul">
 <li>\(\Y\) represents de the class to assign and is a categorical RV with \(K\) possiblities.</li>
-<li>\(\X\)  is a vector gathering the observation about the object to classify</li>
+<li>\(\X\)  is a random vector gathering the observation about the object to classify</li>
 </ul>
 <p>
 \(\X = (X_i)_{i=1}^d\), where each of the \(d\) component is a RV, a feature.  
@@ -70,7 +90,7 @@ Given a random variable (RV) and a random vector such as:
 <p>
 predict the class \(y\) such as to maximize :
 \[
-P(\Y=y | \X) = \frac{P(\X|\Y) P(\Y)}{P(\X)}
+P(\Y=y | \X=\x) = \frac{P(\X=\x|\Y=y) P(\Y=y)}{P(\X=\x)}
 \]
 </p>
 </div></li></ol>
@@ -81,7 +101,7 @@ P(\Y=y | \X) = \frac{P(\X|\Y) P(\Y)}{P(\X)}
 <div class="outline-text-3" id="text-1-3">
 <p>
 \[
-P(\Y=y | \X) \propto P(\X|\Y) P(\Y) = P(\X,\Y)
+P(\Y=y| \X=\x) \propto P(\X=\x|\Y=y) P(\Y=y) = P(\X=\x,\Y=y)
 \]
 </p>
 
@@ -89,8 +109,8 @@ P(\Y=y | \X) \propto P(\X|\Y) P(\Y) = P(\X,\Y)
 <li>Maximizing the class posterior distribution wrt to y allows us to drop \(P(\X)\). This is a constant in this optimisation problem.</li>
 <li>To setup such decision, a classifier has to know, or to estimate,  the both distributions: 
 <ul class="org-ul">
-<li>P(\Y) : a categorical distribution over the classes (trivial)</li>
-<li>P(\X|\Y) : the likelihood of the class, needs further assumption</li>
+<li>\(P(\Y=y)\) : a categorical distribution over the classes (trivial)</li>
+<li>\(P(\X=\x|\Y=y)\) : the likelihood of the class, needs further assumption</li>
 </ul></li>
 </ul>
 </div>
@@ -117,14 +137,14 @@ P(\X|\Y) = \prod_{i=1}^d P(X_i|\Y)
 </p>
 </div></li>
 
-<li><a id="org79c0ffe"></a>Second: the law of P(X<sub>i</sub>|\Y)<br /><div class="outline-text-4" id="text-1-4-2">
+<li><a id="orgc6166c9"></a>Second: the law of P(X<sub>i</sub>=x<sub>i</sub>|\Y=y)<br /><div class="outline-text-4" id="text-1-4-2">
 <p>
 depends on \(X_i\)
 </p>
 <ul class="org-ul">
 <li>real feature : Gaussian \((\mu_{iy},\sigma_{iy})\),</li>
-<li>binary feature : Bernoulli \((\paa)\)</li>
-<li>word counts : Multinomial</li>
+<li>binary feature : Bernoulli \((\paa)\),</li>
+<li>word counts : Multinomial.</li>
 </ul>
 </div></li></ol>
 </div>
@@ -133,24 +153,221 @@ depends on \(X_i\)
 <h3 id="org6003863"><span class="section-number-3">1.5</span> Bernoulli Naive Bayes</h3>
 <div class="outline-text-3" id="text-1-5">
 \begin{align*}
-P(\Y=y | \X) &\propto P(\X|\Y=y;\pa) P(\Y=y) \\
+P(\Y=y | \X=\x) &\propto P(\X=\x|\Y=y;\pa) P(\Y=y) \\
 &\propto \prod_i^{d} P(X_i=x_i | Y=y; \paa ) P(\Y=y) \\
 P(X_i=x_i | Y=y; \paa ) &= \paa^{x_i} (1-\paa)^{1-x_i}
 \end{align*}
 </div>
 <ol class="org-ol"><li><a id="orgb1e806c"></a>Maximum Likelihood Estimation (MLE)<br /><div class="outline-text-4" id="text-1-5-1">
 <p>
-\[\paa = N_1 / N\]
+\[\paa = N_{1y} / N_y\]
 </p>
 <ul class="org-ul">
-<li>\(N_1\): the number of positive examples of \(X_i\)</li>
-<li>\(N\) : the number of total examples</li>
+<li>\(N_{1y}\): the number of positive examples of \(X_i\)</li>
+<li>\(N_y\) : the number of total examples</li>
+</ul>
+</div></li></ol>
+</div>
+
+<div id="outline-container-orga012175" class="outline-3">
+<h3 id="orga012175"><span class="section-number-3">1.6</span> MLE limitations</h3>
+<div class="outline-text-3" id="text-1-6">
+</div><ol class="org-ol"><li><a id="org552f973"></a>Sparse obervation<br /><div class="outline-text-4" id="text-1-6-1">
+<ul class="org-ul">
+<li>\(N_{1y}=0 \Rightarrow \paa = 0\)</li>
+<li>From the Bayesian Naive view \(\Rightarrow P(\X=\x|\Y=y) = 0\)</li>
+<li>The model cannot explain the observation !</li>
+<li>Unobserved does not mean impossible</li>
+</ul>
+</div></li>
+
+<li><a id="org761484b"></a>Sparse data as text<br /><div class="outline-text-4" id="text-1-6-2">
+<ul class="org-ul">
+<li>If you see a sequence of 5 heads, it does not mean that tail is impossible.</li>
+<li>Text data are sparse and exhibits Zipf law</li>
+<li>Rare words are frequent, MLE fails in this case.</li>
+</ul>
+</div></li></ol>
+</div>
+</div>
+
+<div id="outline-container-orgc730144" class="outline-2">
+<h2 id="orgc730144"><span class="section-number-2">2</span> Bayesian inference of parameters, the second level</h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="outline-container-org28daa65" class="outline-3">
+<h3 id="org28daa65"><span class="section-number-3">2.1</span> The Bayesian way</h3>
+<div class="outline-text-3" id="text-2-1">
+<div class="org-center">
+<p>
+Parameters are uncertain and must be modelled by random variables. 
+</p>
+</div>
+<ul class="org-ul">
+<li>This is the Bayesian way: there is not a single value for the parameters</li>
+<li>Parameters can be characterized by their posterior distribution given the training data \(\data\).</li>
+<li>The frequentist way assume an existing value for the parameters, MLE is a way to estimate them.</li>
+</ul>
+</div>
+<ol class="org-ol"><li><a id="orgaef5088"></a>Bayesian learning of parameters<br /><div class="outline-text-4" id="text-2-1-1">
+<p>
+\[
+P(\params |\data ) = \frac{P(\data|\params)P(\params)}{P(\data)}
+\]
+</p>
+</div></li></ol>
+</div>
+
+<div id="outline-container-org8874cab" class="outline-3">
+<h3 id="org8874cab"><span class="section-number-3">2.2</span> The Bayesian way - 2</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+In the previous equation: 
+</p>
+<ul class="org-ul">
+<li>\(P(\data|\params)\) is the Likelihood of the parameters</li>
+<li>We know by contruction its form</li>
+<li>\(P(\params)\) is the prior over the parameters</li>
+<li>\(P(\data)\) is the evidence and in many cases untractable (requires approximate inference such as Monte-Carlo)</li>
+</ul>
+</div>
+<ol class="org-ol"><li><a id="org479cbcb"></a>Bernoulli BN<br /><div class="outline-text-4" id="text-2-2-1">
+<ul class="org-ul">
+<li>For each class we consider a parameter \(\paa\)</li>
+<li>What kind of prior can we set, since  \(0 \leq \paa \leq 1\)</li>
+</ul>
+</div></li></ol>
+</div>
+
+<div id="outline-container-orga5e9bc7" class="outline-3">
+<h3 id="orga5e9bc7"><span class="section-number-3">2.3</span> Beta prior for \(\paa\)</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+\[
+P(\paa;\aneg,\apos) = \frac{1}{Beta(\aneg,\apos)} \paa^{(\apos-1)}(1-\paa)^{(\aneg-1)}
+\]
+</p>
+<ul class="org-ul">
+<li>\(Beta(\aneg,\apos)\) is the beta function :</li>
+</ul>
+<p>
+\[
+Beta(\aneg,\apos) = \frac{\Gamma(\apos+\aneg)}{\Gamma(\apos)\Gamma(\aneg)}
+\] 
+</p>
+<ul class="org-ul">
+<li>\(\Gamma\) is the gamma function, the generalisation of the factorial function to real numbers.</li>
+</ul>
+</div>
+
+<ol class="org-ol"><li><a id="org5ca4341"></a>Special cases:<br /><div class="outline-text-4" id="text-2-3-1">
+<ul class="org-ul">
+<li>\(\aneg=\apos=1\): uninformative prior, \(P(\paa;\aneg,\apos)\) is uniform</li>
+<li>\(\aneg=\apos>1\): symmetric prior, the mode is for \(\paa=0.5\)</li>
+<li>\(\aneg=\apos<1\): favour sparse distribution (\(\paa\) close to 0 or 1).</li>
+</ul>
+</div></li></ol>
+</div>
+
+<div id="outline-container-orgbe49294" class="outline-3">
+<h3 id="orgbe49294"><span class="section-number-3">2.4</span> Posterior distribution  and conjugated prior</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+\[
+P(\paa | \data ) \propto \paa^{(N_{1y}+\apos-1)} (1-\paa)^{(N_{0y}+\aneg-1)}
+\]
+</p>
+<ul class="org-ul">
+<li>A new Beta distribution such as:
+<ul class="org-ul">
+<li>\(\apos'=\apos+N_{1y}\)</li>
+<li>\(\aneg'=\aneg+N_{0y}\)</li>
+</ul></li>
+</ul>
+</div>
+<ol class="org-ol"><li><a id="orgeda7ad2"></a>Conjugated prior<br /><div class="outline-text-4" id="text-2-4-1">
+<p>
+The prior and posterior distribution have the same form: 
+</p>
+<div class="org-center">
+<p>
+The Beta distribution is <b>the conjugated prior</b> of the Bernoulli distribution
+</p>
+</div>
+</div></li>
+<li><a id="org5434cfa"></a>Hyper-parameters<br /><div class="outline-text-4" id="text-2-4-2">
+<ul class="org-ul">
+<li>\(\aneg,\apos\) can be seen as hyper-parameters.</li>
+<li>To be tuned.</li>
+</ul>
+</div></li></ol>
+</div>
+
+<div id="outline-container-org06ef0af" class="outline-3">
+<h3 id="org06ef0af"><span class="section-number-3">2.5</span> Posterior distribution analysis and MAP estimation</h3>
+<div class="outline-text-3" id="text-2-5">
+<ul class="org-ul">
+<li>If the data size increases, the impact of the prior decreases,</li>
+<li><i>e.g</i> if \(\apos << N_{1y}\),</li>
+<li>and more peaky is the distribution around its mode</li>
+</ul>
+</div>
+
+<ol class="org-ol"><li><a id="org0ead9b4"></a>MAP estimation of parameters<br /><div class="outline-text-4" id="text-2-5-1">
+<p>
+Set \(\paa\) to the mode value of the posterior distribution (quite frequentist): 
+\[
+\paa^{MAP} = \frac{N_{1y} + \apos -1 }{N_y + \aneg + \apos -2}
+\]
+</p>
+
+<ul class="org-ul">
+<li>if \(\apos\) and \(\aneg \leq 1\) (no sparse prior)</li>
+<li>priors act as pseudo counts / regularization.</li>
+<li>avoid over-fitting</li>
+<li>A uninformative prior yields MLE.</li>
 </ul>
 </div></li></ol>
 </div>
 </div>
 
 
-<div id="outline-container-orgc730144" class="outline-2">
-<h2 id="orgc730144"><span class="section-number-2">2</span> Bayesian inference of parameters, the second level</h2>
+<div id="outline-container-org7763b69" class="outline-2">
+<h2 id="org7763b69"><span class="section-number-2">3</span> Bayesian prediction: the third level of inference</h2>
+<div class="outline-text-2" id="text-3">
+</div><div id="outline-container-org2c1dacf" class="outline-3">
+<h3 id="org2c1dacf"><span class="section-number-3">3.1</span> The Bayesian predictive law</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+Since we observed training data \(\data\), the real goal is to predict a value by <b>marginalizing</b> the parameters.  
+</p>
+</div>
+
+<ol class="org-ol"><li><a id="org0d5e203"></a>Bernoulli BN:<br /><div class="outline-text-4" id="text-3-1-1">
+\begin{align*}
+P(\Y=y|\X, \data) &\propto \prod_{i=1}^d P(X_i = \x_i | \Y=y, \data) P(\Y=y|\data)\\
+P(X_i = \x_i | \Y=y, \data) &=  \int_{0}^{1} P(X_i = \x_i,\paa | \Y=y, \data) d\paa\\
+&= \int_{0}^{1} P(X_i = \x_i|\paa , \Y=y, \data) P(\paa | \Y=y, \data) d\paa
+\end{align*}
+<ul class="org-ul">
+<li>the first term is the Likelihood,</li>
+<li>the second term the posterior distribution of the parameter.</li>
+</ul>
+</div></li></ol>
+</div>
+
+
+<div id="outline-container-orgc10a3ea" class="outline-3">
+<h3 id="orgc10a3ea"><span class="section-number-3">3.2</span> The Bayesian predictive law - 2</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+\[
+P(X_i = \x_i | \Y=y, \data) = \frac{N_{1y}+\apos}{N_{y}+\apos+\aneg}
+\]
+</p>
+<ul class="org-ul">
+<li>priors act as pseudo counts / regularization.</li>
+<li>sparse prior is possible !</li>
+</ul>
+</div>
+</div>
 </div>

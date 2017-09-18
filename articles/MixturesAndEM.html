@@ -1,0 +1,355 @@
+---
+title: "Mixture of models and the E.M algorithm"
+date: 2017-09-17
+layout: post
+categories: 
+tags: 
+- cours 
+- bayes 
+- EM 
+- gmm 
+- variational
+published: true
+comments: 
+---
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org5341547">1. Summary and Aknowledgment</a></li>
+<li><a href="#org638309a">2. Introduction and examples</a>
+<ul>
+<li><a href="#orge2bd510">2.1. Clustering</a></li>
+<li><a href="#org23f09db">2.2. Estimation for mixture of distributions</a></li>
+</ul>
+</li>
+<li><a href="#orga5fcf34">3. The EM Algorithm in general</a></li>
+<li><a href="#org1b96e3d">4. Variational view of EM</a>
+<ul>
+<li><a href="#org3ec7dea">4.1. Remark</a></li>
+<li><a href="#org8f6c16a">4.2. E step</a></li>
+<li><a href="#org134d48c">4.3. M step</a></li>
+<li><a href="#orgdeb2e32">4.4. A summary of EM</a></li>
+</ul>
+</li>
+<li><a href="#org7a0fa1a">5. GMM</a>
+<ul>
+<li><a href="#orgbe0e1a9">5.1. E step</a></li>
+<li><a href="#orgc58f124">5.2. M step</a></li>
+</ul>
+</li>
+<li><a href="#orgf0cfcb7">6. <span class="todo TODO">TODO</span> Online (or incremental version)</a></li>
+<li><a href="#org51288b8">7. Bernoulli Mixture model</a></li>
+</ul>
+</div>
+</div>
+<hr>
+
+<p>
+\(\newcommand{\normal}{\mathcal{N}}\)
+\(\newcommand{\X}{\mathbf{X}}\)
+\(\newcommand{\Z}{\mathbf{Z}}\)
+\(\newcommand{\z}{\mathbf{z}}\)
+\(\newcommand{\pa}{\mathbf{\theta}}\)
+\(\newcommand{\paold}{\pa^{old}}\)
+\(\newcommand{\panew}{\pa^{new}}\)
+\(\newcommand{\x}{\mathbf{x}}\)
+\(\newcommand{\m}{\mu}\)
+\(\newcommand{\s}{\sigma}\)
+\(\newcommand{\M}{\boldsymbol{\m}}\)
+\(\newcommand{\C}{\boldsymbol{\Sigma}}\)
+\(\newcommand{\pis}{\boldsymbol{\Pi}}\)
+\(\newcommand{\lb}{\mathcal{L}(q;\pa)}\) 
+\(\newcommand{\dkl}{D_{kl}}\)
+</p>
+
+<div id="outline-container-org5341547" class="outline-2">
+<h2 id="org5341547"><span class="section-number-2">1</span> Summary and Aknowledgment</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>Notes on EM algorithm for mixture models estimate.</li>
+<li>Mainly based on Christopher Bishop's book (see chapter 9 of <a href="http://research.microsoft.com/en-us/um/people/cmbishop/prml/">Pattern Recognition and Machine Learning</a>).</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org638309a" class="outline-2">
+<h2 id="org638309a"><span class="section-number-2">2</span> Introduction and examples</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+One of the most widely used  mixture of distributions (or mixture model, <i>i.e</i> MM) is the Gaussian mixture model (GMM). 
+When a random vector of real values \(\X\) is drawn from a GMM, its density of probability is: 
+\[
+p(\X| \M,\C,\pis)  = \sum_{k=1}^K \pi_k \normal(\X|\M_k,\C_k),
+\]
+with \(\pis = (\pi_k)_{1}^K\) and \(K\) the number of gaussians or clusters. The set of parameters for this model is \(\pa=(\pi_k, \M_k, \C_k)_{k=1}^K\). 
+The generative story of this model is as follows: 
+</p>
+<ol class="org-ol">
+<li>First pick a cluster (or a gaussian) \(\sim Cat(\pis)\)</li>
+<li>Generate \(\X \sim \normal(\X|\M_k,\C_k)\)</li>
+</ol>
+<p>
+MMs are mainly used for clustering or probability density estimation. 
+</p>
+</div>
+
+
+<div id="outline-container-orge2bd510" class="outline-3">
+<h3 id="orge2bd510"><span class="section-number-3">2.1</span> Clustering</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+In a clustering task, each gaussian is associated to a cluster, and the learning step aims at estimating the hidden assignments of a data point to a cluster. In the case of GMM, a gaussian is associated to a cluster. This can be interpreted as an extension of the K-means algorithm, with soft assignements and the possibility to better control the shape of each clusters with the covariance matrix.  
+</p>
+</div>
+</div>
+
+<div id="outline-container-org23f09db" class="outline-3">
+<h3 id="org23f09db"><span class="section-number-3">2.2</span> Estimation for mixture of distributions</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+For probabilistic classifier, each class is modeled by a distribution (the likelihood term). However, following the gaussian example, assigning a single gaussian to model the data of one class can be a poor assumption. Inside a class, the data can exhibit different modes associated to the intra-class variability of the data. In this case a MM can be a better choice: for instance by increasing the number of Gaussians, we allows the model to have an improved expressivity along with more parameters to be estimated.
+</p>
+</div>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-orga5fcf34" class="outline-2">
+<h2 id="orga5fcf34"><span class="section-number-2">3</span> The EM Algorithm in general</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+A mixture model is a generative model that relies on latent variables \(\Z\) to explain the observed data \(\X\). These latent parameters \(\Z\) represent the affectation of each observation to a component of the mixture. To learn the parameters of the model we can maximize the log-likelihood of the parameters on the training data: 
+</p>
+\begin{align*}
+\log(p(\X|\pa)) &= \log(\sum_{\Z} p(\X,\Z|\pa) )
+\end{align*} 
+<p>
+For a training point \(\x\), a latent vector \(\z\) of dimension \(K\) is associated. \(\z\) corresponds to the assignement of \(\x\) to each cluster. \(\Z\) is therefore a set of binary random variables:
+</p>
+<ul class="org-ul">
+<li>\(\z = (z_k)_{k=1}^K\)</li>
+<li>\(z_k=1\) if \(\x\) belongs to the cluster \(k\) and \(0\) otherwise.</li>
+</ul>
+<p>
+To say it differently, 
+\[ p(\X , \Z = \z, \pa) = \pi_k \normal(\M_k,\C_k),\]
+if \(z_k = 1\) and \(z_{k'} = 0,\ \forall k'\neq k\). 
+</p>
+
+<p>
+If \(\Z\) could be observed, it becomes therefore a <i>simple</i> and easy to solve classification problem. \((\X, \Z)\) is often denoted as  the <b>complete</b> data set, while \((\X)\) is the <b>incomplete</b> one. In other words, \(P(\X,\Z|\pa)\) is easy to optimize, while \(P(\X|\pa)\) requires to marginalize the latent variable, introducing a log-sum without a closed-form solution.
+</p>
+
+<p>
+The <b>Expectation-Maximization (EM)</b> algorithm is a solution to solve the optimization problem of finding \(\pa\)  to maximize \(\log(p(\X|\pa))\). 
+While in practice \(\Z\) is unknown, for a given set of parameters we can compute \(P(\Z|\X,\pa)\) and also the <b>expected</b> value of \(\Z|\X,\pa\). This is the <b>E(xpectation) step</b>. In a second step, learning the classification task can be carried out: <b>maximizing</b> \(\pa\) knowing \(\Z\) (or the expected value). This is the <b>M(aximization) step</b>. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1b96e3d" class="outline-2">
+<h2 id="org1b96e3d"><span class="section-number-2">4</span> Variational view of EM</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+The quantity of interest can be rewritten as follows by  introducing a distribution \(q(\Z)\) defined over the latent variables:
+\[\log(P(\X|\pa))= \sum_{\Z}q(\Z) \log(\frac{P(\X,\Z|\pa)}{q(\Z)}) - \sum_{\Z}q(\Z) \log(\frac{P(\Z|\X,\pa)}{q(\Z)})\] 
+</p>
+
+<p>
+Two terms appear. The second one is the Kullback-Leibler divergence between \(P(\Z|\X,\pa)\) and \(q(\Z)\) while the first one is for the moment denoted by \(\lb\). 
+</p>
+\begin{align*}
+\log(P(\X|\pa)) &=  \lb + \dkl(q(\Z)||P(\Z|\X,\pa))\\
+\lb &= \sum_{\Z}q(\Z) \log(\frac{P(\X,\Z|\pa)}{q(\Z)})\\
+\dkl(q(\Z)||P(\Z|\X,\pa)) &= \sum_{\Z}q(\Z) \log(\frac{P(\Z|\X,\pa)}{q(\Z)})
+\end{align*}
+
+
+<p>
+Recall that the Kullback-Leibler divergence satisfies \(\dkl(q|p)\ge 0\), with equality if, and only if \(q(Z) = p(Z|X,\pa)\). Therefore \(P(\X|\pa) \ge \lb\) which means that \(\lb\) is a <b>lower bound</b> of \(P(\X|\pa)\) we want to maximize. <b>The goal of the EM algorithm is therefore to maximize \(\lb\) to indirectly maximize \(P(X|\pa)\).</b>  
+</p>
+</div>
+
+<div id="outline-container-org3ec7dea" class="outline-3">
+<h3 id="org3ec7dea"><span class="section-number-3">4.1</span> Remark</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+This formulation does not solve the tractability issue since in the \(\dkl\) term we still have a dependance between \(P(\Z|X,\pa)\) and \(P(\X|\pa)\), <i>i.e</i> :
+</p>
+<div class="org-center">
+<p>
+\(P(\Z|X,\pa) = \frac{P(\X,\Z|\pa)}{P(\X|\pa)}\).
+</p>
+</div>
+<p>
+So both \(P(\Z|X,\pa)\) and \(P(\X|\pa)\) are untractable. The probabilistic model specifies the joint distribution \(P(\X, \Z)\), and the goal is to find an approximation for the posterior distribution \(P(\Z|\X,\pa)\) as well as for the model evidence \(P(X|\pa)\). 
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org8f6c16a" class="outline-3">
+<h3 id="org8f6c16a"><span class="section-number-3">4.2</span> E step</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+Suppose that the current value of the parameter vector is \(\paold\). In the E step, the lower bound \(\lb\) <b>is maximized with respect to \(q(\Z)\)</b> while holding \(\pa\) fixed to \(\paold\). 
+</p>
+\begin{align*}
+\lb &= - \dkl(q(\Z)||P(\Z|\X,\pa)) + p(\X|\paold) \\
+    &= - \dkl(q(\Z)||P(\Z|\X,\pa)) + cte
+\end{align*}
+<ul class="org-ul">
+<li>the solution is when \(q(\Z) = P(\Z|\X,\paold)\), and</li>
+<li>the Kullback-Leibler divergence vanishes.</li>
+</ul>
+
+<p>
+Since the KL divergence is zero, we have \(\lb=P(\X|\paold)\). In fact, the E-step consists in computing the posterior distribution over \(\Z\) with the parameters fixed at \(\paold\). Then you just set <i>theoritically</i> \(q(\Z) = P(\Z|\X,\paold)\). 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org134d48c" class="outline-3">
+<h3 id="org134d48c"><span class="section-number-3">4.3</span> M step</h3>
+<div class="outline-text-3" id="text-4-3">
+<p>
+The distribution \(q(Z)\) is now fixed and the <b>lower bound \(\lb\) is now maximized with respect to \(\pa\)</b>.  The maximization process yields a new value for the parameters \(\panew\) and increases the lower bound (except if we are already at the maximum). Note that \(q(Z)=P(\Z|\X,\paold)\) acts as a constant in the maximization process: 
+</p>
+
+\begin{align}
+\lb &=  \sum_{\Z} P(\Z|\X,\paold) \log(\frac{P(\X,\Z|\pa)}{P(\Z|\X,\paold)}) \\
+&= \sum_{\Z} P(\Z|\X,\paold) \log(P(\X,\Z|\pa)) \\
+&- \sum_{\Z} P(\Z|\X,\paold) \log(P(\Z|\X,\paold))
+\end{align}
+<p>
+The second term is a positive constant, since it depends only on \(\paold\). This is the entropy of the posterior distribution \(H(P(\Z|\X,\paold))\). The first we want to maximize is the expectation under the posterior \(P(\Z|\X,\paold)\) of the log-likelihood of complete data. This means in practice, that we optimize a classifier of \(\X\) into \(\Z\), with the supervision of  \(P(\Z|\X,\paold)\) that provides the pseudo-affectation. 
+</p>
+
+
+<p>
+Since the distribution \(q\) is fixed to \(P(\Z|\X,\paold)\), \(q(Z) \neq P(\Z|\X,\panew)\) and now the KL divergence term is nonzero. The increase in the log likelihood function is therefore greater than the increase in the lower bound. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgdeb2e32" class="outline-3">
+<h3 id="orgdeb2e32"><span class="section-number-3">4.4</span> A summary of EM</h3>
+<div class="outline-text-3" id="text-4-4">
+<p>
+You can see the EM algorithm as pushing two functions. 
+</p>
+<ul class="org-ul">
+<li>With fixed parameters (\(\paold\)), push \(\lb\) to stick \(P(\X|\paold)\) by setting \(q(Z)=P(\Z|\X,\paold)\)</li>
+<li>Then recompute the parameters to get \(\panew\) with a fixed \(q(\Z)=P(\Z|\X,\paold)\). The criterion is to maximize \(\lb\) w.r.t \(\pa\). In fact you are moving in the parameter space in order to push \(\lb\), but by doing this you also push the likelihood even further: \(P(\X|\panew) \ge \lb\) because \(P(\Z|\X,\pa)\) has changed to  \(P(\Z|\X,\panew)\) while \(q(\Z)\) has not.</li>
+</ul>
+
+<p>
+For graphical illustration, you can look at the book of Christopher Bishop  called <a href="http://research.microsoft.com/en-us/um/people/cmbishop/prml/">Pattern Recognition and Machine Learning</a>. You can also read the great paper of Radford Neal and Geoffrey Hinton on the link between <a href="ftp://ftp.cdf.toronto.edu/dist/radford/emk.pdf">Variational Bayes and EM</a>.
+</p>
+
+<p>
+Note that for implementation, \(q(\Z)\) does not really exist or is not a quantity of interest. It acts more like a temporary variable to perform this two steps game. 
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org7a0fa1a" class="outline-2">
+<h2 id="org7a0fa1a"><span class="section-number-2">5</span> GMM</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+Application of the EM algorithm to GMM. 
+</p>
+</div>
+<div id="outline-container-orgbe0e1a9" class="outline-3">
+<h3 id="orgbe0e1a9"><span class="section-number-3">5.1</span> E step</h3>
+<div class="outline-text-3" id="text-5-1">
+<p>
+Given the current set of parameters \(\pa=\paold\), we set \(q(\Z)=P(\Z|\X,\paold)\). This implies that for each training example \(\X\), we compute the posterior distribution of its associated latent variable \(\Z\)
+</p>
+\begin{align*}
+q(\Z)&=P(\Z|\X,\paold)\\
+&=\frac{P(\X,\Z|\paold)}{\sum_z P(\X,\Z|\paold)}\\
+&= \frac{\pi_k \normal(\X|\M_k,\C_k)}{\sum_{j=1}^K\ \pi_j \normal(\X|\M_j,\C_j)}
+\end{align*}
+
+<p>
+\(q(\Z)\) can ba be considered as the a soft assignement of \(\X\) to the different clusters, or its responsability. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc58f124" class="outline-3">
+<h3 id="orgc58f124"><span class="section-number-3">5.2</span> M step</h3>
+<div class="outline-text-3" id="text-5-2">
+<p>
+The distribution \(q(Z)\) is now fixed and the lower bound \(\lb\) is maximized with respect to \(\pa\).  We optimize a classifier of \(\X\) into \(\Z\), with the supervision of \(P(\Z|\X,\paold)\) that provides the pseudo-affectation.
+</p>
+<ul class="org-ul">
+<li>Each data points is involved in each cluster, but weighted by its responsability. 
+<ul class="org-ul">
+<li>\(\x_n\) is associated to \(\z_n\)</li>
+<li>\(\x_n\) belongs to cluster \(k\) with a weight given by \(q(z_{nk})\)</li>
+</ul></li>
+</ul>
+
+
+\begin{align*}
+N_k  &= \sum_n   q(z_{nk})
+\M_k &= \frac{1}{N_k} \sum_n q(z_{nk}) \x_n \\
+\C_k &= \frac{1}{N_k} \sum_n q(z_{nk}) (\x_n-\M_k) (\x_n-\M_k)^t\\
+\pi_k &= \frac{N_k}{N}
+\end{align*}
+</div>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-orgf0cfcb7" class="outline-2">
+<h2 id="orgf0cfcb7"><span class="section-number-2">6</span> <span class="todo TODO">TODO</span> Online (or incremental version)</h2>
+</div>
+
+
+<div id="outline-container-org51288b8" class="outline-2">
+<h2 id="org51288b8"><span class="section-number-2">7</span> Bernoulli Mixture model</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+With the naive assumption, a random vector \(\X\) is assumed to be generated by a set of independant Bernoulli distributions, one for each component:
+\[
+P(\X=\x|\M) = \prod_{i=1}^d \m_i^{x_i} (1-\m_i)^{1-x_i}, 
+\]
+where \(\M\) is the vector of parameters, and \(\m_i\) is the parameter of the Bernoulli distribution associated to the component \(i\) of \(\X\). 
+We can then compute the (statistical) mean and covariance of \(\X\) under this naive assumption: 
+</p>
+\begin{align*}
+E[\X] &= \M\\
+cov[\X] &= diag\{\M(1-\M)\}. 
+\end{align*}
+<p>
+Here \(diag\) denotes a diagonal matrix and \(\M(1-\M)\) is the vector gathering the diagonal values. Therefore, there is no correlation between the component of \(\X\) (of course, it was designed like this). The variance for one component is thus \(\m_i(1-\m_i)\). 
+</p>
+
+<p>
+If we want to capture correlations between the variables, unlike a single Bernoulli distribution, a solution is to assume a mixture of Bernoulli distributions. 
+\[
+P(\X=\x|\M,\pis) = \sum_{k=1}^K \pi_k P(\X=\x|\m_k), 
+\]
+Under this distribution, the statistics are now: 
+</p>
+\begin{align*}
+E[\X] &= \sum_k \pi_k \M_k\\
+cov[\X] &= \sum_k \pi_k (diag\{\M_k(1-\M_k)\} + \M_k\M_k^t)  + E[\X]E[\X]^t
+\end{align*}
+
+<p>
+The covariance is no longer diagonal and the model can capture correlation between variables at the expense of increasing the number of parameters (\(K\) times). 
+</p>
+</div>
+</div>
