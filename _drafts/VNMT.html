@@ -46,7 +46,7 @@ comments:
 </p>
 
 <p>
-\(\newcommand{\lb}{\mathcal{L}(q;\pa)}\) 
+\(\newcommand{\lb}{\mathcal{L}}\) 
 </p>
 
 <p>
@@ -63,7 +63,7 @@ comments:
 
 <p>
 Assume a source sentence \(\X = x_{1}^{\lsrc}\) and a target sentence \(\Y = y_{1}^{\ltrg}\). 
-A NMT system defines the probability distribution \(P(\Y|\X,\pnmt)\) as a funtion parametrized by \(\pnmt\) \(g\):
+A NMT system defines the probability distribution \(P(\Y|\X,\pnmt)\) as a funtion  \(g\) parametrized by \(\pnmt\): 
 </p>
 \begin{align}
 P(\Y|\X,\pnmt) &= \prod_{j=1}^{j=J}P(y_j|y_{1}, ... , y_{j-1},\X,\pnmt) \\
@@ -86,14 +86,14 @@ Consider a probabilistic model in which we denote all of the observed variables 
 <p>
 The goal of variational inference is to find a distribution \(\q\) which is as close as possible of \(P(\Z)\), as well as maximizing the data evidence \(\p(\X|\Z)\).The goal is to maximize the elbow: 
 \[
-\lb(\pa,paphi, \X) = - \dkl[\q(\Z)||P(\Z)] + E_{\q} [\log \p(\X|Z)]
+\lb(\pa,\paphi, \X) = - \dkl[\q(\Z)||P(\Z)] + E_{\q} [\log \p(\X|Z)]
 \]
 </p>
 
 <p>
 With VAE, the first step is to replace \(\q(\Z)\) by \(\q(\Z|X)\). This allows us to design a NNet to infer this conditional distribution. Therefore the objective function becomes: 
 \[
-\lb_{VAE}(\pa,paphi, \X) = - \dkl[\q(\Z|\X)||P(\Z)] + E_{\q} [\log \p(\X|Z)]
+\lb_{VAE}(\pa,\paphi, \X) = - \dkl[\q(\Z|\X)||P(\Z)] + E_{\q} [\log \p(\X|Z)]
 \]
 </p>
 
