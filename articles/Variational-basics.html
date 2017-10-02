@@ -116,7 +116,7 @@ The right hand side is just \(P(\X|\pa)\) and remains unchanged. The second tric
 </p>
 <div class="org-center">
 <p>
-\(\log(P(\X|\pa))= \sum_{\Z}q(\Z) \log(\frac{P(\X,\Z|\pa)q(\Z)}{P(\Z|\X,\pa)q(\Z)})\)
+\(\log(P(\X|\pa))= \sum_{\Z}q(\Z) \log(\frac{P(\X,\Z|\pa)q(\Z)}{P(\Z|\X,\pa)q(\Z)})\) 
 </p>
 </div>
 
@@ -125,18 +125,22 @@ Then reformulate it a little bit:
 </p>
 <div class="org-center">
 <p>
-\(\log(P(\X|\pa))= \sum_{\Z}q(\Z) \log(\frac{P(\X,\Z|\pa)}{q(\Z)}) - \sum_{\Z}q(\Z) \log(\frac{P(\Z|\X,\pa)}{q(\Z)})\) 
+\(\log(P(\X|\pa))= \sum_{\Z}q(\Z) \log(\frac{P(\X,\Z|\pa)}{q(\Z)}) + \sum_{\Z}q(\Z) \log(\frac {q(\Z)}{P(\Z|\X,\pa)})\) 
 </p>
 </div>
 
 <p>
-Two terms appear. The second one is the Kullback-Leibler divergence between \(P(\Z|\X,\pa)\) and \(q(\Z)\) while the first one is for the moment denoted by \(\lb\). 
+Two terms appear. The second one is the Kullback-Leibler divergence between  \(q(\Z)\) and \(P(\Z|\X,\pa)\): 
+\[
+\dkl(q(\Z)||P(\Z|\X,\pa)) = \sum_{\Z} q(\Z) \log(\frac{q(\Z)}{P(\Z|\X)}).
+\]
+And the first term is for the moment denoted by \(\lb\). We then obtain the following relation: 
 </p>
 \begin{align}
 \log(P(\X|\pa)) &=  \lb + \dkl(q(\Z)||P(\Z|\X,\pa))\\
 \lb &= \sum_{\Z}q(\Z) \log(\frac{P(\X,\Z|\pa)}{q(\Z)}) \\
 &= E_{q}[ \log(\frac{P(\X,\Z|\pa)}{q(\Z)}) ] \\
-&=  E_{q}[ \log(P(\X,\Z|\pa) ] - \dkl(q(\Z)| P(\Z))
+&=  E_{q}[ \log(P(\X|\Z, \pa) ] - \dkl(q(\Z)| P(\Z))
 \end{align}
 
 <p>
