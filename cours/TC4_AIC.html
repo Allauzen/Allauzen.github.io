@@ -22,6 +22,13 @@ comments:
 </li>
 <li><a href="#org9ed8e79">2. Cours 2 : Modèle de Markov Caché ou HMM, introduction</a></li>
 <li><a href="#orgbca9e96">3. Cours 3 : Inférence / Viterbi</a></li>
+<li><a href="#orgb1d811b">4. Project: Second-Order HMM for typos correction</a>
+<ul>
+<li><a href="#orgaea3cf9">4.1. <span class="todo TODO">TODO</span> :</a></li>
+<li><a href="#orgf5d8d79">4.2. Submission Checklist</a></li>
+<li><a href="#org3949c6e">4.3. Grading Scheme:</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -95,5 +102,124 @@ Le TP est sur le <a href="https://ocsync.limsi.fr/index.php/s/TETPT57yxziIN8R">c
 <li>retour sur l'algorithme de Viterbi</li>
 <li>Le TP est sur  <a href="https://ocsync.limsi.fr/index.php/s/TETPT57yxziIN8R">ce drive</a>. Il s'agit du TP3</li>
 </ul>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgb1d811b" class="outline-2">
+<h2 id="orgb1d811b"><span class="section-number-2">4</span> Project: Second-Order HMM for typos correction</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+The goal is to design a model to correct typos in texts without a dictionaries. 
+</p>
+
+<p>
+In this problem, a state refers to the correct letter that should have
+been typed, and an observation refers to the actual letter that is
+typed. Given a sequence of outputs/observations (i.e., actually typed
+letters), the problem is to reconstruct the hidden state sequence (i.e.,
+the intended sequence of letters). Thus, data for this problem looks
+like:
+</p>
+
+<pre class="example">
+[('t', 't'), ('h', 'h'), ('w', 'e'), ('k', 'm')]
+ [('f', 'f'), ('o', 'o'), ('r', 'r'), ('m', 'm')] 
+</pre>
+
+<p>
+The first example is misspelled: the observation is <b>thwk</b> while the
+correct word is <b>them</b>. The second example is correctly typed.
+</p>
+
+<p>
+Data for this problem was generated as follows: starting with a text
+document, in this case, the Unabomber's Manifesto, which was chosen not
+for political reasons, but for its convenience being available on-line
+and of about the right length, all numbers and punctuation were
+converted to white space and all letters converted to lower case. The
+remaining text is a sequence only over the lower case letters and the
+space character, represented in the data files by an underscore
+character. Next, typos were artificially added to the data as follows:
+with 90% probability, the correct letter is transcribed, but with 10%
+probability, a randomly chosen neighbor (on an ordinary physical
+keyboard) of the letter is transcribed instead. Space characters are
+always transcribed correctly. In a harder variant of the problem, the
+rate of errors is increased to 20%.
+</p>
+
+<p>
+You can download the datasets in this <a href="http://perso.limsi.fr/Individu/allauzen/cours/TC-AIC/TC4/typos-data.tgz">archive file</a>. This archive contains 4 pickles: train10 and test10 constitute the dataset with 10% or spelling errors, while train20 and test20 the one with 20% or errors.
+</p>
+</div>
+
+<div id="outline-container-orgaea3cf9" class="outline-3">
+<h3 id="orgaea3cf9"><span class="section-number-3">4.1</span> <span class="todo TODO">TODO</span> :</h3>
+<div class="outline-text-3" id="text-4-1">
+<ul class="org-ul">
+<li>(3pts) Dry run: Train a first-order HMM using the training data. This
+is basically what we did in lab sessions for POS-tagging. Compute the
+error rate (at the character level) and compare this results with the
+dummiest classifier that just do nothing. You can also compute the
+number of errors your model can correct and the number of errors your
+model creates.</li>
+<li>(7pts) Second Order HMM: To improve the performance, we can increase
+the order of the HMM. Implement a second Order model for this task
+(this means that the probability of the next state depends on the
+current state and the previous one as well). A convenient way to
+implement a second order HMM, is to think about it as a variable
+change.</li>
+<li>(5pts) Critics and evolution: This model is somehow limited. For
+instance, it only handles substitution errors. Could you describe a
+way to extend this model to also handle noisy insertion of characters
+?</li>
+
+<li>(5pts) Same question for deletion (or omitted characters) ?</li>
+
+<li>(5pts) Unsupervised training: Propose and discuss some ideas to do
+unsupervised training for this task. For this question you should
+provide details on : what kind of data, which parameters will be
+involved, &#x2026;</li>
+</ul>
+
+<p>
+For the last three questions, be as precise as you can. An
+implementation is not mandatory.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf5d8d79" class="outline-3">
+<h3 id="orgf5d8d79"><span class="section-number-3">4.2</span> Submission Checklist</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+You can rely on existing libraries such as nltk or sklearn, and you can
+use other programming languages. You must send an archive with: 
+</p>
+<ul class="org-ul">
+<li>the source code (without external libraries of course) necessary to</li>
+</ul>
+<p>
+reproduce your results 
+</p>
+<ul class="org-ul">
+<li>a report that presents, explains, analyses and discusses your results.</li>
+</ul>
+
+<p>
+You can of course use a notebook. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3949c6e" class="outline-3">
+<h3 id="org3949c6e"><span class="section-number-3">4.3</span> Grading Scheme:</h3>
+<div class="outline-text-3" id="text-4-3">
+<p>
+Just follow the TODO list. Extra points will be given for an
+implementation for the last three questions (5pts each)
+</p>
+</div>
 </div>
 </div>
