@@ -67,7 +67,6 @@ DEPENDENCIES
   jekyll-gist
   jekyll-sitemap
   json
-  rb-fsevent (<= 0.9.4)
 
 BUNDLED WITH
-   1.15.2
+   1.16.0.pre.2

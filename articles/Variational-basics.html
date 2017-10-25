@@ -15,21 +15,26 @@ comments:
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org219055f">1. Variational Bayes: Bayesian "approximate (or not)" inference</a></li>
-<li><a href="#orgd9deebe">2. The EM view</a>
+<li><a href="#org304f6e1">1. Variational Bayes: Bayesian "approximate (or not)" inference</a>
 <ul>
-<li><a href="#orgefdcc8d">2.1. E step</a></li>
-<li><a href="#org7d7fbe8">2.2. M step</a></li>
-<li><a href="#org163e935">2.3. A summary of EM</a></li>
+<li><a href="#orgdc611e5">1.1. Variational derivation</a></li>
+<li><a href="#orgae0dc76">1.2. Approximate inference</a></li>
 </ul>
 </li>
-<li><a href="#orgb157c54">3. The problem of approximate inference in general</a>
+<li><a href="#org7abd66f">2. The EM view</a>
 <ul>
-<li><a href="#org1e6b8c2">3.1. The evidence lower bound (ELBO)</a></li>
-<li><a href="#org38aed33">3.2. <span class="todo TODO">TODO</span> Example of variational inference</a></li>
+<li><a href="#org836513d">2.1. E step</a></li>
+<li><a href="#org95f90b0">2.2. M step</a></li>
+<li><a href="#org15bb494">2.3. A summary of EM</a></li>
 </ul>
 </li>
-<li><a href="#orgbc60ff2">4. Variational inference or MCMC</a></li>
+<li><a href="#orgdb22905">3. The problem of approximate inference in general</a>
+<ul>
+<li><a href="#org902f388">3.1. The evidence lower bound (ELBO)</a></li>
+<li><a href="#org0a52bfc">3.2. <span class="todo TODO">TODO</span> Example of variational inference</a></li>
+</ul>
+</li>
+<li><a href="#org859a068">4. Variational inference or MCMC</a></li>
 </ul>
 </div>
 </div>
@@ -75,8 +80,8 @@ If we consider \(P(\X, \Z,\pa)\), there are different levels of bayesian inferen
 In all cases, the inference is untractable because we need to estimate \(P(\X|\pa)\) or even marginalize parameters. This requires approximate inference approach, such as MCMC or Variational one.
 </p>
 
-<div id="outline-container-org219055f" class="outline-2">
-<h2 id="org219055f"><span class="section-number-2">1</span> Variational Bayes: Bayesian "approximate (or not)" inference</h2>
+<div id="outline-container-org304f6e1" class="outline-2">
+<h2 id="org304f6e1"><span class="section-number-2">1</span> Variational Bayes: Bayesian "approximate (or not)" inference</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 This likelihood can be expressed in two ways: 
@@ -92,10 +97,16 @@ Let us consider the second one in its log formulation:
 \(\log(P(\X|\pa))= \log(\frac{P(\X,\Z|\pa)}{P(\Z|\X,\pa)})\)
 </p>
 </div>
+</div>
+<div id="outline-container-orgdc611e5" class="outline-3">
+<h3 id="orgdc611e5"><span class="section-number-3">1.1</span> Variational derivation</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Let introduce a distribution \(q(\Z)\) defined over the latent variables. This probability function is an approximate of the true posterior \(P(\Z|\X,\pa)\). <b>The goal is to find the distribution \(q\) that best approximates the posterior distribution and then to use it as a proxy for Bayesian inference</b>. 
+</p>
 
 <p>
-Next we introduce a distribution \(q(\Z)\) defined over the latent variables. This probability function is an approximate of the true posterior \(P(\Z|\X,\pa)\). 
-By multliplying both parts with \(q\), and summing  over \(\Z\): 
+To introduce \(q\), we can multliply both parts of the previous equation with \(q\), and sum  over \(\Z\): 
 </p>
 <div class="org-center">
 <p>
@@ -108,7 +119,7 @@ The right hand side is just \(P(\X|\pa)\) and remains unchanged. The second tric
 </p>
 <div class="org-center">
 <p>
-\(\log(P(\X|\pa))= \sum_{\Z}q(\Z) \log(\frac{P(\X,\Z|\pa)q(\Z)}{P(\Z|\X,\pa)q(\Z)})\)
+\(\log(P(\X|\pa))= \sum_{\Z}q(\Z) \log(\frac{P(\X,\Z|\pa)q(\Z)}{P(\Z|\X,\pa)q(\Z)})\) 
 </p>
 </div>
 
@@ -117,21 +128,32 @@ Then reformulate it a little bit:
 </p>
 <div class="org-center">
 <p>
-\(\log(P(\X|\pa))= \sum_{\Z}q(\Z) \log(\frac{P(\X,\Z|\pa)}{q(\Z)}) - \sum_{\Z}q(\Z) \log(\frac{P(\Z|\X,\pa)}{q(\Z)})\) 
+\(\log(P(\X|\pa))= \sum_{\Z}q(\Z) \log(\frac{P(\X,\Z|\pa)}{q(\Z)}) + \sum_{\Z}q(\Z) \log(\frac {q(\Z)}{P(\Z|\X,\pa)})\) 
 </p>
 </div>
 
 <p>
-Two terms appear. The second one is the Kullback-Leibler divergence between \(P(\Z|\X,\pa)\) and \(q(\Z)\) while the first one is for the moment denoted by \(\lb\). 
+Two terms appear. The second one is the Kullback-Leibler divergence between  \(q(\Z)\) and \(P(\Z|\X,\pa)\): 
+\[
+\dkl(q(\Z)||P(\Z|\X,\pa)) = \sum_{\Z} q(\Z) \log(\frac{q(\Z)}{P(\Z|\X)}).
+\]
+And the first term is for the moment denoted by \(\lb\). We then obtain the following relation: 
 </p>
-<div class="org-center">
-<p>
-\(\log(P(\X|\pa))=  \lb + \dkl(q(\Z)||P(\Z|\X,\pa))\)
-</p>
-</div>
+\begin{align}
+\log(P(\X|\pa)) &=  \lb + \dkl(q(\Z)||P(\Z|\X,\pa))\\
+\lb &= \sum_{\Z}q(\Z) \log(\frac{P(\X,\Z|\pa)}{q(\Z)}) \\
+&= E_{q}[ \log(\frac{P(\X,\Z|\pa)}{q(\Z)}) ] \\
+&=  E_{q}[ \log(P(\X|\Z, \pa) ] - \dkl(q(\Z)| P(\Z))
+\end{align}
 
 <p>
-Recall that the Kullback-Leibler divergence satisfies \(\dkl(q|p)\ge 0\), with equality if, and only if \(q(Z) = p(Z|X,\pa)\). Therefore \(P(\X|\pa) \ge \lb\) which means that \(\lb\) is a lower bound of \(P(\X|\pa)\) we want to maximize. This formulation does not solve the tractability issue since in the \(\dkl\) term we still have a dependance between \(P(\Z|X,\pa)\) and \(P(\X|\pa)\), <i>i.e</i> :
+Recall that the Kullback-Leibler divergence satisfies \(\dkl(q|p)\ge 0\), with equality if, and only if \(q(\Z) = p(\Z|\X,\pa)\). Therefore \(P(\X|\pa) \ge \lb\) which means that \(\lb\) is a lower bound of \(P(\X|\pa)\) we want to maximize.  \(\lb\) is therefore named the <b>Evidence Lower Bound or \(\elbo\)</b>. 
+</p>
+
+
+
+<p>
+This formulation does not solve the tractability issue since in the \(\dkl\) term we still have a dependance between \(P(\Z|X,\pa)\) and \(P(\X|\pa)\), <i>i.e</i> :
 </p>
 <div class="org-center">
 <p>
@@ -153,9 +175,24 @@ Although there is nothing intrinsically approximate about variational methods, t
 </div>
 </div>
 
+<div id="outline-container-orgae0dc76" class="outline-3">
+<h3 id="orgae0dc76"><span class="section-number-3">1.2</span> Approximate inference</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+To solve the tractability issue, there are two common approaches: 
+</p>
+<ul class="org-ul">
+<li>The E.M algorithm that fix the parameters during the E step and then compute when it's possible \(P(\Z|\X;\pa)\) to then optimize the \(\elbo\).</li>
 
-<div id="outline-container-orgd9deebe" class="outline-2">
-<h2 id="orgd9deebe"><span class="section-number-2">2</span> The EM view</h2>
+<li>Otherwise we can directly optimize the \(\elbo\) term. This can be done with some further assumptions on \(q\) like mean-fields.</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org7abd66f" class="outline-2">
+<h2 id="org7abd66f"><span class="section-number-2">2</span> The EM view</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 The EM algorithm aims at estimating the parameters \(\pa\) of a generative model that relies on latent variables \(\Z\) to explain the observed data \(\X\). In the example of mixture of gaussians, \(\Z\) represents the affectation of each observation to a gaussian. If \(\Z\) could be observed, it becomes therefore a <i>simple</i> and easy to solve classification problem. We can call \((\X, \Z)\) the complete data set, while  \((\X)\) is the  incomplete one.  In other words, \(P(\X,\Z|\pa)\) is easy to optimize, while \(P(\X|\pa)\) is untractable (the log-sum). 
@@ -170,8 +207,8 @@ Now we can go back to the lower bound to explain the EM algorithm. This is a two
 </p>
 </div>
 
-<div id="outline-container-orgefdcc8d" class="outline-3">
-<h3 id="orgefdcc8d"><span class="section-number-3">2.1</span> E step</h3>
+<div id="outline-container-org836513d" class="outline-3">
+<h3 id="org836513d"><span class="section-number-3">2.1</span> E step</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 Suppose that the current value of the parameter vector is \(\paold\). In the E step, the lower bound \(\lb\) <b>is maximized with respect to \(q(\Z)\)</b> while holding \(\pa\) fixed to \(\paold\). If you remember that: 
@@ -187,8 +224,8 @@ Since the KL divergence is zero, we have \(\lb=P(\X|\paold)\). In fact, the E-st
 </div>
 </div>
 
-<div id="outline-container-org7d7fbe8" class="outline-3">
-<h3 id="org7d7fbe8"><span class="section-number-3">2.2</span> M step</h3>
+<div id="outline-container-org95f90b0" class="outline-3">
+<h3 id="org95f90b0"><span class="section-number-3">2.2</span> M step</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 The distribution \(q(Z)\) is now fixed and the <b>lower bound \(\lb\) is now maximized with respect to \(\pa\)</b>.  The maximization process yields a new value for the parameters \(\panew\) and increases the lower bound (except if we are already at the maximum). Note that \(q(Z)=P(\Z|\X,\paold)\) acts as a constant in the maximization process: 
@@ -209,8 +246,8 @@ Since the distribution \(q\) is fixed to \(P(\Z|\X,\paold)\), \(q(Z) \neq P(\Z|\
 </div>
 </div>
 
-<div id="outline-container-org163e935" class="outline-3">
-<h3 id="org163e935"><span class="section-number-3">2.3</span> A summary of EM</h3>
+<div id="outline-container-org15bb494" class="outline-3">
+<h3 id="org15bb494"><span class="section-number-3">2.3</span> A summary of EM</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 You can see the EM algorithm as pushing two functions. 
@@ -233,8 +270,8 @@ Note that for implementation, \(q(\Z)\) does not really exist or is not a quanti
 
 
 
-<div id="outline-container-orgb157c54" class="outline-2">
-<h2 id="orgb157c54"><span class="section-number-2">3</span> The problem of approximate inference in general</h2>
+<div id="outline-container-orgdb22905" class="outline-2">
+<h2 id="orgdb22905"><span class="section-number-2">3</span> The problem of approximate inference in general</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 In this part, there is no mention of hyperparameters or even parameters. Let say that the latent variables represent all unknown quantities of interest.
@@ -256,8 +293,8 @@ To estimate \(p(\Z|\X)\), the Bayes formula tells us:
 This is not of a great help since the denominator is the evidence and is also untractable: the summation over all the possible values of \(\Z\).
 </p>
 </div>
-<div id="outline-container-org1e6b8c2" class="outline-3">
-<h3 id="org1e6b8c2"><span class="section-number-3">3.1</span> The evidence lower bound (ELBO)</h3>
+<div id="outline-container-org902f388" class="outline-3">
+<h3 id="org902f388"><span class="section-number-3">3.1</span> The evidence lower bound (ELBO)</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 Given a family of distribution, we are looking for one its member \(q(\Z)\) that best approximates the conditional distribution \(p(Z|X)\). The criterion is the Kullback-Leibler divergence :
@@ -313,13 +350,13 @@ In a lot of papers and books on variational inference, the elbo is  derived thro
 </div>
 
 
-<div id="outline-container-org38aed33" class="outline-3">
-<h3 id="org38aed33"><span class="section-number-3">3.2</span> <span class="todo TODO">TODO</span> Example of variational inference</h3>
+<div id="outline-container-org0a52bfc" class="outline-3">
+<h3 id="org0a52bfc"><span class="section-number-3">3.2</span> <span class="todo TODO">TODO</span> Example of variational inference</h3>
 </div>
 </div>
 
-<div id="outline-container-orgbc60ff2" class="outline-2">
-<h2 id="orgbc60ff2"><span class="section-number-2">4</span> Variational inference or MCMC</h2>
+<div id="outline-container-org859a068" class="outline-2">
+<h2 id="org859a068"><span class="section-number-2">4</span> Variational inference or MCMC</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 Here is quoted, what you can read in this <a href="https://arxiv.org/abs/1601.00670">review from Blei et al.</a>, comparing variational inference and MCMC:

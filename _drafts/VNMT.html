@@ -14,8 +14,8 @@ comments:
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgcd428ca">Variational Auto-Encoder (VAE)</a></li>
-<li><a href="#org69362c1">Variational Neural Machine Translation</a></li>
+<li><a href="#orga7ad60e">Variational Auto-Encoder (VAE)</a></li>
+<li><a href="#org1a5fff4">Neural Machine Translation</a></li>
 </ul>
 </div>
 </div>
@@ -30,6 +30,7 @@ comments:
 \(\newcommand{\Z}{\mathbf{Z}}\)
 \(\newcommand{\C}{\mathbf{C}}\)
 \(\newcommand{\X}{\mathbf{X}}\)
+\(\newcommand{\x}{\mathbf{x}}\)
 \(\newcommand{\Y}{\mathbf{Y}}\)
 \(\newcommand{\Z}{\mathbf{Z}}\)
 \(\newcommand{\pa}{\mathbf{\theta}}\)
@@ -39,7 +40,8 @@ comments:
 </p>
 
 <p>
-\(\newcommand{\pnmt}{\mathbf{\theta}_{nmt}}\)
+\(\newcommand{\pd}{\mathbf{\theta}_{d}}\)
+\(\newcommand{\pe}{\mathbf{\theta}_{e}}\)
 \(\newcommand{\pvar}{\mathbf{\Phi}}\)
 \(\newcommand{\paold}{\pa^{old}}\)
 \(\newcommand{\panew}{\pa^{new}}\)
@@ -61,53 +63,99 @@ comments:
 
 
 
+
+
+
+<div id="outline-container-orga7ad60e" class="outline-2">
+<h2 id="orga7ad60e">Variational Auto-Encoder (VAE)</h2>
+<div class="outline-text-2" id="text-orga7ad60e">
 <p>
-Assume a source sentence \(\X = x_{1}^{\lsrc}\) and a target sentence \(\Y = y_{1}^{\ltrg}\). 
-A NMT system defines the probability distribution \(P(\Y|\X,\pnmt)\) as a funtion  \(g\) parametrized by \(\pnmt\): 
+Consider a probabilistic model in which we denote all of the observed variables by \(\X\) and all and all of the hidden variables by \(\Z\). In general, the probabilistic model is designed by a generative story which implies a definition of the joint probability \(P(\X, \Z)\). The variational inference starts from the following equation: 
 </p>
 \begin{align}
-P(\Y|\X,\pnmt) &= \prod_{j=1}^{j=J}P(y_j|y_{1}, ... , y_{j-1},\X,\pnmt) \\
-P(y_j|y_{1}, ... , y_{j-1},\X,\pnmt)  &= P(y_j|y_{j-1}, \C_j, s_j, \pnmt) = g_{pnmt}(y_j,y_{j-1}, \C_j, s_j, \pnmt) \\
-C_j &=  \sum_{i=1}^I \al_{ij} x_i\\
-\al_{ji} &= \frac{\exp(a(s_{j-1},x_i))}{\sum_i \exp(a(s_{j-1},x_i))}\\
-C_j &: \textrm{the context vector representing the source information} \\
-s_j &: \textrm{the hidden state of the decoder }\\
-\al_j &= \textrm{the attention coefficients associated to the generation of } y_j
+\log(P(\X|\pa)) - \dkl(q(\Z)||P(\Z|\X,\pa)) &=  \lb \\
+\lb &= \sum_{\Z}q(\Z) \log(\frac{P(\X,\Z|\pa)}{q(\Z)}) \\
+&= E_{q}[ \log(\frac{P(\X,\Z|\pa)}{q(\Z)}) ] \\
+&=  E_{q}[ \log(P(\X|\Z, \pa) ] - \dkl(q(\Z)| P(\Z))
 \end{align}
-
-
-<div id="outline-container-orgcd428ca" class="outline-2">
-<h2 id="orgcd428ca">Variational Auto-Encoder (VAE)</h2>
-<div class="outline-text-2" id="text-orgcd428ca">
 <p>
-Consider a probabilistic model in which we denote all of the observed variables by \(\X\) and all and all of the hidden variables by \(\Z\). In general, the probabilistic model is designed by a generative story which implies a definition of the joint probability \(P(\X, \Z)\). 
-</p>
-
-<p>
-The goal of variational inference is to find a distribution \(\q\) which is as close as possible of \(P(\Z)\), as well as maximizing the data evidence \(\p(\X|\Z)\).The goal is to maximize the elbow: 
+The goal is to optimize the evidence term \(\log(P(\X|\pa))\), but for tractability purpose we approximate this optimization program by optimizion the evidence lower bound (or elbo) \(\lb\). 
+The new goal is to find a distribution \(\q\) which is as close as possible of \(P(\Z)\), as well as maximizing the expectation of  \(\p(\X|\Z)\) under \(q\). The elbo can be written as follows, introducting the parameters for the both distributions: 
 \[
-\lb(\pa,\paphi, \X) = - \dkl[\q(\Z)||P(\Z)] + E_{\q} [\log \p(\X|Z)]
+\lb(\pa,\paphi, \X) = - \dkl[\q(\Z)||P(\Z)] + E_{\q} [\log \p(\X|\Z)],
 \]
 </p>
 
 <p>
-With VAE, the first step is to replace \(\q(\Z)\) by \(\q(\Z|X)\). This allows us to design a NNet to infer this conditional distribution. Therefore the objective function becomes: 
-\[
-\lb_{VAE}(\pa,\paphi, \X) = - \dkl[\q(\Z|\X)||P(\Z)] + E_{\q} [\log \p(\X|Z)]
-\]
+where \(\pa\) the parameters for \(\p(\X|\Z)\) and \(\paphi\) for \(q\).  This is the convention objective function for variational approach, where the goal is to estimate \(q\). 
 </p>
 
 <p>
-Moreover, we assume \(\q(\Z|\X)\)  to be gaussian $\mathcal{N}(\qmu,\qsigma) (<i>i.e</i> the covariance matrix is diagonal). To estimate this distribution, a NNet infer from \(\X\) these two parameters and then we can draw a value of \(\Z\): 
+VAE can be seen as a way to parametrize with neural net the optimization program of variational inference. The first step is to replace \(\q(\Z)\) by \(\q(\Z|\X)\). This allows us to design a NNet to infer this conditional distribution. Therefore the objective function becomes: 
+</p>
+\begin{align}
+ \lb_{VAE}(\pa,\paphi, \X) &= - \dkl[\q(\Z|\X)||P(\Z)] + E_{\q} [\log \p(\X|\Z)] \\
+&=  E_{\q} [\log \p(\X|\Z)]  -  E_{\q} [\log \q(\Z|\X)] +  E_{\q} [\log P(\Z)] 
+\end{align}
+<p>
+Moreover, we assume \(\q(\Z|\X)\)  to be gaussian \(\mathcal{N}(\qmu,\qsigma)\) (<i>i.e</i> the covariance matrix is diagonal). To estimate this distribution, a NNet infer from \(\X\) these two parameters and then we can draw a value of \(\Z\): 
 \[
 \Z \sim \qmu + \qsigma \epsilon,
 \]
-where \(\epsilon\) is a gaussian noise \(\sim \mathcal{N}(0,1)\). 
+where \(\epsilon\) is a gaussian noise \(\sim \mathcal{N}(0,1)\). This is the <b>reparametrization trick</b>. With this trick and the introduction of \(\q(\Z|\X)\) place of  \(\q(\Z)\), a single NNet can be designed to trained the both involved functions: 
+</p>
+
+<ul class="org-ul">
+<li>Given a realisation of \(\X\) as the input of the VAE: compute \(\q(\Z|\X)\). This is the encoder and the first part of the NNet.
+<ul class="org-ul">
+<li>The encoder compute the parameters of gaussian distribution \(\q(\Z|\X)\).</li>
+<li>Inject \(\epsilon\) to get a sample of \(\Z\) under \(\q(\Z|\X)\)</li>
+</ul></li>
+<li>Given this sample of \(\Z\), reconstruct \(\X\) with the decoder or the second part of the NNet. The decoder estimate \(\p(\X|\Z)\)</li>
+</ul>
+
+<p>
+In <a href="https://arxiv.org/abs/1312.6114">the seminal paper</a>, we also assume that \(\p\) is gaussian and with the same reparametrization trick and a noise sample, we can generate a re-construction of the input and compute the re-construction error. So we have two "outputs": 
+</p>
+<ul class="org-ul">
+<li>the output of the encoder allows us to compute the KL-divergence term of the objective function;</li>
+<li>the reconstruction error is computed given the output of the decoder.</li>
+</ul>
+<p>
+Therefore the both functions (\(\q\) and \(\p\)) are trained using a single NNet with back-propagation of the gradient for the two terms of the objective function.
 </p>
 </div>
 </div>
 
 
-<div id="outline-container-org69362c1" class="outline-2">
-<h2 id="org69362c1">Variational Neural Machine Translation</h2>
+
+
+
+<div id="outline-container-org1a5fff4" class="outline-2">
+<h2 id="org1a5fff4">Neural Machine Translation</h2>
+<div class="outline-text-2" id="text-org1a5fff4">
+<p>
+Assume a source sentence \(\X = x_{1}^{\lsrc}\) and a target sentence \(\Y = y_{1}^{\ltrg}\). 
+A NMT system defines the probability distribution \(P(\Y|\X,\pd)\) as a funtion  \(g\) parametrized by \(\pd\): 
+</p>
+\begin{align}
+P(\Y|\X,\pd) &= \prod_{j=1}^{j=J}P(y_j|y_{1}, ... , y_{j-1},\X,\pd) \\
+P(y_j|y_{1}, ... , y_{j-1},\X,\pd)  &= P(y_j|y_{j-1}, \C_j, s_j, \pd) = g_{\pd}(y_j,y_{j-1}, \C_j, s_j) \\
+\C_j &: \textrm{the context vector representing the source information} \\
+s_j &: \textrm{the hidden state of the decoder }\\
+\al_j &= \textrm{the attention coefficients associated to the generation of } y_j\\
+\C_j &=  \sum_{i=1}^I \al_{ij} x_i\\
+\al_{ji} &= \frac{\exp(a(s_{j-1},x_i))}{\sum_i \exp(a(s_{j-1},\x_i))}\\
+\x_i &:\textrm{a vector representing the source word } $x_i$
+\end{align}
+
+<p>
+The NMT system is in this form decomposed in three parts: 
+</p>
+<ul class="org-ul">
+<li>The encoder is parametrized by \(\pe\) and generates the sequence of vectors \(\x_i^{\lsrc}\).</li>
+<li>The decoder generates the target sequence and implements \(g_{\pd}\).</li>
+<li>The attention model makes the link between both of them by computing at each decoding step the context vector \(\C_j\).</li>
+</ul>
+</div>
 </div>
