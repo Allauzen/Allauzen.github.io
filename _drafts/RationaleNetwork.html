@@ -1,0 +1,324 @@
+---
+title: "Rationalizing Neural Predictions"
+date: 2017-11-01
+layout: post
+categories: 
+tags: 
+- article 
+- NNet 
+- readings
+published: true
+comments: 
+---
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org8c0d6f8">Abstract</a>
+<ul>
+<li><a href="#orgca19310">Generator</a></li>
+<li><a href="#org44434ec">Encoder</a></li>
+<li><a href="#org9f57bfd">Joint optimization</a></li>
+<li><a href="#inference">Inference</a></li>
+</ul>
+</li>
+<li><a href="#comments-sancare">Comments sancare</a></li>
+<li><a href="#rationale-generator">Rationale generator</a>
+<ul>
+<li><a href="#experimental-setup">Experimental setup</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+\(\newcommand{\X}{\mathbf{X}}\)
+\(\newcommand{\Y}{\mathbf{Y}}\)
+\(\newcommand{\Z}{\mathbf{Z}}\)
+</p>
+
+<p>
+\(\newcommand{\x}{\mathbf{x}}\)
+\(\newcommand{\y}{\mathbf{y}}\)
+\(\newcommand{\z}{\mathbf{z}}\)
+\(\newcommand{\pa}{\mathbf{\theta}}\)
+</p>
+<p>
+\(\newcommand{\paold}{\pa^{old}}\)
+\(\newcommand{\panew}{\pa^{new}}\)
+</p>
+
+<p>
+\(\newcommand{\lb}{\mathcal{L}(q;\pa)}\) 
+</p>
+<p>
+\(\newcommand{\dkl}{D_{kl}}\)
+</p>
+
+
+<p>
+\(\newcommand{\lsrc}{ I}\)
+\(\newcommand{\ltrg}{ J}\)
+</p>
+<hr>
+
+
+
+<p>
+Reading notes on "Rationalizing Neural Predictions", by Tao Lei,
+Regina Barzilay and Tommi Jaakkola, published at EMNLP 2016. You can
+download <a href="https://people.csail.mit.edu/taolei/papers/emnlp16_rationale.pdf">the paper</a> and <a href="https://people.csail.mit.edu/taolei/papers/emnlp16_rationale_slides.pdf">the slides</a>.
+</p>
+
+
+
+
+<div id="outline-container-org8c0d6f8" class="outline-2">
+<h2 id="org8c0d6f8">Abstract</h2>
+<div class="outline-text-2" id="text-org8c0d6f8">
+<p>
+The motivation is to design a model that can both represent a text for
+classification purpose and also explain its decision. The model learns
+first to extract pieces of an input text as justifications (called
+rationales) that are tailored to be short, coherent, and yet
+sufficient for making efficient predictions.
+</p>
+
+
+<p>
+The model can be decomposed in two steps: 
+</p>
+<ul class="org-ul">
+<li>The <i>generator</i> specifies a distribution over text fragments as
+candidate rationales. In fact, each word of the input text is
+associated with a binary hidden random variable to weight its importance
+for the next step.</li>
+<li>The <i>encoder</i> takes the output of the generator to make the
+prediction.</li>
+</ul>
+
+<p>
+The rationale extraction can be understood as a type of stochastic
+attention although architectures and objectives differ.
+</p>
+</div>
+
+<div id="outline-container-orgca19310" class="outline-3">
+<h3 id="orgca19310">Generator</h3>
+<div class="outline-text-3" id="text-orgca19310">
+<p>
+The goal is to associate to an input sequence of words, a sequence of
+hidden random variables, where each hidden variable indicates wether the
+associated word should be considered as rationale (\(z=1\)) or not (\(z=0\)).
+</p>
+
+<p>
+Assume the input text is of sequence of words as input: \(\X =
+  x_{1}^{\lsrc}\). The model associates to each input word a binary
+variable: \(\Z=z_{1}^{\lsrc}\).  The generator reads the input text
+with a BiLSTM. To infer the probability of the sequence \(P(\Z|\X)\),
+independent and recurrent predictions are explored.
+</p>
+
+
+
+<blockquote>
+<p>
+For NMT people this could be called the encoder. Maybe <i>selector</i> or
+simply <i>filter</i> could be used. The choice of terminology in this
+paper is for me confusing. However&#x2026;<br />
+</p>
+</blockquote>
+</div>
+</div>
+
+
+
+<div id="outline-container-org44434ec" class="outline-3">
+<h3 id="org44434ec">Encoder</h3>
+<div class="outline-text-3" id="text-org44434ec">
+<p>
+Rationales are defined as the set of \(x_t\) such as \(z_t=1\). Therefore
+the input for the encoder is a <i>selection</i> of \(\X\).  Then you can pick
+your favorite architecture to deal with this input. In the paper, they
+used RNNs and pick the last hidden state to make the final prediction
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9f57bfd" class="outline-3">
+<h3 id="org9f57bfd">Joint optimization</h3>
+<div class="outline-text-3" id="text-org9f57bfd">
+<p>
+From an input \(\X\) of length \(\lsrc\), it generates \(\lsrc\)  binary variables \(\Z\). The
+generator estimate \(P(\Z|\X)\). 
+</p>
+
+<p>
+The authors first define a cost function as follows:
+</p>
+\begin{align}
+  cost(\x,\z,\y) &= || \y - f_{\pa_{e}}(\x,\z) ||^2 + \lambda_1 ||\z|| + \lambda_2 \sum_t |z_t - z_{t-1} |  \\
+  P(\Z=\z | \X=\x) &= g_{\pa_g}(\x)
+\end{align}
+
+<p>
+The cost function depends therefore on the value of \(\z\) in three
+ways: 
+</p>
+<ul class="org-ul">
+<li>First the term \(||\y - f_{\pa_{e}}(\x,\z) ||^2\) is the
+reconstruction error. The target is \(\y\) while the encoder predicts
+\(f_{\pa_{e}}(\x,\z)\).</li>
+<li>Then, the term \(||\z||\) ensure that the selection (the number of \(z\)
+set to one) is as small as possible.</li>
+<li>The last term \(\sum_t |z_t - z_{t-1} |\) favors contiguous selection
+(phrases).</li>
+</ul>
+
+<p>
+The loss function to be optimized for each training example is : 
+</p>
+\begin{align}
+\mathcal{L}(\pa_g, \pa_e, \x, \y) &= E_{\z\sim P(\Z|\X)} cost(\x,\y,\z) \\
+&=\sum_{\z} P(\Z=\z | \X=\x) cost(\x,\y,\z) \\
+&= \sum_{\z} g_{\pa_g}(\x)  cost(\x,\y,\z)
+\end{align}
+
+<p>
+This expected cost is a workaround to deal with hidden variables.
+Minimizing the expected cost is challenging since it involves summing
+over all the possible choices of rationales \(\z\). Then the authors
+propose to sample \(\z\) from the generator to approximate the expectation.
+</p>
+
+<p>
+However, the derivatives look bit wired. The cost function is considered
+as a constant <i>wrt</i> of the generator parameters. The term related to the
+norm of \(\z\) for instance, implies the expected norm of \(\z\). This expectation
+depends on the same parameters and could be included in the gradient ?
+</p>
+
+<p>
+The assumption made through the paper is: given p(z|x), z is sampled and
+becomes then deterministic.
+</p>
+
+<ul class="org-ul">
+<li>Maybe I missed it but there's no mention of the number of samples in
+the paper.</li>
+</ul>
+
+<p>
+To summarize the inference step for training : * Forward propagation of
+x through the generator gives you p(z|x). * Sample a bunch of z in this
+distribution * Given z, build the input of the encoder and compute the
+expected cost * Update the parameters of the whole model given the
+expected gradients.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5593aeb" class="outline-3">
+<h3 id="inference"><a id="org5593aeb"></a>Inference</h3>
+<div class="outline-text-3" id="text-inference">
+<ul class="org-ul">
+<li>Forward propagation of x through the generator gives you p(z|x).</li>
+<li>Compute z and then get the rationales</li>
+<li>Given z, build the input of the encoder and compute the answer.</li>
+</ul>
+
+<p>
+Once again, maybe I missed something, but how the second step is
+implemented ? Just apply a threshold on the probability ? 0.5 ?
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org5755a07" class="outline-2">
+<h2 id="comments-sancare"><a id="org5755a07"></a>Comments sancare</h2>
+<div class="outline-text-2" id="text-comments-sancare">
+<ul class="org-ul">
+<li>The case studies focus on setup where the ambiguity is minimal. Is it
+your case?</li>
+<li>Our rationale extraction can be understood as a type of stochastic
+attention although architectures and objectives differ.</li>
+<li>Read stochastic attention : Huijuan Xu and Kate Saenko. 2015. Ask,
+attend and answer: Exploring question-guided spatial atten- tion for
+visual question answering. arXiv preprint arXiv:1511.05234.</li>
+
+<li>The encoder is a simple rnn. While we expect a short sequence after
+the rationale extraction step. This could maybe bias the whole model
+to select word at end of the sequence, and then by backprop to favor
+rationale extraction at the end.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org5abe7b5" class="outline-2">
+<h2 id="rationale-generator"><a id="org5abe7b5"></a>Rationale generator</h2>
+<div class="outline-text-2" id="text-rationale-generator">
+<p>
+From an input x of length l, it generates l binary variables z. The
+generator estimate p(z|x). The loss function is defined with two terms:
+<img src="Rationale%20network/2670F194-28B2-4370-A0A3-73C63DEAA826.jpg" alt="2670F194-28B2-4370-A0A3-73C63DEAA826.jpg" />
+<img src="Rationale%20network/9E16FBB3-4604-4B0E-9CE9-F1273B4EF68C.jpg" alt="9E16FBB3-4604-4B0E-9CE9-F1273B4EF68C.jpg" />
+</p>
+
+<ul class="org-ul">
+<li>Note that the first regularization term could be l1 norm instead of
+l2 , to favor sparsity. Maybe good for long documents.
+<img src="Rationale%20network/53600740-027C-48D8-A365-EA5E9D125597.jpg" alt="53600740-027C-48D8-A365-EA5E9D125597.jpg" /></li>
+<li>Can we use reparametrization trick ?</li>
+</ul>
+
+<p>
+We employ recurrent convolution (RCNN), a refinement of local-ngram
+based convolution. RCNN attempts to learn n-gram features that are not
+necessarily consecutive,
+</p>
+
+<p>
+What's this?
+</p>
+
+<p>
+Tao Lei, Regina Barzilay, and Tommi Jaakkola. 2015. Molding cnns for
+text: non-linear, non-consecutive convolutions. In Proceedings of the
+2015 Conference on Empirical Methods in Natural Language Processing
+(EMNLP).
+</p>
+
+<p>
+Tao Lei, Hrishikesh Joshi, Regina Barzilay, Tommi Jaakkola, Katerina
+Tymoshenko, Alessandro Moschitti, and Llu´ıs M`arquez. 2016.
+Semi-supervised question retrieval with gated convolutions. In
+Proceedings of the 2016 Conference of the North American Chapter of the
+Association for Computational Linguistics: Human Language Technologies
+(NAACL).
+</p>
+</div>
+
+<div id="outline-container-orgefccd0b" class="outline-3">
+<h3 id="experimental-setup"><a id="orgefccd0b"></a>Experimental setup</h3>
+<div class="outline-text-3" id="text-experimental-setup">
+<p>
+Wired: &gt; McAuley et al. (2012) also provided sentence-<br />
+&gt; level annotations on around 1,000 reviews. Each<br />
+&gt; sentence is annotated with one (or multiple) aspect<br />
+&gt; label, indicating what aspect this sentence covers.
+</p>
+
+<p>
+Every sentence is labeled, there's no noise and therefore no recall
+neither. The data.should be investigated.
+</p>
+
+<p>
+Maybe the precision scores should be mitigated in table 2.
+</p>
+</div>
+</div>
+</div>
