@@ -1,0 +1,113 @@
+---
+title: "Variational Neural Machine Translation"
+date: 2017-07-29
+layout: post
+categories: 
+tags: 
+- variational 
+- nmt 
+- nnet
+published: true
+comments: 
+---
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgcd428ca">Variational Auto-Encoder (VAE)</a></li>
+<li><a href="#org69362c1">Variational Neural Machine Translation</a></li>
+</ul>
+</div>
+</div>
+<hr>
+
+
+
+<p>
+\(\newcommand{\lsrc}{ I}\)
+\(\newcommand{\ltrg}{ J}\)
+\(\newcommand{\al}{ \alpha}\)
+\(\newcommand{\Z}{\mathbf{Z}}\)
+\(\newcommand{\C}{\mathbf{C}}\)
+\(\newcommand{\X}{\mathbf{X}}\)
+\(\newcommand{\Y}{\mathbf{Y}}\)
+\(\newcommand{\Z}{\mathbf{Z}}\)
+\(\newcommand{\pa}{\mathbf{\theta}}\)
+\(\newcommand{\paphi}{\mathbf{\phi}}\)
+\(\newcommand{\q}{q_{\paphi}}\)
+\(\newcommand{\p}{p_{\pa}}\)
+</p>
+
+<p>
+\(\newcommand{\pnmt}{\mathbf{\theta}_{nmt}}\)
+\(\newcommand{\pvar}{\mathbf{\Phi}}\)
+\(\newcommand{\paold}{\pa^{old}}\)
+\(\newcommand{\panew}{\pa^{new}}\)
+</p>
+
+<p>
+\(\newcommand{\lb}{\mathcal{L}}\) 
+</p>
+
+<p>
+\(\newcommand{\dkl}{D_{kl}}\)
+\(\newcommand{\elbo}{\textrm{elbo}}\)
+</p>
+
+<p>
+\(\newcommand{\qmu}{\mathbf{\mu}}\) 
+\(\newcommand{\qsigma}{\mathbf{\sigma}}\) 
+</p>
+
+
+
+<p>
+Assume a source sentence \(\X = x_{1}^{\lsrc}\) and a target sentence \(\Y = y_{1}^{\ltrg}\). 
+A NMT system defines the probability distribution \(P(\Y|\X,\pnmt)\) as a funtion  \(g\) parametrized by \(\pnmt\): 
+</p>
+\begin{align}
+P(\Y|\X,\pnmt) &= \prod_{j=1}^{j=J}P(y_j|y_{1}, ... , y_{j-1},\X,\pnmt) \\
+P(y_j|y_{1}, ... , y_{j-1},\X,\pnmt)  &= P(y_j|y_{j-1}, \C_j, s_j, \pnmt) = g_{pnmt}(y_j,y_{j-1}, \C_j, s_j, \pnmt) \\
+C_j &=  \sum_{i=1}^I \al_{ij} x_i\\
+\al_{ji} &= \frac{\exp(a(s_{j-1},x_i))}{\sum_i \exp(a(s_{j-1},x_i))}\\
+C_j &: \textrm{the context vector representing the source information} \\
+s_j &: \textrm{the hidden state of the decoder }\\
+\al_j &= \textrm{the attention coefficients associated to the generation of } y_j
+\end{align}
+
+
+<div id="outline-container-orgcd428ca" class="outline-2">
+<h2 id="orgcd428ca">Variational Auto-Encoder (VAE)</h2>
+<div class="outline-text-2" id="text-orgcd428ca">
+<p>
+Consider a probabilistic model in which we denote all of the observed variables by \(\X\) and all and all of the hidden variables by \(\Z\). In general, the probabilistic model is designed by a generative story which implies a definition of the joint probability \(P(\X, \Z)\). 
+</p>
+
+<p>
+The goal of variational inference is to find a distribution \(\q\) which is as close as possible of \(P(\Z)\), as well as maximizing the data evidence \(\p(\X|\Z)\).The goal is to maximize the elbow: 
+\[
+\lb(\pa,\paphi, \X) = - \dkl[\q(\Z)||P(\Z)] + E_{\q} [\log \p(\X|Z)]
+\]
+</p>
+
+<p>
+With VAE, the first step is to replace \(\q(\Z)\) by \(\q(\Z|X)\). This allows us to design a NNet to infer this conditional distribution. Therefore the objective function becomes: 
+\[
+\lb_{VAE}(\pa,\paphi, \X) = - \dkl[\q(\Z|\X)||P(\Z)] + E_{\q} [\log \p(\X|Z)]
+\]
+</p>
+
+<p>
+Moreover, we assume \(\q(\Z|\X)\)  to be gaussian \(\mathcal{N}(\qmu,\qsigma)\) (<i>i.e</i> the covariance matrix is diagonal). To estimate this distribution, a NNet infer from \(\X\) these two parameters and then we can draw a value of \(\Z\): 
+\[
+\Z \sim \qmu + \qsigma \epsilon,
+\]
+where \(\epsilon\) is a gaussian noise \(\sim \mathcal{N}(0,1)\). 
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org69362c1" class="outline-2">
+<h2 id="org69362c1">Variational Neural Machine Translation</h2>
+</div>
