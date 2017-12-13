@@ -1,10 +1,8 @@
 ---
-layout: page
-title: "Page Not Found"
-description: "Page not found. Your pixels are in another canvas."
+layout: redirected
 sitemap: false
-search_omit: true
-permalink: /404.html
+permalink: /M1TER.html
+redirect_to: /cours/M1TER
 ---  
 
 Sorry, but the page you were trying to view does not exist --- perhaps you can try searching for it below.
