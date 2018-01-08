@@ -14,11 +14,11 @@ comments:
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org8c0d6f8">Abstract</a>
+<li><a href="#org9e48cad">Abstract</a>
 <ul>
-<li><a href="#orgca19310">Generator</a></li>
-<li><a href="#org44434ec">Encoder</a></li>
-<li><a href="#org9f57bfd">Joint optimization</a></li>
+<li><a href="#org46046d7">Generator</a></li>
+<li><a href="#org3c2da24">Encoder</a></li>
+<li><a href="#org0983cc8">Joint optimization</a></li>
 <li><a href="#inference">Inference</a></li>
 </ul>
 </li>
@@ -47,9 +47,9 @@ download <a href="https://people.csail.mit.edu/taolei/papers/emnlp16_rationale.p
 
 
 
-<div id="outline-container-org8c0d6f8" class="outline-2">
-<h2 id="org8c0d6f8">Abstract</h2>
-<div class="outline-text-2" id="text-org8c0d6f8">
+<div id="outline-container-org9e48cad" class="outline-2">
+<h2 id="org9e48cad">Abstract</h2>
+<div class="outline-text-2" id="text-org9e48cad">
 <p>
 The motivation is to design a model that can both represent a text for
 classification purpose and also explain its decision. The model learns
@@ -77,9 +77,9 @@ attention although architectures and objectives differ.
 </p>
 </div>
 
-<div id="outline-container-orgca19310" class="outline-3">
-<h3 id="orgca19310">Generator</h3>
-<div class="outline-text-3" id="text-orgca19310">
+<div id="outline-container-org46046d7" class="outline-3">
+<h3 id="org46046d7">Generator</h3>
+<div class="outline-text-3" id="text-org46046d7">
 <p>
 The goal is to associate to an input sequence of words, a sequence of
 hidden random variables, where each hidden variable indicates wether the
@@ -108,9 +108,9 @@ paper is for me confusing. However&#x2026;<br />
 
 
 
-<div id="outline-container-org44434ec" class="outline-3">
-<h3 id="org44434ec">Encoder</h3>
-<div class="outline-text-3" id="text-org44434ec">
+<div id="outline-container-org3c2da24" class="outline-3">
+<h3 id="org3c2da24">Encoder</h3>
+<div class="outline-text-3" id="text-org3c2da24">
 <p>
 Rationales are defined as the set of \(x_t\) such as \(z_t=1\). Therefore
 the input for the encoder is a <i>selection</i> of \(\X\).  Then you can pick
@@ -120,9 +120,9 @@ used RNNs and pick the last hidden state to make the final prediction
 </div>
 </div>
 
-<div id="outline-container-org9f57bfd" class="outline-3">
-<h3 id="org9f57bfd">Joint optimization</h3>
-<div class="outline-text-3" id="text-org9f57bfd">
+<div id="outline-container-org0983cc8" class="outline-3">
+<h3 id="org0983cc8">Joint optimization</h3>
+<div class="outline-text-3" id="text-org0983cc8">
 <p>
 From an input \(\X\) of length \(\lsrc\), it generates \(\lsrc\)  binary variables \(\Z\). The
 generator estimate \(P(\Z|\X)\). 
@@ -193,8 +193,8 @@ expected gradients.
 </div>
 </div>
 
-<div id="outline-container-org5593aeb" class="outline-3">
-<h3 id="inference"><a id="org5593aeb"></a>Inference</h3>
+<div id="outline-container-orgd930870" class="outline-3">
+<h3 id="inference"><a id="orgd930870"></a>Inference</h3>
 <div class="outline-text-3" id="text-inference">
 <ul class="org-ul">
 <li>Forward propagation of x through the generator gives you p(z|x).</li>
@@ -211,8 +211,8 @@ implemented ? Just apply a threshold on the probability ? 0.5 ?
 </div>
 
 
-<div id="outline-container-org5755a07" class="outline-2">
-<h2 id="comments-sancare"><a id="org5755a07"></a>Comments sancare</h2>
+<div id="outline-container-orge784c3a" class="outline-2">
+<h2 id="comments-sancare"><a id="orge784c3a"></a>Comments sancare</h2>
 <div class="outline-text-2" id="text-comments-sancare">
 <ul class="org-ul">
 <li>The case studies focus on setup where the ambiguity is minimal. Is it
@@ -231,8 +231,8 @@ rationale extraction at the end.</li>
 </div>
 </div>
 
-<div id="outline-container-org5abe7b5" class="outline-2">
-<h2 id="rationale-generator"><a id="org5abe7b5"></a>Rationale generator</h2>
+<div id="outline-container-orgc87dae5" class="outline-2">
+<h2 id="rationale-generator"><a id="orgc87dae5"></a>Rationale generator</h2>
 <div class="outline-text-2" id="text-rationale-generator">
 <p>
 From an input x of length l, it generates l binary variables z. The
@@ -275,8 +275,8 @@ Association for Computational Linguistics: Human Language Technologies
 </p>
 </div>
 
-<div id="outline-container-orgefccd0b" class="outline-3">
-<h3 id="experimental-setup"><a id="orgefccd0b"></a>Experimental setup</h3>
+<div id="outline-container-org12d5ddb" class="outline-3">
+<h3 id="experimental-setup"><a id="org12d5ddb"></a>Experimental setup</h3>
 <div class="outline-text-3" id="text-experimental-setup">
 <p>
 Wired: &gt; McAuley et al. (2012) also provided sentence-<br />
