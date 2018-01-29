@@ -17,7 +17,11 @@ comments:
 <li><a href="#org414f34b">Séance 1</a></li>
 <li><a href="#org3e626f4">Séance 2</a></li>
 <li><a href="#orgaf67ffa">Séance 3</a></li>
-<li><a href="#org6eeed4a">Séance 4</a></li>
+<li><a href="#org6eeed4a">Séance 4</a>
+<ul>
+<li><a href="#org6c3951a">Correction partielle</a></li>
+</ul>
+</li>
 <li><a href="#orgfd95088">Séance 5</a></li>
 </ul>
 </div>
@@ -81,8 +85,58 @@ Le 29/01/10
 <li>Cours et TP : Bayésien Naif Gaussien sur les images</li>
 </ul>
 </div>
+<div id="outline-container-org6c3951a" class="outline-3">
+<h3 id="org6c3951a">Correction partielle</h3>
+<div class="outline-text-3" id="text-org6c3951a">
+<p>
+Estimation des paramètres et affichage 
+</p>
+<pre class="example">
+means = {}
+variances = {}
+priors = {}
+for lbl in range(NLABELS):
+    subtrain = images[labels==lbl] # get the subpart of train for the class
+    mean = subtrain.mean(axis=0)   # compute the mean 
+    print(subtrain.shape)          #        
+    means[lbl]=mean                # store the mean vector in a dict 
+    var = subtrain.var(axis=0)     # compute the variance
+    variances[lbl]=var             #
+    priors[lbl]=labels[labels==lbl].shape[0]
+    ###############################################
+    # plot everything
+    fig = plt.figure()
+    a=fig.add_subplot(1,2,1)
+    plt.imshow(mean.reshape(28,28) , matplotlib.pyplot.cm.spectral)  
+    a.set_title('mean image of the class '+str(lbl))
+    a=fig.add_subplot(1,2,2)
+    plt.imshow(var.reshape(28,28) , matplotlib.pyplot.cm.spectral)
+    a.set_title('variance of the class '+str(lbl))
+    matplotlib.pyplot.show()
+    ################################################
+priors = priors/priors.sum() # norm prior distribution
+</pre>
+<p>
+Puis pour l'inférence, le calcul des probabilités <i>a posteriori</i>: 
+</p>
+<pre class="example">
+def computePosteriors(image):
+    posteriors = np.zeros([NLABELS,1])
+    for lbl in range(NLABELS):
+	    mean = means[lbl]
+	    sigma2 = variances[lbl]
+	    non_null = sigma2!=0
+	    scale = 0.5*np.log(2*sigma2[non_null]*math.pi)
+	    expterm = -0.5*np.divide(np.square(image[non_null]-mean[non_null])
+				     ,sigma2[non_null])
+	    llh = (expterm-scale).sum()
+	    post = llh + np.log(priors[lbl]) 
+	    posteriors[lbl]=post
+    return posteriors
+</pre>
 </div>
-
+</div>
+</div>
 <div id="outline-container-orgfd95088" class="outline-2">
 <h2 id="orgfd95088">Séance 5</h2>
 <div class="outline-text-2" id="text-orgfd95088">
