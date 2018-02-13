@@ -1,0 +1,1168 @@
+---
+title: "Bayesian inference at different levels"
+date: 2018-02-12 Mon 20:15
+layout: post
+categories: 
+tags: 
+- reading
+published: true
+comments: 
+---
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgccecc6c">1. Bayesian / Variational</a>
+<ul>
+<li><a href="#orgee90369">1.1. Stochastic Gradient Descent as Approximate Bayesian Inference</a></li>
+<li><a href="#orgf88f340">1.2. Online but Accurate Inference for Latent Variable Models with Local Gibbs Sampling</a></li>
+<li><a href="#orgab55bf7">1.3. Variational Attention for Sequence-to-Sequence Models&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Pooyan">Pooyan</span></span></a></li>
+<li><a href="#org65d91f6">1.4. AUTOENCODING VARIATIONAL INFERENCE FOR TOPIC MODELS</a></li>
+<li><a href="#org7da0f15">1.5. Variational Inference: A Review for Statisticians</a></li>
+<li><a href="#org6d77d56">1.6. Variational Autoencoders slides</a></li>
+</ul>
+</li>
+<li><a href="#org081842e">2. Geometry</a>
+<ul>
+<li><a href="#org7f856c4">2.1. Latent Space Oddity: on the Curvature of Deep Generative Models</a></li>
+<li><a href="#org76d41bb">2.2. <span class="todo TODO">TODO</span> SphereFace: Deep Hypersphere Embedding for Face Recognition</a></li>
+<li><a href="#orgad95df6">2.3. <span class="todo TODO">TODO</span> Geometries of Word Embeddings</a></li>
+<li><a href="#org5ff1c9a">2.4. <span class="todo TODO">TODO</span> SEMANTIC SPACES</a></li>
+<li><a href="#orgfeef1ce">2.5. <span class="todo TODO">TODO</span> GEOMETRY OF POLYSEMY</a></li>
+</ul>
+</li>
+<li><a href="#orged6926a">3. Language Learning</a>
+<ul>
+<li><a href="#orgeedb16d">3.1. Order matters: Distributional properties of speech to young children  bootstraps learning of semantic representations</a></li>
+</ul>
+</li>
+<li><a href="#org372dc3e">4. NMT/Sequence 2 Sequence</a>
+<ul>
+<li><a href="#org156701a">4.1. A Regularized Framework for Sparse and Structured Neural Attention&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Pooyan">Pooyan</span>&#xa0;<span class="Sancare">Sancare</span>&#xa0;<span class="SG">SG</span></span></a></li>
+<li><a href="#org22f8bc4">4.2. Sequence Modeling via Segmentations</a></li>
+<li><a href="#org601c4f9">4.3. CNN Is All You Need</a></li>
+<li><a href="#org45dc2a4">4.4. <span class="todo TODO">TODO</span> Attention is all you need&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Sancare">Sancare</span></span></a></li>
+<li><a href="#orgff792c8">4.5. <span class="todo TODO">TODO</span> Attentive Convolution&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Sancare">Sancare</span></span></a></li>
+</ul>
+</li>
+<li><a href="#orge17ec9f">5. Text Classification</a>
+<ul>
+<li><a href="#org0e13d6b">5.1. Fine-tuned Language Models for Text Classification&#xa0;&#xa0;&#xa0;<span class="tag"><span class="SG">SG</span></span></a></li>
+<li><a href="#orgd7b502d">5.2. Comparative Opinion Mining: A Review&#xa0;&#xa0;&#xa0;<span class="tag"><span class="SG">SG</span></span></a></li>
+<li><a href="#org4508082">5.3. Train Once, Test Anywhere: Zero-Shot Learning for Text Classification&#xa0;&#xa0;&#xa0;<span class="tag"><span class="SG">SG</span></span></a></li>
+<li><a href="#org240c57f">5.4. A Novel Approach for Effective Learning in Low Resourced Scenarios&#xa0;&#xa0;&#xa0;<span class="tag"><span class="SG">SG</span></span></a></li>
+<li><a href="#orgeccbcd8">5.5. Sentiment Predictability for Stocks&#xa0;&#xa0;&#xa0;<span class="tag"><span class="SG">SG</span></span></a></li>
+<li><a href="#org2cc2b6d">5.6. Convolutional Neural Networks for Medical Diagnosis from Admission Notes&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Sancare">Sancare</span></span></a></li>
+<li><a href="#org97e0331">5.7. Matching with Text Data: An Experimental Evaluation of Methods for  Matching Documents and of Measuring Match Quality&#xa0;&#xa0;&#xa0;<span class="tag"><span class="SG">SG</span></span></a></li>
+<li><a href="#org5fdc3b5">5.8. Deep pyramid convolutional neural networks for text categorization. :Sancare:SG</a></li>
+<li><a href="#org6b96eb8">5.9. <span class="todo STARTED">STARTED</span> Rationalizing Neural Predictions&#xa0;&#xa0;&#xa0;<span class="tag"><span class="NNet">NNet</span>&#xa0;<span class="Sancare">Sancare</span></span></a>
+<ul>
+<li><a href="#org1c6f667">5.9.1. abstract</a></li>
+<li><a href="#org6f4e38a">5.9.2. Generator</a></li>
+</ul>
+</li>
+<li><a href="#orgcf6e57e">5.10. <span class="todo TODO">TODO</span> Hierarchical Attention Networks for Document Classification&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Sancare">Sancare</span>&#xa0;<span class="NNet">NNet</span></span></a></li>
+<li><a href="#orgd4a87f3">5.11. <span class="todo STARTED">STARTED</span> Convolutional Neural Networks for Sentence Classification.&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Sancare">Sancare</span></span></a></li>
+<li><a href="#org8db1536">5.12. <span class="todo TODO">TODO</span> Very Deep Convolutional Networks for NLP&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Sancare">Sancare</span></span></a></li>
+</ul>
+</li>
+<li><a href="#org9e96ec6">6. Character / Large Vocab / LM  / Embeddings</a>
+<ul>
+<li><a href="#org5927a31">6.1. Character-level Recurrent Neural Networks in Practice: Comparing Training and Sampling Schemes&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Matthieu">Matthieu</span></span></a></li>
+<li><a href="#org12473ac">6.2. Topic Compositional Neural Language Model</a></li>
+<li><a href="#org81d3cfd">6.3. Neural Word Embedding as Implicit Matrix Factorization</a></li>
+</ul>
+</li>
+<li><a href="#org39bf52d">7. Wasserstein</a>
+<ul>
+<li><a href="#org75c9b46">7.1. Stein VAE&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Pooyan">Pooyan</span></span></a></li>
+<li><a href="#org94bb0d8">7.2. Learning with a Wasserstein Loss&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Pooyan">Pooyan</span></span></a></li>
+</ul>
+</li>
+<li><a href="#org23de81d">8. <span class="todo TODO">TODO</span> Systran / Korean project</a></li>
+<li><a href="#orgc04ac0c">9. Speech/Music/Audio and others</a>
+<ul>
+<li><a href="#org0016be7">9.1. A segmental framework for fully-unsupervised large-vocabulary speech recognition</a></li>
+<li><a href="#org1768c2b">9.2. On Deep Multi-View Representation Learning: Objectives and Optimization</a></li>
+<li><a href="#org0e78c34">9.3. Joint Modeling of Text and Acoustic-Prosodic Cues for Neural Parsing</a></li>
+<li><a href="#org390b635">9.4. <span class="todo TODO">TODO</span> GENERALIZING TRANSDUCTION GRAMMARS TO MODEL CONTINUOUS VALUED MUSICAL EVENTS</a></li>
+<li><a href="#org6038bb6">9.5. <span class="todo TODO">TODO</span> Show, Attend and Tell: Neural Image Caption Generation with Visual Attention&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Sancare">Sancare</span>&#xa0;<span class="NNet">NNet</span></span></a></li>
+</ul>
+</li>
+<li><a href="#orgbd8b3ce">10. NNet&#xa0;&#xa0;&#xa0;<span class="tag"><span class="NNet">NNet</span></span></a>
+<ul>
+<li><a href="#org15c65ea">10.1. <span class="todo TODO">TODO</span> Training RNNs as Fast as CNNs&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Sancare">Sancare</span></span></a></li>
+<li><a href="#org82fd7e6">10.2. <span class="todo TODO">TODO</span> From Softmax to Sparsemax: A Sparse Model of Attention and Multi-Label Classification</a></li>
+<li><a href="#org3d9cfd8">10.3. <span class="todo TODO">TODO</span> Sequential Neural Models with Stochastic Layers</a></li>
+<li><a href="#org6dfdfa4">10.4. Neural Variational Inference for Text Processing</a></li>
+<li><a href="#org3ea5fe7">10.5. Training recurrent networks online without backtracking&#xa0;&#xa0;&#xa0;<span class="tag"><span class="NoBackTrack">NoBackTrack</span></span></a></li>
+<li><a href="#org5a7c36b">10.6. <span class="todo TODO">TODO</span> An Attentional Model for Speech Translation Without Transcription&#xa0;&#xa0;&#xa0;<span class="tag"><span class="BULB">BULB</span></span></a></li>
+<li><a href="#orgd1039ab">10.7. <span class="todo TODO">TODO</span> Understanding Deep Convolutional Networks&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Mallat">Mallat</span></span></a></li>
+<li><a href="#org52ea18a">10.8. <span class="todo TODO">TODO</span> FFT</a>
+<ul>
+<li><a href="#org59dfb13">10.8.1. Training Deep Fourier Neural Networks To Fit Time-Series Data</a></li>
+</ul>
+</li>
+<li><a href="#orge81bf30">10.9. <span class="todo TODO">TODO</span> Statistical Machine Translation Features with Multitask Tensor Networks</a></li>
+<li><a href="#org372d559">10.10. <span class="todo TODO">TODO</span> Highway Networks</a></li>
+<li><a href="#org17071cf">10.11. <span class="todo TODO">TODO</span> Character-aware language model</a></li>
+<li><a href="#orgd6ec957">10.12. <span class="todo TODO">TODO</span> Log-Linear RNNs: Towards Recurrent Neural Networks with Flexible Prior Knowledge</a></li>
+<li><a href="#org51a884f">10.13. Critical Behavior from Deep Dynamics: A Hidden Dimension in Natural Language</a></li>
+</ul>
+</li>
+<li><a href="#org9b3f37d">11. <span class="todo TODO">TODO</span> Transport optimal</a></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orgccecc6c" class="outline-2">
+<h2 id="orgccecc6c"><span class="section-number-2">1</span> Bayesian / Variational</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orgee90369" class="outline-3">
+<h3 id="orgee90369"><span class="section-number-3">1.1</span> Stochastic Gradient Descent as Approximate Bayesian Inference</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Stephan Mandt, Matthew D. Hoffman, David M. Blei
+JMLR 18(134):1-35, 2017.
+Link: <a href="http://jmlr.org/papers/v18/17-214.html">http://jmlr.org/papers/v18/17-214.html</a>
+</p>
+
+<p>
+Abstract Stochastic Gradient Descent with a constant learning rate
+(constant SGD) simulates a Markov chain with a stationary
+distribution. With this perspective, we derive several new
+results. (1) We show that constant SGD can be used as an approximate
+Bayesian posterior inference algorithm. Specifically, we show how to
+adjust the tuning parameters of constant SGD to best match the
+stationary distribution to a posterior, minimizing the
+Kullback-Leibler divergence between these two distributions. (2) We
+demonstrate that constant SGD gives rise to a new variational EM
+algorithm that optimizes hyperparameters in complex probabilistic
+models. (3) We also show how to tune SGD with momentum for approximate
+sampling. (4) We analyze stochastic-gradient MCMC algorithms. For
+Stochastic- Gradient Langevin Dynamics and Stochastic-Gradient Fisher
+Scoring, we quantify the approximation errors due to finite learning
+rates. Finally (5), we use the stochastic process perspective to give
+a short proof!  of why Polyak averaging is optimal. Based on this
+idea, we propose a scalable approximate MCMC algorithm, the Averaged
+Stochastic Gradient Sampler.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orgf88f340" class="outline-3">
+<h3 id="orgf88f340"><span class="section-number-3">1.2</span> Online but Accurate Inference for Latent Variable Models with Local Gibbs Sampling</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Christophe Dupuy, Francis Bach
+JMLR 18(126):1-45, 2017.
+Link: <a href="http://jmlr.org/papers/v18/16-374.html">http://jmlr.org/papers/v18/16-374.html</a>
+</p>
+
+<p>
+Abstract
+We study parameter inference in large-scale latent variable models. We first propose a unified treatment of online inference for latent variable models from a non-canonical exponential family, and draw explicit links between several previously proposed frequentist or Bayesian methods. We then propose a novel inference method for the frequentist estimation of parameters, that adapts MCMC methods to online inference of latent variable models with the proper use of local Gibbs sampling. Then, for latent Dirichlet allocation,we provide an extensive set of experiments and comparisons with existing work, where our new approach outperforms all previously proposed methods. In particular, using Gibbs sampling for latent variable inference is superior to variational inference in terms of test log-likelihoods. Moreover, Bayesian inference through variational methods perform poorly, sometimes leading to worse fits with latent variables of higher dimensionality.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orgab55bf7" class="outline-3">
+<h3 id="orgab55bf7"><span class="section-number-3">1.3</span> Variational Attention for Sequence-to-Sequence Models&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Pooyan">Pooyan</span></span></h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+Authors: Hareesh Bahuleyan, Lili Mou, Olga Vechtomova, Pascal Poupart
+Categories: cs.CL
+Comments: 8 pages, 4 figures, 2 tables
+<br />
+  The variational encoder-decoder (VED) encodes source information as a set of
+random variables using a neural network, which in turn is decoded into target
+data using another neural network. In natural language processing,
+sequence-to-sequence (Seq2Seq) models typically serve as encoder-decoder
+networks. When combined with a traditional (deterministic) attention mechanism,
+the variational latent space may be bypassed by the attention model, making the
+generated sentences less diversified. In our paper, we propose a variational
+attention mechanism for VED, where the attention vector is modeled as normally
+distributed random variables. Experiments show that variational attention
+increases diversity while retaining high quality. We also show that the model
+is not sensitive to hyperparameters.
+\\ ( <a href="https://arxiv.org/abs/1712.08207">https://arxiv.org/abs/1712.08207</a> ,  1538kb)
+</p>
+</div>
+</div>
+
+
+
+<div id="outline-container-org65d91f6" class="outline-3">
+<h3 id="org65d91f6"><span class="section-number-3">1.4</span> AUTOENCODING VARIATIONAL INFERENCE FOR TOPIC MODELS</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+ICL17 
+in <span class="underline">hot</span> 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7da0f15" class="outline-3">
+<h3 id="org7da0f15"><span class="section-number-3">1.5</span> Variational Inference: A Review for Statisticians</h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+in <span class="underline">hot</span> 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6d77d56" class="outline-3">
+<h3 id="org6d77d56"><span class="section-number-3">1.6</span> Variational Autoencoders slides</h3>
+<div class="outline-text-3" id="text-1-6">
+<p>
+Raymond Yeh, Junting Lou, Teck-Yian Lim
+in <span class="underline">hot</span>
+</p>
+</div>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-org081842e" class="outline-2">
+<h2 id="org081842e"><span class="section-number-2">2</span> Geometry</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org7f856c4" class="outline-3">
+<h3 id="org7f856c4"><span class="section-number-3">2.1</span> Latent Space Oddity: on the Curvature of Deep Generative Models</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Georgios Arvanitidis, Lars Kai Hansen and Søren Hauberg.
+In International Conference on Learning Representations (ICLR), 2018.
+<a href="http://www2.compute.dtu.dk/~sohau/papers/">http://www2.compute.dtu.dk/~sohau/papers/</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org76d41bb" class="outline-3">
+<h3 id="org76d41bb"><span class="section-number-3">2.2</span> <span class="todo TODO">TODO</span> SphereFace: Deep Hypersphere Embedding for Face Recognition</h3>
+<div class="outline-text-3" id="text-2-2">
+<ul class="org-ul">
+<li>State "TODO"       from              <span class="timestamp-wrapper"><span class="timestamp">[2017-09-10 Sun 22:43]</span></span></li>
+</ul>
+<p>
+in <span class="underline">hot</span>  for words are region 
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orgad95df6" class="outline-3">
+<h3 id="orgad95df6"><span class="section-number-3">2.3</span> <span class="todo TODO">TODO</span> Geometries of Word Embeddings</h3>
+<div class="outline-text-3" id="text-2-3">
+<ul class="org-ul">
+<li>State "TODO"       from              <span class="timestamp-wrapper"><span class="timestamp">[2017-07-15 Sat 22:03]</span></span></li>
+</ul>
+
+<p>
+<a href="http://ee.princeton.edu/events/geometries-word-embeddings">http://ee.princeton.edu/events/geometries-word-embeddings</a>
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org5ff1c9a" class="outline-3">
+<h3 id="org5ff1c9a"><span class="section-number-3">2.4</span> <span class="todo TODO">TODO</span> SEMANTIC SPACES</h3>
+<div class="outline-text-3" id="text-2-4">
+<ul class="org-ul">
+<li>State "TODO"       from              <span class="timestamp-wrapper"><span class="timestamp">[2017-07-15 Sat 22:01]</span></span></li>
+</ul>
+<p>
+<a href="https://arxiv.org/pdf/1605.04238.pdf">https://arxiv.org/pdf/1605.04238.pdf</a>
+</p>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgfeef1ce" class="outline-3">
+<h3 id="orgfeef1ce"><span class="section-number-3">2.5</span> <span class="todo TODO">TODO</span> GEOMETRY OF POLYSEMY</h3>
+<div class="outline-text-3" id="text-2-5">
+<ul class="org-ul">
+<li>State "TODO"       from              <span class="timestamp-wrapper"><span class="timestamp">[2017-07-15 Sat 22:00]</span></span></li>
+</ul>
+<p>
+Jiaqi Mu, Suma Bhat, Pramod Viswanath
+<a href="https://arxiv.org/pdf/1610.07569.pdf">https://arxiv.org/pdf/1610.07569.pdf</a>
+In ICLR 2017
+</p>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-orged6926a" class="outline-2">
+<h2 id="orged6926a"><span class="section-number-2">3</span> Language Learning</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-orgeedb16d" class="outline-3">
+<h3 id="orgeedb16d"><span class="section-number-3">3.1</span> Order matters: Distributional properties of speech to young children  bootstraps learning of semantic representations</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+Authors: Philip A Huebner, Jon A Willits
+Categories: cs.CL
+Comments: Submitted to CogSci 2018
+<br />
+  Some researchers claim that language acquisition is critically dependent on
+experiencing linguistic input in order of increasing complexity. We set out to
+test this hypothesis using a simple recurrent neural network (SRN) trained to
+predict word sequences in CHILDES, a 5-million-word corpus of speech directed
+to children. First, we demonstrated that age-ordered CHILDES exhibits a gradual
+increase in linguistic complexity. Next, we compared the performance of two
+groups of SRNs trained on CHILDES which had either been age-ordered or not.
+Specifically, we assessed learning of grammatical and semantic structure and
+showed that training on age-ordered input facilitates learning of semantic, but
+not of sequential structure. We found that this advantage is eliminated when
+the models were trained on input with utterance boundary information removed.
+\\ ( <a href="https://arxiv.org/abs/1802.00768">https://arxiv.org/abs/1802.00768</a>
+</p>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-org372dc3e" class="outline-2">
+<h2 id="org372dc3e"><span class="section-number-2">4</span> NMT/Sequence 2 Sequence</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-org156701a" class="outline-3">
+<h3 id="org156701a"><span class="section-number-3">4.1</span> A Regularized Framework for Sparse and Structured Neural Attention&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Pooyan">Pooyan</span>&#xa0;<span class="Sancare">Sancare</span>&#xa0;<span class="SG">SG</span></span></h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+Vlad Niculae, Mathieu Blondel
+</p>
+
+<p>
+Modern neural networks are often augmented with an attention
+mechanism, which tells the network where to focus within the
+input. We propose in this paper a new framework for sparse and
+structured attention, building upon a smoothed max operator. We
+show that the gradient of this operator defines a mapping from
+real values to probabilities, suitable as an attention
+mechanism. Our framework includes softmax and a slight
+generalization of the recently-proposed sparsemax as special
+cases. However, we also show how our framework can incorporate
+modern structured penalties, resulting in more interpretable
+attention mechanisms, that focus on entire segments or groups of
+an input. We derive efficient algorithms to compute the forward
+and backward passes of our attention mechanisms, enabling their
+use in a neural network trained with backpropagation. To showcase
+their potential as a drop-in replacement for existing ones, we
+evaluate our attention mechanisms on three large-scale tasks:
+textual entailment, machine translation, and sentence
+summarization. Our attention mechanisms improve interpretability
+without sacrificing performance; notably, on textual entailment
+and summarization, we outperform the standard attention mechanisms
+based on softmax and sparsemax.
+</p>
+
+<p>
+<a href="https://arxiv.org/abs/1705.07704">https://arxiv.org/abs/1705.07704</a>
+</p>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-org22f8bc4" class="outline-3">
+<h3 id="org22f8bc4"><span class="section-number-3">4.2</span> Sequence Modeling via Segmentations</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+Chong Wang, Yining Wang, Po-Sen Huang, Abdelrahman Mohamed, Dengyong Zhou, Li Deng
+(Submitted on 24 Feb 2017 (v1), last revised 19 Jun 2017 (this version, v5))
+</p>
+
+<p>
+    Segmental structure is a common pattern in many types of sequences such as phrases in human languages. In this paper, we present a probabilistic model for sequences via their segmentations. The probability of a segmented sequence is calculated as the product of the probabilities of all its segments, where each segment is modeled using existing tools such as recurrent neural networks. Since the segmentation of a sequence is usually unknown in advance, we sum over all valid segmentations to obtain the final probability for the sequence. An efficient dynamic programming algorithm is developed for forward and backward computations without resorting to any approximation. We demonstrate our approach on text segmentation and speech recognition tasks. In addition to quantitative results, we also show that our approach can discover meaningful segments in their respective application contexts. 
+ICML 2017 
+<a href="https://arxiv.org/abs/1702.07463">https://arxiv.org/abs/1702.07463</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org601c4f9" class="outline-3">
+<h3 id="org601c4f9"><span class="section-number-3">4.3</span> CNN Is All You Need</h3>
+<div class="outline-text-3" id="text-4-3">
+<p>
+Authors: Qiming Chen, Ren Wu
+Categories: cs.CL cs.LG cs.NE
+<br />
+  The Convolution Neural Network (CNN) has demonstrated the unique advantage in
+audio, image and text learning; recently it has also challenged Recurrent
+Neural Networks (RNNs) with long short-term memory cells (LSTM) in
+sequence-to-sequence learning, since the computations involved in CNN are
+easily parallelizable whereas those involved in RNN are mostly sequential,
+leading to a performance bottleneck. However, unlike RNN, the native CNN lacks
+the history sensitivity required for sequence transformation; therefore
+enhancing the sequential order awareness, or position-sensitivity, becomes the
+key to make CNN the general deep learning model. In this work we introduce an
+extended CNN model with strengthen position-sensitivity, called PoseNet. A
+notable feature of PoseNet is the asymmetric treatment of position information
+in the encoder and the decoder. Experiments shows that PoseNet allows us to
+improve the accuracy of CNN based sequence-to-sequence learning significantly,
+achieving around 33-36 BLEU scores on the WMT 2014 English-to-German
+translation task, and around 44-46 BLEU scores on the English-to-French
+translation task.
+\\ ( <a href="https://arxiv.org/abs/1712.09662">https://arxiv.org/abs/1712.09662</a> ,  1056kb)
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org45dc2a4" class="outline-3">
+<h3 id="org45dc2a4"><span class="section-number-3">4.4</span> <span class="todo TODO">TODO</span> Attention is all you need&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Sancare">Sancare</span></span></h3>
+<div class="outline-text-3" id="text-4-4">
+<ul class="org-ul">
+<li>State "TODO"       from              <span class="timestamp-wrapper"><span class="timestamp">[2017-10-03 Tue 11:45]</span></span></li>
+</ul>
+<p>
+Google Brain 
+</p>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgff792c8" class="outline-3">
+<h3 id="orgff792c8"><span class="section-number-3">4.5</span> <span class="todo TODO">TODO</span> Attentive Convolution&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Sancare">Sancare</span></span></h3>
+<div class="outline-text-3" id="text-4-5">
+<ul class="org-ul">
+<li>State "TODO"       from              <span class="timestamp-wrapper"><span class="timestamp">[2017-10-03 Tue 11:38]</span></span></li>
+</ul>
+<p>
+Yin and Shütze
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge17ec9f" class="outline-2">
+<h2 id="orge17ec9f"><span class="section-number-2">5</span> Text Classification</h2>
+<div class="outline-text-2" id="text-5">
+</div>
+<div id="outline-container-org0e13d6b" class="outline-3">
+<h3 id="org0e13d6b"><span class="section-number-3">5.1</span> Fine-tuned Language Models for Text Classification&#xa0;&#xa0;&#xa0;<span class="tag"><span class="SG">SG</span></span></h3>
+<div class="outline-text-3" id="text-5-1">
+<p>
+Authors: Jeremy Howard, Sebastian Ruder
+Categories: cs.CL cs.LG stat.ML
+<br />
+  Transfer learning has revolutionized computer vision, but existing approaches
+in NLP still require task-specific modifications and training from scratch. We
+propose Fine-tuned Language Models (FitLaM), an effective transfer learning
+method that can be applied to any task in NLP, and introduce techniques that
+are key for fine-tuning a state-of-the-art language model. Our method
+significantly outperforms the state-of-the-art on five text classification
+tasks, reducing the error by 18-24% on the majority of datasets. We open-source
+our pretrained models and code to enable adoption by the community.
+\\ ( <a href="https://arxiv.org/abs/1801.06146">https://arxiv.org/abs/1801.06146</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd7b502d" class="outline-3">
+<h3 id="orgd7b502d"><span class="section-number-3">5.2</span> Comparative Opinion Mining: A Review&#xa0;&#xa0;&#xa0;<span class="tag"><span class="SG">SG</span></span></h3>
+<div class="outline-text-3" id="text-5-2">
+<p>
+Authors: Kasturi Dewi Varathan and Anastasia Giachanou and Fabio Crestani
+Categories: cs.IR cs.CL
+Journal-ref: Journal of the Association for Information Science and Technology,
+  68(4), 2017
+DOI: 10.1002/asi.23716
+<br />
+  Opinion mining refers to the use of natural language processing, text
+analysis and computational linguistics to identify and extract subjective
+information in textual material. Opinion mining, also known as sentiment
+analysis, has received a lot of attention in recent times, as it provides a
+number of tools to analyse the public opinion on a number of different topics.
+Comparative opinion mining is a subfield of opinion mining that deals with
+identifying and extracting information that is expressed in a comparative form
+(e.g.~"paper X is better than the Y"). Comparative opinion mining plays a very
+important role when ones tries to evaluate something, as it provides a
+reference point for the comparison. This paper provides a review of the area of
+comparative opinion mining. It is the first review that cover specifically this
+topic as all previous reviews dealt mostly with general opinion mining. This
+survey covers comparative opinion mining from two different angles. One from
+perspective of techniques and the other from perspective of comparative opinion
+elements. It also incorporates preprocessing tools as well as dataset that were
+used by the past researchers that can be useful to the future researchers in
+the field of comparative opinion mining.
+\\ ( <a href="https://arxiv.org/abs/1712.08941">https://arxiv.org/abs/1712.08941</a> ,  40kb)
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org4508082" class="outline-3">
+<h3 id="org4508082"><span class="section-number-3">5.3</span> Train Once, Test Anywhere: Zero-Shot Learning for Text Classification&#xa0;&#xa0;&#xa0;<span class="tag"><span class="SG">SG</span></span></h3>
+<div class="outline-text-3" id="text-5-3">
+<p>
+Authors: Pushpankar Kumar Pushp, Muktabh Mayank Srivastava
+Categories: cs.CL
+<br />
+  Zero-shot Learners are models capable of predicting unseen classes. In this
+work, we propose a Zero-shot Learning approach for text categorization. Our
+method involves training model on a large corpus of sentences to learn the
+relationship between a sentence and embedding of sentence's tags. Learning such
+relationship makes the model generalize to unseen sentences, tags, and even new
+datasets provided they can be put into same embedding space. The model learns
+to predict whether a given sentence is related to a tag or not; unlike other
+classifiers that learn to classify the sentence as one of the possible classes.
+We propose three different neural networks for the task and report their
+accuracy on the test set of the dataset used for training them as well as two
+other standard datasets for which no retraining was done. We show that our
+models generalize well across new unseen classes in both cases. Although the
+models do not achieve the accuracy level of the state of the art supervised
+models, yet it evidently is a step forward towards general intelligence in
+natural language processing.
+\\ ( <a href="https://arxiv.org/abs/1712.05972">https://arxiv.org/abs/1712.05972</a> ,  251kb)
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org240c57f" class="outline-3">
+<h3 id="org240c57f"><span class="section-number-3">5.4</span> A Novel Approach for Effective Learning in Low Resourced Scenarios&#xa0;&#xa0;&#xa0;<span class="tag"><span class="SG">SG</span></span></h3>
+<div class="outline-text-3" id="text-5-4">
+<p>
+Authors: Sri Harsha Dumpala, Rupayan Chakraborty, Sunil Kumar Kopparapu
+Comments: Presented at NIPS 2017 Machine Learning for Audio Signal Processing
+  (ML4Audio) Workshop, Dec. 2017
+</p>
+
+<p>
+  Deep learning based discriminative methods, being the state-of-the-art
+machine learning techniques, are ill-suited for learning from lower amounts of
+data. In this paper, we propose a novel framework, called simultaneous two
+sample learning (s2sL), to effectively learn the class discriminative
+characteristics, even from very low amount of data. In s2sL, more than one
+sample (here, two samples) are simultaneously considered to both, train and
+test the classifier. We demonstrate our approach for speech/music
+discrimination and emotion classification through experiments. Further, we also
+show the effectiveness of s2sL approach for classification in low-resource
+scenario, and for imbalanced data.
+\\ ( <a href="https://arxiv.org/abs/1712.05608">https://arxiv.org/abs/1712.05608</a> ,  376kb)
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orgeccbcd8" class="outline-3">
+<h3 id="orgeccbcd8"><span class="section-number-3">5.5</span> Sentiment Predictability for Stocks&#xa0;&#xa0;&#xa0;<span class="tag"><span class="SG">SG</span></span></h3>
+<div class="outline-text-3" id="text-5-5">
+<p>
+Authors: Jordan Prosky, Xingyou Song, Andrew Tan, Michael Zhao
+Categories: cs.CL cs.AI cs.LG cs.MM
+Comments: 9 pages
+<br />
+  In this work, we present our findings and experiments for stock-market
+prediction using various textual sentiment analysis tools, such as mood
+analysis and event extraction, as well as prediction models, such as LSTMs and
+specific convolutional architectures.
+</p>
+
+<p>
+<a href="https://arxiv.org/abs/1712.05785">https://arxiv.org/abs/1712.05785</a>
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org2cc2b6d" class="outline-3">
+<h3 id="org2cc2b6d"><span class="section-number-3">5.6</span> Convolutional Neural Networks for Medical Diagnosis from Admission Notes&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Sancare">Sancare</span></span></h3>
+<div class="outline-text-3" id="text-5-6">
+<p>
+Authors: Christy Li, Dimitris Konomis, Graham Neubig, Pengtao Xie, Carol Cheng,
+  Eric Xing
+Categories: cs.CL
+<br />
+  \(\textbf{Objective}\) Develop an automatic diagnostic system which only uses
+textual admission information from Electronic Health Records (EHRs) and assist
+clinicians with a timely and statistically proved decision tool. The hope is
+that the tool can be used to reduce mis-diagnosis.
+  \(\textbf{Materials and Methods}\) We use the real-world clinical notes from
+MIMIC-III, a freely available dataset consisting of clinical data of more than
+forty thousand patients who stayed in intensive care units of the Beth Israel
+Deaconess Medical Center between 2001 and 2012. We proposed a Convolutional
+Neural Network model to learn semantic features from unstructured textual input
+and automatically predict primary discharge diagnosis.
+  \(\textbf{Results}\) The proposed model achieved an overall 96.11% accuracy and
+80.48% weighted F1 score values on 10 most frequent disease classes,
+significantly outperforming four strong baseline models by at least 12.7% in
+weighted F1 score.
+  \(\textbf{Discussion}\) Experimental results imply that the CNN model is
+suitable for supporting diagnosis decision making in the presence of complex,
+noisy and unstructured clinical data while at the same time using fewer layers
+and parameters that other traditional Deep Network models.
+  \(\textbf{Conclusion}\) Our model demonstrated capability of representing
+complex medical meaningful features from unstructured clinical notes and
+prediction power for commonly misdiagnosed frequent diseases. It can use easily
+adopted in clinical setting to provide timely and statistically proved decision
+support.
+  \(\textbf{Keywords}\) Convolutional neural network, text classification,
+discharge diagnosis prediction, admission information from EHRs.
+</p>
+</div>
+</div>
+
+
+
+<div id="outline-container-org97e0331" class="outline-3">
+<h3 id="org97e0331"><span class="section-number-3">5.7</span> Matching with Text Data: An Experimental Evaluation of Methods for  Matching Documents and of Measuring Match Quality&#xa0;&#xa0;&#xa0;<span class="tag"><span class="SG">SG</span></span></h3>
+<div class="outline-text-3" id="text-5-7">
+<p>
+Authors: Reagan Mozer, Luke Miratrix, Aaron Russell Kaufman, L. Jason
+  Anastasopoulos
+Categories: stat.ME cs.CL
+<br />
+  How should one perform matching in observational studies when the units are
+text documents? The lack of randomized assignment of documents into treatment
+and control groups may lead to systematic differences between groups on
+high-dimensional and latent features of text such as topical content and
+sentiment. Standard balance metrics, used to measure the quality of a matching
+method, fail in this setting. We decompose text matching methods into two
+parts: (1) a text representation, and (2) a distance metric, and present a
+framework for measuring the quality of text matches experimentally using human
+subjects. We consider 28 potential methods, and find that representing text as
+term vectors and matching on cosine distance significantly outperform
+alternative representations and distance metrics. We apply our chosen method to
+a substantive debate in the study of media bias using a novel data set of front
+page news articles from thirteen news sources. Media bias is composed of topic
+selection bias and presentation bias; using our matching method to control for
+topic selection, we find that both components contribute significantly to media
+bias, though some news sources rely on one component more than the other.
+\\ ( <a href="https://arxiv.org/abs/1801.00644">https://arxiv.org/abs/1801.00644</a> ,  237kb)
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5fdc3b5" class="outline-3">
+<h3 id="org5fdc3b5"><span class="section-number-3">5.8</span> Deep pyramid convolutional neural networks for text categorization. :Sancare:SG</h3>
+<div class="outline-text-3" id="text-5-8">
+<p>
+Rie Johnson and Tong Zhang
+<a href="http://aclweb.org/anthology/P/P17/P17-1052.pdf">http://aclweb.org/anthology/P/P17/P17-1052.pdf</a>
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org6b96eb8" class="outline-3">
+<h3 id="org6b96eb8"><span class="section-number-3">5.9</span> <span class="todo STARTED">STARTED</span> Rationalizing Neural Predictions&#xa0;&#xa0;&#xa0;<span class="tag"><span class="NNet">NNet</span>&#xa0;<span class="Sancare">Sancare</span></span></h3>
+<div class="outline-text-3" id="text-5-9">
+<ul class="org-ul">
+<li>State "STARTED"    from "TODO"       <span class="timestamp-wrapper"><span class="timestamp">[2017-10-25 Wed 11:33]</span></span></li>
+<li>State "TODO"       from              <span class="timestamp-wrapper"><span class="timestamp">[2017-07-15 Sat 21:59]</span></span></li>
+</ul>
+<p>
+<a href="https://people.csail.mit.edu/taolei/papers/emnlp16_rationale.pdf">https://people.csail.mit.edu/taolei/papers/emnlp16_rationale.pdf</a>
+</p>
+
+
+
+<p>
+Tao Lei, Regina Barzilay and Tommi Jaakkola
+EMNLP16 
+</p>
+</div>
+
+<div id="outline-container-org1c6f667" class="outline-4">
+<h4 id="org1c6f667"><span class="section-number-4">5.9.1</span> abstract</h4>
+<div class="outline-text-4" id="text-5-9-1">
+<p>
+Prediction without justification has limited ap- plicability. As a remedy, we learn to extract pieces of input text as justifications – ratio- nales – that are tailored to be short and co- herent, yet sufficient for making the same pre- diction. Our approach combines two modu- lar components, generator and encoder, which are trained to operate well together. The gen- erator specifies a distribution over text frag- ments as candidate rationales and these are passed through the encoder for prediction. Ra- tionales are never given during training. In- stead, the model is regularized by desiderata for rationales.
+</p>
+
+<p>
+ntro 
+The notion of what counts as a rationale may be ambiguous in some contexts and the task of select- ing rationales may therefore be challenging to eval- uate. We focus on two domains where ambiguity is minimal (or can be minimized).
+</p>
+
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> Similar questions : short texts</li>
+<li class="off"><code>[&#xa0;]</code> Beer corpus : what is the length of a review ? 
+<ul class="org-ul">
+<li>Median no. of words per review : 126</li>
+<li>Avg length of review : 149</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org6f4e38a" class="outline-4">
+<h4 id="org6f4e38a"><span class="section-number-4">5.9.2</span> Generator</h4>
+<div class="outline-text-4" id="text-5-9-2">
+<p>
+We can think of the generator as a tagging model where each word in the input receives a binary tag pertaining to whether it is selected to be included in the rationale. In our case, the generator is probabilistic and specifies a distribution over possible selections.
+</p>
+
+<p>
+The rationale is introduced as a latent variable, a constraint that guides how to interpret the input sequence.
+</p>
+
+<p>
+The encoder could be realized in many ways such as a recurrent neural network.
+The target vector is then generated on the basis of the final state reached by the recur- rent unit after processing all the words in the input sequence. 
+</p>
+
+<p>
+The generator can be modeled using a shared bi-directional recurrent neural net
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgcf6e57e" class="outline-3">
+<h3 id="orgcf6e57e"><span class="section-number-3">5.10</span> <span class="todo TODO">TODO</span> Hierarchical Attention Networks for Document Classification&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Sancare">Sancare</span>&#xa0;<span class="NNet">NNet</span></span></h3>
+<div class="outline-text-3" id="text-5-10">
+<ul class="org-ul">
+<li>State "TODO"       from              <span class="timestamp-wrapper"><span class="timestamp">[2017-10-03 Tue 10:06]</span></span></li>
+</ul>
+<p>
+Yang, Dyer et al. NAACL 2016
+</p>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgd4a87f3" class="outline-3">
+<h3 id="orgd4a87f3"><span class="section-number-3">5.11</span> <span class="todo STARTED">STARTED</span> Convolutional Neural Networks for Sentence Classification.&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Sancare">Sancare</span></span></h3>
+<div class="outline-text-3" id="text-5-11">
+<ul class="org-ul">
+<li>State "STARTED"    from "TODO"       <span class="timestamp-wrapper"><span class="timestamp">[2017-12-19 Tue 09:38]</span></span></li>
+<li>State "TODO"       from ""           <span class="timestamp-wrapper"><span class="timestamp">[2017-10-25 Wed 11:37]</span></span></li>
+</ul>
+<p>
+Yoon Kim EMNLP 2014 
+&#x2014;&gt; hot Kim14CNN
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org8db1536" class="outline-3">
+<h3 id="org8db1536"><span class="section-number-3">5.12</span> <span class="todo TODO">TODO</span> Very Deep Convolutional Networks for NLP&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Sancare">Sancare</span></span></h3>
+<div class="outline-text-3" id="text-5-12">
+<ul class="org-ul">
+<li>State "TODO"       from ""           <span class="timestamp-wrapper"><span class="timestamp">[2017-10-25 Wed 11:51]</span></span></li>
+</ul>
+<p>
+Facebook
+</p>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+<div id="outline-container-org9e96ec6" class="outline-2">
+<h2 id="org9e96ec6"><span class="section-number-2">6</span> Character / Large Vocab / LM  / Embeddings</h2>
+<div class="outline-text-2" id="text-6">
+</div>
+<div id="outline-container-org5927a31" class="outline-3">
+<h3 id="org5927a31"><span class="section-number-3">6.1</span> Character-level Recurrent Neural Networks in Practice: Comparing Training and Sampling Schemes&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Matthieu">Matthieu</span></span></h3>
+<div class="outline-text-3" id="text-6-1">
+<p>
+Authors: Cedric De Boom, Bart Dhoedt, Thomas Demeester
+Categories: cs.LG cs.CL stat.ML
+Comments: 23 pages, 11 figures, 4 tables
+DOI: 10.1007/s00521-017-3322-z
+<br />
+  Recurrent neural networks are nowadays successfully used in an abundance of
+applications, going from text, speech and image processing to recommender
+systems. Backpropagation through time is the algorithm that is commonly used to
+train these networks on specific tasks. Many deep learning frameworks have
+their own implementation of training and sampling procedures for recurrent
+neural networks, while there are in fact multiple other possibilities to choose
+from and other parameters to tune. In existing literature this is very often
+overlooked or ignored. In this paper we therefore give an overview of possible
+training and sampling schemes for character-level recurrent neural networks to
+solve the task of predicting the next token in a given sequence. We test these
+different schemes on a variety of datasets, neural network architectures and
+parameter settings, and formulate a number of take-home recommendations. The
+choice of training and sampling scheme turns out to be subject to a number of
+trade-offs, such as training stability, sampling time, model performance and
+implementation effort, but is largely independent of the data. Perhaps the most
+surprising result is that transferring hidden states for correctly initializing
+the model on subsequences often leads to unstable training behavior depending
+on the dataset.
+\\ ( <a href="https://arxiv.org/abs/1801.00632">https://arxiv.org/abs/1801.00632</a> ,  183kb)
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org12473ac" class="outline-3">
+<h3 id="org12473ac"><span class="section-number-3">6.2</span> Topic Compositional Neural Language Model</h3>
+<div class="outline-text-3" id="text-6-2">
+<p>
+Authors: Wenlin Wang, Zhe Gan, Wenqi Wang, Dinghan Shen, Jiaji Huang, Wei Ping,
+  Sanjeev Satheesh, Lawrence Carin
+Categories: cs.LG cs.CL
+Comments: To appear in AISTATS 2018
+<br />
+  We propose a Topic Compositional Neural Language Model (TCNLM), a novel
+method designed to simultaneously capture both the global semantic meaning and
+the local word ordering structure in a document. The TCNLM learns the global
+semantic coherence of a document via a neural topic model, and the probability
+of each learned latent topic is further used to build a Mixture-of-Experts
+(MoE) language model, where each expert (corresponding to one topic) is a
+recurrent neural network (RNN) that accounts for learning the local structure
+of a word sequence. In order to train the MoE model efficiently, a matrix
+factorization method is applied, by extending each weight matrix of the RNN to
+be an ensemble of topic-dependent weight matrices. The degree to which each
+member of the ensemble is used is tied to the document-dependent probability of
+the corresponding topics. Experimental results on several corpora show that the
+proposed approach outperforms both a pure RNN-based model and other
+topic-guided language models. Further, our model yields sensible topics, and
+also has the capacity to generate meaningful sentences conditioned on given
+topics.
+\\ ( <a href="https://arxiv.org/abs/1712.09783">https://arxiv.org/abs/1712.09783</a> ,  3346kb)
+</p>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-org81d3cfd" class="outline-3">
+<h3 id="org81d3cfd"><span class="section-number-3">6.3</span> Neural Word Embedding as Implicit Matrix Factorization</h3>
+<div class="outline-text-3" id="text-6-3">
+<p>
+Yoav Goldberg and Omer Levy, NIPS 2014
+<a href="https://papers.nips.cc/paper/5477-neural-word-embedding-as-implicit-matrix-factorization">https://papers.nips.cc/paper/5477-neural-word-embedding-as-implicit-matrix-factorization</a>
+</p>
+
+
+<p>
+The previous one is short and messy somehow: 
+word2vec Explained: Deriving Mikolov et al.’s Negative-Sampling Word-Embedding Method
+Yoav Goldberg and Omer Levy
+<a href="https://arxiv.org/pdf/1402.3722.pdf">https://arxiv.org/pdf/1402.3722.pdf</a>
+</p>
+<ul class="org-ul">
+<li class="on"><code>[X]</code> In page 2, I don't understand the number of parameters
+It is |C|.|V|.d while I would write  (|C|+|V|).d ? 
+I'm right and this is corrected in the NIPS 2014 paper</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-org39bf52d" class="outline-2">
+<h2 id="org39bf52d"><span class="section-number-2">7</span> Wasserstein</h2>
+<div class="outline-text-2" id="text-7">
+</div>
+<div id="outline-container-org75c9b46" class="outline-3">
+<h3 id="org75c9b46"><span class="section-number-3">7.1</span> Stein VAE&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Pooyan">Pooyan</span></span></h3>
+<div class="outline-text-3" id="text-7-1">
+<p>
+SVAE in NIPS 2017
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org94bb0d8" class="outline-3">
+<h3 id="org94bb0d8"><span class="section-number-3">7.2</span> Learning with a Wasserstein Loss&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Pooyan">Pooyan</span></span></h3>
+<div class="outline-text-3" id="text-7-2">
+<p>
+NIPS 2015 : wass<sub>NIPS2015</sub>
+</p>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div id="outline-container-org23de81d" class="outline-2">
+<h2 id="org23de81d"><span class="section-number-2">8</span> <span class="todo TODO">TODO</span> Systran / Korean project</h2>
+<div class="outline-text-2" id="text-8">
+<ul class="org-ul">
+<li>State "TODO"       from              <span class="timestamp-wrapper"><span class="timestamp">[2018-02-12 Mon 09:19]</span></span></li>
+</ul>
+<p>
+Title: Learning Online Alignments with Continuous Rewards Policy Gradient
+Authors: Yuping Luo, Chung-Cheng Chiu, Navdeep Jaitly, Ilya Sutskever
+<a href="https://arxiv.org/abs/1608.01281">https://arxiv.org/abs/1608.01281</a>
+</p>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgc04ac0c" class="outline-2">
+<h2 id="orgc04ac0c"><span class="section-number-2">9</span> Speech/Music/Audio and others</h2>
+<div class="outline-text-2" id="text-9">
+</div>
+<div id="outline-container-org0016be7" class="outline-3">
+<h3 id="org0016be7"><span class="section-number-3">9.1</span> A segmental framework for fully-unsupervised large-vocabulary speech recognition</h3>
+<div class="outline-text-3" id="text-9-1">
+<p>
+<a href="https://arxiv.org/abs/1606.06950">https://arxiv.org/abs/1606.06950</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1768c2b" class="outline-3">
+<h3 id="org1768c2b"><span class="section-number-3">9.2</span> On Deep Multi-View Representation Learning: Objectives and Optimization</h3>
+<div class="outline-text-3" id="text-9-2">
+<p>
+Weiran Wang, Raman Arora, Karen Livescu, Jeff Bilmes
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0e78c34" class="outline-3">
+<h3 id="org0e78c34"><span class="section-number-3">9.3</span> Joint Modeling of Text and Acoustic-Prosodic Cues for Neural Parsing</h3>
+<div class="outline-text-3" id="text-9-3">
+<p>
+Trang Tran, Shubham Toshniwal, Mohit Bansal, Kevin Gimpel, Karen Livescu, Mari Ostendorf
+</p>
+
+<p>
+hot
+</p>
+</div>
+</div>
+
+
+
+<div id="outline-container-org390b635" class="outline-3">
+<h3 id="org390b635"><span class="section-number-3">9.4</span> <span class="todo TODO">TODO</span> GENERALIZING TRANSDUCTION GRAMMARS TO MODEL CONTINUOUS VALUED MUSICAL EVENTS</h3>
+<div class="outline-text-3" id="text-9-4">
+<ul class="org-ul">
+<li>State "TODO"       from              <span class="timestamp-wrapper"><span class="timestamp">[2017-07-15 Sat 22:00]</span></span></li>
+</ul>
+<p>
+<a href="http://www.cs.ust.hk/~dekai/library/WU_Dekai/Wu_Ismir2016.pdf">http://www.cs.ust.hk/~dekai/library/WU_Dekai/Wu_Ismir2016.pdf</a>
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org6038bb6" class="outline-3">
+<h3 id="org6038bb6"><span class="section-number-3">9.5</span> <span class="todo TODO">TODO</span> Show, Attend and Tell: Neural Image Caption Generation with Visual Attention&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Sancare">Sancare</span>&#xa0;<span class="NNet">NNet</span></span></h3>
+<div class="outline-text-3" id="text-9-5">
+<ul class="org-ul">
+<li>State "TODO"       from              <span class="timestamp-wrapper"><span class="timestamp">[2017-10-03 Tue 11:37]</span></span></li>
+</ul>
+<p>
+Kelvin Xu, Jimmy Ba, Ryan Kiros, Kyunghyun Cho, Aaron Courville, Ruslan Salakhutdinov, Richard Zemel, Yoshua Bengio
+</p>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgbd8b3ce" class="outline-2">
+<h2 id="orgbd8b3ce"><span class="section-number-2">10</span> NNet&#xa0;&#xa0;&#xa0;<span class="tag"><span class="NNet">NNet</span></span></h2>
+<div class="outline-text-2" id="text-10">
+</div>
+<div id="outline-container-org15c65ea" class="outline-3">
+<h3 id="org15c65ea"><span class="section-number-3">10.1</span> <span class="todo TODO">TODO</span> Training RNNs as Fast as CNNs&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Sancare">Sancare</span></span></h3>
+<div class="outline-text-3" id="text-10-1">
+<p>
+Tao Lei, Yu Zhang
+</p>
+</div>
+</div>
+
+
+
+<div id="outline-container-org82fd7e6" class="outline-3">
+<h3 id="org82fd7e6"><span class="section-number-3">10.2</span> <span class="todo TODO">TODO</span> From Softmax to Sparsemax: A Sparse Model of Attention and Multi-Label Classification</h3>
+<div class="outline-text-3" id="text-10-2">
+<ul class="org-ul">
+<li>State "TODO"       from              <span class="timestamp-wrapper"><span class="timestamp">[2017-11-05 Sun 14:43]</span></span></li>
+</ul>
+<p>
+Martins16 
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org3d9cfd8" class="outline-3">
+<h3 id="org3d9cfd8"><span class="section-number-3">10.3</span> <span class="todo TODO">TODO</span> Sequential Neural Models with Stochastic Layers</h3>
+<div class="outline-text-3" id="text-10-3">
+<ul class="org-ul">
+<li>State "TODO"       from              <span class="timestamp-wrapper"><span class="timestamp">[2017-07-15 Sat 22:04]</span></span></li>
+</ul>
+<p>
+<a href="https://arxiv.org/abs/1605.07571">https://arxiv.org/abs/1605.07571</a>
+Marco Fraccaro, Søren Kaae Sønderby, Ulrich Paquet, Ole Winther
+NIP16
+</p>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-org6dfdfa4" class="outline-3">
+<h3 id="org6dfdfa4"><span class="section-number-3">10.4</span> Neural Variational Inference for Text Processing</h3>
+</div>
+
+<div id="outline-container-org3ea5fe7" class="outline-3">
+<h3 id="org3ea5fe7"><span class="section-number-3">10.5</span> Training recurrent networks online without backtracking&#xa0;&#xa0;&#xa0;<span class="tag"><span class="NoBackTrack">NoBackTrack</span></span></h3>
+<div class="outline-text-3" id="text-10-5">
+<p>
+<a href="http://arxiv.org/pdf/1507.07680v2.pdf">http://arxiv.org/pdf/1507.07680v2.pdf</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5a7c36b" class="outline-3">
+<h3 id="org5a7c36b"><span class="section-number-3">10.6</span> <span class="todo TODO">TODO</span> An Attentional Model for Speech Translation Without Transcription&#xa0;&#xa0;&#xa0;<span class="tag"><span class="BULB">BULB</span></span></h3>
+<div class="outline-text-3" id="text-10-6">
+<ul class="org-ul">
+<li><p>
+State "TODO"       from ""           <span class="timestamp-wrapper"><span class="timestamp">[2016-06-07 Tue 08:54]</span></span>
+</p>
+
+<p>
+<a href="http://people.eng.unimelb.edu.au/tcohn/papers/naacl16duong.pdf">http://people.eng.unimelb.edu.au/tcohn/papers/naacl16duong.pdf</a>
+</p></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgd1039ab" class="outline-3">
+<h3 id="orgd1039ab"><span class="section-number-3">10.7</span> <span class="todo TODO">TODO</span> Understanding Deep Convolutional Networks&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Mallat">Mallat</span></span></h3>
+<div class="outline-text-3" id="text-10-7">
+<ul class="org-ul">
+<li>State "TODO"       from ""           <span class="timestamp-wrapper"><span class="timestamp">[2016-06-07 Tue 08:55]</span></span></li>
+</ul>
+
+<p>
+<a href="https://arxiv.org/abs/1601.04920">https://arxiv.org/abs/1601.04920</a>
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org52ea18a" class="outline-3">
+<h3 id="org52ea18a"><span class="section-number-3">10.8</span> <span class="todo TODO">TODO</span> FFT</h3>
+<div class="outline-text-3" id="text-10-8">
+<ul class="org-ul">
+<li>State "TODO"       from ""           <span class="timestamp-wrapper"><span class="timestamp">[2016-06-07 Tue 08:58]</span></span></li>
+</ul>
+</div>
+
+<div id="outline-container-org59dfb13" class="outline-4">
+<h4 id="org59dfb13"><span class="section-number-4">10.8.1</span> Training Deep Fourier Neural Networks To Fit Time-Series Data</h4>
+<div class="outline-text-4" id="text-10-8-1">
+<p>
+<a href="http://arxiv.org/abs/1405.2262">http://arxiv.org/abs/1405.2262</a>
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orge81bf30" class="outline-3">
+<h3 id="orge81bf30"><span class="section-number-3">10.9</span> <span class="todo TODO">TODO</span> Statistical Machine Translation Features with Multitask Tensor Networks</h3>
+<div class="outline-text-3" id="text-10-9">
+<ul class="org-ul">
+<li>State "TODO"       from ""           <span class="timestamp-wrapper"><span class="timestamp">[2015-09-25 Fri 14:52]</span></span></li>
+</ul>
+
+<p>
+<a href="http://www.aclweb.org/anthology/P/P15/P15-1004.pdf">http://www.aclweb.org/anthology/P/P15/P15-1004.pdf</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org372d559" class="outline-3">
+<h3 id="org372d559"><span class="section-number-3">10.10</span> <span class="todo TODO">TODO</span> Highway Networks</h3>
+<div class="outline-text-3" id="text-10-10">
+<ul class="org-ul">
+<li><p>
+State "TODO"       from ""           <span class="timestamp-wrapper"><span class="timestamp">[2015-08-27 Thu 14:13]</span></span>
+</p>
+
+<p>
+<a href="http://arxiv.org/pdf/1505.00387v1.pdf">http://arxiv.org/pdf/1505.00387v1.pdf</a>
+</p></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org17071cf" class="outline-3">
+<h3 id="org17071cf"><span class="section-number-3">10.11</span> <span class="todo TODO">TODO</span> Character-aware language model</h3>
+<div class="outline-text-3" id="text-10-11">
+<ul class="org-ul">
+<li>State "TODO"       from ""           <span class="timestamp-wrapper"><span class="timestamp">[2015-08-27 Thu 14:08]</span></span></li>
+</ul>
+
+<p>
+<a href="http://arxiv.org/pdf/1508.06615v1.pdf">http://arxiv.org/pdf/1508.06615v1.pdf</a>
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orgd6ec957" class="outline-3">
+<h3 id="orgd6ec957"><span class="section-number-3">10.12</span> <span class="todo TODO">TODO</span> Log-Linear RNNs: Towards Recurrent Neural Networks with Flexible Prior Knowledge</h3>
+<div class="outline-text-3" id="text-10-12">
+<ul class="org-ul">
+<li>State "TODO"       from ""           <span class="timestamp-wrapper"><span class="timestamp">[2016-07-12 Tue 09:44]</span></span></li>
+</ul>
+
+<p>
+<a href="https://arxiv.org/abs/1607.02467">https://arxiv.org/abs/1607.02467</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org51a884f" class="outline-3">
+<h3 id="org51a884f"><span class="section-number-3">10.13</span> Critical Behavior from Deep Dynamics: A Hidden Dimension in Natural Language</h3>
+</div>
+</div>
+
+
+<div id="outline-container-org9b3f37d" class="outline-2">
+<h2 id="org9b3f37d"><span class="section-number-2">11</span> <span class="todo TODO">TODO</span> Transport optimal</h2>
+<div class="outline-text-2" id="text-11">
+<ul class="org-ul">
+<li>State "TODO"       from ""           <span class="timestamp-wrapper"><span class="timestamp">[2016-06-07 Tue 10:18]</span></span></li>
+</ul>
+
+
+<p>
+Kalman Filter
+<a href="http://www.bzarg.com/p/how-a-kalman-filter-works-in-pictures/">http://www.bzarg.com/p/how-a-kalman-filter-works-in-pictures/</a>
+</p>
+</div>
+</div>

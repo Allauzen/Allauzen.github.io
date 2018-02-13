@@ -17,17 +17,17 @@ comments:
 <li><a href="#org5f0e4cf">Summary</a>
 <ul>
 <li><a href="#org2b9e75b">Generator</a></li>
-<li><a href="#org82e91d0">Encoder</a></li>
+<li><a href="#org1201ae3">Encoder</a></li>
 <li><a href="#org5be0659">Joint optimization</a></li>
 <li><a href="#org84b1bc0">Inference</a></li>
 </ul>
 </li>
 <li><a href="#org5276d84">Questions / Comments</a>
 <ul>
-<li><a href="#orgd151765">Rationale /</a></li>
+<li><a href="#org4fb73da">Rationale</a></li>
 <li><a href="#org702c869">Training and inference</a></li>
 <li><a href="#org7b4e22b">Attention based model for classification</a></li>
-<li><a href="#org1201ae3">Encoder</a></li>
+<li><a href="#orgbd667c5">Encoder</a></li>
 <li><a href="#org28b36e9">Loss function etc &#x2026;</a></li>
 </ul>
 </li>
@@ -80,22 +80,17 @@ download <a href="https://people.csail.mit.edu/taolei/papers/emnlp16_rationale.p
 <h2 id="org5f0e4cf">Summary</h2>
 <div class="outline-text-2" id="text-org5f0e4cf">
 <p>
-The motivation is to design a model that can both represent a text for
-classification purpose and also explain its decision. The model learns
-first to extract pieces of an input text as justifications (called
-rationales) that are tailored to be short, coherent, and yet
-sufficient for making efficient predictions.
-</p>
-
-
-<p>
-The model can be decomposed into two steps: 
+The goal is a model that can both represent a text for classification
+purpose and explain its decision. The model learns first to extract
+pieces of an input text as justifications (called rationales) that are
+tailored to be short, coherent, and yet sufficient for making
+efficient predictions. The model can be decomposed into two steps:
 </p>
 <ul class="org-ul">
 <li>The <i>generator</i> specifies a distribution over text fragments as
 candidate rationales. In fact, each word of the input text is
-associated with a binary hidden random variable to weight its importance
-for the next step.</li>
+associated with a binary hidden random variable to weight its
+importance for the next step.</li>
 <li>The <i>encoder</i> takes the output of the generator to make the
 prediction.</li>
 </ul>
@@ -136,9 +131,9 @@ paper is for me confusing. However&#x2026;<br />
 </div>
 
 
-<div id="outline-container-org82e91d0" class="outline-3">
-<h3 id="org82e91d0">Encoder</h3>
-<div class="outline-text-3" id="text-org82e91d0">
+<div id="outline-container-org1201ae3" class="outline-3">
+<h3 id="org1201ae3">Encoder</h3>
+<div class="outline-text-3" id="text-org1201ae3">
 <p>
 Rationales are defined as the set of \(x_t\) such as \(z_t=1\). Therefore
 the input for the encoder is a <i>selection</i> of \(\X\).  Then you can pick
@@ -245,9 +240,9 @@ While for inference:
 <h2 id="org5276d84">Questions / Comments</h2>
 <div class="outline-text-2" id="text-org5276d84">
 </div>
-<div id="outline-container-orgd151765" class="outline-3">
-<h3 id="orgd151765">Rationale /</h3>
-<div class="outline-text-3" id="text-orgd151765">
+<div id="outline-container-org4fb73da" class="outline-3">
+<h3 id="org4fb73da">Rationale</h3>
+<div class="outline-text-3" id="text-org4fb73da">
 <p>
 As written in the paper the notion of what counts as a rationale may
 be ambiguous in some contexts and the task of selecting rationales
@@ -264,11 +259,8 @@ where ambiguity is minimal (or can be minimized).
 <ul class="org-ul">
 <li>For training, maybe I missed it but, there's no mention in the paper of the number of samples  used to approximate the expectation.</li>
 
-<li>The inference step raises a similar question:  but how the second step is</li>
+<li>The inference step raises a similar question:  but how the second step is implemented ? Just apply a threshold on the probability ? 0.5 ?</li>
 </ul>
-<p>
-implemented ? Just apply a threshold on the probability ? 0.5 ?
-</p>
 </div>
 </div>
 
@@ -289,9 +281,9 @@ point, starting by <a href="https://arxiv.org/abs/1511.05234">this paper on stoc
 
 
 
-<div id="outline-container-org1201ae3" class="outline-3">
-<h3 id="org1201ae3">Encoder</h3>
-<div class="outline-text-3" id="text-org1201ae3">
+<div id="outline-container-orgbd667c5" class="outline-3">
+<h3 id="orgbd667c5">Encoder</h3>
+<div class="outline-text-3" id="text-orgbd667c5">
 <p>
 The encoder is a "simple" rnn and the last hidden state is taken as
 input for classification. While we expect a short sequence after the
