@@ -1,6 +1,6 @@
 ---
 title: "Rationalizing Neural Predictions"
-date: 2017-11-01
+date: 2017-11-03
 layout: post
 categories: 
 tags: 
@@ -14,21 +14,21 @@ comments:
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org4c85952">Summary</a>
+<li><a href="#org37cd8a3">Summary</a>
 <ul>
-<li><a href="#org46046d7">Generator</a></li>
-<li><a href="#orgc8e5eec">Encoder</a></li>
-<li><a href="#org0983cc8">Joint optimization</a></li>
-<li><a href="#orgd930870">Inference</a></li>
+<li><a href="#org1ce8038">Generator</a></li>
+<li><a href="#org7771cf6">Encoder</a></li>
+<li><a href="#orgc0a4444">Joint optimization</a></li>
+<li><a href="#org4052838">Inference</a></li>
 </ul>
 </li>
-<li><a href="#org3782370">Questions / Comments</a>
+<li><a href="#org9087602">Questions / Comments</a>
 <ul>
-<li><a href="#org5d31f9e">Rationale /</a></li>
-<li><a href="#org9a4f65d">Training and inference</a></li>
-<li><a href="#org8a5ecb0">Attention based model for classification</a></li>
-<li><a href="#orgcb08d06">Encoder</a></li>
-<li><a href="#org46f8ed7">Loss function etc &#x2026;</a></li>
+<li><a href="#org2be6dfe">Rationale /</a></li>
+<li><a href="#orge93cb9a">Training and inference</a></li>
+<li><a href="#orge92742a">Attention based model for classification</a></li>
+<li><a href="#org3e2ff44">Encoder</a></li>
+<li><a href="#org2b11abd">Loss function etc &#x2026;</a></li>
 </ul>
 </li>
 </ul>
@@ -76,9 +76,9 @@ download <a href="https://people.csail.mit.edu/taolei/papers/emnlp16_rationale.p
 
 
 
-<div id="outline-container-org4c85952" class="outline-2">
-<h2 id="org4c85952">Summary</h2>
-<div class="outline-text-2" id="text-org4c85952">
+<div id="outline-container-org37cd8a3" class="outline-2">
+<h2 id="org37cd8a3">Summary</h2>
+<div class="outline-text-2" id="text-org37cd8a3">
 <p>
 The motivation is to design a model that can both represent a text for
 classification purpose and also explain its decision. The model learns
@@ -106,9 +106,9 @@ attention although architectures and objectives differ.
 </p>
 </div>
 
-<div id="outline-container-org46046d7" class="outline-3">
-<h3 id="org46046d7">Generator</h3>
-<div class="outline-text-3" id="text-org46046d7">
+<div id="outline-container-org1ce8038" class="outline-3">
+<h3 id="org1ce8038">Generator</h3>
+<div class="outline-text-3" id="text-org1ce8038">
 <p>
 The goal is to associate to an input sequence of words, a sequence of
 hidden random variables, where each hidden variable indicates wether the
@@ -136,9 +136,9 @@ paper is for me confusing. However&#x2026;<br />
 </div>
 
 
-<div id="outline-container-orgc8e5eec" class="outline-3">
-<h3 id="orgc8e5eec">Encoder</h3>
-<div class="outline-text-3" id="text-orgc8e5eec">
+<div id="outline-container-org7771cf6" class="outline-3">
+<h3 id="org7771cf6">Encoder</h3>
+<div class="outline-text-3" id="text-org7771cf6">
 <p>
 Rationales are defined as the set of \(x_t\) such as \(z_t=1\). Therefore
 the input for the encoder is a <i>selection</i> of \(\X\).  Then you can pick
@@ -148,9 +148,9 @@ used RNNs and pick the last hidden state to make the final prediction
 </div>
 </div>
 
-<div id="outline-container-org0983cc8" class="outline-3">
-<h3 id="org0983cc8">Joint optimization</h3>
-<div class="outline-text-3" id="text-org0983cc8">
+<div id="outline-container-orgc0a4444" class="outline-3">
+<h3 id="orgc0a4444">Joint optimization</h3>
+<div class="outline-text-3" id="text-orgc0a4444">
 <p>
 From an input \(\X\) of length \(\lsrc\), it generates \(\lsrc\)  binary variables \(\Z\). The
 generator estimate \(P(\Z|\X)\). 
@@ -224,9 +224,9 @@ expected cost.
 </div>
 </div>
 
-<div id="outline-container-orgd930870" class="outline-3">
-<h3 id="orgd930870">Inference</h3>
-<div class="outline-text-3" id="text-orgd930870">
+<div id="outline-container-org4052838" class="outline-3">
+<h3 id="org4052838">Inference</h3>
+<div class="outline-text-3" id="text-org4052838">
 <p>
 While for inference: 
 </p>
@@ -241,13 +241,13 @@ While for inference:
 
 
 
-<div id="outline-container-org3782370" class="outline-2">
-<h2 id="org3782370">Questions / Comments</h2>
-<div class="outline-text-2" id="text-org3782370">
+<div id="outline-container-org9087602" class="outline-2">
+<h2 id="org9087602">Questions / Comments</h2>
+<div class="outline-text-2" id="text-org9087602">
 </div>
-<div id="outline-container-org5d31f9e" class="outline-3">
-<h3 id="org5d31f9e">Rationale /</h3>
-<div class="outline-text-3" id="text-org5d31f9e">
+<div id="outline-container-org2be6dfe" class="outline-3">
+<h3 id="org2be6dfe">Rationale /</h3>
+<div class="outline-text-3" id="text-org2be6dfe">
 <p>
 As written in the paper the notion of what counts as a rationale may
 be ambiguous in some contexts and the task of selecting rationales
@@ -258,9 +258,9 @@ where ambiguity is minimal (or can be minimized).
 </div>
 
 
-<div id="outline-container-org9a4f65d" class="outline-3">
-<h3 id="org9a4f65d">Training and inference</h3>
-<div class="outline-text-3" id="text-org9a4f65d">
+<div id="outline-container-orge93cb9a" class="outline-3">
+<h3 id="orge93cb9a">Training and inference</h3>
+<div class="outline-text-3" id="text-orge93cb9a">
 <ul class="org-ul">
 <li>For training, maybe I missed it but, there's no mention in the paper of the number of samples  used to approximate the expectation.</li>
 
@@ -273,9 +273,9 @@ implemented ? Just apply a threshold on the probability ? 0.5 ?
 </div>
 
 
-<div id="outline-container-org8a5ecb0" class="outline-3">
-<h3 id="org8a5ecb0">Attention based model for classification</h3>
-<div class="outline-text-3" id="text-org8a5ecb0">
+<div id="outline-container-orge92742a" class="outline-3">
+<h3 id="orge92742a">Attention based model for classification</h3>
+<div class="outline-text-3" id="text-orge92742a">
 <p>
 The rationale extraction can be understood as attention, even
 architectures and objectives differ. The discussion in the paper is
@@ -289,9 +289,9 @@ point, starting by <a href="https://arxiv.org/abs/1511.05234">this paper on stoc
 
 
 
-<div id="outline-container-orgcb08d06" class="outline-3">
-<h3 id="orgcb08d06">Encoder</h3>
-<div class="outline-text-3" id="text-orgcb08d06">
+<div id="outline-container-org3e2ff44" class="outline-3">
+<h3 id="org3e2ff44">Encoder</h3>
+<div class="outline-text-3" id="text-org3e2ff44">
 <p>
 The encoder is a "simple" rnn and the last hidden state is taken as
 input for classification. While we expect a short sequence after the
@@ -302,9 +302,9 @@ rationale extraction at the end.
 </div>
 </div>
 
-<div id="outline-container-org46f8ed7" class="outline-3">
-<h3 id="org46f8ed7">Loss function etc &#x2026;</h3>
-<div class="outline-text-3" id="text-org46f8ed7">
+<div id="outline-container-org2b11abd" class="outline-3">
+<h3 id="org2b11abd">Loss function etc &#x2026;</h3>
+<div class="outline-text-3" id="text-org2b11abd">
 <p>
 Note that the first regularization term could be l1 norm instead of l2, to favor sparsity. Maybe good for long documents.
 </p>

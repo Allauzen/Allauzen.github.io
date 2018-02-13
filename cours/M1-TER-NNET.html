@@ -1,6 +1,6 @@
 ---
-title: "TER : NNet / Traitement automatique des langues"
-date: 2017-11-01
+title: "NNet / Traitement automatique des langues"
+date: 2018-01-08
 layout: post
 categories: 
 tags: 
@@ -15,11 +15,187 @@ comments:
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
+<li><a href="#org050f62c">News et TODO-list</a>
+<ul>
+<li><a href="#orga3728da">à faire pour le 7/02</a></li>
+<li><a href="#org3c38b28">à faire pour le 24/01</a></li>
+<li><a href="#orgae448ec">Première séance le 10/01, et la seconde aura lieu le 24/01</a></li>
+</ul>
+</li>
+<li><a href="#org92bf546">Contenu</a>
+<ul>
+<li><a href="#org2b252e8">Séance 1 : le 10/01</a></li>
+<li><a href="#org79f0964">Séance 2 : le 24/01</a>
+<ul>
+<li><a href="#orgb2666ae">Eléments de correction</a></li>
+</ul>
+</li>
+<li><a href="#orgba56510">Séance 4 : le 31/01</a></li>
+<li><a href="#org89f8aec">Séance 5 : le 07/02</a></li>
+</ul>
+</li>
 <li><a href="#org3e67866">Contexte</a></li>
 </ul>
 </div>
 </div>
 <hr>
+
+<p>
+Le <b><b>dossier partagé</b></b> pour ce cours est le <a href="https://ocsync.limsi.fr/index.php/s/qeHOwyR9jVheFjC">suivant</a>. Vous y trouverez
+les cours et les ressources nécessaires. 
+</p>
+
+<div id="outline-container-org050f62c" class="outline-2">
+<h2 id="org050f62c">News et TODO-list</h2>
+<div class="outline-text-2" id="text-org050f62c">
+</div>
+<div id="outline-container-orga3728da" class="outline-3">
+<h3 id="orga3728da">à faire pour le 7/02</h3>
+<div class="outline-text-3" id="text-orga3728da">
+<p>
+Partant de la correction sur la regression logistique. Effectuer
+l'apprentissage sur les données imdb, soit le TP3. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3c38b28" class="outline-3">
+<h3 id="org3c38b28">à faire pour le 24/01</h3>
+<div class="outline-text-3" id="text-org3c38b28">
+<ul class="org-ul">
+<li>Il faut  finir le TP1. La partie importante est la dernière sur
+l'exploration de données. Un objectif est d'obtenir une liste de
+mots pour représenter les textes. Cette liste est obtenue à partir
+des mots observés dans les textes positifs <b><b>et</b></b> négatifs. On peut
+supprimer par exemple les mots les plus fréquents qui apparaissent
+dans les 2 catégories.</li>
+
+<li>Relire le cours, du moins les 2 premières parties et faire la liste
+des questions, s'il y en a.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgae448ec" class="outline-3">
+<h3 id="orgae448ec">Première séance le 10/01, et la seconde aura lieu le 24/01</h3>
+</div>
+</div>
+
+<div id="outline-container-org92bf546" class="outline-2">
+<h2 id="org92bf546">Contenu</h2>
+<div class="outline-text-2" id="text-org92bf546">
+</div>
+<div id="outline-container-org2b252e8" class="outline-3">
+<h3 id="org2b252e8">Séance 1 : le 10/01</h3>
+<div class="outline-text-3" id="text-org2b252e8">
+<ul class="org-ul">
+<li>Cours: Classification binaire / Séparation linéaire</li>
+<li>TP : Prise en main python et données imdb</li>
+</ul>
+</div>
+</div>
+
+
+
+<div id="outline-container-org79f0964" class="outline-3">
+<h3 id="org79f0964">Séance 2 : le 24/01</h3>
+<div class="outline-text-3" id="text-org79f0964">
+<ul class="org-ul">
+<li>Cours: Régression logistique, fontcion de coût et optimisation</li>
+<li>TP : Prise en main de pytorch</li>
+</ul>
+</div>
+
+<div id="outline-container-orgb2666ae" class="outline-4">
+<h4 id="orgb2666ae">Eléments de correction</h4>
+<div class="outline-text-4" id="text-orgb2666ae">
+<p>
+Pour dessiner les données (tous les points en noir)
+</p>
+<div class="org-src-container">
+<pre class="src src-python">plt.title(<span style="color: #ffa07a;">'Toy example: the raw data'</span>)
+plotData(ST1,ST2,-1. ,21, opt1=<span style="color: #ffa07a;">'ko'</span>, opt2=<span style="color: #ffa07a;">'ko'</span> )
+plt.show()
+</pre>
+</div>
+<p>
+Pour dessiner les données (chacun sa couleur)
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python">plt.title(<span style="color: #ffa07a;">'Toy example: the data with classes'</span>)
+plotData(ST1,ST2,-1. ,21)
+plt.show()
+</pre>
+</div>
+<p>
+En ajoutant une droite séparatrice
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">x + y = 20 -&gt; -20 + x + y = 0 </span>
+<span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">bias = -20 ; vecteur normal: (1,1)</span>
+plt.title(<span style="color: #ffa07a;">'Toy example: a first solution'</span>)
+plotDroite( matrix(<span style="color: #ffa07a;">'-20 ; 1 ; 1'</span>), -1, 21)
+plotData(ST1,ST2,-1. ,21)
+plt.show()
+</pre>
+</div>
+
+
+<p>
+Pour la dernière partie, le plan est: 
+</p>
+<ul class="org-ul">
+<li>définir le modèle</li>
+<li>la fonction objectif (de coût) à optimiser (minimiser ici)</li>
+<li>le choix d'un optimiseur qui permet d'adapter le pas de gradient</li>
+</ul>
+
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #00ffff;">import</span> torch <span style="color: #00ffff;">as</span> th
+<span style="color: #00ffff;">import</span> torch.autograd <span style="color: #00ffff;">as</span> ag
+<span style="color: #00ffff;">import</span> torch.nn.functional <span style="color: #00ffff;">as</span> F
+<span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">set the seed (reproductibility)</span>
+torch.manual_seed(1) 
+<span style="color: #eedd82;">D_in</span> = 2
+<span style="color: #eedd82;">D_out</span>= 1
+<span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">Use the nn package to define our model and loss function</span>
+<span style="color: #eedd82;">model</span> = th.nn.Sequential(
+    th.nn.Linear(D_in, D_out),
+    th.nn.Sigmoid()    
+)
+<span style="color: #eedd82;">loss_fn</span> = th.nn.BCELoss()
+<span style="color: #eedd82;">learning_rate</span> = 1e-1
+<span style="color: #eedd82;">optimizer</span> = torch.optim.SGD(model.parameters(), lr=learning_rate)
+</pre>
+</div>
+
+<p>
+Reste à écrire la boucle d'apprentissage pour la semaine prochaine. 
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgba56510" class="outline-3">
+<h3 id="orgba56510">Séance 4 : le 31/01</h3>
+<div class="outline-text-3" id="text-orgba56510">
+<ul class="org-ul">
+<li>TP : pytorch / regression logistique suite et fin + imdb</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org89f8aec" class="outline-3">
+<h3 id="org89f8aec">Séance 5 : le 07/02</h3>
+<div class="outline-text-3" id="text-org89f8aec">
+<p>
+Voir le travail à faire pour <b><b>avant</b></b> la séance: Finir la regression
+logistique sur imdb. 
+</p>
+</div>
+</div>
+</div>
 
 
 <div id="outline-container-org3e67866" class="outline-2">

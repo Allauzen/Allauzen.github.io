@@ -103,8 +103,15 @@ aka <a href="http://statmt.org/wmt17/">WMT17</a>.</li>
 <ul class="org-ul">
 <li>3 papers at the first conference on statistical machine translation,
 aka <a href="http://statmt.org/wmt16/">WMT16</a>.</li>
+
+<li>Special issue on <b>Deep Learning for Machine Translation</b> in the
+journal <b>Computer Speech and Language</b></li>
 </ul>
 
+<p>
+Submit a paper ! For more details see this
+<a href="http://www.journals.elsevier.com/computer-speech-and-language/call-for-papers/special-issue-on-deep-learning-for-machine-translation/">link</a>
+</p>
 
 <ul class="org-ul">
 <li>Tutorial on Deep learning and NLP applications at the
@@ -124,7 +131,8 @@ Rescoring.</li>
 <a href="http://www.atala.org/TALN-RECITAL-2015-22eme-conference">Apprentissage discriminant des modèles continus de traduction</a></li>
 
 <li>Check the website of the Digicosme working group on
-<b><a href="https://gt-deepnet.limsi.fr/">Deep Nets and learning representation</a></b> (in French). We will have nice invited speakers for
+<b><a href="https://gt-deepnet.limsi.fr/">Deep Nets and learning
+representation</a></b> (in French). We will have nice invited speakers for
 the upcoming sessions:
 
 <ul class="org-ul">
@@ -136,10 +144,11 @@ Boltzmann Machine Priors"</li>
 <li>May the 22nd: Edward Grefenstette (Google-Deepmind)</li>
 <li>June the 18th: Stéphane Mallat (CMAP)</li>
 </ul></li>
-</ul>
 
+<li>The temporary web site of the future master of Paris-Saclay
+<b><a href="https://perso.limsi.fr/allauzen/aic/pmwiki.php">Machine Learning for Information and Content</a></b> exists and provides details about
+appliction.</li>
 
-<ul class="org-ul">
 <li>Think about submiting to the 3rd edition of the workshop on
 <b><a href="https://sites.google.com/site/cvscworkshop2015">Continuous Vector Space Models and their Compositionality (CVSC)</a></b>, with a nice set of
 Keynote speakers:

@@ -1,0 +1,193 @@
+---
+title: "M1 : Probabilité Statistique et Théorie de l'Information"
+date: 2018-01-08
+layout: post
+categories: 
+tags: 
+- cours 
+- M1 
+- ProbaStat
+published: true
+comments: 
+---
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org94c1ed2">Travail à rendre</a>
+<ul>
+<li><a href="#orga76c6f9">Avant le 05/03/2018 13h29</a></li>
+</ul>
+</li>
+<li><a href="#org6155164">Séance 1</a></li>
+<li><a href="#org854a501">Séance 2</a></li>
+<li><a href="#org4eb87aa">Séance 3</a></li>
+<li><a href="#orge926f41">Séance 4</a>
+<ul>
+<li><a href="#org7051f6f">Correction partielle</a></li>
+</ul>
+</li>
+<li><a href="#orga0314d8">Séance 5</a></li>
+</ul>
+</div>
+</div>
+<hr>
+
+<p>
+Site du cours de M1 <i>Probabilité Statistique et Théorie de
+l'Information</i> en construction. 
+</p>
+
+<p>
+Les ressources liées au cours sont accessibles sur <a href="https://ocsync.limsi.fr/index.php/s/fSdulz6kS9dzK3Z">ce drive</a> 
+</p>
+
+<div id="outline-container-org94c1ed2" class="outline-2">
+<h2 id="org94c1ed2">Travail à rendre</h2>
+<div class="outline-text-2" id="text-org94c1ed2">
+</div>
+<div id="outline-container-orga76c6f9" class="outline-3">
+<h3 id="orga76c6f9">Avant le 05/03/2018 13h29</h3>
+<div class="outline-text-3" id="text-orga76c6f9">
+<p>
+Rendre un ou 2 notebooks (choisir un ou des noms de fichiers contenant
+votre identité). Le travail à faire: 
+</p>
+<ul class="org-ul">
+<li>Le dernier exercice du TP3 sur le Bayesien  Naïf (intitulé Bayésien
+naïf discret) avec des consignes détaillées plus bas</li>
+<li>Le TP4 sur la recherche Bayésienne</li>
+</ul>
+
+<p>
+Concernant la fin du TP3, il est important de : 
+</p>
+<ul class="org-ul">
+<li>estimer les paramètres sur les données d'apprentissage (<i>train</i>) et
+d'évaluer le résultat (taux d'erreur) sur les données de test
+(<i>test</i>).</li>
+<li>introduire la notion de lissage (voir le cours) et faire varier la
+valeur du coefficient de lissage (le alpha dans le cours) et
+regarder l'impact sur les résultats en test.</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+<div id="outline-container-org6155164" class="outline-2">
+<h2 id="org6155164">Séance 1</h2>
+<div class="outline-text-2" id="text-org6155164">
+<p>
+Le 8/01/18: 
+</p>
+<ul class="org-ul">
+<li>Cours: introduction et notions de bases</li>
+<li>TP : Intro à python</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org854a501" class="outline-2">
+<h2 id="org854a501">Séance 2</h2>
+<div class="outline-text-2" id="text-org854a501">
+<p>
+Le 15/01/18: 
+</p>
+<ul class="org-ul">
+<li>Cours : introduction au probabilité</li>
+<li>TD/TP : Exercice + intro à numpy</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org4eb87aa" class="outline-2">
+<h2 id="org4eb87aa">Séance 3</h2>
+<div class="outline-text-2" id="text-org4eb87aa">
+<p>
+Le 22/01/18:
+</p>
+<ul class="org-ul">
+<li>Cours : suite et fin des cours précédents</li>
+<li>TP : Fin du TP sur les probabilités + exercices sur les corrélations</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge926f41" class="outline-2">
+<h2 id="orge926f41">Séance 4</h2>
+<div class="outline-text-2" id="text-orge926f41">
+<p>
+Le 29/01/10
+</p>
+<ul class="org-ul">
+<li>Cours et TP : Bayésien Naif Gaussien sur les images</li>
+</ul>
+</div>
+<div id="outline-container-org7051f6f" class="outline-3">
+<h3 id="org7051f6f">Correction partielle</h3>
+<div class="outline-text-3" id="text-org7051f6f">
+<p>
+Estimation des paramètres et affichage 
+</p>
+<pre class="example">
+means = {}
+variances = {}
+priors = {}
+for lbl in range(NLABELS):
+    subtrain = images[labels==lbl] # get the subpart of train for the class
+    mean = subtrain.mean(axis=0)   # compute the mean 
+    print(subtrain.shape)          #        
+    means[lbl]=mean                # store the mean vector in a dict 
+    var = subtrain.var(axis=0)     # compute the variance
+    variances[lbl]=var             #
+    priors[lbl]=labels[labels==lbl].shape[0]
+    ###############################################
+    # plot everything
+    fig = plt.figure()
+    a=fig.add_subplot(1,2,1)
+    plt.imshow(mean.reshape(28,28) , matplotlib.pyplot.cm.spectral)  
+    a.set_title('mean image of the class '+str(lbl))
+    a=fig.add_subplot(1,2,2)
+    plt.imshow(var.reshape(28,28) , matplotlib.pyplot.cm.spectral)
+    a.set_title('variance of the class '+str(lbl))
+    matplotlib.pyplot.show()
+    ################################################
+priors = priors/priors.sum() # norm prior distribution
+</pre>
+<p>
+Puis pour l'inférence, le calcul des probabilités <i>a posteriori</i>: 
+</p>
+<pre class="example">
+def computePosteriors(image):
+    posteriors = np.zeros([NLABELS,1])
+    for lbl in range(NLABELS):
+	    mean = means[lbl]
+	    sigma2 = variances[lbl]
+	    non_null = sigma2!=0
+	    scale = 0.5*np.log(2*sigma2[non_null]*math.pi)
+	    expterm = -0.5*np.divide(np.square(image[non_null]-mean[non_null])
+				     ,sigma2[non_null])
+	    llh = (expterm-scale).sum()
+	    post = llh + np.log(priors[lbl]) 
+	    posteriors[lbl]=post
+    return posteriors
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orga0314d8" class="outline-2">
+<h2 id="orga0314d8">Séance 5</h2>
+<div class="outline-text-2" id="text-orga0314d8">
+<p>
+Le 05/02/18:
+</p>
+<ul class="org-ul">
+<li>Cours : fin du Bayésien Naif</li>
+<li>un TP long sur l'inférence Bayesienne (recherche)</li>
+</ul>
+</div>
+</div>

@@ -31,8 +31,7 @@ comments:
 <li><a href="#orgc9ae100">3. The problem of approximate inference in general</a>
 <ul>
 <li><a href="#orgb0dfcd9">3.1. The evidence lower bound (ELBO)</a></li>
-<li><a href="#orge2456ef">3.2. ELBO : some comments</a></li>
-<li><a href="#orga11b6ef">3.3. <span class="todo TODO">TODO</span> Example of variational inference</a></li>
+<li><a href="#orga11b6ef">3.2. <span class="todo TODO">TODO</span> Example of variational inference</a></li>
 </ul>
 </li>
 <li><a href="#org80fab12">4. Variational inference or MCMC</a></li>
@@ -336,7 +335,7 @@ For further insight, the elbo can be rewritten as:
 </p>
 
 \begin{align}
-\elbo(q)&= E_{q}[\log p(\Z)] + E_q [\log p(\X|\Z)]- E_q [\log q(\Z)]\\
+\elbo(q)&= E_{q}[\log p(\Z)] + E_q [\log p(\X|\Z)]- E_q [\log q(\Z)]
 &=  E_q [\log p(\X|\Z)] - \dkl(q(\Z)||p(\Z))
 \end{align}
 
@@ -350,39 +349,9 @@ In a lot of papers and books on variational inference, the elbo is  derived thro
 </div>
 </div>
 
-<div id="outline-container-orge2456ef" class="outline-3">
-<h3 id="orge2456ef"><span class="section-number-3">3.2</span> ELBO : some comments</h3>
-<div class="outline-text-3" id="text-3-2">
-<p>
-Variational inference aims at maximizing the ELBO. This means that we indirectly optimize two terms: 
-</p>
-<ul class="org-ul">
-<li>maximizing \(p(\X)\), the data evidence, while</li>
-<li>minimizing the divergence \(\dkl(q(\Z)||p(\Z|\X))\).</li>
-</ul>
-<p>
-The elbo term can written as: 
-</p>
-\begin{align} 
-\lb &= E_{q}[log p(\X,\Z|\pa)]- E_{q}[log q(\Z)] .
-\end{align} 
-<p>
-Maximizing the ELBO, means thus to jointly  maximize \(E_{q}[log p(\X,\Z|\pa)]\) and the entropy of the distribution \(q\). However we can further decompose the joint distribution: 
-</p>
-\begin{align} 
-\lb &= E_{q}[log p(\X|,\Z\pa) p(\Z|\pa)]- E_{q}[log q(\Z)] \\
-&= E_{q}[log p(\X|,\Z\pa)] + E_{q}[p(\Z|\pa)-log q(\Z)] \\
-&= E_{q}[log p(\X|,\Z\pa)] - \dkl( q(\Z)||p(\Z|\pa) ).
-\end{align} 
-<p>
-Therefore the second term can be interpreted as a régularization term on \(q\). 
-</p>
-</div>
-</div>
-
 
 <div id="outline-container-orga11b6ef" class="outline-3">
-<h3 id="orga11b6ef"><span class="section-number-3">3.3</span> <span class="todo TODO">TODO</span> Example of variational inference</h3>
+<h3 id="orga11b6ef"><span class="section-number-3">3.2</span> <span class="todo TODO">TODO</span> Example of variational inference</h3>
 </div>
 </div>
 
