@@ -17,7 +17,8 @@ comments:
 <ul>
 <li><a href="#org050f62c">News et TODO-list</a>
 <ul>
-<li><a href="#orga3728da">à faire pour le 7/02</a></li>
+<li><a href="#org79d4f99">à faire et à rendre pour le 07 mars</a></li>
+<li><a href="#org506d5ab">à faire pour le 14/02</a></li>
 <li><a href="#org3c38b28">à faire pour le 24/01</a></li>
 <li><a href="#orgae448ec">Première séance le 10/01, et la seconde aura lieu le 24/01</a></li>
 </ul>
@@ -31,7 +32,7 @@ comments:
 </ul>
 </li>
 <li><a href="#orgba56510">Séance 4 : le 31/01</a></li>
-<li><a href="#org89f8aec">Séance 5 : le 07/02</a></li>
+<li><a href="#orgf777253">Séance 5 : le 14/02</a></li>
 </ul>
 </li>
 <li><a href="#org3e67866">Contexte</a></li>
@@ -49,15 +50,56 @@ les cours et les ressources nécessaires.
 <h2 id="org050f62c">News et TODO-list</h2>
 <div class="outline-text-2" id="text-org050f62c">
 </div>
-<div id="outline-container-orga3728da" class="outline-3">
-<h3 id="orga3728da">à faire pour le 7/02</h3>
-<div class="outline-text-3" id="text-orga3728da">
+<div id="outline-container-org79d4f99" class="outline-3">
+<h3 id="org79d4f99">à faire et à rendre pour le 07 mars</h3>
+<div class="outline-text-3" id="text-org79d4f99">
+<p>
+Le travail à rendre est un bilan de ce que vous avez fait sur les
+derniers TPs sur la classification de textes sur les données imdb. Le
+format attendu est un notebook. Le travail attendu:
+</p>
+<ul class="org-ul">
+<li>implémentation du classifieur simple, la régression logistique (voir TP2 et 3)</li>
+<li>un réseau de neurone réalisant une toujours une régression logistique en sortie, mais le  texte à classer est vu comme un sac de mots binaire (comme avant aussi) et chaque mot est représenté par un vecteur, son embedding. Le modèle est donc une régression logistique branchée sur un <i>sac de word embeddings</i> (voir le TP4).</li>
+</ul>
+
+<p>
+Pour ces deux classifieurs, la démarche expérimentale est la même : 
+</p>
+<ul class="org-ul">
+<li>à partir d'une partition des données en <i>(train,dev,test)</i></li>
+<li>apprendre le modèle sur la partie <i>train</i></li>
+<li>si des hyperparamètres doivent être réglés (le pas de gradient, le choix de l'Optimizer, le nombre d'époque), cela est fait en regardant les résultats sur la partie <i>dev</i>.</li>
+<li>Le résultat d'évaluation est reporté sur le <i>test</i>.</li>
+</ul>
+
+<p>
+La répartition entre ces 3 parties est de l'ordre (80%,10%,10%). Un point important peut être de représenter l'évolution des grandeurs suivantes: 
+</p>
+<ul class="org-ul">
+<li>la fonction objectif sur le <i>train</i> et sur le <i>dev</i></li>
+<li>le taux de classification correcte (ou d'erreur) sur le <i>train</i> et sur le <i>dev</i></li>
+</ul>
+</div>
+</div>
+
+
+
+
+
+<div id="outline-container-org506d5ab" class="outline-3">
+<h3 id="org506d5ab">à faire pour le 14/02</h3>
+<div class="outline-text-3" id="text-org506d5ab">
 <p>
 Partant de la correction sur la regression logistique. Effectuer
-l'apprentissage sur les données imdb, soit le TP3. 
+l'apprentissage sur les données imdb, soit le TP3.  Le travail était à
+faire pour le 07/02, mais suite aux intempéries, la séance a été
+reportée.
 </p>
 </div>
 </div>
+
+
 
 <div id="outline-container-org3c38b28" class="outline-3">
 <h3 id="org3c38b28">à faire pour le 24/01</h3>
@@ -181,18 +223,23 @@ Reste à écrire la boucle d'apprentissage pour la semaine prochaine.
 <h3 id="orgba56510">Séance 4 : le 31/01</h3>
 <div class="outline-text-3" id="text-orgba56510">
 <ul class="org-ul">
-<li>TP : pytorch / regression logistique suite et fin + imdb</li>
+<li>TP2 et 3 : pytorch / regression logistique suite et fin + imdb</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org89f8aec" class="outline-3">
-<h3 id="org89f8aec">Séance 5 : le 07/02</h3>
-<div class="outline-text-3" id="text-org89f8aec">
+
+<div id="outline-container-orgf777253" class="outline-3">
+<h3 id="orgf777253">Séance 5 : le 14/02</h3>
+<div class="outline-text-3" id="text-orgf777253">
 <p>
 Voir le travail à faire pour <b><b>avant</b></b> la séance: Finir la regression
 logistique sur imdb. 
 </p>
+<ul class="org-ul">
+<li>Cours : le point sur les outils, puis les word embeddings</li>
+<li>TP4 : Reprendre le TP3 et passer au word embeddings</li>
+</ul>
 </div>
 </div>
 </div>
