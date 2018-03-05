@@ -1,0 +1,102 @@
+---
+title: "Transformer Nets / Attention is all you need"
+date: 2018-02-13
+layout: post
+categories: 
+tags: 
+published: true
+comments: 
+---
+<p>
+\(\newcommand{\X}{\mathbf{X}}\)
+\(\newcommand{\Y}{\mathbf{Y}}\)
+\(\newcommand{\Z}{\mathbf{Z}}\)
+</p>
+
+<p>
+\(\newcommand{\x}{\mathbf{x}}\)
+\(\newcommand{\y}{\mathbf{y}}\)
+\(\newcommand{\z}{\mathbf{z}}\)
+\(\newcommand{\pa}{\mathbf{\theta}}\)
+</p>
+<p>
+\(\newcommand{\paold}{\pa^{old}}\)
+\(\newcommand{\panew}{\pa^{new}}\)
+</p>
+
+<p>
+\(\newcommand{\lb}{\mathcal{L}(q;\pa)}\) 
+</p>
+<p>
+\(\newcommand{\dkl}{D_{kl}}\)
+</p>
+
+
+<p>
+\(\newcommand{\lsrc}{ I}\)
+\(\newcommand{\ltrg}{ J}\)
+</p>
+<hr>
+
+
+
+<p>
+\(\newcommand{\lsrc}{ I}\)
+\(\newcommand{\ltrg}{ J}\)
+\(\newcommand{\al}{ \alpha}\)
+\(\newcommand{\Z}{\mathbf{Z}}\)
+\(\newcommand{\C}{\mathbf{C}}\)
+\(\newcommand{\X}{\mathbf{X}}\)
+\(\newcommand{\x}{\mathbf{x}}\)
+\(\newcommand{\Y}{\mathbf{Y}}\)
+\(\newcommand{\Z}{\mathbf{Z}}\)
+</p>
+
+<p>
+\(\newcommand{\psmt}{\mathbf{\theta}}\)
+</p>
+
+
+
+<p>
+Transformer Nets are first described in the paper <a href="https://arxiv.org/abs/1706.03762">Attention is all you need</a>. It was published at <a href="https://papers.nips.cc/paper/7181-attention-is-all-you-need.pdf">NIPS 2017</a>. 6 month before, an implementation in pytorch <a href="https://github.com/jadore801120/attention-is-all-you-need-pytorch">was available</a>.  The notion of <a href="https://arxiv.org/abs/1703.03130">self-attention was also published in ICLR2017</a>. 
+</p>
+
+<div id="outline-container-orgefe2492" class="outline-2">
+<h2 id="orgefe2492">Terminology and basics of attention/transformer</h2>
+<div class="outline-text-2" id="text-orgefe2492">
+<p>
+The paper relies on the intensive use of 3 terms : Key, Value, and Query. Let us focus on the machine translation task. 
+</p>
+</div>
+
+
+<div id="outline-container-org27cdb3b" class="outline-3">
+<h3 id="org27cdb3b">NMT reminder</h3>
+<div class="outline-text-3" id="text-org27cdb3b">
+<p>
+Assume a source sentence \(\X = x_{1}^{\lsrc}\) and a target sentence \(\Y = y_{1}^{\ltrg}\). 
+A NMT system defines the probability distribution \(P(\Y|\X,\psmt)\) as a funtion  \(g\) parametrized by \(\psmt\): 
+</p>
+\begin{align}
+P(\Y|\X,\psmt) &= \prod_{j=1}^{j=J}P(y_j|y_{1}, ... , y_{j-1},\X,\psmt) \\
+P(y_j|y_{1}, ... , y_{j-1},\X,\psmt)  &= P(y_j|y_{j-1}, \C_j, s_j, \psmt) = g_{\psmt}(y_j,y_{j-1}, \C_j, s_j) \\
+\C_j &: \textrm{the context vector representing the source information} \\
+s_j &: \textrm{the hidden state of the decoder }\\
+\al_j &= \textrm{the attention coefficients associated to the generation of } y_j\\
+\C_j &=  \sum_{i=1}^I \al_{ij} x_i\\
+\al_{ji} &= \frac{\exp(a(s_{j-1},x_i))}{\sum_i \exp(a(s_{j-1},\x_i))}\\
+\x_i &:\textrm{a vector representing the source word } x_i
+\end{align}
+
+<p>
+The NMT system is in this form decomposed in three parts: 
+</p>
+<ul class="org-ul">
+<li>The encoder generates the sequence of vectors \(\x_i^{\lsrc}\) from the source sentence, with one vector per source words.</li>
+<li>The decoder generates the target sequence and implements \(g_{\psmt}\).</li>
+<li>The attention model makes the link between both of them by computing at each decoding step the context vector \(\C_j\).</li>
+</ul>
+</div>
+</div>
+</div>
