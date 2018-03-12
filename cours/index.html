@@ -171,25 +171,27 @@ If you want to convert an image which is a matrix in a simple array:
 <p>
 In python 2: 
 </p>
-<pre class="example">
-import cPickle, gzip, numpy
-# Load the dataset
-f = gzip.open('mnist.pkl.gz', 'rb') 
-train_set, valid_set, test_set = cPickle.load(f) 
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #00ffff;">import</span> cPickle, gzip, numpy
+<span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">Load the dataset</span>
+<span style="color: #ffffff; background-color: #000000;">f</span> = gzip.open(<span style="color: #ffa07a;">'mnist.pkl.gz'</span>, <span style="color: #ffa07a;">'rb'</span>) 
+<span style="color: #ffffff; background-color: #000000;">train_set</span>, <span style="color: #ffffff; background-color: #000000;">valid_set</span>, <span style="color: #ffffff; background-color: #000000;">test_set</span> = cPickle.load(f) 
 f.close()
 </pre>
+</div>
 <p>
 While in python 3: 
 </p>
-<pre class="example">
-import pickle, gzip, numpy
-# Load the dataset
-f = gzip.open('./mnist.pkl.gz', 'rb')
-u = pickle._Unpickler(f)
-u.encoding = 'latin1'
-p = u.load()
-train_set, valid_set, test_set = p
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #00ffff;">import</span> pickle, gzip, numpy
+<span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">Load the dataset</span>
+<span style="color: #ffffff; background-color: #000000;">f</span> = gzip.open(<span style="color: #ffa07a;">'./mnist.pkl.gz'</span>, <span style="color: #ffa07a;">'rb'</span>)
+<span style="color: #ffffff; background-color: #000000;">u</span> = pickle._Unpickler(f)
+<span style="color: #ffffff; background-color: #000000;">u.encoding</span> = <span style="color: #ffa07a;">'latin1'</span>
+<span style="color: #ffffff; background-color: #000000;">p</span> = u.load()
+<span style="color: #ffffff; background-color: #000000;">train_set</span>, <span style="color: #ffffff; background-color: #000000;">valid_set</span>, <span style="color: #ffffff; background-color: #000000;">test_set</span> = p
 </pre>
+</div>
 
 <p>
 Each set (train, valid and test) is an array that contains two objects:
@@ -201,22 +203,24 @@ Each set (train, valid and test) is an array that contains two objects:
 <li>An array of integers that encode the corresponding labels</li>
 </ul>
 
-<pre class="example">
-im = train_set[0][0]      # the first image 
-im = numpy.append([1.],im) # add one component 
-label = train_set[1][0]  # its label 
-numpy.dot(w,im)            # the dot product of the image with a 
-			   #vector  of the same size.
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #ffffff; background-color: #000000;">im</span> = train_set[<span style="color: #ffffff; background-color: #000000;">0</span>][<span style="color: #ffffff; background-color: #000000;">0</span>]      <span style="color: #ff7f24;"># the first image </span>
+<span style="color: #ffffff; background-color: #000000;">im</span> = numpy.append([<span style="color: #ffffff; background-color: #000000;">1</span>.],im) <span style="color: #ff7f24;"># add one component </span>
+<span style="color: #ffffff; background-color: #000000;">label</span> = train_set[<span style="color: #ffffff; background-color: #000000;">1</span>][<span style="color: #ffffff; background-color: #000000;">0</span>]  <span style="color: #ff7f24;"># its label </span>
+numpy.dot(w,im)            <span style="color: #ff7f24;"># the dot product of the image with a </span>
+               <span style="color: #ff7f24;">#vector  of the same size.</span>
 </pre>
+</div>
 <p>
 If you want to display an image 
 </p>
-<pre class="example">
-import matplotlib.pyplot as plt 
-im = train_set[0][0].reshape(28,28) 
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #00ffff;">import</span> matplotlib.pyplot <span style="color: #00ffff;">as</span> plt 
+<span style="color: #ffffff; background-color: #000000;">im</span> = train_set[<span style="color: #ffffff; background-color: #000000;">0</span>][<span style="color: #ffffff; background-color: #000000;">0</span>].reshape(<span style="color: #ffffff; background-color: #000000;">28</span>,<span style="color: #ffffff; background-color: #000000;">28</span>) 
 plt.show()
-plt.imshow(im.reshape(28,28) , plt.cm.gray) 
+plt.imshow(im.reshape(<span style="color: #ffffff; background-color: #000000;">28</span>,<span style="color: #ffffff; background-color: #000000;">28</span>) , plt.cm.gray) 
 </pre>
+</div>
 </div>
 </div>
 

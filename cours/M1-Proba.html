@@ -152,49 +152,51 @@ Le 29/01/10
 <p>
 Estimation des paramètres et affichage 
 </p>
-<pre class="example">
-means = {}
-variances = {}
-priors = {}
-for lbl in range(NLABELS):
-    subtrain = images[labels==lbl] # get the subpart of train for the class
-    mean = subtrain.mean(axis=0)   # compute the mean 
-    print(subtrain.shape)          #        
-    means[lbl]=mean                # store the mean vector in a dict 
-    var = subtrain.var(axis=0)     # compute the variance
-    variances[lbl]=var             #
-    priors[lbl]=labels[labels==lbl].shape[0]
-    ###############################################
-    # plot everything
-    fig = plt.figure()
-    a=fig.add_subplot(1,2,1)
-    plt.imshow(mean.reshape(28,28) , matplotlib.pyplot.cm.spectral)  
-    a.set_title('mean image of the class '+str(lbl))
-    a=fig.add_subplot(1,2,2)
-    plt.imshow(var.reshape(28,28) , matplotlib.pyplot.cm.spectral)
-    a.set_title('variance of the class '+str(lbl))
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #ffffff; background-color: #000000;">means</span> = {}
+<span style="color: #ffffff; background-color: #000000;">variances</span> = {}
+<span style="color: #ffffff; background-color: #000000;">priors</span> = {}
+<span style="color: #00ffff;">for</span> lbl <span style="color: #00ffff;">in</span> <span style="color: #b0c4de;">range</span>(NLABELS):
+    <span style="color: #ffffff; background-color: #000000;">subtrain</span> = images[<span style="color: #ffffff; background-color: #000000;">labels</span>==lbl] <span style="color: #ff7f24;"># get the subpart of train for the class</span>
+    <span style="color: #ffffff; background-color: #000000;">mean</span> = subtrain.mean(<span style="color: #ffffff; background-color: #000000;">axis</span>=<span style="color: #ffffff; background-color: #000000;">0</span>)   <span style="color: #ff7f24;"># compute the mean </span>
+    <span style="color: #00ffff;">print</span>(subtrain.shape)          <span style="color: #ff7f24;">#        </span>
+    <span style="color: #ffffff; background-color: #000000;">means</span>[lbl]=mean                <span style="color: #ff7f24;"># store the mean vector in a dict </span>
+    <span style="color: #ffffff; background-color: #000000;">var</span> = subtrain.var(<span style="color: #ffffff; background-color: #000000;">axis</span>=<span style="color: #ffffff; background-color: #000000;">0</span>)     <span style="color: #ff7f24;"># compute the variance</span>
+    <span style="color: #ffffff; background-color: #000000;">variances</span>[lbl]=var             <span style="color: #ff7f24;">#</span>
+    <span style="color: #ffffff; background-color: #000000;">priors</span>[lbl]=labels[<span style="color: #ffffff; background-color: #000000;">labels</span>==lbl].shape[<span style="color: #ffffff; background-color: #000000;">0</span>]
+    <span style="color: #ff7f24;">###############################################</span>
+    <span style="color: #ff7f24;"># plot everything</span>
+    <span style="color: #ffffff; background-color: #000000;">fig</span> = plt.figure()
+    <span style="color: #ffffff; background-color: #000000;">a</span>=fig.add_subplot(<span style="color: #ffffff; background-color: #000000;">1</span>,<span style="color: #ffffff; background-color: #000000;">2</span>,<span style="color: #ffffff; background-color: #000000;">1</span>)
+    plt.imshow(mean.reshape(<span style="color: #ffffff; background-color: #000000;">28</span>,<span style="color: #ffffff; background-color: #000000;">28</span>) , matplotlib.pyplot.cm.spectral)  
+    a.set_title(<span style="color: #ffa07a;">'mean image of the class '</span>+<span style="color: #b0c4de;">str</span>(lbl))
+    <span style="color: #ffffff; background-color: #000000;">a</span>=fig.add_subplot(<span style="color: #ffffff; background-color: #000000;">1</span>,<span style="color: #ffffff; background-color: #000000;">2</span>,<span style="color: #ffffff; background-color: #000000;">2</span>)
+    plt.imshow(var.reshape(<span style="color: #ffffff; background-color: #000000;">28</span>,<span style="color: #ffffff; background-color: #000000;">28</span>) , matplotlib.pyplot.cm.spectral)
+    a.set_title(<span style="color: #ffa07a;">'variance of the class '</span>+<span style="color: #b0c4de;">str</span>(lbl))
     matplotlib.pyplot.show()
-    ################################################
-priors = priors/priors.sum() # norm prior distribution
+    <span style="color: #ff7f24;">################################################</span>
+<span style="color: #ffffff; background-color: #000000;">priors</span> = priors/priors.sum() <span style="color: #ff7f24;"># norm prior distribution</span>
 </pre>
+</div>
 <p>
 Puis pour l'inférence, le calcul des probabilités <i>a posteriori</i>: 
 </p>
-<pre class="example">
-def computePosteriors(image):
-    posteriors = np.zeros([NLABELS,1])
-    for lbl in range(NLABELS):
-	    mean = means[lbl]
-	    sigma2 = variances[lbl]
-	    non_null = sigma2!=0
-	    scale = 0.5*np.log(2*sigma2[non_null]*math.pi)
-	    expterm = -0.5*np.divide(np.square(image[non_null]-mean[non_null])
-				     ,sigma2[non_null])
-	    llh = (expterm-scale).sum()
-	    post = llh + np.log(priors[lbl]) 
-	    posteriors[lbl]=post
-    return posteriors
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #00ffff;">def</span> <span style="color: #87cefa;">computePosteriors</span>(image):
+    <span style="color: #ffffff; background-color: #000000;">posteriors</span> = np.zeros([NLABELS,<span style="color: #ffffff; background-color: #000000;">1</span>])
+    <span style="color: #00ffff;">for</span> lbl <span style="color: #00ffff;">in</span> <span style="color: #b0c4de;">range</span>(NLABELS):
+        <span style="color: #ffffff; background-color: #000000;">mean</span> = means[lbl]
+        <span style="color: #ffffff; background-color: #000000;">sigma2</span> = variances[lbl]
+        <span style="color: #ffffff; background-color: #000000;">non_null</span> = sigma2!=<span style="color: #ffffff; background-color: #000000;">0</span>
+        <span style="color: #ffffff; background-color: #000000;">scale</span> = <span style="color: #ffffff; background-color: #000000;">0</span>.<span style="color: #ffffff; background-color: #000000;">5</span>*np.log(<span style="color: #ffffff; background-color: #000000;">2</span>*sigma2[non_null]*math.pi)
+        <span style="color: #ffffff; background-color: #000000;">expterm</span> = -<span style="color: #ffffff; background-color: #000000;">0</span>.<span style="color: #ffffff; background-color: #000000;">5</span>*np.divide(np.square(image[non_null]-mean[non_null])
+                     ,sigma2[non_null])
+        <span style="color: #ffffff; background-color: #000000;">llh</span> = (expterm-scale).sum()
+        <span style="color: #ffffff; background-color: #000000;">post</span> = llh + np.log(priors[lbl]) 
+        <span style="color: #ffffff; background-color: #000000;">posteriors</span>[lbl]=post
+    <span style="color: #00ffff;">return</span> posteriors
 </pre>
+</div>
 </div>
 </div>
 </div>
@@ -232,7 +234,7 @@ Le 05/03/18
 Le 12/03/18
 </p>
 <ul class="org-ul">
-<li>Cours : Information Theory / partie 1</li>
+<li>Cours : Information Theory / partie 2</li>
 <li>TP : Application de l'information mutuelle</li>
 </ul>
 </div>
