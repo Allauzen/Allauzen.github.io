@@ -16,6 +16,7 @@ comments:
 <ul>
 <li><a href="#orgbf8b485">Travail à rendre</a>
 <ul>
+<li><a href="#org2e5522d">Soutenances finale le 09/04</a></li>
 <li><a href="#org83f2134">Avant le 12/03/2018 13h29</a></li>
 <li><a href="#org4f807f6">Avant le 05/03/2018 13h29</a></li>
 </ul>
@@ -31,6 +32,15 @@ comments:
 <li><a href="#orgfd95088">Séance 5</a></li>
 <li><a href="#org9b635dd">Séance 6</a></li>
 <li><a href="#orga04e5e6">Séance 7</a></li>
+<li><a href="#org96b71cb">Les dernières séances</a></li>
+<li><a href="#orgcc59ef3">Projet à rendre / soutenances</a>
+<ul>
+<li><a href="#orgbf30d9d">Exercice 1 (8 pts)</a></li>
+<li><a href="#org371f0e5">Exercice 2 (10 pts)</a></li>
+<li><a href="#org9c03fae">Excercice 3 (7 pts)</a></li>
+<li><a href="#org14ac9ac">Consignes</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -48,6 +58,14 @@ Les ressources liées au cours sont accessibles sur <a href="https://ocsync.lims
 <div id="outline-container-orgbf8b485" class="outline-2">
 <h2 id="orgbf8b485">Travail à rendre</h2>
 <div class="outline-text-2" id="text-orgbf8b485">
+</div>
+<div id="outline-container-org2e5522d" class="outline-3">
+<h3 id="org2e5522d">Soutenances finale le 09/04</h3>
+<div class="outline-text-3" id="text-org2e5522d">
+<p>
+Voir plus bas (projet) pour les détails. 
+</p>
+</div>
 </div>
 <div id="outline-container-org83f2134" class="outline-3">
 <h3 id="org83f2134">Avant le 12/03/2018 13h29</h3>
@@ -237,5 +255,193 @@ Le 12/03/18
 <li>Cours : Information Theory / partie 2</li>
 <li>TP : Application de l'information mutuelle</li>
 </ul>
+</div>
+</div>
+
+<div id="outline-container-org96b71cb" class="outline-2">
+<h2 id="org96b71cb">Les dernières séances</h2>
+<div class="outline-text-2" id="text-org96b71cb">
+<ul class="org-ul">
+<li>8: 19/03</li>
+<li>9: 26/03 Rien</li>
+<li>10: 09/04 Soutenances</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orgcc59ef3" class="outline-2">
+<h2 id="orgcc59ef3">Projet à rendre / soutenances</h2>
+<div class="outline-text-2" id="text-orgcc59ef3">
+<p>
+Repartons du TP sur Bayésien Naif Gaussien appliqué aux images MNIST. 
+</p>
+</div>
+
+<div id="outline-container-orgbf30d9d" class="outline-3">
+<h3 id="orgbf30d9d">Exercice 1 (8 pts)</h3>
+<div class="outline-text-3" id="text-orgbf30d9d">
+<ul class="org-ul">
+<li>Expliciter et expliquer l'hypothèse faite lors de la construction du</li>
+</ul>
+<p>
+classifieur. En particulier, chaque pixel est considéré comme une
+variable aléatoire et donc une image comme la réalisation d'un vecteur
+aléatoire.  Quelle hypothèse est faite sur la
+dépendance entre les pixels ?  Quel est l'impact sur la matrice de covariance ? 
+</p>
+<ul class="org-ul">
+<li>Proposer une mesure permettant d'évaluer cette hypothèse.</li>
+<li>Évaluons cette hypothèse en considérant comme voisinage  pour chaque pixel, son
+voisin de gauche et de droite.</li>
+<li>Si nous faisions l'hypothèse qu'un pixel ne dépend que de ses
+voisins immédiats de gauche et de droite, écrire les paramètres à
+estimer et comment les estimer.</li>
+<li>BONUS: Coder et expérimenter ce modèle</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org371f0e5" class="outline-3">
+<h3 id="org371f0e5">Exercice 2 (10 pts)</h3>
+<div class="outline-text-3" id="text-org371f0e5">
+<p>
+Le classifieur vu en TP considère la réalisation un pixel
+conditionnellement à une classe comme une variable aléatoire
+gaussienne.
+</p>
+<ul class="org-ul">
+<li>Prenez les images de la classe 4, prendre 5 pixels avec une forte
+variance et tracer pour chacun la répartition des valeurs avec un
+histogramme.</li>
+<li>Faites la même chose pour la classe 5.</li>
+<li>Commenter les résultats obtenus</li>
+</ul>
+
+<p>
+Supposons maintenant que la valeur d'un pixel conditionnellement à sa
+classe est en fait une variable aléatoire dont la distribution est
+donné par le mélange de 2 gaussiennes: 
+\[ X_i|Y=y \sim \alpha_{i,y,1}\mathcal{N}(\mu_{i,y,1},
+\sigma_{i,y,1}) + \alpha_{i,y,2}\mathcal{N}(\mu_{i,y,2}, \sigma_{i,y,2})
+\]
+\[
+p(x_i|y) = \alpha_{i,y,1} p_1(x|y)  + \alpha_{i,y,2} p_2(x|y),
+\]
+avec \(p_1(x|y)   = \mathcal{N}(\mu_{i,y,1}, \sigma_{i,y,1})\). La distribution est en fait l'interpolation linéaire de 2 gaussiennes,
+et : 
+\[  \alpha_{i,y,1} +  \alpha_{i,y,2}  =1 \]
+La question qui se pose est comment calculer les paramètres de ce
+nouveau modèle pour une classe \(y\) donnée, à savoir : 
+\[(\alpha_{i,y,1},\alpha_{i,y,2},  \mu_{i,y,1} ,  \mu_{i,y,2},
+\sigma_{i,y,1} ,\sigma_{i,y,2})\]
+et nous allons voir comment au travers des questions suivantes. 
+</p>
+
+<p>
+Prenons par exemple les images de la classe 5 et un pixel du centre de
+l'image (par exemple un des pixels que vous avez sélectionné dans une
+des questions précédentes).  Dans le cas à une seule gaussienne,
+chaque réalisation contribue à l'estimation des statistiques
+nécessaires (\(\mu,\sigma\)). Avec 2 gaussiennes, on ne sais pas à
+gaussienne, une observation va contribuer. Mais on peut calculer cette
+contribution, si on connait et fixe les paramètres. 
+</p>
+
+<ul class="org-ul">
+<li>Proposer une fonction permettant de calculer la contribution d'une
+réalisation à chacune des gaussienne. Sachant que la somme des deux
+contributions est 1 et qu'elles dépendent de \(\alpha_{i,y,1},
+  \alpha_{i,y,1}, p_1, p_2\).</li>
+<li>Une fois connue cette contribution, il est possible de mettre à jour
+les paramètres, puisque l'on sait pour chaque réalisation, de
+combien elle participe à chaque gaussienne. Une fois les
+contribution de chaque réalisation calculée sur les données
+d'apprentissage, écrire la formule d'estimation des paramètres pour</li>
+</ul>
+<p>
+\[(\alpha_{i,y,1},\alpha_{i,y,2},  \mu_{i,y,1} ,  \mu_{i,y,2},
+\sigma_{i,y,1} ,\sigma_{i,y,2}).\]
+</p>
+
+<p>
+Ainsi, si les paramètres sont connus, il est possible de calculer les
+contributions de chaque exemple, puis de recalculer les
+paramètres. Ainsi l'algorithme d'apprentissage est itératif: 
+</p>
+<ul class="org-ul">
+<li>0 : initialisation des contributions (tirage au hasard entre les
+deux gaussiennes)</li>
+<li>1 : Calcul des paramètres.</li>
+<li>2 : Calcul des contributions et retour à l'étape 1</li>
+</ul>
+
+<p>
+Cet algorithme s'appelle E.M, et vous allez l'implémenter avec 2
+fonctions à coder et à tester. 
+</p>
+<ul class="org-ul">
+<li>Partir des données MNIST et les images de la classe 5, estimer les
+paramètres du mélange, visualiser la distribution obtenues pour les
+pixels sélectionnés et comparer cette fonction à l'histogramme des
+valeurs.</li>
+<li>Recommencer avec plusieurs initialisations aléatoires pour comparer
+les résultats. Sont-ils stables ?</li>
+<li>Faire de même avec la classe 4</li>
+<li>BONUS : coder un classifier qui utilise un mélange de 2 gaussiennes
+pour modéliser \(X_i|Y\), évaluer ses performances et comparer avec le
+classifieur de base.</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org9c03fae" class="outline-3">
+<h3 id="org9c03fae">Excercice 3 (7 pts)</h3>
+<div class="outline-text-3" id="text-org9c03fae">
+<p>
+Dans le TP sur le Bayésien Naif, il y a un exercice sur
+m'implémentation et l'expérimentation d'un classifieur binomial que
+vous deviez faire et rendre. C'est l'occasion. 
+</p>
+</div>
+</div>
+
+
+
+<div id="outline-container-org14ac9ac" class="outline-3">
+<h3 id="org14ac9ac">Consignes</h3>
+<div class="outline-text-3" id="text-org14ac9ac">
+<p>
+Ce travail est à faire en binôme ou trinôme. Ce projet fera objet
+d'une soutenance qui aura lieu lors de la dernière séance de cours, le
+09/04. Vous devez, avant le 09/04 rendre un notebook avec vos
+contributions (ou si vous préférez un rapport au format pdf et un
+fichier source). 
+</p>
+
+<p>
+Lors de la soutenance, vous devrez présenter rapidement ce que vous
+avez fait et les résultats importants, en 10 minutes maximum. Il
+faudra sélectionner. Par exemple, les réponses aux questions "de
+cours", doivent être mise dans le rapport ou le notebook, mais pas
+nécessairement dans la présentation. La soutenance sera complétée par
+10 minutes de questions portant sur les exercices et donc le cours
+(partie théorique et pratique). 
+</p>
+
+<p>
+Vous pouvez utiliser votre propre implémentation et/ou bien spur
+utiliser des librairies existantes. Dans ce cas, il est important de
+le mentionner. 
+</p>
+
+<p>
+Le total des points excède 20 points. Les points qui dépasseraient
+le maximum seront reportés sur les autres notes concernant les travaux
+rendus.
+</p>
+</div>
 </div>
 </div>
