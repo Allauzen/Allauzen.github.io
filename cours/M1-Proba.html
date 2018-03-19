@@ -273,14 +273,14 @@ Le 12/03/18
 <div id="outline-container-orgcc59ef3" class="outline-2">
 <h2 id="orgcc59ef3">Projet à rendre / soutenances</h2>
 <div class="outline-text-2" id="text-orgcc59ef3">
-<p>
-Repartons du TP sur Bayésien Naif Gaussien appliqué aux images MNIST. 
-</p>
 </div>
-
 <div id="outline-container-orgbf30d9d" class="outline-3">
 <h3 id="orgbf30d9d">Exercice 1 (8 pts)</h3>
 <div class="outline-text-3" id="text-orgbf30d9d">
+<p>
+Partons de l'exercice 3 (à faire de préférence avant)
+</p>
+
 <ul class="org-ul">
 <li>Expliciter et expliquer l'hypothèse faite lors de la construction du</li>
 </ul>
@@ -296,16 +296,26 @@ dépendance entre les pixels ?  Quel est l'impact sur la matrice de covariance ?
 voisin de gauche et de droite.</li>
 <li>Si nous faisions l'hypothèse qu'un pixel ne dépend que de ses
 voisins immédiats de gauche et de droite, écrire les paramètres à
-estimer et comment les estimer.</li>
+estimer et comment les estimer.  On pourra se contenter de
+dépendances simples: si une image est un vecteur, un pixel (une
+composante du vecteur) dépend du pixel avant et après dans le
+vecteur; pour les pixels sur les bords du vecteurs peuvent être
+ignoré si besoin.</li>
+
 <li>BONUS: Coder et expérimenter ce modèle</li>
 </ul>
 </div>
 </div>
 
 
+
 <div id="outline-container-org371f0e5" class="outline-3">
 <h3 id="org371f0e5">Exercice 2 (10 pts)</h3>
 <div class="outline-text-3" id="text-org371f0e5">
+<p>
+Repartons du TP sur Bayésien Naif Gaussien appliqué aux images MNIST. 
+</p>
+
 <p>
 Le classifieur vu en TP considère la réalisation un pixel
 conditionnellement à une classe comme une variable aléatoire
