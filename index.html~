@@ -1,6 +1,6 @@
 ---
 title: ""
-date: 2017-10-25
+date: 2018-08-21
 layout: mainpage
 categories: 
 tags: 
@@ -15,15 +15,21 @@ comments:
 <h2 id="orge69dc51">News</h2>
 <div class="outline-text-2" id="text-orge69dc51">
 <ul class="org-ul">
-<li>With Hinrich Schütze and Emmanuel Morin, we are editors of a
+<li>With Matthieu Labeau:<a href="https://aclanthology.coli.uni-saarland.de/papers/C18-1261/c18-1261">Learning with Noise-Contrastive Estimation:
+Easing training by learning to scale</a>, in COLING 2018. The paper was
+one of the <a href="https://coling2018.org/coling-2018-best-papers/">"Area Chair Favorites"</a>.</li>
+
+<li>With Hinrich Schütze and Sophie Rosset, we are editors of a
 Special issue on <b>Deep-Learning for NLP</b> of the TAL journal. Submit
 a paper ! See <a href="https://tal-59-2.sciencesconf.org/">the official page for more detail</a>.</li>
 
+<li>Invited Talk at the day "NLP and AI" of the French conference on AI
+(PFIA) in Nancy. My talk was about <i>Language models: large
+vocabulary challenges</i>.</li>
+
 <li>Our paper <a href="https://arxiv.org/abs/1603.05962">Document Neural Autoregressive Distribution Estimation</a>
 with Stanislas Lauly, Yin Zheng and Hugo Larochelle has been
-<b>accepted in JMLR</b>.</li>
-
-<li>Invited Talk</li>
+published in <b>JMLR</b>.</li>
 
 <li>With Matthieu Labeau: <b>Best paper award</b> at <a href="https://sites.google.com/view/sclem2017/schedule"> SCLeM 2017</a> with our paper <i>Character and Subword-Based Word Representation for Neural Language Modeling Prediction</i>. If you attend EMNLP workshops, see the talk and the poster, September 7, 2017 in Copenhagen.</li>
 
@@ -38,14 +44,23 @@ with Stanislas Lauly, Yin Zheng and Hugo Larochelle has been
 <div id="text-table-of-contents">
 <ul>
 <li><a href="#orge69dc51">News</a></li>
-<li><a href="#orgc3c6efb">Main research interest</a></li>
 <li><a href="#org574bf77">Publication</a></li>
+<li><a href="#orgc3c6efb">Main research interest</a></li>
 <li><a href="#org36ff7e7">Older news</a></li>
 <li><a href="#org87c1367">Talks on deep-learning for NLP</a></li>
 <li><a href="#orgbac19ae">Contact</a></li>
 </ul>
 </div>
 </div>
+</div>
+</div>
+
+<div id="outline-container-org574bf77" class="outline-2">
+<h2 id="org574bf77">Publication</h2>
+<div class="outline-text-2" id="text-org574bf77">
+<p>
+<a href="https://perso.limsi.fr/Individu/allauzen/my_publication/html/index.html">publication page</a>  or <a href="http://scholar.google.com/citations?hl=en&amp;user=B2-gXkkAAAAJ">my Google Scholar page</a>
+</p>
 </div>
 </div>
 
@@ -65,14 +80,6 @@ group</a>.
 </div>
 </div>
 
-<div id="outline-container-org574bf77" class="outline-2">
-<h2 id="org574bf77">Publication</h2>
-<div class="outline-text-2" id="text-org574bf77">
-<p>
-<a href="https://perso.limsi.fr/Individu/allauzen/my_publication/html/index.html">publication page</a>  or <a href="http://scholar.google.com/citations?hl=en&amp;user=B2-gXkkAAAAJ">my Google Scholar page</a>
-</p>
-</div>
-</div>
 
 
 
@@ -103,15 +110,8 @@ aka <a href="http://statmt.org/wmt17/">WMT17</a>.</li>
 <ul class="org-ul">
 <li>3 papers at the first conference on statistical machine translation,
 aka <a href="http://statmt.org/wmt16/">WMT16</a>.</li>
-
-<li>Special issue on <b>Deep Learning for Machine Translation</b> in the
-journal <b>Computer Speech and Language</b></li>
 </ul>
 
-<p>
-Submit a paper ! For more details see this
-<a href="http://www.journals.elsevier.com/computer-speech-and-language/call-for-papers/special-issue-on-deep-learning-for-machine-translation/">link</a>
-</p>
 
 <ul class="org-ul">
 <li>Tutorial on Deep learning and NLP applications at the
@@ -131,8 +131,7 @@ Rescoring.</li>
 <a href="http://www.atala.org/TALN-RECITAL-2015-22eme-conference">Apprentissage discriminant des modèles continus de traduction</a></li>
 
 <li>Check the website of the Digicosme working group on
-<b><a href="https://gt-deepnet.limsi.fr/">Deep Nets and learning
-representation</a></b> (in French). We will have nice invited speakers for
+<b><a href="https://gt-deepnet.limsi.fr/">Deep Nets and learning representation</a></b> (in French). We will have nice invited speakers for
 the upcoming sessions:
 
 <ul class="org-ul">
@@ -144,11 +143,10 @@ Boltzmann Machine Priors"</li>
 <li>May the 22nd: Edward Grefenstette (Google-Deepmind)</li>
 <li>June the 18th: Stéphane Mallat (CMAP)</li>
 </ul></li>
+</ul>
 
-<li>The temporary web site of the future master of Paris-Saclay
-<b><a href="https://perso.limsi.fr/allauzen/aic/pmwiki.php">Machine Learning for Information and Content</a></b> exists and provides details about
-appliction.</li>
 
+<ul class="org-ul">
 <li>Think about submiting to the 3rd edition of the workshop on
 <b><a href="https://sites.google.com/site/cvscworkshop2015">Continuous Vector Space Models and their Compositionality (CVSC)</a></b>, with a nice set of
 Keynote speakers:
@@ -220,7 +218,7 @@ Tél : 01 69 85 80 27
 </p>
 
 <p>
-Mail : allauzen<sub>at</sub><sub>limsi.fr</sub><sub>(replace<sub>at</sub>)</sub>
+Mail : allauzenATlimsi.fr(replace<sub>at</sub>)
 </p>
 </div>
 </div>

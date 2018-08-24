@@ -1,6 +1,6 @@
 ---
 title: "Variational Neural Machine Translation"
-date: 2017-07-29
+date: 2017-08-29
 layout: post
 categories: 
 tags: 
@@ -14,18 +14,8 @@ comments:
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<<<<<<< HEAD
-<li><a href="#org0be4d48">Variational Auto-Encoder (VAE)</a></li>
-<li><a href="#orgbaab7db">Neural Machine Translation</a></li>
-=======
-<<<<<<< HEAD
 <li><a href="#orga7ad60e">Variational Auto-Encoder (VAE)</a></li>
 <li><a href="#org1a5fff4">Neural Machine Translation</a></li>
-=======
-<li><a href="#org0be4d48">Variational Auto-Encoder (VAE)</a></li>
-<li><a href="#orgbaab7db">Neural Machine Translation</a></li>
->>>>>>> 00169cff0e39695cbf6d739bf04099dce01545f1
->>>>>>> 45d417e7cef5e7ede54801ddfa15f3d713779da8
 </ul>
 </div>
 </div>
@@ -76,21 +66,9 @@ comments:
 
 
 
-<<<<<<< HEAD
-<div id="outline-container-org0be4d48" class="outline-2">
-<h2 id="org0be4d48">Variational Auto-Encoder (VAE)</h2>
-<div class="outline-text-2" id="text-org0be4d48">
-=======
-<<<<<<< HEAD
 <div id="outline-container-orga7ad60e" class="outline-2">
 <h2 id="orga7ad60e">Variational Auto-Encoder (VAE)</h2>
 <div class="outline-text-2" id="text-orga7ad60e">
-=======
-<div id="outline-container-org0be4d48" class="outline-2">
-<h2 id="org0be4d48">Variational Auto-Encoder (VAE)</h2>
-<div class="outline-text-2" id="text-org0be4d48">
->>>>>>> 00169cff0e39695cbf6d739bf04099dce01545f1
->>>>>>> 45d417e7cef5e7ede54801ddfa15f3d713779da8
 <p>
 Consider a probabilistic model in which we denote all of the observed variables by \(\X\) and all and all of the hidden variables by \(\Z\). In general, the probabilistic model is designed by a generative story which implies a definition of the joint probability \(P(\X, \Z)\). The variational inference starts from the following equation: 
 </p>
@@ -153,21 +131,9 @@ Therefore the both functions (\(\q\) and \(\p\)) are trained using a single NNet
 
 
 
-<<<<<<< HEAD
-<div id="outline-container-orgbaab7db" class="outline-2">
-<h2 id="orgbaab7db">Neural Machine Translation</h2>
-<div class="outline-text-2" id="text-orgbaab7db">
-=======
-<<<<<<< HEAD
 <div id="outline-container-org1a5fff4" class="outline-2">
 <h2 id="org1a5fff4">Neural Machine Translation</h2>
 <div class="outline-text-2" id="text-org1a5fff4">
-=======
-<div id="outline-container-orgbaab7db" class="outline-2">
-<h2 id="orgbaab7db">Neural Machine Translation</h2>
-<div class="outline-text-2" id="text-orgbaab7db">
->>>>>>> 00169cff0e39695cbf6d739bf04099dce01545f1
->>>>>>> 45d417e7cef5e7ede54801ddfa15f3d713779da8
 <p>
 Assume a source sentence \(\X = x_{1}^{\lsrc}\) and a target sentence \(\Y = y_{1}^{\ltrg}\). 
 A NMT system defines the probability distribution \(P(\Y|\X,\pd)\) as a funtion  \(g\) parametrized by \(\pd\): 

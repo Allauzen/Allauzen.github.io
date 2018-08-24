@@ -118,6 +118,10 @@ laboratoire. Puis rapporter ce formulaire au secrétariat.</li>
 <li><a href="https://www.lri.fr/~sais/stages/2018/varacite-TER.pdf">Évaluation de la véracité : application aux événements en épidémiologie animale</a>, F. Sais</li>
 <li><a href="https://www.lri.fr/~sais/stages/2018/invalidation.pdf">Amélioration des résultats de liage de données RDF en exploitant des clés complexes</a>, N. Pernelle et P. Chatalic</li>
 <li><a href="https://perso.limsi.fr/grouin/ter-stage-chatbot.html">Système de dialogue (chatbot) et de recherche d'informations</a>, C. Grouin et S. Rosset</li>
+<<<<<<< HEAD
+<li><a href="https://perso.limsi.fr/gabrieli/Stages/sujet1.pdf">Vers la correction automatique de réponses d'étudiants</a>, G. Illouz</li>
+=======
+>>>>>>> 00169cff0e39695cbf6d739bf04099dce01545f1
 </ul>
 </div>
 </div>
@@ -125,9 +129,14 @@ laboratoire. Puis rapporter ce formulaire au secrétariat.</li>
 
 
 
+<<<<<<< HEAD
+<div id="outline-container-orgf5ae25a" class="outline-4">
+<h4 id="orgf5ae25a"><span class="section-number-4">1.2.2</span> Sujets affectés</h4>
+=======
 
 <div id="outline-container-orgb167273" class="outline-4">
 <h4 id="orgb167273"><span class="section-number-4">1.2.2</span> Sujets affectés</h4>
+>>>>>>> 00169cff0e39695cbf6d739bf04099dce01545f1
 <div class="outline-text-4" id="text-1-2-2">
 <p>
 En construction
