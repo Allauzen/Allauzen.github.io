@@ -1,6 +1,6 @@
 ---
-title: "Variational Bayes / some basics"
-date: 2017-07-21
+title: "Variational Bayes: notes on basics"
+date: 2018-08-21
 layout: post
 categories: 
 tags: 
@@ -15,27 +15,34 @@ comments:
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org304f6e1">1. Variational Bayes: Bayesian "approximate (or not)" inference</a>
+<li><a href="#orgb6e3455">1. Summary, Aknowledgment and links</a>
 <ul>
-<li><a href="#orgdc611e5">1.1. Variational derivation</a></li>
-<li><a href="#orgae0dc76">1.2. Approximate inference</a></li>
+<li><a href="#org64fd125">1.1. Useful links</a></li>
+<li><a href="#org531f1e2">1.2. Introduction</a></li>
+<li><a href="#org1ac1f30">1.3. Remarks on notation and random variables</a></li>
 </ul>
 </li>
-<li><a href="#org7abd66f">2. The EM view</a>
+<li><a href="#org304f6e1">2. Variational Bayes: Bayesian "approximate (or not)" inference</a>
 <ul>
-<li><a href="#org836513d">2.1. E step</a></li>
-<li><a href="#org95f90b0">2.2. M step</a></li>
-<li><a href="#org15bb494">2.3. A summary of EM</a></li>
+<li><a href="#orgdc611e5">2.1. Variational derivation</a></li>
+<li><a href="#orgae0dc76">2.2. Approximate inference</a></li>
 </ul>
 </li>
-<li><a href="#orgdb22905">3. The problem of approximate inference in general</a>
+<li><a href="#org82dc089">3. A special case: EM</a>
 <ul>
-<li><a href="#org902f388">3.1. The evidence lower bound (ELBO)</a></li>
-<li><a href="#org09bd4ea">3.2. ELBO : some comments</a></li>
-<li><a href="#org0a52bfc">3.3. <span class="todo TODO">TODO</span> Example of variational inference</a></li>
+<li><a href="#org836513d">3.1. E step</a></li>
+<li><a href="#org95f90b0">3.2. M step</a></li>
+<li><a href="#org15bb494">3.3. A summary of EM</a></li>
 </ul>
 </li>
-<li><a href="#org859a068">4. Variational inference or MCMC</a></li>
+<li><a href="#orgdb22905">4. The problem of approximate inference in general</a>
+<ul>
+<li><a href="#org902f388">4.1. The evidence lower bound (ELBO)</a></li>
+<li><a href="#org09bd4ea">4.2. ELBO : some comments</a></li>
+<li><a href="#org0a52bfc">4.3. <span class="todo TODO">TODO</span> Example of variational inference</a></li>
+</ul>
+</li>
+<li><a href="#org859a068">5. Variational inference or MCMC</a></li>
 </ul>
 </div>
 </div>
@@ -56,13 +63,39 @@ comments:
 </p>
 
 
+<div id="outline-container-orgb6e3455" class="outline-2">
+<h2 id="orgb6e3455"><span class="section-number-2">1</span> Summary, Aknowledgment and links</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org64fd125" class="outline-3">
+<h3 id="org64fd125"><span class="section-number-3">1.1</span> Useful links</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+This page contains notes and links on <i>Variational inference</i> or <i>Variational Bayes</i>. 
+The content is mainly inspired by different readings: 
+</p>
+<ul class="org-ul">
+<li>Christopher Bishop's book (see chapter 9 and 10 of <a href="http://research.microsoft.com/en-us/um/people/cmbishop/prml/">Pattern Recognition and Machine Learning</a>)</li>
+</ul>
+<p>
+afor "statisticians" 
+</p>
+<ul class="org-ul">
+<li>The <a href="https://media.nips.cc/Conferences/2016/Slides/6199-Slides.pdf">tutorial at NIPS 2016 by Blei et al.</a>; it includes recent stochastic approaches to Variational Inference</li>
+<li>The talk of  <a href="https://kaybrodersen.github.io/talks/Brodersen_2013_03_22.pdf">Kay H. Brodersen</a>; it starts with Laplace approximation and covers density estimation, regression and clustering.</li>
+</ul>
+</div>
+</div>
 
+<div id="outline-container-org531f1e2" class="outline-3">
+<h3 id="org531f1e2"><span class="section-number-3">1.2</span> Introduction</h3>
+<div class="outline-text-3" id="text-1-2">
 <p>
 Consider a probabilistic model in which we denote all the observed variables by \(\X\) and all the hidden variables by \(\Z\). In general, the probabilistic model is designed by a generative story which implies a definition of the joint probability \(P(\X, \Z|\pa)\) or \(P(\X, \Z,\pa)\) in the real bayesian view.
 </p>
 
 <p>
-If we consider the joint distribution \(P(\X, \Z|\pa)\), it is defined by a set of parameters denoted \(\pa\). The goal is to maximize the likelihood function \(P(\X|\pa)\) to learn the parameters \(\pa\). The problem is that this maximization problem is in most of the case intractable.
+If we consider the joint distribution \(P(\X, \Z|\pa)\), it is defined by a set of parameters denoted \(\pa\). The goal is to maximize the likelihood function \(P(\X|\pa)\) to learn the parameters \(\pa\). However, this maximization problem is intractable in most of the case.
 </p>
 
 <p>
@@ -77,10 +110,44 @@ If we consider \(P(\X, \Z,\pa)\), there are different levels of bayesian inferen
 <p>
 In all cases, the inference is untractable because we need to estimate \(P(\X|\pa)\) or even marginalize parameters. This requires approximate inference approach, such as MCMC or Variational one.
 </p>
+</div>
+</div>
+
+<div id="outline-container-org1ac1f30" class="outline-3">
+<h3 id="org1ac1f30"><span class="section-number-3">1.3</span> Remarks on notation and random variables</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+It is difficult to clearly define notation to handle all cases. For instance, let us consider a Gaussian mixture model. It can be used for density estimation or data clustering. Observed variables \(\X\) are random vectors, each belonging to a cluster. The affectations of each example to a cluster (or a gaussian) is encoded by \(\Z\) the set of latent variables. The model is defined by its set of parameters \(\pa\). 
+</p>
+
+<p>
+In Bayesian perspective, the parameters are also considered as random variables and therefore \(\pa\) can be included in \(\Z\). In this case, parameters are treated as random variables, just like affectations. However, there is an important difference between \(\pa\) and \(\Z\):  
+</p>
+<ul class="org-ul">
+<li>\(\Z\) are local random variables, there is one affectation by training example;</li>
+<li>\(\pa\) are global random variables, they are shared across the training data.</li>
+</ul>
+<p>
+This can represent a an issue for scalability. For each training example, you have to store the distribution over its affectation or its associated random variable.
+For large corpus, this is not convenient. More recent approaches rely on stochastic variants of Variational Inference as an efficient work-around. 
+</p>
+
+<p>
+To summarize this distinction: 
+</p>
+<ul class="org-ul">
+<li>In the MLE, we consider \(P(\X, \Z|\pa)\) to estimate a value of \(\pa\). We can also estimate \(P(\Z|\X,\pa)\).</li>
+<li>In the Bayesian case, we consider \(P(\X, \Z, \pa)\) to estimate a value of the posterior distributions over \(\pa\) and \(\Z\).</li>
+</ul>
+</div>
+</div>
+</div>
+
+
 
 <div id="outline-container-org304f6e1" class="outline-2">
-<h2 id="org304f6e1"><span class="section-number-2">1</span> Variational Bayes: Bayesian "approximate (or not)" inference</h2>
-<div class="outline-text-2" id="text-1">
+<h2 id="org304f6e1"><span class="section-number-2">2</span> Variational Bayes: Bayesian "approximate (or not)" inference</h2>
+<div class="outline-text-2" id="text-2">
 <p>
 This likelihood can be expressed in two ways: 
 \[P(\X|\pa)= \sum_{\Z} P(\X,\Z|\pa)= \frac{P(\X,\Z|\pa)}{P(\Z|\X,\pa)}\]. 
@@ -97,8 +164,8 @@ Let us consider the second one in its log formulation:
 </div>
 </div>
 <div id="outline-container-orgdc611e5" class="outline-3">
-<h3 id="orgdc611e5"><span class="section-number-3">1.1</span> Variational derivation</h3>
-<div class="outline-text-3" id="text-1-1">
+<h3 id="orgdc611e5"><span class="section-number-3">2.1</span> Variational derivation</h3>
+<div class="outline-text-3" id="text-2-1">
 <p>
 Let introduce a distribution \(q(\Z)\) defined over the latent variables. This probability function is an approximate of the true posterior \(P(\Z|\X,\pa)\). <b>The goal is to find the distribution \(q\) that best approximates the posterior distribution and then to use it as a proxy for Bayesian inference</b>. 
 </p>
@@ -174,8 +241,8 @@ Although there is nothing intrinsically approximate about variational methods, t
 </div>
 
 <div id="outline-container-orgae0dc76" class="outline-3">
-<h3 id="orgae0dc76"><span class="section-number-3">1.2</span> Approximate inference</h3>
-<div class="outline-text-3" id="text-1-2">
+<h3 id="orgae0dc76"><span class="section-number-3">2.2</span> Approximate inference</h3>
+<div class="outline-text-3" id="text-2-2">
 <p>
 To solve the tractability issue, there are two common approaches: 
 </p>
@@ -189,9 +256,9 @@ To solve the tractability issue, there are two common approaches:
 </div>
 
 
-<div id="outline-container-org7abd66f" class="outline-2">
-<h2 id="org7abd66f"><span class="section-number-2">2</span> The EM view</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-org82dc089" class="outline-2">
+<h2 id="org82dc089"><span class="section-number-2">3</span> A special case: EM</h2>
+<div class="outline-text-2" id="text-3">
 <p>
 The EM algorithm aims at estimating the parameters \(\pa\) of a generative model that relies on latent variables \(\Z\) to explain the observed data \(\X\). In the example of mixture of gaussians, \(\Z\) represents the affectation of each observation to a gaussian. If \(\Z\) could be observed, it becomes therefore a <i>simple</i> and easy to solve classification problem. We can call \((\X, \Z)\) the complete data set, while  \((\X)\) is the  incomplete one.  In other words, \(P(\X,\Z|\pa)\) is easy to optimize, while \(P(\X|\pa)\) is untractable (the log-sum). 
 </p>
@@ -201,13 +268,18 @@ However, in practice \(\Z\) is unknown, but for a given set of parameters we can
 </p>
 
 <p>
+As written in <a href="https://arxiv.org/abs/1601.00670">the review of (Blei et al.)</a>, EM optimize the expected complete log-likelihood and this is the first term of the ELBO. The goal of the algorithm is to find maximum likelihood estimates for parameters in models with latent variables. Parameters are in this case not considered as random hence latent variables.  
+Unlike Variational Inference, EM assumes that the posterior distribution \(P(\Z|\X,\pa)\) is computable. Unlike EM, variational inference does not estimate fixed model parameters but it is often used in a Bayesian setting where classical parameters are treated as latent variables. 
+</p>
+
+<p>
 Now we can go back to the lower bound to explain the EM algorithm. This is a two-stage iterative optimization technique for finding maximum likelihood solutions.
 </p>
 </div>
 
 <div id="outline-container-org836513d" class="outline-3">
-<h3 id="org836513d"><span class="section-number-3">2.1</span> E step</h3>
-<div class="outline-text-3" id="text-2-1">
+<h3 id="org836513d"><span class="section-number-3">3.1</span> E step</h3>
+<div class="outline-text-3" id="text-3-1">
 <p>
 Suppose that the current value of the parameter vector is \(\paold\). In the E step, the lower bound \(\lb\) <b>is maximized with respect to \(q(\Z)\)</b> while holding \(\pa\) fixed to \(\paold\). If you remember that: 
 </p>
@@ -223,8 +295,8 @@ Since the KL divergence is zero, we have \(\lb=P(\X|\paold)\). In fact, the E-st
 </div>
 
 <div id="outline-container-org95f90b0" class="outline-3">
-<h3 id="org95f90b0"><span class="section-number-3">2.2</span> M step</h3>
-<div class="outline-text-3" id="text-2-2">
+<h3 id="org95f90b0"><span class="section-number-3">3.2</span> M step</h3>
+<div class="outline-text-3" id="text-3-2">
 <p>
 The distribution \(q(Z)\) is now fixed and the <b>lower bound \(\lb\) is now maximized with respect to \(\pa\)</b>.  The maximization process yields a new value for the parameters \(\panew\) and increases the lower bound (except if we are already at the maximum). Note that \(q(Z)=P(\Z|\X,\paold)\) acts as a constant in the maximization process: 
 </p>
@@ -245,8 +317,8 @@ Since the distribution \(q\) is fixed to \(P(\Z|\X,\paold)\), \(q(Z) \neq P(\Z|\
 </div>
 
 <div id="outline-container-org15bb494" class="outline-3">
-<h3 id="org15bb494"><span class="section-number-3">2.3</span> A summary of EM</h3>
-<div class="outline-text-3" id="text-2-3">
+<h3 id="org15bb494"><span class="section-number-3">3.3</span> A summary of EM</h3>
+<div class="outline-text-3" id="text-3-3">
 <p>
 You can see the EM algorithm as pushing two functions. 
 </p>
@@ -262,15 +334,19 @@ For graphical illustration, you can look at the book of Christopher Bishop  call
 <p>
 Note that for implementation, \(q(\Z)\) does not really exist or is not a quantity of interest. It acts more like a temporary variable to perform this two steps game. 
 </p>
-</div>
-</div>
-</div>
 
+
+
+
+<img src="/assets/figs/em.jpg" alt="bla" style="width:600px; margin:0px auto;display:block"/>
+</div>
+</div>
+</div>
 
 
 <div id="outline-container-orgdb22905" class="outline-2">
-<h2 id="orgdb22905"><span class="section-number-2">3</span> The problem of approximate inference in general</h2>
-<div class="outline-text-2" id="text-3">
+<h2 id="orgdb22905"><span class="section-number-2">4</span> The problem of approximate inference in general</h2>
+<div class="outline-text-2" id="text-4">
 <p>
 In this part, there is no mention of hyperparameters or even parameters. Let say that the latent variables represent all unknown quantities of interest.
 </p>
@@ -291,9 +367,10 @@ To estimate \(p(\Z|\X)\), the Bayes formula tells us:
 This is not of a great help since the denominator is the evidence and is also untractable: the summation over all the possible values of \(\Z\).
 </p>
 </div>
+
 <div id="outline-container-org902f388" class="outline-3">
-<h3 id="org902f388"><span class="section-number-3">3.1</span> The evidence lower bound (ELBO)</h3>
-<div class="outline-text-3" id="text-3-1">
+<h3 id="org902f388"><span class="section-number-3">4.1</span> The evidence lower bound (ELBO)</h3>
+<div class="outline-text-3" id="text-4-1">
 <p>
 Given a family of distribution, we are looking for one its member \(q(\Z)\) that best approximates the conditional distribution \(p(Z|X)\). The criterion is the Kullback-Leibler divergence :
 </p>
@@ -348,8 +425,8 @@ In a lot of papers and books on variational inference, the elbo is  derived thro
 </div>
 
 <div id="outline-container-org09bd4ea" class="outline-3">
-<h3 id="org09bd4ea"><span class="section-number-3">3.2</span> ELBO : some comments</h3>
-<div class="outline-text-3" id="text-3-2">
+<h3 id="org09bd4ea"><span class="section-number-3">4.2</span> ELBO : some comments</h3>
+<div class="outline-text-3" id="text-4-2">
 <p>
 Variational inference aims at maximizing the ELBO. This means that we indirectly optimize two terms: 
 </p>
@@ -358,34 +435,48 @@ Variational inference aims at maximizing the ELBO. This means that we indirectly
 <li>minimizing the divergence \(\dkl(q(\Z)||p(\Z|\X))\).</li>
 </ul>
 <p>
-The elbo term can written as: 
+The elbo term can be  written as: 
 </p>
 \begin{align} 
 \lb &= E_{q}[log p(\X,\Z|\pa)]- E_{q}[log q(\Z)] .
 \end{align} 
 <p>
-Maximizing the ELBO, means thus to jointly  maximize \(E_{q}[log p(\X,\Z|\pa)]\) and the entropy of the distribution \(q\). However we can further decompose the joint distribution: 
+Maximizing the ELBO, means thus to jointly maximize \(E_{q}[log p(\X,\Z|\pa)]\) and the entropy of the distribution \(q\).  With the first term, \(q\) should put probability mass on \(\Z\) to explain the data. The second term favours otherwise uniform distribution.
+</p>
+
+
+
+<p>
+However we can further decompose the joint distribution: 
 </p>
 \begin{align} 
-\lb &= E_{q}[log p(\X|,\Z\pa) p(\Z|\pa)]- E_{q}[log q(\Z)] \\
-&= E_{q}[log p(\X|,\Z\pa)] + E_{q}[p(\Z|\pa)-log q(\Z)] \\
-&= E_{q}[log p(\X|,\Z\pa)] - \dkl( q(\Z)||p(\Z|\pa) ).
+\lb &= E_{q}[log p(\X|,\Z,\pa) p(\Z|\pa)]- E_{q}[log q(\Z)] \\
+&= E_{q}[log p(\X|,\Z,\pa)] + E_{q}[p(\Z|\pa)-log q(\Z)] \\
+&= E_{q}[log p(\X|,\Z,\pa)] - \dkl( q(\Z)||p(\Z|\pa) ).
 \end{align} 
 <p>
-Therefore the second term can be interpreted as a régularization term on \(q\). 
+With the first term, \(q\) will tend to place probability mass on configurations of the latent variables that explain the observed data. For example, if you compute the first term with Monte-Carlo methods, the density \(q\) should propose values of \(\Z\), for which \(p(\X|\Z,\pa)\) is high. The second term is the negative KL divergence between the \(q\) and the prior distribution.  It favors distributions close to the prior. Therefore the second term can be interpreted as a régularization term on \(q\).
 </p>
 </div>
 </div>
+
+
 
 
 <div id="outline-container-org0a52bfc" class="outline-3">
-<h3 id="org0a52bfc"><span class="section-number-3">3.3</span> <span class="todo TODO">TODO</span> Example of variational inference</h3>
+<h3 id="org0a52bfc"><span class="section-number-3">4.3</span> <span class="todo TODO">TODO</span> Example of variational inference</h3>
+<div class="outline-text-3" id="text-4-3">
+<p>
+As in the Bishop's book or the review of Blei et al., the Bayesian mixture of gaussians could be a good example to write. 
+</p>
+</div>
 </div>
 </div>
 
+
 <div id="outline-container-org859a068" class="outline-2">
-<h2 id="org859a068"><span class="section-number-2">4</span> Variational inference or MCMC</h2>
-<div class="outline-text-2" id="text-4">
+<h2 id="org859a068"><span class="section-number-2">5</span> Variational inference or MCMC</h2>
+<div class="outline-text-2" id="text-5">
 <p>
 Here is quoted, what you can read in this <a href="https://arxiv.org/abs/1601.00670">review from Blei et al.</a>, comparing variational inference and MCMC:
 </p>
