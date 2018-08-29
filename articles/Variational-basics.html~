@@ -421,15 +421,8 @@ The first term is an expected log likelihood under the \(q\) distribution and th
 <p>
 In a lot of papers and books on variational inference, the elbo is  derived through Jensen's inequality. See the <a href="https://people.eecs.berkeley.edu/~jordan/papers/variational-intro.pdf">Jordan's paper in 1999</a> for instance. 
 </p>
-\begin{align}
-\log p(\X) &= \log \sum_{\Z} p(\X,\Z) = \log \sum_{\Z} \Big[ p(\X,\Z)\frac{q(\Z)}{q(\Z)}\Big] \\
-&= \log E_q \Big[\frac{p(\X,\Z)}{q(\Z)}\Big] \\
-&\geq  E_q \Big[ \log \frac{p(\X,\Z)}{q(\Z)}\Big] \\
-= E_q \Big[ \log p(\X,\Z)\Big] + H(\Z)
-\end{align}
 </div>
 </div>
-
 
 <div id="outline-container-orge2456ef" class="outline-3">
 <h3 id="orge2456ef"><span class="section-number-3">4.2</span> ELBO : some comments</h3>
