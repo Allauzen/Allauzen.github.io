@@ -18,30 +18,30 @@ comments:
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org48c33fd">1. Summary and Aknowledgment</a></li>
-<li><a href="#orga560dbd">2. Introduction and examples</a>
+<li><a href="#org551ebdc">1. Summary and Aknowledgment</a></li>
+<li><a href="#org3009daa">2. Introduction and examples</a>
 <ul>
-<li><a href="#orgd9c1593">2.1. Clustering</a></li>
-<li><a href="#org947544f">2.2. Estimation for mixture of distributions</a></li>
+<li><a href="#org043288e">2.1. Clustering</a></li>
+<li><a href="#orgb82eea8">2.2. Estimation for mixture of distributions</a></li>
 </ul>
 </li>
-<li><a href="#org0d6b1ba">3. The EM Algorithm in general</a></li>
-<li><a href="#orgc68ccae">4. Variational view of EM</a>
+<li><a href="#orgac4b0e7">3. The EM Algorithm in general</a></li>
+<li><a href="#orgd3a6fd2">4. Variational view of EM</a>
 <ul>
-<li><a href="#org1be1ab6">4.1. Remark</a></li>
-<li><a href="#org775c781">4.2. E step</a></li>
-<li><a href="#org5b0c81c">4.3. M step</a></li>
-<li><a href="#orgee4f0c6">4.4. A summary of EM</a></li>
+<li><a href="#orgd021824">4.1. Remark</a></li>
+<li><a href="#org44af7b2">4.2. E step</a></li>
+<li><a href="#org0c1302d">4.3. M step</a></li>
+<li><a href="#orge704263">4.4. A summary of EM</a></li>
 </ul>
 </li>
-<li><a href="#org689270a">5. GMM</a>
+<li><a href="#orgc6bad86">5. GMM</a>
 <ul>
-<li><a href="#org1417dc8">5.1. E step</a></li>
-<li><a href="#org2b41230">5.2. M step</a></li>
+<li><a href="#org0ddbc1e">5.1. E step</a></li>
+<li><a href="#org8a75497">5.2. M step</a></li>
 </ul>
 </li>
-<li><a href="#org49eabf6">6. <span class="todo TODO">TODO</span> Online (or incremental version)</a></li>
-<li><a href="#org4bd0171">7. Bernoulli Mixture model</a></li>
+<li><a href="#org6927e31">6. <span class="todo TODO">TODO</span> Online (or incremental version)</a></li>
+<li><a href="#org6109e02">7. Bernoulli Mixture model</a></li>
 </ul>
 </div>
 </div>
@@ -65,8 +65,8 @@ comments:
 \(\newcommand{\dkl}{D_{kl}}\)
 </p>
 
-<div id="outline-container-org48c33fd" class="outline-2">
-<h2 id="org48c33fd"><span class="section-number-2">1</span> Summary and Aknowledgment</h2>
+<div id="outline-container-org551ebdc" class="outline-2">
+<h2 id="org551ebdc"><span class="section-number-2">1</span> Summary and Aknowledgment</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li>Notes on EM algorithm for mixture models estimate.</li>
@@ -77,8 +77,8 @@ comments:
 </div>
 
 
-<div id="outline-container-orga560dbd" class="outline-2">
-<h2 id="orga560dbd"><span class="section-number-2">2</span> Introduction and examples</h2>
+<div id="outline-container-org3009daa" class="outline-2">
+<h2 id="org3009daa"><span class="section-number-2">2</span> Introduction and examples</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 One of the most widely used  mixture of distributions (or mixture model, <i>i.e</i> MM) is the Gaussian mixture model (GMM). 
@@ -99,8 +99,8 @@ MMs are mainly used for clustering or probability density estimation.
 </div>
 
 
-<div id="outline-container-orgd9c1593" class="outline-3">
-<h3 id="orgd9c1593"><span class="section-number-3">2.1</span> Clustering</h3>
+<div id="outline-container-org043288e" class="outline-3">
+<h3 id="org043288e"><span class="section-number-3">2.1</span> Clustering</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 In a clustering task, each gaussian is associated to a cluster, and the learning step aims at estimating the hidden assignments of a data point to a cluster. In the case of GMM, a gaussian is associated to a cluster. This can be interpreted as an extension of the K-means algorithm, with soft assignements and the possibility to better control the shape of each clusters with the covariance matrix.  
@@ -108,8 +108,8 @@ In a clustering task, each gaussian is associated to a cluster, and the learning
 </div>
 </div>
 
-<div id="outline-container-org947544f" class="outline-3">
-<h3 id="org947544f"><span class="section-number-3">2.2</span> Estimation for mixture of distributions</h3>
+<div id="outline-container-orgb82eea8" class="outline-3">
+<h3 id="orgb82eea8"><span class="section-number-3">2.2</span> Estimation for mixture of distributions</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 For probabilistic classifier, each class is modeled by a distribution (the likelihood term). However, following the gaussian example, assigning a single gaussian to model the data of one class can be a poor assumption. Inside a class, the data can exhibit different modes associated to the intra-class variability of the data. In this case a MM can be a better choice: for instance by increasing the number of Gaussians, we allows the model to have an improved expressivity along with more parameters to be estimated.
@@ -121,8 +121,8 @@ For probabilistic classifier, each class is modeled by a distribution (the likel
 
 
 
-<div id="outline-container-org0d6b1ba" class="outline-2">
-<h2 id="org0d6b1ba"><span class="section-number-2">3</span> The EM Algorithm in general</h2>
+<div id="outline-container-orgac4b0e7" class="outline-2">
+<h2 id="orgac4b0e7"><span class="section-number-2">3</span> The EM Algorithm in general</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 A mixture model is a generative model that relies on latent variables \(\Z\) to explain the observed data \(\X\). These latent parameters \(\Z\) represent the affectation of each observation to a component of the mixture. To learn the parameters of the model we can maximize the log-likelihood of the parameters on the training data: 
@@ -154,8 +154,8 @@ While in practice \(\Z\) is unknown, for a given set of parameters we can comput
 </div>
 </div>
 
-<div id="outline-container-orgc68ccae" class="outline-2">
-<h2 id="orgc68ccae"><span class="section-number-2">4</span> Variational view of EM</h2>
+<div id="outline-container-orgd3a6fd2" class="outline-2">
+<h2 id="orgd3a6fd2"><span class="section-number-2">4</span> Variational view of EM</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 The quantity of interest can be rewritten as follows by  introducing a distribution \(q(\Z)\) defined over the latent variables:
@@ -177,8 +177,8 @@ Recall that the Kullback-Leibler divergence satisfies \(\dkl(q|p)\ge 0\), with e
 </p>
 </div>
 
-<div id="outline-container-org1be1ab6" class="outline-3">
-<h3 id="org1be1ab6"><span class="section-number-3">4.1</span> Remark</h3>
+<div id="outline-container-orgd021824" class="outline-3">
+<h3 id="orgd021824"><span class="section-number-3">4.1</span> Remark</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 This formulation does not solve the tractability issue since in the \(\dkl\) term we still have a dependance between \(P(\Z|X,\pa)\) and \(P(\X|\pa)\), <i>i.e</i> :
@@ -195,8 +195,8 @@ So both \(P(\Z|X,\pa)\) and \(P(\X|\pa)\) are untractable. The probabilistic mod
 </div>
 
 
-<div id="outline-container-org775c781" class="outline-3">
-<h3 id="org775c781"><span class="section-number-3">4.2</span> E step</h3>
+<div id="outline-container-org44af7b2" class="outline-3">
+<h3 id="org44af7b2"><span class="section-number-3">4.2</span> E step</h3>
 <div class="outline-text-3" id="text-4-2">
 <p>
 Suppose that the current value of the parameter vector is \(\paold\). In the E step, the lower bound \(\lb\) <b>is maximized with respect to \(q(\Z)\)</b> while holding \(\pa\) fixed to \(\paold\). 
@@ -216,8 +216,8 @@ Since the KL divergence is zero, we have \(\lb=P(\X|\paold)\). In fact, the E-st
 </div>
 </div>
 
-<div id="outline-container-org5b0c81c" class="outline-3">
-<h3 id="org5b0c81c"><span class="section-number-3">4.3</span> M step</h3>
+<div id="outline-container-org0c1302d" class="outline-3">
+<h3 id="org0c1302d"><span class="section-number-3">4.3</span> M step</h3>
 <div class="outline-text-3" id="text-4-3">
 <p>
 The distribution \(q(Z)\) is now fixed and the <b>lower bound \(\lb\) is now maximized with respect to \(\pa\)</b>.  The maximization process yields a new value for the parameters \(\panew\) and increases the lower bound (except if we are already at the maximum). Note that \(q(Z)=P(\Z|\X,\paold)\) acts as a constant in the maximization process: 
@@ -239,8 +239,8 @@ Since the distribution \(q\) is fixed to \(P(\Z|\X,\paold)\), \(q(Z) \neq P(\Z|\
 </div>
 </div>
 
-<div id="outline-container-orgee4f0c6" class="outline-3">
-<h3 id="orgee4f0c6"><span class="section-number-3">4.4</span> A summary of EM</h3>
+<div id="outline-container-orge704263" class="outline-3">
+<h3 id="orge704263"><span class="section-number-3">4.4</span> A summary of EM</h3>
 <div class="outline-text-3" id="text-4-4">
 <p>
 You can see the EM algorithm as pushing two functions. 
@@ -262,15 +262,15 @@ Note that for implementation, \(q(\Z)\) does not really exist or is not a quanti
 </div>
 
 
-<div id="outline-container-org689270a" class="outline-2">
-<h2 id="org689270a"><span class="section-number-2">5</span> GMM</h2>
+<div id="outline-container-orgc6bad86" class="outline-2">
+<h2 id="orgc6bad86"><span class="section-number-2">5</span> GMM</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 Application of the EM algorithm to GMM. 
 </p>
 </div>
-<div id="outline-container-org1417dc8" class="outline-3">
-<h3 id="org1417dc8"><span class="section-number-3">5.1</span> E step</h3>
+<div id="outline-container-org0ddbc1e" class="outline-3">
+<h3 id="org0ddbc1e"><span class="section-number-3">5.1</span> E step</h3>
 <div class="outline-text-3" id="text-5-1">
 <p>
 Given the current set of parameters \(\pa=\paold\), we set \(q(\Z)=P(\Z|\X,\paold)\). This implies that for each training example \(\X\), we compute the posterior distribution of its associated latent variable \(\Z\)
@@ -287,8 +287,8 @@ q(\Z)&=P(\Z|\X,\paold)\\
 </div>
 </div>
 
-<div id="outline-container-org2b41230" class="outline-3">
-<h3 id="org2b41230"><span class="section-number-3">5.2</span> M step</h3>
+<div id="outline-container-org8a75497" class="outline-3">
+<h3 id="org8a75497"><span class="section-number-3">5.2</span> M step</h3>
 <div class="outline-text-3" id="text-5-2">
 <p>
 The distribution \(q(Z)\) is now fixed and the lower bound \(\lb\) is maximized with respect to \(\pa\).  We optimize a classifier of \(\X\) into \(\Z\), with the supervision of \(P(\Z|\X,\paold)\) that provides the pseudo-affectation.
@@ -315,13 +315,13 @@ N_k  &= \sum_n   q(z_{nk})
 
 
 
-<div id="outline-container-org49eabf6" class="outline-2">
-<h2 id="org49eabf6"><span class="section-number-2">6</span> <span class="todo TODO">TODO</span> Online (or incremental version)</h2>
+<div id="outline-container-org6927e31" class="outline-2">
+<h2 id="org6927e31"><span class="section-number-2">6</span> <span class="todo TODO">TODO</span> Online (or incremental version)</h2>
 </div>
 
 
-<div id="outline-container-org4bd0171" class="outline-2">
-<h2 id="org4bd0171"><span class="section-number-2">7</span> Bernoulli Mixture model</h2>
+<div id="outline-container-org6109e02" class="outline-2">
+<h2 id="org6109e02"><span class="section-number-2">7</span> Bernoulli Mixture model</h2>
 <div class="outline-text-2" id="text-7">
 <p>
 With the naive assumption, a random vector \(\X\) is assumed to be generated by a set of independant Bernoulli distributions, one for each component:
