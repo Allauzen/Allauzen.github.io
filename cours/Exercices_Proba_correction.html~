@@ -19,22 +19,22 @@ comments:
 <ul>
 <li><a href="#orgcaa95e1">1.1. Le problème des anniversaires (ou du conflit dans les tables de hashage)</a>
 <ul>
-<li><a href="#orgf5307ce">1.1.1. Correction</a></li>
+<li><a href="#org7408c26">1.1.1. Correction</a></li>
 </ul>
 </li>
 <li><a href="#orgbdbd861">1.2. Critique de film</a>
 <ul>
-<li><a href="#org3f4a8d4">1.2.1. Correction</a></li>
+<li><a href="#orga21f931">1.2.1. Correction</a></li>
 </ul>
 </li>
 <li><a href="#org852f385">1.3. Estimation des paramètres pour une gaussienne</a>
 <ul>
-<li><a href="#org60343fc">1.3.1. Correction</a></li>
+<li><a href="#org59d3dd8">1.3.1. Correction</a></li>
 </ul>
 </li>
 <li><a href="#org0ec1864">1.4. En passant</a>
 <ul>
-<li><a href="#org391aff0">1.4.1. Correction</a>
+<li><a href="#orgeca1d49">1.4.1. Correction</a>
 <ul>
 <li><a href="#org6c775e6">1.4.1.1. Binomiale / Bernoulli</a></li>
 <li><a href="#org2eb2e2f">1.4.1.2. Loi de poisson</a></li>
@@ -46,14 +46,14 @@ comments:
 </li>
 <li><a href="#org2ab46cc">2. Le problèmes des urnes</a>
 <ul>
-<li><a href="#org11337ba">2.1. En théorie</a>
+<li><a href="#org28382cd">2.1. En théorie</a>
 <ul>
-<li><a href="#org8778870">2.1.1. Correction</a></li>
+<li><a href="#org9bbf6b0">2.1.1. Correction</a></li>
 </ul>
 </li>
 <li><a href="#org422b06f">2.2. En pratique</a>
 <ul>
-<li><a href="#org8cad305">2.2.1. Correction</a></li>
+<li><a href="#orga57f6b8">2.2.1. Correction</a></li>
 </ul>
 </li>
 </ul>
@@ -62,12 +62,12 @@ comments:
 <ul>
 <li><a href="#org33cea71">3.1. Estimation complète</a>
 <ul>
-<li><a href="#org69363a2">3.1.1. Correction</a></li>
+<li><a href="#org451a048">3.1.1. Correction</a></li>
 </ul>
 </li>
 <li><a href="#org1b72d42">3.2. Estimation avec indépendance conditionnelle</a>
 <ul>
-<li><a href="#org837234c">3.2.1. Correction</a></li>
+<li><a href="#orga0d7071">3.2.1. Correction</a></li>
 </ul>
 </li>
 <li><a href="#orgb5cc4bd">3.3. Un exemple réaliste</a>
@@ -79,15 +79,15 @@ comments:
 <li><a href="#orgfc5cf17">3.3.2.2. Votes des Démocrates</a></li>
 </ul>
 </li>
-<li><a href="#org4a3ccfc">3.3.3. Correction</a></li>
+<li><a href="#org97edccf">3.3.3. Correction</a></li>
 </ul>
 </li>
 <li><a href="#org5eec09e">3.4. Introduction au cas continu</a>
 <ul>
-<li><a href="#org3fa8570">3.4.1. En théorie</a></li>
-<li><a href="#org7fbafd3">3.4.2. Correction</a></li>
+<li><a href="#org11337ba">3.4.1. En théorie</a></li>
+<li><a href="#org94b047f">3.4.2. Correction</a></li>
 <li><a href="#org6f27cfc">3.4.3. Point de vue empirique</a></li>
-<li><a href="#org7423275">3.4.4. Correction</a></li>
+<li><a href="#org090a781">3.4.4. Correction</a></li>
 </ul>
 </li>
 </ul>
@@ -96,7 +96,7 @@ comments:
 <ul>
 <li>
 <ul>
-<li><a href="#orgb60f696">4.0.1. Correction</a></li>
+<li><a href="#orgf5307ce">4.0.1. Correction</a></li>
 </ul>
 </li>
 </ul>
@@ -105,6 +105,15 @@ comments:
 </div>
 </div>
 <span style="background: red;">PREVIEW</span><hr>
+
+<div class="LATEX">
+<p>
+\newpage
+\setlength\parindent{0pt}
+</p>
+
+</div>
+
 
 <p>
 Certains de ces exercices sont des adaptations des exercices donnés
@@ -130,8 +139,8 @@ Ces exercices peuvent faire référence aux cours
 </ul>
 </div>
 
-<div id="outline-container-orgf5307ce" class="outline-4">
-<h4 id="orgf5307ce"><span class="section-number-4">1.1.1</span> Correction</h4>
+<div id="outline-container-org7408c26" class="outline-4">
+<h4 id="org7408c26"><span class="section-number-4">1.1.1</span> Correction</h4>
 <div class="outline-text-4" id="text-1-1-1">
 <p>
 La VA \(X\) : la date d'anniversaire d'une personne, il y en a 365  possibles.
@@ -181,8 +190,8 @@ Pour répondre à cette question:
 </ul>
 </div>
 
-<div id="outline-container-org3f4a8d4" class="outline-4">
-<h4 id="org3f4a8d4"><span class="section-number-4">1.2.1</span> Correction</h4>
+<div id="outline-container-orga21f931" class="outline-4">
+<h4 id="orga21f931"><span class="section-number-4">1.2.1</span> Correction</h4>
 <div class="outline-text-4" id="text-1-2-1">
 <p>
 Pour aller voir un film, dois-je me baser sur l'avis de mon critique préféré (ou ami facebook) ? 
@@ -234,14 +243,14 @@ cela, il faut suivre les étapes suivantes:
 </div>
 
 
-<div id="outline-container-org60343fc" class="outline-4">
-<h4 id="org60343fc"><span class="section-number-4">1.3.1</span> Correction</h4>
+<div id="outline-container-org59d3dd8" class="outline-4">
+<h4 id="org59d3dd8"><span class="section-number-4">1.3.1</span> Correction</h4>
 <div class="outline-text-4" id="text-1-3-1">
 <p>
 La vraissemblance est la probabilité assignée par le modèle aux données d'estimation: 
 </p>
 \begin{align*}
-P(x_{1:N}) &= \prod_i P(x_i) \textrm{ hypoth\`ese iid}\\
+P(x_{1:N}) &= \prod_i P(x_i) \textrm{hypoth\`ese iid}\\
 \log P(x_{1:N}) &= \sum_i \log P(x_i)\\
 \log P(x_i) &= -log(\sqrt{2\pi}\sigma) -\frac{1}{2} (\frac{x_i-\mu}{\sigma})^2\\
 \frac{\partial P(x_i) }{\partial \mu} &= (x_i-\mu)/\sigma^2\\
@@ -267,8 +276,8 @@ expliquez la.</li>
 </ul>
 </div>
 
-<div id="outline-container-org391aff0" class="outline-4">
-<h4 id="org391aff0"><span class="section-number-4">1.4.1</span> Correction</h4>
+<div id="outline-container-orgeca1d49" class="outline-4">
+<h4 id="orgeca1d49"><span class="section-number-4">1.4.1</span> Correction</h4>
 <div class="outline-text-4" id="text-1-4-1">
 </div>
 <div id="outline-container-org6c775e6" class="outline-5">
@@ -374,8 +383,8 @@ Exemple:  Sur ce trajet ferroviaire, nous avons constaté deux incidents par an.
 <h2 id="org2ab46cc"><span class="section-number-2">2</span> Le problèmes des urnes</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org11337ba" class="outline-3">
-<h3 id="org11337ba"><span class="section-number-3">2.1</span> En théorie</h3>
+<div id="outline-container-org28382cd" class="outline-3">
+<h3 id="org28382cd"><span class="section-number-3">2.1</span> En théorie</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 Soient deux urnes \(u_1\) et \(u_2\) contenant respectivement :
@@ -416,8 +425,8 @@ locale définie par le tableau suivant \[
 </ul>
 </div>
 
-<div id="outline-container-org8778870" class="outline-4">
-<h4 id="org8778870"><span class="section-number-4">2.1.1</span> Correction</h4>
+<div id="outline-container-org9bbf6b0" class="outline-4">
+<h4 id="org9bbf6b0"><span class="section-number-4">2.1.1</span> Correction</h4>
 <div class="outline-text-4" id="text-2-1-1">
 <ul class="org-ul">
 <li>D'après l'énoncé, il est clair que \(P(U=u_1)=P(U=u_2)=0,5\).</li>
@@ -561,8 +570,8 @@ tableau.</li>
 </ul>
 </div>
 
-<div id="outline-container-org8cad305" class="outline-4">
-<h4 id="org8cad305"><span class="section-number-4">2.2.1</span> Correction</h4>
+<div id="outline-container-orga57f6b8" class="outline-4">
+<h4 id="orga57f6b8"><span class="section-number-4">2.2.1</span> Correction</h4>
 <div class="outline-text-4" id="text-2-2-1">
 <ul class="org-ul">
 <li>Un simple comptage donne \(P(U=u_1)=\frac{7}{12}\) et
@@ -698,21 +707,24 @@ suivant (les données d'apprentissage) :
 </ul>
 </div>
 
-<div id="outline-container-org69363a2" class="outline-4">
-<h4 id="org69363a2"><span class="section-number-4">3.1.1</span> Correction</h4>
+<div id="outline-container-org451a048" class="outline-4">
+<h4 id="org451a048"><span class="section-number-4">3.1.1</span> Correction</h4>
 <div class="outline-text-4" id="text-3-1-1">
 <ul class="org-ul">
 <li>On a besoin de \(P(classe=1|T=t,P=p)\) pour les neuf combinaisons
 possibles de t et p.</li>
-<li>Les probabilités sont les suivantes :</li>
-</ul>
+<li><p>
+Les probabilités sont les suivantes :
+</p>
+
+\begin{array}{cc|ccc} &P & 1 & 2 & 3\\\hline T&S&1 &1 &NA\\
+&M&0,5&1&1\\ &L&NA&0,25&0 \end{array}
 
 <p>
 <i>NA</i> désigne une probabilité qui ne peut pas être estimée car le
 couple concerné n'a pas été observé dans les données.
-</p>
+</p></li>
 
-<ul class="org-ul">
 <li>On ne peut pas prendre de décision pour les couples (S,3) et
 (L,1).</li>
 </ul>
@@ -734,18 +746,26 @@ classifieur bayesien naïf.
 </ul>
 </div>
 
-<div id="outline-container-org837234c" class="outline-4">
-<h4 id="org837234c"><span class="section-number-4">3.2.1</span> Correction</h4>
+<div id="outline-container-orga0d7071" class="outline-4">
+<h4 id="orga0d7071"><span class="section-number-4">3.2.1</span> Correction</h4>
 <div class="outline-text-4" id="text-3-2-1">
-<p>
-On obtient 
+<ul class="org-ul">
+<li><p>
+On obtient :
 </p>
+
+\begin{array}{l|ccc} p&1&2&3\\\hline P(P=p|classe=1)&0,5&0,5&0\\
+P(P=p|classe=2)&\frac{1}{6}&\frac{1}{2}&\frac{1}{3}\\\hline
+\end{array}
 
 <p>
 et
 </p>
 
-<ul class="org-ul">
+\begin{array}{l|ccc} t&S&M&L\\\hline
+P(T=t|classe=1)&\frac{1}{2}&\frac{1}{3}&\frac{1}{6}\\
+P(T=t|classe=2)&0&\frac{1}{3}&\frac{2}{3}\\\hline \end{array}</li>
+
 <li><p>
 D'après l'hypothèse d'indépendance conditionnelle, on a \[
    P(classe=1|P=p,T=t)=\frac{P(P=p|classe=1)P(T=t|classe=1)P(classe=1)}{P(P=p,T=t)}
@@ -756,21 +776,35 @@ comparer \(P(P=p|classe=1)P(T=t|classe=1)\) avec
 
 <p>
 On obtient le tableau suivant pour la classe 1 :
-</p></li>
-</ul>
+</p>
+
+\begin{array}{cc|ccc} &P & 1 & 2 & 3\\\hline T&S&\frac{1}{4}
+&\frac{1}{4} &0\\ &M&\frac{1}{6}&\frac{1}{6}&0\\
+&L&\frac{1}{12}&\frac{1}{12}&0 \end{array}
+
 <p>
 et pour la classe 2 :
 </p>
+
+\begin{array}{cc|ccc} &P & 1 & 2 & 3\\\hline T&S&0 &0 &0\\
+&M&\frac{1}{18}&\frac{1}{6}&\frac{1}{9}\\
+&L&\frac{1}{9}&\frac{1}{3}&\frac{2}{9} \end{array}
+
 <p>
 Les décisions sont donc :
 </p>
+
+\begin{array}{cc|ccc} &P & 1 & 2 & 3\\\hline T&S&1 &1 &tie\\
+&M&1&tie&2\\ &L&2&2&2\\ \end{array}
+
 <p>
 On constate la présence de deux cas d'égalité.
 </p>
 
 <p>
-Ceci conduit à 2,5 erreurs, soit un risque de \(\frac{5}{24}\).
-</p>
+Ceci conduit à 2,5 erreurs, soit un risque de \frac{5}{24}.
+</p></li>
+</ul>
 </div>
 </div>
 </div>
@@ -1196,8 +1230,8 @@ bayésien naïf. On rappelle qu'il y 267 représentants démocrates et
 </div>
 </div>
 
-<div id="outline-container-org4a3ccfc" class="outline-4">
-<h4 id="org4a3ccfc"><span class="section-number-4">3.3.3</span> Correction</h4>
+<div id="outline-container-org97edccf" class="outline-4">
+<h4 id="org97edccf"><span class="section-number-4">3.3.3</span> Correction</h4>
 <div class="outline-text-4" id="text-3-3-3">
 <p>
 Pour mettre en oeuvre le classifieur bayésien, il faut estimer les probabilités à priori des deux classes, soit P(\text{Démocrate}) et P(\text{Républicain}), ce qui se fait simplement à partir des effectifs. Il faut aussi pouvoir calculer la loi de chaque variable V1 à V16 conditionnellement à chaque classe, ce qui se fait aussi simplement en utilisant les tableaux. Par exemple : 
@@ -1242,8 +1276,8 @@ On remplace dans cette formule les v<sub>i</sub> par les votes indiqués
 <h3 id="org5eec09e"><span class="section-number-3">3.4</span> Introduction au cas continu</h3>
 <div class="outline-text-3" id="text-3-4">
 </div>
-<div id="outline-container-org3fa8570" class="outline-4">
-<h4 id="org3fa8570"><span class="section-number-4">3.4.1</span> En théorie</h4>
+<div id="outline-container-org11337ba" class="outline-4">
+<h4 id="org11337ba"><span class="section-number-4">3.4.1</span> En théorie</h4>
 <div class="outline-text-4" id="text-3-4-1">
 <p>
 On considère deux populations, les hommes H de taille moyenne 1,74m
@@ -1274,8 +1308,8 @@ choisie au hasard. Donner la densité de T.</li>
 </div>
 
 
-<div id="outline-container-org7fbafd3" class="outline-4">
-<h4 id="org7fbafd3"><span class="section-number-4">3.4.2</span> Correction</h4>
+<div id="outline-container-org94b047f" class="outline-4">
+<h4 id="org94b047f"><span class="section-number-4">3.4.2</span> Correction</h4>
 <div class="outline-text-4" id="text-3-4-2">
 <ul class="org-ul">
 <li>Le choix est uniforme dans une population de h+f individus. On a
@@ -1510,8 +1544,8 @@ par la table ci-dessous.
 
 
 
-<div id="outline-container-org7423275" class="outline-4">
-<h4 id="org7423275"><span class="section-number-4">3.4.4</span> Correction</h4>
+<div id="outline-container-org090a781" class="outline-4">
+<h4 id="org090a781"><span class="section-number-4">3.4.4</span> Correction</h4>
 <div class="outline-text-4" id="text-3-4-4">
 <ul class="org-ul">
 <li>On suppose que conditionnellement à la classe, la distribution de la
@@ -1557,8 +1591,8 @@ moyenne 18 secondes pour s'acquitter du péage. On estime qu'il y a risque de sa
 </ul>
 </div>
 
-<div id="outline-container-orgb60f696" class="outline-4">
-<h4 id="orgb60f696"><span class="section-number-4">4.0.1</span> Correction</h4>
+<div id="outline-container-orgf5307ce" class="outline-4">
+<h4 id="orgf5307ce"><span class="section-number-4">4.0.1</span> Correction</h4>
 <div class="outline-text-4" id="text-4-0-1">
 <p>
 L'arrivée d'un véhicule au péage est une épreuve de Bernoulli dont la probabilité de l'observer dans la période considérée est

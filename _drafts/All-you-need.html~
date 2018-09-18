@@ -96,20 +96,13 @@ The NMT system is in this form decomposed in three parts:
 <li>The decoder generates the target sequence and implements \(g_{\psmt}\).</li>
 <li>The attention model makes the link between both of them by computing at each decoding step the context vector \(\C_j\).</li>
 </ul>
-</div>
-</div>
 
 
 
-
-<div id="outline-container-org9dc673c" class="outline-3">
-<h3 id="org9dc673c">Matrix computation</h3>
-<div class="outline-text-3" id="text-org9dc673c">
 <p>
-Assume a source sentence \(\X = x_{1}^{\lsrc}\). It's a matrix. 
-\[  \begin{array}{|c|c|c|c|c|}
+\[  \begin{array}{|r|r|r|}
 \hline
-\phantom{x}  &\phantom{x} &\phantom{x}&\phantom{x}&\phantom{x}\\\hline
+\phantom{x}  &\phantom{x} &\phantom{x}\\\hline
 &  &  \\\hline
 &  &  \\\hline
  \end{array} \] 

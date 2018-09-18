@@ -20,6 +20,7 @@ comments:
 <li><a href="#org037aa99">1.1. Useful links</a></li>
 <li><a href="#org0f60113">1.2. Introduction</a></li>
 <li><a href="#orgc3e0865">1.3. Remarks on notation and random variables</a></li>
+<li><a href="#orgc9acf75">1.4. Expectation of a random variable</a></li>
 </ul>
 </li>
 <li><a href="#orgbe5f6d4">2. Variational Bayes: Bayesian "approximate (or not)" inference</a>
@@ -141,7 +142,67 @@ To summarize this distinction:
 </ul>
 </div>
 </div>
+
+
+<div id="outline-container-orgc9acf75" class="outline-3">
+<h3 id="orgc9acf75"><span class="section-number-3">1.4</span> Expectation of a random variable</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+Before to read these notes, it is better to be familiar with expectation. Given a random variable \(X\), we define its expectation under the distribution \(p\)
+</p>
+\begin{align}
+E_{X \sim p}[X] &= \sum_{x} x p(X=x) \\
+ &\int_x x p(x)dx
+\end{align}
+<p>
+The first line is for discrete RV while the second one is for continuous RV. In this last case, \(p(x)\) denotes the probability density function. If \(X\) is a categorical RV, note it can be meaning less as it is, while for continuous RV it can be interpreted as the mean value. 
+</p>
+
+<p>
+A quantity of interest is the expected value of a function of the RV. For instance, the variance of a continuous RV can be expressed as \(E[(X-E[X])^2]\). In information theory, it is meaningfull to define the expected value of the information quantity as the entropy the RV: 
+\[
+H(X)=-\sum_x p(X=x)log(p(X=x)) = E_p[-log(p(X))]
+\]
+</p>
+
+<p>
+Now assume two distributions on the same RV, \(q\) and \(p\) we can
+measure the Kullback-Leibler divergence between these two
+distributions as :
+</p>
+
+<p>
+\[
+\dkl(p||q)=\sum_x p(X=x)log(p(X=x)/q(X=x)) = E_p[log(p(X)/q(X))]
+\]
+</p>
+
+
+<p>
+This divergence is not symmetric, \(\dkl(p||q) \neq \dkl(q||p)\), and is
+\(\geq 0\). The equality stands when \(p\) and \(q\) are the same
+distribution over \(X\). 
+</p>
+
+<p>
+If we denote \(p^*\) the true distribution of \(X\) and if we parametrize a distribution over \(X\) with \(\pa\), we can search \(\pa\) to minimize the following divergence: 
+</p>
+\begin{align*}
+\dkl(p^*||p_{\pa}) &= \sum_x (p^*(X=x)log p^*(X=x)-p^*(x) log(p_{\pa}(X=x)))\\
+&= \sum_x p^*(X=x)log p^*(X=x)- \sum_x p^*(x) log(p_{\pa}(X=x))\\
+&= Cste - \sum_x p^*(x) log(p_{\pa}(X=x))\\
+&= Cste - E_{X\sim p^*} [log p_{\pa}(X=x)]
+\end{align*}
+
+<p>
+Therefore minimizing this theoritical KL divergence is equivalent to maximizing in practice the log-likelihood <i>wrt</i> \(\pa\).
+</p>
 </div>
+</div>
+</div>
+
+
+
 
 
 
@@ -352,7 +413,7 @@ In this part, there is no mention of hyperparameters or even parameters. Let say
 </p>
 
 <p>
-A generative model defines a joint density of latent variables \(\Z\) and observations \(\X\), \[p(\Z, \X) = p(Z)p(\X | \Z),\] with a generative scenario: draw the latent variables from a prior density \(p(\Z)\) and then relates them to the observations through the likelihood $p(\X|\Z). Inference in a Bayesian model amounts to conditioning on data and computing the posterior $p(\Z | \X). In fact, the latent variables \(\Z\) help govern the distribution of the data.
+A generative model defines a joint density of latent variables \(\Z\) and observations \(\X\), \[p(\Z, \X) = p(Z)p(\X | \Z),\] with a generative scenario: draw the latent variables from a prior density \(p(\Z)\) and then relates them to the observations through the likelihood \(p(\X|\Z)\). Inference in a Bayesian model amounts to conditioning on data and computing the posterior \(p(\Z | \X)\). In fact, the latent variables \(\Z\) help govern the distribution of the data.
 </p>
 
 <p>

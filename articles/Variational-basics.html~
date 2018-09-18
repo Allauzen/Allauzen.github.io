@@ -425,11 +425,14 @@ In a lot of papers and books on variational inference, the elbo is  derived thro
 \log p(\X) &= \log \sum_{\Z} p(\X,\Z) = \log \sum_{\Z} \Big[ p(\X,\Z)\frac{q(\Z)}{q(\Z)}\Big] \\
 &= \log E_q \Big[\frac{p(\X,\Z)}{q(\Z)}\Big] \\
 &\geq  E_q \Big[ \log \frac{p(\X,\Z)}{q(\Z)}\Big] \\
-= E_q \Big[ \log p(\X,\Z)\Big] + H(\Z)
+&= E_q \Big[ \log p(\X,\Z)\Big] + H(\Z)
 \end{align}
-</div>
-</div>
 
+<p>
+See the swap between the \(\log\) function (which is convex) and the expectation: this is the application fof the Jensen's inequality. 
+</p>
+</div>
+</div>
 
 <div id="outline-container-orge2456ef" class="outline-3">
 <h3 id="orge2456ef"><span class="section-number-3">4.2</span> ELBO : some comments</h3>
