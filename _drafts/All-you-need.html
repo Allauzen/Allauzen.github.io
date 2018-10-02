@@ -61,18 +61,18 @@ comments:
 Transformer Nets are first described in the paper <a href="https://arxiv.org/abs/1706.03762">Attention is all you need</a>. It was published at <a href="https://papers.nips.cc/paper/7181-attention-is-all-you-need.pdf">NIPS 2017</a>. Six month before, an implementation in pytorch <a href="https://github.com/jadore801120/attention-is-all-you-need-pytorch">was available</a>.  The notion of <a href="https://arxiv.org/abs/1703.03130">self-attention was also published in ICLR2017</a>. 
 </p>
 
-<div id="outline-container-org2a731b3" class="outline-2">
-<h2 id="org2a731b3">Terminology and basics of attention/transformer</h2>
-<div class="outline-text-2" id="text-org2a731b3">
+<div id="outline-container-orgefe2492" class="outline-2">
+<h2 id="orgefe2492">Terminology and basics of attention/transformer</h2>
+<div class="outline-text-2" id="text-orgefe2492">
 <p>
 The paper relies on the intensive use of 3 terms : Key, Value, and Query. Let us focus on the machine translation task. 
 </p>
 </div>
 
 
-<div id="outline-container-org3ce27ba" class="outline-3">
-<h3 id="org3ce27ba">NMT reminder</h3>
-<div class="outline-text-3" id="text-org3ce27ba">
+<div id="outline-container-org27cdb3b" class="outline-3">
+<h3 id="org27cdb3b">NMT reminder</h3>
+<div class="outline-text-3" id="text-org27cdb3b">
 <p>
 Assume a source sentence \(\X = x_{1}^{\lsrc}\) and a target sentence \(\Y = y_{1}^{\ltrg}\). 
 A NMT system defines the probability distribution \(P(\Y|\X,\psmt)\) as a funtion  \(g\) parametrized by \(\psmt\): 
@@ -102,9 +102,9 @@ The NMT system is in this form decomposed in three parts:
 
 
 
-<div id="outline-container-org9dc673c" class="outline-3">
-<h3 id="org9dc673c">Matrix computation</h3>
-<div class="outline-text-3" id="text-org9dc673c">
+<div id="outline-container-orgf5ad5ef" class="outline-3">
+<h3 id="orgf5ad5ef">Matrix computation</h3>
+<div class="outline-text-3" id="text-orgf5ad5ef">
 <p>
 Assume a source sentence \(\X = x_{1}^{\lsrc}\). It's a matrix. 
 \[  \begin{array}{|c|c|c|c|c|}

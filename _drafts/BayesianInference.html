@@ -15,33 +15,33 @@ comments:
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgfb87a2a">0.1. Warning</a></li>
+<li><a href="#org65b69fe">0.1. Warning</a></li>
 </ul>
 </li>
-<li><a href="#orgf1bf436">1. Classification inference (Bayesian inference 1)</a>
+<li><a href="#orgf8f381a">1. Classification inference (Bayesian inference 1)</a>
 <ul>
-<li><a href="#orgdceb188">1.1. Problem Set-up</a></li>
-<li><a href="#orgce96430">1.2. Maximum A Posteriori (MAP)</a></li>
-<li><a href="#org4fad09b">1.3. Roadmap to build a classifier</a></li>
-<li><a href="#orgb486a2b">1.4. No inference without assumptions</a></li>
-<li><a href="#org82a0094">1.5. Bernoulli Naive Bayes</a></li>
-<li><a href="#org6762164">1.6. MLE limitations</a></li>
+<li><a href="#org769b7e4">1.1. Problem Set-up</a></li>
+<li><a href="#orge131ed1">1.2. Maximum A Posteriori (MAP)</a></li>
+<li><a href="#orgf0fbbf1">1.3. Roadmap to build a classifier</a></li>
+<li><a href="#org160e5ce">1.4. No inference without assumptions</a></li>
+<li><a href="#orga2cc0cb">1.5. Bernoulli Naive Bayes</a></li>
+<li><a href="#org1811eb3">1.6. MLE limitations</a></li>
 </ul>
 </li>
-<li><a href="#org1c9b71f">2. Bayesian inference of parameters, the second level</a>
+<li><a href="#org0c4c837">2. Bayesian inference of parameters, the second level</a>
 <ul>
-<li><a href="#org9c9cca9">2.1. The Bayesian way</a></li>
-<li><a href="#org7798f37">2.2. The Bayesian way - 2</a></li>
-<li><a href="#orgb1fec8b">2.3. Beta prior for \(\paa\)</a></li>
-<li><a href="#org7e15e70">2.4. Beta prior</a></li>
-<li><a href="#org2a66aad">2.5. Posterior distribution  and conjugated prior</a></li>
-<li><a href="#org5739c64">2.6. Posterior distribution analysis and MAP estimation</a></li>
+<li><a href="#orgcb24875">2.1. The Bayesian way</a></li>
+<li><a href="#org1073bbf">2.2. The Bayesian way - 2</a></li>
+<li><a href="#orgaad37ee">2.3. Beta prior for \(\paa\)</a></li>
+<li><a href="#org19f8039">2.4. Beta prior</a></li>
+<li><a href="#orgf44408e">2.5. Posterior distribution  and conjugated prior</a></li>
+<li><a href="#org4b662f1">2.6. Posterior distribution analysis and MAP estimation</a></li>
 </ul>
 </li>
-<li><a href="#org0b06cd6">3. Bayesian prediction: the third level of inference</a>
+<li><a href="#orge2f7d45">3. Bayesian prediction: the third level of inference</a>
 <ul>
-<li><a href="#orgf6338e9">3.1. The Bayesian predictive law</a></li>
-<li><a href="#org257aa9d">3.2. The Bayesian predictive law - 2</a></li>
+<li><a href="#orgcf4dfb0">3.1. The Bayesian predictive law</a></li>
+<li><a href="#org80694d4">3.2. The Bayesian predictive law - 2</a></li>
 </ul>
 </div>
 </div>
@@ -59,8 +59,8 @@ comments:
 </p>
 
 
-<div id="outline-container-orgfb87a2a" class="outline-3">
-<h3 id="orgfb87a2a"><span class="section-number-3">0.1</span> Warning</h3>
+<div id="outline-container-org65b69fe" class="outline-3">
+<h3 id="org65b69fe"><span class="section-number-3">0.1</span> Warning</h3>
 <div class="outline-text-3" id="text-0-1">
 <p>
 Notes on the different levels of Bayesian inferences:  
@@ -75,12 +75,12 @@ Notes on the different levels of Bayesian inferences:
 
 
 
-<div id="outline-container-orgf1bf436" class="outline-2">
-<h2 id="orgf1bf436"><span class="section-number-2">1</span> Classification inference (Bayesian inference 1)</h2>
+<div id="outline-container-orgf8f381a" class="outline-2">
+<h2 id="orgf8f381a"><span class="section-number-2">1</span> Classification inference (Bayesian inference 1)</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-orgdceb188" class="outline-3">
-<h3 id="orgdceb188"><span class="section-number-3">1.1</span> Problem Set-up</h3>
+<div id="outline-container-org769b7e4" class="outline-3">
+<h3 id="org769b7e4"><span class="section-number-3">1.1</span> Problem Set-up</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 Given a random variable (RV) and a random vector such as:
@@ -95,7 +95,7 @@ Given a random variable (RV) and a random vector such as:
 </div>
 
 <ol class="org-ol">
-<li><a id="orgaf36649"></a>The <b>Bayesian decision</b><br />
+<li><a id="orga8ca415"></a>The <b>Bayesian decision</b><br />
 <div class="outline-text-4" id="text-1-1-1">
 <p>
 predict the class \(y\) such as to maximize :
@@ -108,8 +108,8 @@ P(\Y=y | \X=\x) = \frac{P(\X=\x|\Y=y) P(\Y=y)}{P(\X=\x)}
 </ol>
 </div>
 
-<div id="outline-container-orgce96430" class="outline-3">
-<h3 id="orgce96430"><span class="section-number-3">1.2</span> Maximum A Posteriori (MAP)</h3>
+<div id="outline-container-orge131ed1" class="outline-3">
+<h3 id="orge131ed1"><span class="section-number-3">1.2</span> Maximum A Posteriori (MAP)</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 \[
@@ -129,12 +129,12 @@ P(\Y=y| \X=\x) \propto P(\X=\x|\Y=y) P(\Y=y) = P(\X=\x,\Y=y)
 </div>
 
 
-<div id="outline-container-org4fad09b" class="outline-3">
-<h3 id="org4fad09b"><span class="section-number-3">1.3</span> Roadmap to build a classifier</h3>
+<div id="outline-container-orgf0fbbf1" class="outline-3">
+<h3 id="orgf0fbbf1"><span class="section-number-3">1.3</span> Roadmap to build a classifier</h3>
 <div class="outline-text-3" id="text-1-3">
 </div>
 <ol class="org-ol">
-<li><a id="orgdd4cdfc"></a>Training / Estimation<br />
+<li><a id="orgea4407f"></a>Training / Estimation<br />
 <div class="outline-text-4" id="text-1-3-1">
 <ul class="org-ul">
 <li>Define the distributions (prior and llh), their parametrization</li>
@@ -143,7 +143,7 @@ P(\Y=y| \X=\x) \propto P(\X=\x|\Y=y) P(\Y=y) = P(\X=\x,\Y=y)
 </div>
 </li>
 
-<li><a id="org00d8bc9"></a>Inference / classification<br />
+<li><a id="org52839f6"></a>Inference / classification<br />
 <div class="outline-text-4" id="text-1-3-2">
 <p>
 Use the model
@@ -154,8 +154,8 @@ Use the model
 </div>
 
 
-<div id="outline-container-orgb486a2b" class="outline-3">
-<h3 id="orgb486a2b"><span class="section-number-3">1.4</span> No inference without assumptions</h3>
+<div id="outline-container-org160e5ce" class="outline-3">
+<h3 id="org160e5ce"><span class="section-number-3">1.4</span> No inference without assumptions</h3>
 <div class="outline-text-3" id="text-1-4">
 <p>
 As said in MacKay's book: 
@@ -167,7 +167,7 @@ As said in MacKay's book:
 </div>
 </div>
 <ol class="org-ol">
-<li><a id="org7eacb5e"></a>First: the naive or independance assumption<br />
+<li><a id="orga98b4f5"></a>First: the naive or independance assumption<br />
 <div class="outline-text-4" id="text-1-4-1">
 <p>
 \[
@@ -177,7 +177,7 @@ P(\X|\Y) = \prod_{i=1}^d P(X_i|\Y)
 </div>
 </li>
 
-<li><a id="org4543e05"></a>Second: the law of P(X<sub>i</sub>=x<sub>i</sub>|\Y=y)<br />
+<li><a id="org2a07d05"></a>Second: the law of P(X<sub>i</sub>=x<sub>i</sub>|\Y=y)<br />
 <div class="outline-text-4" id="text-1-4-2">
 <p>
 depends on the nature of  \(X_i\)
@@ -192,8 +192,8 @@ depends on the nature of  \(X_i\)
 </ol>
 </div>
 
-<div id="outline-container-org82a0094" class="outline-3">
-<h3 id="org82a0094"><span class="section-number-3">1.5</span> Bernoulli Naive Bayes</h3>
+<div id="outline-container-orga2cc0cb" class="outline-3">
+<h3 id="orga2cc0cb"><span class="section-number-3">1.5</span> Bernoulli Naive Bayes</h3>
 <div class="outline-text-3" id="text-1-5">
 \begin{align*}
 P(\Y=y | \X=\x) &\propto P(\X=\x|\Y=y;\pa) P(\Y=y) \\
@@ -202,7 +202,7 @@ P(X_i=x_i | Y=y; \paa ) &= \paa^{x_i} (1-\paa)^{1-x_i}
 \end{align*}
 </div>
 <ol class="org-ol">
-<li><a id="orgaec6e5f"></a>Maximum Likelihood Estimation (MLE)<br />
+<li><a id="org85f9648"></a>Maximum Likelihood Estimation (MLE)<br />
 <div class="outline-text-4" id="text-1-5-1">
 <p>
 \[\paa = N_{1y} / N_y\]
@@ -216,12 +216,12 @@ P(X_i=x_i | Y=y; \paa ) &= \paa^{x_i} (1-\paa)^{1-x_i}
 </ol>
 </div>
 
-<div id="outline-container-org6762164" class="outline-3">
-<h3 id="org6762164"><span class="section-number-3">1.6</span> MLE limitations</h3>
+<div id="outline-container-org1811eb3" class="outline-3">
+<h3 id="org1811eb3"><span class="section-number-3">1.6</span> MLE limitations</h3>
 <div class="outline-text-3" id="text-1-6">
 </div>
 <ol class="org-ol">
-<li><a id="org8116e15"></a>Sparse obervation<br />
+<li><a id="org1a1ed19"></a>Sparse obervation<br />
 <div class="outline-text-4" id="text-1-6-1">
 <ul class="org-ul">
 <li>\(N_{1y}=0 \Rightarrow \paa = 0\)</li>
@@ -232,7 +232,7 @@ P(X_i=x_i | Y=y; \paa ) &= \paa^{x_i} (1-\paa)^{1-x_i}
 </div>
 </li>
 
-<li><a id="org48c5be1"></a>Sparse data as text<br />
+<li><a id="org2b1d683"></a>Sparse data as text<br />
 <div class="outline-text-4" id="text-1-6-2">
 <ul class="org-ul">
 <li>If you see a sequence of 5 heads, it does not mean that tail is impossible.</li>
@@ -245,12 +245,12 @@ P(X_i=x_i | Y=y; \paa ) &= \paa^{x_i} (1-\paa)^{1-x_i}
 </div>
 </div>
 
-<div id="outline-container-org1c9b71f" class="outline-2">
-<h2 id="org1c9b71f"><span class="section-number-2">2</span> Bayesian inference of parameters, the second level</h2>
+<div id="outline-container-org0c4c837" class="outline-2">
+<h2 id="org0c4c837"><span class="section-number-2">2</span> Bayesian inference of parameters, the second level</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org9c9cca9" class="outline-3">
-<h3 id="org9c9cca9"><span class="section-number-3">2.1</span> The Bayesian way</h3>
+<div id="outline-container-orgcb24875" class="outline-3">
+<h3 id="orgcb24875"><span class="section-number-3">2.1</span> The Bayesian way</h3>
 <div class="outline-text-3" id="text-2-1">
 <div class="org-center">
 <p>
@@ -264,7 +264,7 @@ Parameters are uncertain and must be modelled by random variables.
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="org7eabce8"></a>Bayesian learning of parameters<br />
+<li><a id="orge6eb211"></a>Bayesian learning of parameters<br />
 <div class="outline-text-4" id="text-2-1-1">
 <p>
 \[
@@ -276,8 +276,8 @@ P(\params |\data ) = \frac{P(\data|\params)P(\params)}{P(\data)}
 </ol>
 </div>
 
-<div id="outline-container-org7798f37" class="outline-3">
-<h3 id="org7798f37"><span class="section-number-3">2.2</span> The Bayesian way - 2</h3>
+<div id="outline-container-org1073bbf" class="outline-3">
+<h3 id="org1073bbf"><span class="section-number-3">2.2</span> The Bayesian way - 2</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 In the previous equation: 
@@ -290,7 +290,7 @@ In the previous equation:
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="orgd8de2da"></a>Bernoulli BN<br />
+<li><a id="org0adadef"></a>Bernoulli BN<br />
 <div class="outline-text-4" id="text-2-2-1">
 <ul class="org-ul">
 <li>For each class we consider a parameter \(\paa\)</li>
@@ -301,8 +301,8 @@ In the previous equation:
 </ol>
 </div>
 
-<div id="outline-container-orgb1fec8b" class="outline-3">
-<h3 id="orgb1fec8b"><span class="section-number-3">2.3</span> Beta prior for \(\paa\)</h3>
+<div id="outline-container-orgaad37ee" class="outline-3">
+<h3 id="orgaad37ee"><span class="section-number-3">2.3</span> Beta prior for \(\paa\)</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 \[
@@ -323,7 +323,7 @@ Beta(\aneg,\apos) = \frac{\Gamma(\apos+\aneg)}{\Gamma(\apos)\Gamma(\aneg)}
 </div>
 
 <ol class="org-ol">
-<li><a id="orgd4bff03"></a>Special cases:<br />
+<li><a id="org5b0c9ad"></a>Special cases:<br />
 <div class="outline-text-4" id="text-2-3-1">
 <ul class="org-ul">
 <li>\(\aneg=\apos=1\): uninformative prior, \(P(\paa;\aneg,\apos)\) is uniform</li>
@@ -334,14 +334,14 @@ Beta(\aneg,\apos) = \frac{\Gamma(\apos+\aneg)}{\Gamma(\apos)\Gamma(\aneg)}
 </li>
 </ol>
 </div>
-<div id="outline-container-org7e15e70" class="outline-3">
-<h3 id="org7e15e70"><span class="section-number-3">2.4</span> Beta prior</h3>
+<div id="outline-container-org19f8039" class="outline-3">
+<h3 id="org19f8039"><span class="section-number-3">2.4</span> Beta prior</h3>
 <div class="outline-text-3" id="text-2-4">
 </div>
 </div>
 
-<div id="outline-container-org2a66aad" class="outline-3">
-<h3 id="org2a66aad"><span class="section-number-3">2.5</span> Posterior distribution  and conjugated prior</h3>
+<div id="outline-container-orgf44408e" class="outline-3">
+<h3 id="orgf44408e"><span class="section-number-3">2.5</span> Posterior distribution  and conjugated prior</h3>
 <div class="outline-text-3" id="text-2-5">
 <p>
 \[
@@ -357,7 +357,7 @@ P(\paa | \data ) \propto \paa^{(N_{1y}+\apos-1)} (1-\paa)^{(N_{0y}+\aneg-1)}
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="org470ea48"></a>Conjugated prior<br />
+<li><a id="org7ae06d1"></a>Conjugated prior<br />
 <div class="outline-text-4" id="text-2-5-1">
 <p>
 The prior and posterior distribution have the same form: 
@@ -369,7 +369,7 @@ The Beta distribution is <b>the conjugated prior</b> of the Bernoulli distributi
 </div>
 </div>
 </li>
-<li><a id="orgbccfd5c"></a>Hyper-parameters<br />
+<li><a id="org443a037"></a>Hyper-parameters<br />
 <div class="outline-text-4" id="text-2-5-2">
 <ul class="org-ul">
 <li>\(\aneg,\apos\) can be seen as hyper-parameters.</li>
@@ -380,8 +380,8 @@ The Beta distribution is <b>the conjugated prior</b> of the Bernoulli distributi
 </ol>
 </div>
 
-<div id="outline-container-org5739c64" class="outline-3">
-<h3 id="org5739c64"><span class="section-number-3">2.6</span> Posterior distribution analysis and MAP estimation</h3>
+<div id="outline-container-org4b662f1" class="outline-3">
+<h3 id="org4b662f1"><span class="section-number-3">2.6</span> Posterior distribution analysis and MAP estimation</h3>
 <div class="outline-text-3" id="text-2-6">
 <ul class="org-ul">
 <li>If the data size increases, the impact of the prior decreases,</li>
@@ -391,7 +391,7 @@ The Beta distribution is <b>the conjugated prior</b> of the Bernoulli distributi
 </div>
 
 <ol class="org-ol">
-<li><a id="orgbfe7129"></a>MAP estimation of parameters<br />
+<li><a id="orged70c33"></a>MAP estimation of parameters<br />
 <div class="outline-text-4" id="text-2-6-1">
 <p>
 Set \(\paa\) to the mode value of the posterior distribution (quite frequentist): 
@@ -413,12 +413,12 @@ Set \(\paa\) to the mode value of the posterior distribution (quite frequentist)
 </div>
 
 
-<div id="outline-container-org0b06cd6" class="outline-2">
-<h2 id="org0b06cd6"><span class="section-number-2">3</span> Bayesian prediction: the third level of inference</h2>
+<div id="outline-container-orge2f7d45" class="outline-2">
+<h2 id="orge2f7d45"><span class="section-number-2">3</span> Bayesian prediction: the third level of inference</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-orgf6338e9" class="outline-3">
-<h3 id="orgf6338e9"><span class="section-number-3">3.1</span> The Bayesian predictive law</h3>
+<div id="outline-container-orgcf4dfb0" class="outline-3">
+<h3 id="orgcf4dfb0"><span class="section-number-3">3.1</span> The Bayesian predictive law</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 Since we observed training data \(\data\), the real goal is to predict a value by <b>marginalizing</b> the parameters.  
@@ -426,7 +426,7 @@ Since we observed training data \(\data\), the real goal is to predict a value b
 </div>
 
 <ol class="org-ol">
-<li><a id="orgffdd01e"></a>Bernoulli BN:<br />
+<li><a id="orgb0c62ea"></a>Bernoulli BN:<br />
 <div class="outline-text-4" id="text-3-1-1">
 \begin{align*}
 P(\Y=y|\X, \data) &\propto \prod_{i=1}^d P(X_i = \x_i | \Y=y, \data) P(\Y=y|\data)\\
@@ -443,8 +443,8 @@ P(X_i = \x_i | \Y=y, \data) &=  \int_{0}^{1} P(X_i = \x_i,\paa | \Y=y, \data) d\
 </div>
 
 
-<div id="outline-container-org257aa9d" class="outline-3">
-<h3 id="org257aa9d"><span class="section-number-3">3.2</span> The Bayesian predictive law - 2</h3>
+<div id="outline-container-org80694d4" class="outline-3">
+<h3 id="org80694d4"><span class="section-number-3">3.2</span> The Bayesian predictive law - 2</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 \[

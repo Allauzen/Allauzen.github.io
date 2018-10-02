@@ -15,15 +15,15 @@ comments:
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org47054bb">1. The problem of approximate inference</a>
+<li><a href="#org4d53396">1. The problem of approximate inference</a>
 <ul>
-<li><a href="#orgcce8a40">1.1. The evidence lower bound (ELBO) : derivation</a></li>
-<li><a href="#org064cb73">1.2. ELBO : some comments</a></li>
+<li><a href="#orgd70304b">1.1. The evidence lower bound (ELBO) : derivation</a></li>
+<li><a href="#org459c239">1.2. ELBO : some comments</a></li>
 </ul>
 </li>
-<li><a href="#orgcd61656">2. Variational Inference: A Review for Statisticians</a>
+<li><a href="#orge23369f">2. Variational Inference: A Review for Statisticians</a>
 <ul>
-<li><a href="#org01f9cef">2.1. Comparing variational inference and MCMC</a></li>
+<li><a href="#org436b297">2.1. Comparing variational inference and MCMC</a></li>
 </ul>
 </li>
 </ul>
@@ -67,8 +67,8 @@ Following Random notes on variational inference.
 </p>
 
 
-<div id="outline-container-org47054bb" class="outline-2">
-<h2 id="org47054bb"><span class="section-number-2">1</span> The problem of approximate inference</h2>
+<div id="outline-container-org4d53396" class="outline-2">
+<h2 id="org4d53396"><span class="section-number-2">1</span> The problem of approximate inference</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 In this part, there is no mention of hyperparameters or even parameters. Let say that the latent variables represent all unknown quantities of interest.
@@ -93,8 +93,8 @@ This is not of a great help since the denominator is the evidence and is also un
 </div>
 
 
-<div id="outline-container-orgcce8a40" class="outline-3">
-<h3 id="orgcce8a40"><span class="section-number-3">1.1</span> The evidence lower bound (ELBO) : derivation</h3>
+<div id="outline-container-orgd70304b" class="outline-3">
+<h3 id="orgd70304b"><span class="section-number-3">1.1</span> The evidence lower bound (ELBO) : derivation</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 Given a family of distribution, we are looking for one its member \(q(\Z)\) that best approximates the conditional distribution \(p(\Z|\X)\). The criterion is the Kullback-Leibler divergence: 
@@ -136,8 +136,8 @@ Note that if we can find \(q\) such as \(q(\Z) = P(\Z|\X)\), the KL divergence t
 </div>
 
 
-<div id="outline-container-org064cb73" class="outline-3">
-<h3 id="org064cb73"><span class="section-number-3">1.2</span> ELBO : some comments</h3>
+<div id="outline-container-org459c239" class="outline-3">
+<h3 id="org459c239"><span class="section-number-3">1.2</span> ELBO : some comments</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 Variational inference aims at maximizing the ELBO. This means that we indirectly optimize two terms: 
@@ -169,16 +169,16 @@ Therefore the second term can be interpreted as a régularization term on \(q\).
 
 
 
-<div id="outline-container-orgcd61656" class="outline-2">
-<h2 id="orgcd61656"><span class="section-number-2">2</span> Variational Inference: A Review for Statisticians</h2>
+<div id="outline-container-orge23369f" class="outline-2">
+<h2 id="orge23369f"><span class="section-number-2">2</span> Variational Inference: A Review for Statisticians</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 David M. Blei, Alp Kucukelbir, Jon D. McAuliffe on <a href="https://arxiv.org/abs/1601.00670">arxiv</a>  (2016)
 </p>
 </div>
 
-<div id="outline-container-org01f9cef" class="outline-3">
-<h3 id="org01f9cef"><span class="section-number-3">2.1</span> Comparing variational inference and MCMC</h3>
+<div id="outline-container-org436b297" class="outline-3">
+<h3 id="org436b297"><span class="section-number-3">2.1</span> Comparing variational inference and MCMC</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 When should a statistician use MCMC and when should she use variational inference? We will offer some guidance. MCMC methods tend to be more computationally intensive than variational inference but they also provide guarantees of producing (asymptotically) exact samples from the target density (Robert and Casella, 2004). Variational inference does not enjoy such guarantees it can only find a density close to the target but tends to be faster than MCMC. Because it rests on optimization, variational inference easily takes advantage of methods like stochastic optimization (Robbins and Monro, 1951; Kushner and Yin, 1997) and distributed optimization (though some MCMC methods can also exploit these innovations (Welling and Teh, 2011; Ahmed et al., 2012)).  
