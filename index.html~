@@ -1,6 +1,6 @@
 ---
 title: ""
-date: 2018-09-21
+date: 2018-08-21
 layout: mainpage
 categories: 
 tags: 
@@ -14,13 +14,6 @@ comments:
 <div id="outline-container-orge69dc51" class="outline-2">
 <h2 id="orge69dc51">News</h2>
 <div class="outline-text-2" id="text-orge69dc51">
-<ul class="org-ul">
-<li>November the 23th, a talk at</li>
-</ul>
-<p>
-<a href="https://www.sciencesmaths-paris.fr/fr/horizon-maths-2018-intelligence-artificielle-957.htm">Horizon Maths 2018 : Intelligence Artificielle</a>
-</p>
-
 <ul class="org-ul">
 <li>With Matthieu Labeau:<a href="https://aclanthology.coli.uni-saarland.de/papers/C18-1261/c18-1261">Learning with Noise-Contrastive Estimation:
 Easing training by learning to scale</a>, in COLING 2018. The paper was
