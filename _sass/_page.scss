@@ -188,6 +188,7 @@ span + .entry-title {
 /* main content block */
 
 .entry-content {
+    /*org = 14*/
 	@include span-columns(14);
 
 	p:first-child {
@@ -234,7 +235,7 @@ span + .entry-title {
 
 #home,
 #page {
-
+    /*760 originally */
 	.entry-wrapper {
 		max-width: em(760);
 	}

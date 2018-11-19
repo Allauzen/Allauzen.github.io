@@ -1,0 +1,318 @@
+---
+title: "Rationalizing Neural Predictions"
+date: 2017-11-01
+layout: post
+categories: 
+tags: 
+- article 
+- NNet 
+- readings
+published: true
+comments: 
+---
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org4c85952">Summary</a>
+<ul>
+<li><a href="#org46046d7">Generator</a></li>
+<li><a href="#orgc8e5eec">Encoder</a></li>
+<li><a href="#org0983cc8">Joint optimization</a></li>
+<li><a href="#orgd930870">Inference</a></li>
+</ul>
+</li>
+<li><a href="#org3782370">Questions / Comments</a>
+<ul>
+<li><a href="#org5d31f9e">Rationale /</a></li>
+<li><a href="#org9a4f65d">Training and inference</a></li>
+<li><a href="#org8a5ecb0">Attention based model for classification</a></li>
+<li><a href="#orgcb08d06">Encoder</a></li>
+<li><a href="#org46f8ed7">Loss function etc &#x2026;</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+\(\newcommand{\X}{\mathbf{X}}\)
+\(\newcommand{\Y}{\mathbf{Y}}\)
+\(\newcommand{\Z}{\mathbf{Z}}\)
+</p>
+
+<p>
+\(\newcommand{\x}{\mathbf{x}}\)
+\(\newcommand{\y}{\mathbf{y}}\)
+\(\newcommand{\z}{\mathbf{z}}\)
+\(\newcommand{\pa}{\mathbf{\theta}}\)
+</p>
+<p>
+\(\newcommand{\paold}{\pa^{old}}\)
+\(\newcommand{\panew}{\pa^{new}}\)
+</p>
+
+<p>
+\(\newcommand{\lb}{\mathcal{L}(q;\pa)}\) 
+</p>
+<p>
+\(\newcommand{\dkl}{D_{kl}}\)
+</p>
+
+
+<p>
+\(\newcommand{\lsrc}{ I}\)
+\(\newcommand{\ltrg}{ J}\)
+</p>
+<hr>
+
+
+
+<p>
+Reading notes on "Rationalizing Neural Predictions", by Tao Lei,
+Regina Barzilay and Tommi Jaakkola, published at EMNLP 2016. You can
+download <a href="https://people.csail.mit.edu/taolei/papers/emnlp16_rationale.pdf">the paper</a> and <a href="https://people.csail.mit.edu/taolei/papers/emnlp16_rationale_slides.pdf">the slides</a>.
+</p>
+
+
+
+
+<div id="outline-container-org4c85952" class="outline-2">
+<h2 id="org4c85952">Summary</h2>
+<div class="outline-text-2" id="text-org4c85952">
+<p>
+The motivation is to design a model that can both represent a text for
+classification purpose and also explain its decision. The model learns
+first to extract pieces of an input text as justifications (called
+rationales) that are tailored to be short, coherent, and yet
+sufficient for making efficient predictions.
+</p>
+
+
+<p>
+The model can be decomposed into two steps: 
+</p>
+<ul class="org-ul">
+<li>The <i>generator</i> specifies a distribution over text fragments as
+candidate rationales. In fact, each word of the input text is
+associated with a binary hidden random variable to weight its importance
+for the next step.</li>
+<li>The <i>encoder</i> takes the output of the generator to make the
+prediction.</li>
+</ul>
+
+<p>
+The rationale extraction can be understood as a type of stochastic
+attention although architectures and objectives differ.
+</p>
+</div>
+
+<div id="outline-container-org46046d7" class="outline-3">
+<h3 id="org46046d7">Generator</h3>
+<div class="outline-text-3" id="text-org46046d7">
+<p>
+The goal is to associate to an input sequence of words, a sequence of
+hidden random variables, where each hidden variable indicates wether the
+associated word should be considered as rationale (\(z=1\)) or not (\(z=0\)).
+</p>
+
+<p>
+Assume the input text is of sequence of words as input: \(\X =
+  x_{1}^{\lsrc}\). The model associates to each input word a binary
+variable: \(\Z=z_{1}^{\lsrc}\).  The generator reads the input text
+with a BiLSTM. To infer the probability of the sequence \(P(\Z|\X)\),
+independent and recurrent predictions are explored.
+</p>
+
+
+
+<blockquote>
+<p>
+For NMT people this could be called the encoder. Maybe <i>selector</i> or
+simply <i>filter</i> could be used. The choice of terminology in this
+paper is for me confusing. However&#x2026;<br />
+</p>
+</blockquote>
+</div>
+</div>
+
+
+<div id="outline-container-orgc8e5eec" class="outline-3">
+<h3 id="orgc8e5eec">Encoder</h3>
+<div class="outline-text-3" id="text-orgc8e5eec">
+<p>
+Rationales are defined as the set of \(x_t\) such as \(z_t=1\). Therefore
+the input for the encoder is a <i>selection</i> of \(\X\).  Then you can pick
+your favorite architecture to deal with this input. In the paper, they
+used RNNs and pick the last hidden state to make the final prediction
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0983cc8" class="outline-3">
+<h3 id="org0983cc8">Joint optimization</h3>
+<div class="outline-text-3" id="text-org0983cc8">
+<p>
+From an input \(\X\) of length \(\lsrc\), it generates \(\lsrc\)  binary variables \(\Z\). The
+generator estimate \(P(\Z|\X)\). 
+</p>
+
+<p>
+The authors first define a cost function as follows:
+</p>
+\begin{align}
+  cost(\x,\z,\y) &= || \y - f_{\pa_{e}}(\x,\z) ||^2 + \lambda_1 ||\z|| + \lambda_2 \sum_t |z_t - z_{t-1} |  \\
+  P(\Z=\z | \X=\x) &= g_{\pa_g}(\x)
+\end{align}
+
+<p>
+The cost function depends therefore on the value of \(\z\) in three
+ways: 
+</p>
+<ul class="org-ul">
+<li>First the term \(||\y - f_{\pa_{e}}(\x,\z) ||^2\) is the
+reconstruction error. The target is \(\y\) while the encoder predicts
+\(f_{\pa_{e}}(\x,\z)\).</li>
+<li>Then, the term \(||\z||\) ensures that the selection (the number of \(z\)
+set to one) is as small as possible.</li>
+<li>The last term \(\sum_t |z_t - z_{t-1} |\) favors contiguous selection
+(phrases).</li>
+</ul>
+
+<p>
+The loss function to be optimized for each training example is : 
+</p>
+\begin{align}
+\mathcal{L}(\pa_g, \pa_e, \x, \y) &= E_{\z\sim P(\Z|\X)} cost(\x,\y,\z) \\
+&=\sum_{\z} P(\Z=\z | \X=\x) cost(\x,\y,\z) \\
+&= \sum_{\z} g_{\pa_g}(\x)  cost(\x,\y,\z)
+\end{align}
+
+<p>
+This expected cost is a workaround to deal with hidden variables.
+Minimizing the expected cost is challenging since it involves summing
+over all the possible choices of rationales \(\z\). Then the authors
+propose to sample \(\z\) from the generator to approximate the expectation.
+</p>
+
+<p>
+However, the derivatives look bit wired. The cost function is considered
+as a constant <i>wrt</i> of the generator parameters. The term related to the
+norm of \(\z\) for instance, implies the expected norm of \(\z\). This expectation
+depends on the same parameters and could be included in the gradient ?
+</p>
+
+<p>
+In fact, the assumption made through the paper is: given \(p(\Z|\X)\), \(\z\) is sampled and
+becomes then deterministic.
+</p>
+
+
+<p>
+To summarize the inference step for training : 
+</p>
+<ul class="org-ul">
+<li>Forward propagation of \(\x\) through the generator gives you \(p(\Z|\X)\).</li>
+<li>Sample a bunch of \(\z\) in this distribution.</li>
+<li>Given \(\z\), build the input of the encoder and compute the</li>
+</ul>
+<p>
+expected cost.
+</p>
+<ul class="org-ul">
+<li>Update the parameters of the whole model given the expected gradients.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgd930870" class="outline-3">
+<h3 id="orgd930870">Inference</h3>
+<div class="outline-text-3" id="text-orgd930870">
+<p>
+While for inference: 
+</p>
+<ul class="org-ul">
+<li>Forward propagation of \(\x\) through the generator gives you \(p(\z|\x)\).</li>
+<li>Compute \(\z\) and then get the rationales (how ?)</li>
+<li>Given \(\z\), build the input of the encoder and compute the answer.</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-org3782370" class="outline-2">
+<h2 id="org3782370">Questions / Comments</h2>
+<div class="outline-text-2" id="text-org3782370">
+</div>
+<div id="outline-container-org5d31f9e" class="outline-3">
+<h3 id="org5d31f9e">Rationale /</h3>
+<div class="outline-text-3" id="text-org5d31f9e">
+<p>
+As written in the paper the notion of what counts as a rationale may
+be ambiguous in some contexts and the task of selecting rationales
+may therefore be challenging to evaluate. In the paper, they focus on two domains
+where ambiguity is minimal (or can be minimized).
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org9a4f65d" class="outline-3">
+<h3 id="org9a4f65d">Training and inference</h3>
+<div class="outline-text-3" id="text-org9a4f65d">
+<ul class="org-ul">
+<li>For training, maybe I missed it but, there's no mention in the paper of the number of samples  used to approximate the expectation.</li>
+
+<li>The inference step raises a similar question:  but how the second step is</li>
+</ul>
+<p>
+implemented ? Just apply a threshold on the probability ? 0.5 ?
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org8a5ecb0" class="outline-3">
+<h3 id="org8a5ecb0">Attention based model for classification</h3>
+<div class="outline-text-3" id="text-org8a5ecb0">
+<p>
+The rationale extraction can be understood as attention, even
+architectures and objectives differ. The discussion in the paper is
+not so convincing for me. It could be interesting to investigate that
+point, starting by <a href="https://arxiv.org/abs/1511.05234">this paper on stochastic attention</a>, followed by
+<a href="https://arxiv.org/abs/1706.03762">attention is all you need</a>.
+</p>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-orgcb08d06" class="outline-3">
+<h3 id="orgcb08d06">Encoder</h3>
+<div class="outline-text-3" id="text-orgcb08d06">
+<p>
+The encoder is a "simple" rnn and the last hidden state is taken as
+input for classification. While we expect a short sequence after the
+rationale extraction step. This could maybe bias the whole model to
+select word at end of the sequence, and then by backprop to favor
+rationale extraction at the end.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org46f8ed7" class="outline-3">
+<h3 id="org46f8ed7">Loss function etc &#x2026;</h3>
+<div class="outline-text-3" id="text-org46f8ed7">
+<p>
+Note that the first regularization term could be l1 norm instead of l2, to favor sparsity. Maybe good for long documents.
+</p>
+
+
+<p>
+More generally, is this formulation the best option ? Since \(\Z\) are hidden variables, could we adapt the Variational Auto Encoder to this task and can we use reparametrization trick ?
+</p>
+</div>
+</div>
+</div>
