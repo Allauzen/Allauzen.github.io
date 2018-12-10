@@ -19,16 +19,29 @@ comments:
 <ul>
 <li><a href="#orgcb18046">2.1. Cours d'intro</a></li>
 <li><a href="#orga220007">2.2. TP : prise en main</a></li>
-<li><a href="#orge4db6f7">2.3. Lecture</a></li>
+<li><a href="#orge01249e">2.3. Lecture</a></li>
 </ul>
 </li>
 <li><a href="#orgfa0cce2">3. 28/11/18: Modèle de séquence  - 1</a>
 <ul>
 <li><a href="#orgf46c976">3.1. Cours : ngram et convolution</a></li>
 <li><a href="#org068cb75">3.2. TP : Convolutional Neural Networks for Sentence Classification</a></li>
-<li><a href="#orge01249e">3.3. Lecture</a></li>
+<li><a href="#org42345d5">3.3. Lecture</a></li>
 </ul>
 </li>
+<li><a href="#org9d41bad">4. 05/12/18: Modèle de séquence  - 2</a>
+<ul>
+<li><a href="#org0971d95">4.1. Lectures d'article</a></li>
+<li><a href="#orga8376d0">4.2. Cours : Réseaux récurrents et LSTM</a></li>
+</ul>
+</li>
+<li><a href="#org1d1d835">5. 12/12/18: Lectures et TP</a>
+<ul>
+<li><a href="#org186b62f">5.1. Lectures d'article</a></li>
+<li><a href="#orgdb22ddf">5.2. TPs</a></li>
+</ul>
+</li>
+<li><a href="#org2c4ffae">6. 16/01/19 : Neural Parsing</a></li>
 </ul>
 </div>
 </div>
@@ -81,8 +94,8 @@ Pytorch101 et classification de texte basique.
 </div>
 
 
-<div id="outline-container-orge4db6f7" class="outline-3">
-<h3 id="orge4db6f7"><span class="section-number-3">2.3</span> Lecture</h3>
+<div id="outline-container-orge01249e" class="outline-3">
+<h3 id="orge01249e"><span class="section-number-3">2.3</span> Lecture</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 <a href="https://arxiv.org/abs/1510.00726">A Primer on Neural Network Models for Natural Language Processing</a> is
@@ -123,12 +136,82 @@ reproduire le modèle  <a href="https://www.aclweb.org/anthology/D14-1181">cet a
 </div>
 </div>
 
-<div id="outline-container-orge01249e" class="outline-3">
-<h3 id="orge01249e"><span class="section-number-3">3.3</span> Lecture</h3>
+<div id="outline-container-org42345d5" class="outline-3">
+<h3 id="org42345d5"><span class="section-number-3">3.3</span> Lecture</h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
 Le grand classique: <a href="http://www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf">A Neural Probabilistic Language Model</a>. À lire ! 
 </p>
 </div>
+</div>
+</div>
+
+
+<div id="outline-container-org9d41bad" class="outline-2">
+<h2 id="org9d41bad"><span class="section-number-2">4</span> 05/12/18: Modèle de séquence  - 2</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-org0971d95" class="outline-3">
+<h3 id="org0971d95"><span class="section-number-3">4.1</span> Lectures d'article</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+Un peu de classification d'image avec :
+</p>
+<ul class="org-ul">
+<li><a href="https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf">AlexNet</a></li>
+<li><a href="https://arxiv.org/abs/1512.03385">ResNet</a></li>
+<li><a href="http://proceedings.mlr.press/v37/ioffe15.pdf">BatchNorm</a></li>
+</ul>
+
+<p>
+Remarque: pour les réseaux avec des architecture différentes
+(récurrents, transformers), la BatchNorm est moins utilisée et la
+<a href="https://arxiv.org/abs/1607.06450">Layer Normalization</a> semble plus adaptée. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga8376d0" class="outline-3">
+<h3 id="orga8376d0"><span class="section-number-3">4.2</span> Cours : Réseaux récurrents et LSTM</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+Pour les LSTMs, la référence reste la thèse d'<a href="https://www.cs.toronto.edu/~graves/phd.pdf">Alex Graves</a>. 
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1d1d835" class="outline-2">
+<h2 id="org1d1d835"><span class="section-number-2">5</span> 12/12/18: Lectures et TP</h2>
+<div class="outline-text-2" id="text-5">
+</div>
+<div id="outline-container-org186b62f" class="outline-3">
+<h3 id="org186b62f"><span class="section-number-3">5.1</span> Lectures d'article</h3>
+<div class="outline-text-3" id="text-5-1">
+<ul class="org-ul">
+<li><a href="https://arxiv.org/abs/1706.03762">Transformer / Attention is all you need</a></li>
+<li><a href="http://www.aclweb.org/anthology/P17-1052">Deep Pyramidal convolution for text classification</a></li>
+<li><a href="https://arxiv.org/pdf/1610.02357.pdf">Xception</a>, un peu d'image pour changer.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgdb22ddf" class="outline-3">
+<h3 id="orgdb22ddf"><span class="section-number-3">5.2</span> TPs</h3>
+<div class="outline-text-3" id="text-5-2">
+<p>
+Reprises des derniers TPs 
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org2c4ffae" class="outline-2">
+<h2 id="org2c4ffae"><span class="section-number-2">6</span> 16/01/19 : Neural Parsing</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+Benoit Crabbé
+</p>
 </div>
 </div>
