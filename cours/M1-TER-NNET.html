@@ -19,7 +19,10 @@ comments:
 <li><a href="#orgec1422e">Contenu</a>
 <ul>
 <li><a href="#org7c08dc1">Séance 1, le 16/01</a></li>
-<li><a href="#org9c1dda4">Séance 2, le 30/01</a></li>
+<li><a href="#orgb90c833">Séance 2, le 06/02</a></li>
+<li><a href="#org1d91ccf">Séance 3, le 13/02</a></li>
+<li><a href="#orga43c932">Séance 4, le 20/02</a></li>
+<li><a href="#orgd919649">Séance 5</a></li>
 </ul>
 </li>
 </ul>
@@ -37,6 +40,8 @@ les cours et les ressources nécessaires.
 <div class="outline-text-2" id="text-org74db75e">
 <ul class="org-ul">
 <li>Pour 13/02 : Finir le tp d'intro à pytorch</li>
+<li>Neige le 30/01: cours annulé, mais 2 notebooks sont disponibles pour
+s'avancer un peu (numpy et torch101)</li>
 <li>Neige le 23/01: cours reporté à la demande générale</li>
 <li>Première séance le 16/01, il n'y a pas TER le 09/01 !</li>
 </ul>
@@ -59,16 +64,17 @@ les cours et les ressources nécessaires.
 </div>
 </div>
 
-<div id="outline-container-org9c1dda4" class="outline-3">
-<h3 id="org9c1dda4">Séance 2, le 30/01</h3>
-<div class="outline-text-3" id="text-org9c1dda4">
+<div id="outline-container-orgb90c833" class="outline-3">
+<h3 id="orgb90c833">Séance 2, le 06/02</h3>
+<div class="outline-text-3" id="text-orgb90c833">
 <ul class="org-ul">
 <li>cours: apprentissage / optimisation</li>
+<li>TP : sur numpy, à faire à la maison</li>
 <li>TP : intro pytorch</li>
 </ul>
 
 <p>
-<b><b>Neige</b></b>: la séance est encore annulée, mais on peut s'avancer en
+<b><b>Neige</b></b>: la séance du 30/01 est annulée, mais on peut s'avancer en
 faisant les TPs d'ici la semaine prochaine.  Il y a 2 notebooks, le
 premier est sur numpy et le second sur pytorch. Il est bien de les
 faire dans cet ordre.
@@ -76,18 +82,28 @@ faire dans cet ordre.
 
 <p>
 L'objectif important est d'avancer le plus possible dans le TP sur
-pytorch après avoir maîtriser le TP sur numpy. Avancer le plus
+pytorch après avoir maîtrisé le TP sur numpy. Avancer le plus
 possible les TP pour la semaine prochaine. 
 </p>
 
 
 
 <p>
-Correction partielle du TP à terminer pour la semaine prochaine: 
+Correction partielle du TP sur pytorch qui devrait vous permettre de terminer pour la semaine prochaine: 
 </p>
 
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #00ffff;">import</span> torch <span style="color: #00ffff;">as</span> th
+<span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">set the seed (reproductibility)</span>
+torch.manual_seed(<span style="color: #ffffff; background-color: #000000;">1</span>) 
+<span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">dimensions of the problem</span>
+<span style="color: #ffffff; background-color: #000000;">D_in</span> = <span style="color: #ffffff; background-color: #000000;">2</span>
+<span style="color: #ffffff; background-color: #000000;">D_out</span>= <span style="color: #ffffff; background-color: #000000;">1</span>
+<span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">Use the nn package to define our model and loss function</span>
+<span style="color: #ffffff; background-color: #000000;">model</span> = th.nn.Sequential(
+    th.nn.Linear(D_in, D_out),
+    th.nn.Sigmoid()    
+)
 <span style="color: #ffffff; background-color: #000000;">loss_fn</span> = th.nn.BCELoss()
 <span style="color: #ffffff; background-color: #000000;">learning_rate</span> = 1e-<span style="color: #ffffff; background-color: #000000;">2</span>
 <span style="color: #ffffff; background-color: #000000;">optimizer</span> = th.optim.SGD(model.parameters(), <span style="color: #ffffff; background-color: #000000;">lr</span>=learning_rate)
@@ -105,6 +121,40 @@ Correction partielle du TP à terminer pour la semaine prochaine:
     <span style="color: #00ffff;">print</span>(epoch,total)
 </pre>
 </div>
+</div>
+</div>
+
+<div id="outline-container-org1d91ccf" class="outline-3">
+<h3 id="org1d91ccf">Séance 3, le 13/02</h3>
+<div class="outline-text-3" id="text-org1d91ccf">
+<ul class="org-ul">
+<li>Cours sur la classification de texte:  représentation sous forme de
+sac d'atributs binaires puis de <i>word embeddings</i>.</li>
+<li>TP : Classification sur ImDB, de la regression logistique au word
+embeddings.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga43c932" class="outline-3">
+<h3 id="orga43c932">Séance 4, le 20/02</h3>
+<div class="outline-text-3" id="text-orga43c932">
+<ul class="org-ul">
+<li>Cours sur la classification multi-classe, et la génération de
+phrase.</li>
+<li>TP: Classification de texte, suite et fin</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orgd919649" class="outline-3">
+<h3 id="orgd919649">Séance 5</h3>
+<div class="outline-text-3" id="text-orgd919649">
+<p>
+<b><b>Travail à rendre</b></b>, avant la séance: bilan sur la classification de
+  texte. 
+</p>
 </div>
 </div>
 </div>
