@@ -25,6 +25,19 @@ comments:
 <li><a href="#org4b9a1e7">Séance 5, le 27/02</a></li>
 </ul>
 </li>
+<li><a href="#orgbcc48b9">Projets</a>
+<ul>
+<li><a href="#org41f25c1">Notation automatique de réponses courtes à des questions</a></li>
+<li><a href="#org9fb4977">Notation (et explication) pour les bières</a></li>
+<li><a href="#orgce7bfdf">Airline Travel Information System (ATIS)</a></li>
+<li><a href="#org19a13d8">Classification de tweets</a></li>
+<li><a href="#org7e3493e">Conversion graphèmes vers phonèmes</a></li>
+<li><a href="#org6c36d5a">Q&amp;A insurance</a></li>
+<li><a href="#org71243b9">Quora Question Pairs</a></li>
+<li><a href="#orgd3669ec">Toxic Comment Classification</a></li>
+<li><a href="#orga9eec24">The Fake-news challenge</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -158,6 +171,228 @@ phrase.</li>
 texte.</li>
 <li><b><b>Travail à rendre</b></b>, choix du projet</li>
 </ul>
+</div>
+</div>
+</div>
+
+
+
+
+
+<div id="outline-container-orgbcc48b9" class="outline-2">
+<h2 id="orgbcc48b9">Projets</h2>
+<div class="outline-text-2" id="text-orgbcc48b9">
+<p>
+<b>Pour le mercredi XXX</b>, vous devez choisir un projet à faire, soit
+parmi ceux listés ci-dessous, soit en proposer un, soit on en discute. Puis vous devez
+explorer et décrire la tâche en me écrivant un notebook.
+</p>
+
+<p>
+De manière général, face à un nouveau projet et de nouvelles données, il
+faut :
+</p>
+
+<ul class="org-ul">
+<li>regarder la taille du vocabulaire (en nombre de mots)</li>
+<li>est-il possible de le réduire à une taille acceptable ? par exemple
+en excluant les mots dont la fréquence est en dessous d'un certain
+seuil.</li>
+<li>le nombre de caractères</li>
+<li>le nombre de phrase (ou de document) à traiter pour l'apprentissage
+et pour le test</li>
+<li>parfois, c'est à vous de créer la partition (apprentissage,
+validation, test)</li>
+<li>la distribution de longueurs de phrases.</li>
+</ul>
+
+<p>
+L'objectif de ce notebook sera d'analyser les données et la tâche afin
+de proposer des solutions à expérimenter. Il peut être bien également de
+regarder la métrique d'évaluation et voir quels sont les résultats
+obtenus par l'état de l'art.
+</p>
+</div>
+
+<div id="outline-container-org41f25c1" class="outline-3">
+<h3 id="org41f25c1">Notation automatique de réponses courtes à des questions</h3>
+<div class="outline-text-3" id="text-org41f25c1">
+<p>
+Les données sont <a href="http://web.eecs.umich.edu/~mihalcea/downloads/ShortAnswerGrading_v2.0.zip">ici pour le téléchargement</a> et leur description est
+<a href="http://aclweb.org/anthology/P11-1076">dans cet article</a>. 
+</p>
+
+<p>
+Lorsque l'on connait:
+</p>
+
+<ul class="org-ul">
+<li>une question,</li>
+<li>une réponse d'un étudiant,</li>
+<li>la bonne réponse,</li>
+</ul>
+
+<p>
+comment prédire la note à donné à la réponse de l'étudiant. Il peut être
+aussi intéressant d'essayer d'apprendre à générer la réponse.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org9fb4977" class="outline-3">
+<h3 id="org9fb4977">Notation (et explication) pour les bières</h3>
+<div class="outline-text-3" id="text-org9fb4977">
+<p>
+Les données sont disponibles <a href="http://jmcauley.ucsd.edu/cse255/data/beer/beer_50000.json">ici en json</a>. Un exemple d'utilisation de
+ces données est décrit dans <a href="https://people.csail.mit.edu/taolei/papers/emnlp16_rationale.pdf">cet article</a>. Mais on peut envisager des
+choses plus simple: 
+</p>
+<ul class="org-ul">
+<li>juste un classifieur pour assigner plusieurs notes</li>
+<li>expliquer la note pour un classifier plus simple</li>
+<li>&#x2026;</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgce7bfdf" class="outline-3">
+<h3 id="orgce7bfdf">Airline Travel Information System (ATIS)</h3>
+<div class="outline-text-3" id="text-orgce7bfdf">
+<p>
+Corpus des années 90, il est dédié à la compréhension de la parole. Le
+but est de faire de l'étiquetage de séquence. En entrée, une phrase est
+une séquence de mots, et le but est de lui associé une séquence
+d'étiquette, une par mot.
+</p>
+
+<ul class="org-ul">
+<li>Show flights from Boston to New York today</li>
+<li>O O O B-dept O B-arr I-arr B-date</li>
+</ul>
+
+<p>
+Ainsi le mot Show est associé à 'O' pour 'other'; 'Boston' est associé
+au lieu de départ, 'B-dept' signifie 'début de départ'; 'York' est
+'Inside arrival', &#x2026;
+</p>
+</div>
+</div>
+
+<div id="outline-container-org19a13d8" class="outline-3">
+<h3 id="org19a13d8">Classification de tweets</h3>
+<div class="outline-text-3" id="text-org19a13d8">
+<p>
+Partant d'un tweet vu comme une séquence de symboles, effectuer une
+classification binaire (positif/négatif). Les données peuvent se
+<a href="http://thinknook.com/wp-content/uploads/2012/09/Sentiment-Analysis-Dataset.zip">télécharger
+ici</a>.
+</p>
+
+<p>
+Un axe peut être de développer un modèle efficace. Les étapes
+importantes:
+</p>
+
+<ul class="org-ul">
+<li>Exploration puis préparation des données sous forme exploitable</li>
+<li>Filtrage des données éventuel</li>
+<li>Préparation d'une partition : apprentissage, validation, test</li>
+<li>essayer différents modèles</li>
+</ul>
+
+<p>
+Un autre axe est de partir de cet article
+<a href="https://www-cs.stanford.edu/people/alecmgo/papers/TwitterDistantSupervision09.pdf">en
+pdf</a> qui parle, entre autre, de comment collecter des données tweeter
+pour faire de la classification.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7e3493e" class="outline-3">
+<h3 id="org7e3493e">Conversion graphèmes vers phonèmes</h3>
+<div class="outline-text-3" id="text-org7e3493e">
+<p>
+Partant d'un mot vue comme une séquence de lettres (les graphèmes), le
+but est de générer une séquence de phonèmes. Les données nettalk sont
+décrites
+<a href="https://archive.ics.uci.edu/ml/machine-learning-databases/undocumented/connectionist-bench/nettalk/nettalk.names">ici</a>
+et disponible
+<a href="https://archive.ics.uci.edu/ml/machine-learning-databases/undocumented/connectionist-bench/nettalk/nettalk.data">ici</a>.
+</p>
+
+<p>
+Il y a deux types d'annotation que l'on peut vouloir générer :
+</p>
+
+<ul class="org-ul">
+<li>au moins la séquence de phonèmes (c'est le but premier),</li>
+<li>mais également la séquence d'accentuation.</li>
+</ul>
+
+<p>
+La séquence d'accentuation peut éventuellement aider à prédire les
+phonèmes. Il existe alors plusieurs pistes à explorer.
+</p>
+
+<p>
+Remarque : penser à vérifier si la séquence à générer est toujours de la
+même longueur que la séquence de graphèmes
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6c36d5a" class="outline-3">
+<h3 id="org6c36d5a">Q&amp;A insurance</h3>
+<div class="outline-text-3" id="text-org6c36d5a">
+<p>
+L'objectif est pouvoir sélectionner une réponse à une question. Les
+données viennent du domaine de l'assurance. Les données brutes viennent
+<a href="https://github.com/shuzi/insuranceQA.git">de ce site</a>.
+</p>
+
+<p>
+Une version plus simple peut se télécharger
+<a href="https://github.com/codekansas/insurance_qa_python">ici</a>
+</p>
+
+<p>
+Cette
+<a href="http://benjaminbolte.com/blog/2016/keras-language-modeling.html">page</a>
+explique beaucoup de choses (certaines sont peut être soit trop
+complexes, soit inutiles). Elle cite entre autres des articles décrivant
+des modèles performants et qui peuvent donner des idées.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org71243b9" class="outline-3">
+<h3 id="org71243b9">Quora Question Pairs</h3>
+<div class="outline-text-3" id="text-org71243b9">
+<p>
+Le challenge <a href="https://www.kaggle.com/c/quora-question-pairs">https://www.kaggle.com/c/quora-question-pairs</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd3669ec" class="outline-3">
+<h3 id="orgd3669ec">Toxic Comment Classification</h3>
+<div class="outline-text-3" id="text-orgd3669ec">
+<p>
+<a href="https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge">https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge</a>,
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orga9eec24" class="outline-3">
+<h3 id="orga9eec24">The Fake-news challenge</h3>
+<div class="outline-text-3" id="text-orga9eec24">
+<p>
+<a href="http://www.fakenewschallenge.org/">http://www.fakenewschallenge.org/</a>
+</p>
 </div>
 </div>
 </div>
