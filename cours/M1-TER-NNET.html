@@ -55,6 +55,7 @@ les cours et les ressources nécessaires.
 <h2 id="org74db75e">News et TODO-list</h2>
 <div class="outline-text-2" id="text-org74db75e">
 <ul class="org-ul">
+<li><b><b>Pour le 13/03: voir plus bas !!</b></b></li>
 <li>Pour le 20/02 : Finir le TP 3</li>
 <li>Pour 13/02 : Finir le tp d'intro à pytorch</li>
 <li>Neige le 30/01: cours annulé, mais 2 notebooks sont disponibles pour
@@ -177,19 +178,49 @@ implémentation, même simplifiée.</li>
 <h3 id="org4b9a1e7">Séance 5, le 27/02</h3>
 <div class="outline-text-3" id="text-org4b9a1e7">
 <ul class="org-ul">
-<li>TP : on reprend le TP 4 et il faut faire le TP5</li>
+<li>TP : on reprend le TP 4 et il faut faire le TP5 sur les modèles
+récurrents.</li>
 </ul>
+
+<p>
+Pour le TP4, voici un début de correction: 
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #00ffff;">class</span> <span style="color: #98fb98;">CBOW_classifier</span>(nn.Module):
+    <span style="color: #ffa07a;">"""</span>
+<span style="color: #ffa07a;">    A text classifier: </span>
+<span style="color: #ffa07a;">    - input = a list of word indices </span>
+<span style="color: #ffa07a;">    - output = probability associated to a binary classification task</span>
+<span style="color: #ffa07a;">    The pooling operation is the sum</span>
+
+<span style="color: #ffa07a;">    To build it, two args : </span>
+<span style="color: #ffa07a;">    - vocab_size: the number of words in the vocabulary we want to embed</span>
+<span style="color: #ffa07a;">    - embedding_dim: size of the word vectors</span>
+<span style="color: #ffa07a;">    """</span>
+    <span style="color: #00ffff;">def</span> <span style="color: #87cefa;">__init__</span>(<span style="color: #00ffff;">self</span>, vocab_size, embedding_dim):
+    <span style="color: #b0c4de;">super</span>(CBOW_classifier, <span style="color: #00ffff;">self</span>).__init__()
+    <span style="color: #00ffff;">self</span>.embeddings = nn.Embedding(vocab_size, embedding_dim)
+    <span style="color: #00ffff;">self</span>.linear1 = nn.Linear(embedding_dim, <span style="color: #ffffff; background-color: #000000;">1</span>)
+    <span style="color: #00ffff;">self</span>.out = nn.Sigmoid()
+
+    <span style="color: #00ffff;">def</span> <span style="color: #87cefa;">forward</span>(<span style="color: #00ffff;">self</span>, inputs):
+    <span style="color: #ffffff; background-color: #000000;">inp</span> = <span style="color: #00ffff;">self</span>.embeddings(inputs).sum(<span style="color: #ffffff; background-color: #000000;">dim</span>=<span style="color: #ffffff; background-color: #000000;">0</span>)
+    <span style="color: #00ffff;">return</span> <span style="color: #00ffff;">self</span>.out(<span style="color: #00ffff;">self</span>.linear1(inp))
+</pre>
 </div>
 </div>
-
-
+</div>
 
 <div id="outline-container-org8274d22" class="outline-3">
 <h3 id="org8274d22">Séance 6, le 13 mars</h3>
 <div class="outline-text-3" id="text-org8274d22">
 <ul class="org-ul">
 <li><b><b>Travail à rendre</b></b>, avant la séance: bilan sur la classification de
-texte.</li>
+texte: rendre les TP 3,4, et 5. Comme des éléments de corrections,
+l'important est de documenter le code et d'analyser comment les
+modèles fonctionnent.</li>
+
 <li><b><b>Travail à rendre</b></b>, choix du projet</li>
 </ul>
 </div>
