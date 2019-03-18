@@ -28,6 +28,13 @@ comments:
 <li><a href="#org29a3f89">Projet et soutenance</a>
 <ul>
 <li><a href="#org816ede9">Consignes</a></li>
+<li><a href="#orge2e535c">Exercices</a>
+<ul>
+<li><a href="#orgc843dfd">Hypothèse Gaussienne sur MNIST (7 pts)</a></li>
+<li><a href="#org8336092">Bayésien Naif de Bernoulli (8 pts)</a></li>
+<li><a href="#orgbf57880">Clustering: Mélange de Bernoulli (8 pts)</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -203,15 +210,18 @@ Le 15/04/19
 <p>
 Ce travail est à faire en binôme ou trinôme. Ce projet fera objet
 d'une soutenance qui aura lieu lors de la dernière séance de cours, le
-16/04. Vous devez, avant le 15/04 rendre un notebook avec vos
+15/04. Vous devez, avant le 14/04 rendre un notebook avec vos
 contributions (ou si vous préférez un rapport au format pdf et un
-fichier source). 
+fichier source pour le code). La rédaction du notebook, ou du rapport,
+compte pour une part importante. Elle doit mettre en évidence votre
+reflexion et votre démarche expérimentale. De plus le code doit être
+aussi soigné. 
 </p>
 
 <p>
 Lors de la soutenance, vous devrez présenter rapidement ce que vous
 avez fait et les résultats importants, en 10 minutes maximum. Il
-faudra sélectionner. Par exemple, les réponses aux questions "de
+faudra donc sélectionner les points présentés. Par exemple, les réponses aux questions "de
 cours", doivent être mise dans le rapport ou le notebook, mais pas
 nécessairement dans la présentation. La soutenance sera complétée par
 10 minutes de questions portant sur les exercices et donc le cours
@@ -228,6 +238,135 @@ Le total des points excède 20 points. Les points qui dépasseraient
 le maximum seront reportés sur les autres notes concernant les travaux
 rendus.
 </p>
+</div>
+</div>
+
+<div id="outline-container-orge2e535c" class="outline-3">
+<h3 id="orge2e535c">Exercices</h3>
+<div class="outline-text-3" id="text-orge2e535c">
+</div>
+<div id="outline-container-orgc843dfd" class="outline-4">
+<h4 id="orgc843dfd">Hypothèse Gaussienne sur MNIST (7 pts)</h4>
+<div class="outline-text-4" id="text-orgc843dfd">
+<p>
+Lors d'un TP précédent, nous avons implémenté un classifieur Bayésien
+Naif sur les données MNIST. Deux hypothèses ont alors été  faites: 
+</p>
+<ul class="org-ul">
+<li>Conditionnellement à la classe, chaque pixel est indépendant des autres.</li>
+<li>Conditionnellement à la classe, chaque pixel a une densité de
+probabilité gaussienne.</li>
+</ul>
+
+<p>
+Considérons la seconde hypothèse ci-dessus et regardons si cette
+hypothèse est juste. L'idée est de chercher les pixels qui ne seraient
+pas "Gaussiens". 
+</p>
+<ul class="org-ul">
+<li>Pour la classe 4, sélectionner quelques pixels à grande variance
+et tracer leur histogramme.  Commenter les résultats.</li>
+<li>Faire de même pour les classes 0,1,2 et 3. Commenter les résultats.</li>
+</ul>
+
+<p>
+Pour améliorer le classifieur, nous allons utiliser une méthode d'estimation
+de densité de probabilité plus fine pour chaque pixel: au lieu de la
+considérer comme gaussienne, nous allons donc considérer un mélange de
+\(K\) gaussiennes. Pour cela, une suggestion est de commencer par une
+par une classe (par exemple la classe 5): 
+</p>
+<ul class="org-ul">
+<li>Pour une classe, on sélectionne \(N\) pixels à forte variance (par
+exemple \(N=10\)).</li>
+<li>Ecrire la foncion qui implémente l'algorithme E.M (en partant du TP5
+par exemple), afin d'estimer le mélange de \(K\) gaussiennes sur cette
+sélection de pixels.</li>
+<li>Puis faire cela pour toutes les classes, et intégrer les mélanges de
+gaussiennes au classifieur Bayésien.</li>
+<li>Evaluer le nouveau classifieur, en faisant varier d'abord $K=2,4,6,&#x2026;$ puis $N=10,20,50,100,&#x2026;$.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org8336092" class="outline-4">
+<h4 id="org8336092">Bayésien Naif de Bernoulli (8 pts)</h4>
+<div class="outline-text-4" id="text-org8336092">
+<p>
+Dans le TP sur le Bayésien Naif, il y a un exercice sur
+l'implémentation et l'expérimentation d'un classifieur Bayésien Naif,
+version Bernoulli, pour les images binarisées. Vous deviez le faire,
+c'est l'occasion. 
+</p>
+
+<ul class="org-ul">
+<li>Un problème est que certains pixels sont constants, en général, ou
+pour une classe donnée. Propoer un implémenter une
+solution.</li>
+<li>Comparer les performances de votre classifieur avec le Bayésien Naif
+Gaussien du TP4.</li>
+<li>Pour cela utiliser les données <i>train</i> pour l'apprentissage et le
+<i>test</i> pour l'évaluation.</li>
+</ul>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgbf57880" class="outline-4">
+<h4 id="orgbf57880">Clustering: Mélange de Bernoulli (8 pts)</h4>
+<div class="outline-text-4" id="text-orgbf57880">
+<p>
+Repartons sur les données MNIST qu'il est donc possible de
+binariser. Dans ce cas chaque pixel peut être considéré comme la
+réalisation d'une variable aléatoire binaire. Nous allons faire du
+clustering sur ces données (<i>train</i>) en ignorant dans la phase
+d'estimation les informations sur les étiquettes. Pour faire du
+clustering, nous allons utiliser un modèle de mélange de loi de
+Bernoulli. 
+</p>
+
+<p>
+L'hypothèse que chaque pixel est indépendant des autres est
+maintenu. Une image est supposée être engendrée par un mélange de
+\(K\) distribution de Bernoulli. 
+\[
+P(\mathbf{X} = \mathbf{x}) = \sum_{k=1}^K \pi_k P(\mathbf{X} = \mathbf{x} ;\mu_k),
+\]
+avec \((\pi_k,\mu_k)\) les paramètres du mélange. 
+</p>
+
+
+<p>
+Si on s'interesse à une des composantes \(k\) du mélange, la probabilité
+d'une image est :
+\[
+ P(\mathbf{X} = \mathbf{x} ;\mu_k) 
+  = \prod_{i=1}^d \mu_{ki}^{x_i} (1-\mu_{ki})^{1-x_i} 
+\]
+</p>
+
+<p>
+Chaque composante du mélange est donc une loi de Bernoulli sur les
+images et représente un "cluster". L'objectif est d'implémenter
+l'algorithme E.M pour ce modèle de mélange afin de de faire du
+clustering sur la base d'image MNIST et d'en regarder les résultat.
+</p>
+
+<ul class="org-ul">
+<li>Implémenter les deux fonctions (pour l'étape E et l'étape M), avec
+\(K\) comme paramètre. Pour cela il est important d'écrire les
+équations avant. Il faut donc reprendre le cours sur les mélanges de
+gaussiennes et ré-écrire les  équations qui définissent ces 2
+étapes.</li>
+<li>Lancer l'algorithme de clustering sur les images et visualiser le
+résultats pour les valeurs de \(K=5,10,15,20,25\). Pour cela il est
+possible de représenter l'image qui représente chaque cluster, en
+considérant le vecteur \(\mu_k\) comme une image.</li>
+<li>Pour les différentes valeurs de \(K\) , comparer les valeurs de la
+vraisemblance.</li>
+</ul>
+</div>
 </div>
 </div>
 </div>
