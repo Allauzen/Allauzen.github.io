@@ -174,8 +174,8 @@ In python 2:
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #00ffff;">import</span> cPickle, gzip, numpy
 <span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">Load the dataset</span>
-<span style="color: #eedd82;">f</span> = gzip.<span style="color: #b0c4de;">open</span>(<span style="color: #ffa07a;">'mnist.pkl.gz'</span>, <span style="color: #ffa07a;">'rb'</span>) 
-<span style="color: #eedd82;">train_set</span>, <span style="color: #eedd82;">valid_set</span>, <span style="color: #eedd82;">test_set</span> = cPickle.load(f) 
+<span style="color: #ffffff; background-color: #000000;">f</span> = gzip.open(<span style="color: #ffa07a;">'mnist.pkl.gz'</span>, <span style="color: #ffa07a;">'rb'</span>) 
+<span style="color: #ffffff; background-color: #000000;">train_set</span>, <span style="color: #ffffff; background-color: #000000;">valid_set</span>, <span style="color: #ffffff; background-color: #000000;">test_set</span> = cPickle.load(f) 
 f.close()
 </pre>
 </div>
@@ -185,11 +185,11 @@ While in python 3:
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #00ffff;">import</span> pickle, gzip, numpy
 <span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">Load the dataset</span>
-<span style="color: #eedd82;">f</span> = gzip.<span style="color: #b0c4de;">open</span>(<span style="color: #ffa07a;">'./mnist.pkl.gz'</span>, <span style="color: #ffa07a;">'rb'</span>)
-<span style="color: #eedd82;">u</span> = pickle._Unpickler(f)
-<span style="color: #eedd82;">u.encoding</span> = <span style="color: #ffa07a;">'latin1'</span>
-<span style="color: #eedd82;">p</span> = u.load()
-<span style="color: #eedd82;">train_set</span>, <span style="color: #eedd82;">valid_set</span>, <span style="color: #eedd82;">test_set</span> = p
+<span style="color: #ffffff; background-color: #000000;">f</span> = gzip.open(<span style="color: #ffa07a;">'./mnist.pkl.gz'</span>, <span style="color: #ffa07a;">'rb'</span>)
+<span style="color: #ffffff; background-color: #000000;">u</span> = pickle._Unpickler(f)
+<span style="color: #ffffff; background-color: #000000;">u.encoding</span> = <span style="color: #ffa07a;">'latin1'</span>
+<span style="color: #ffffff; background-color: #000000;">p</span> = u.load()
+<span style="color: #ffffff; background-color: #000000;">train_set</span>, <span style="color: #ffffff; background-color: #000000;">valid_set</span>, <span style="color: #ffffff; background-color: #000000;">test_set</span> = p
 </pre>
 </div>
 
@@ -204,11 +204,11 @@ Each set (train, valid and test) is an array that contains two objects:
 </ul>
 
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #eedd82;">im</span> = train_set[0][0]      <span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">the first image </span>
-<span style="color: #eedd82;">im</span> = numpy.append([1.],im) <span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">add one component </span>
-<span style="color: #eedd82;">label</span> = train_set[1][0]  <span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">its label </span>
-numpy.dot(w,im)            <span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">the dot product of the image with a </span>
-                           <span style="color: #ff7f24;">#</span><span style="color: #ff7f24;">vector  of the same size.</span>
+<pre class="src src-python"><span style="color: #ffffff; background-color: #000000;">im</span> = train_set[<span style="color: #ffffff; background-color: #000000;">0</span>][<span style="color: #ffffff; background-color: #000000;">0</span>]      <span style="color: #ff7f24;"># the first image </span>
+<span style="color: #ffffff; background-color: #000000;">im</span> = numpy.append([<span style="color: #ffffff; background-color: #000000;">1</span>.],im) <span style="color: #ff7f24;"># add one component </span>
+<span style="color: #ffffff; background-color: #000000;">label</span> = train_set[<span style="color: #ffffff; background-color: #000000;">1</span>][<span style="color: #ffffff; background-color: #000000;">0</span>]  <span style="color: #ff7f24;"># its label </span>
+numpy.dot(w,im)            <span style="color: #ff7f24;"># the dot product of the image with a </span>
+               <span style="color: #ff7f24;">#vector  of the same size.</span>
 </pre>
 </div>
 <p>
@@ -216,9 +216,9 @@ If you want to display an image
 </p>
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #00ffff;">import</span> matplotlib.pyplot <span style="color: #00ffff;">as</span> plt 
-<span style="color: #eedd82;">im</span> = train_set[0][0].reshape(28,28) 
+<span style="color: #ffffff; background-color: #000000;">im</span> = train_set[<span style="color: #ffffff; background-color: #000000;">0</span>][<span style="color: #ffffff; background-color: #000000;">0</span>].reshape(<span style="color: #ffffff; background-color: #000000;">28</span>,<span style="color: #ffffff; background-color: #000000;">28</span>) 
 plt.show()
-plt.imshow(im.reshape(28,28) , plt.cm.gray) 
+plt.imshow(im.reshape(<span style="color: #ffffff; background-color: #000000;">28</span>,<span style="color: #ffffff; background-color: #000000;">28</span>) , plt.cm.gray) 
 </pre>
 </div>
 </div>

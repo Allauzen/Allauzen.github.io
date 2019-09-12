@@ -1,0 +1,86 @@
+---
+title: "Research Home"
+date: 
+layout: page
+categories: 
+tags: 
+- research
+published: true
+comments: 
+---
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org74b6ea9">Main topics</a></li>
+<li><a href="#org0f9adaa">Projects</a></li>
+<li><a href="#org606f3b5">PhD students</a>
+<ul>
+<li><a href="#org4bc47e1">Current</a></li>
+<li><a href="#org938921d">Former</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org74b6ea9" class="outline-2">
+<h2 id="org74b6ea9">Main topics</h2>
+<div class="outline-text-2" id="text-org74b6ea9">
+<p>
+At LIMSI, I'm working in the <a href="https://www.limsi.fr/fr/recherche/tlp">Spoken Language Processing group</a> and more precisely in the topic <a href="https://www.limsi.fr/en/research/tlp/topics/topic5">Machine Learning and Automatic Translation</a>. My main topics are Neural Machine Translation and language modelling. 
+</p>
+
+<p>
+On the Machine learning side, I'm interested in Deep-Learning (as quite everyone but I've started earlier), Bayesian modeling (parametric and non-parametric), Conditional Random Fields, &#x2026; 
+</p>
+</div>
+</div>
+
+
+
+<div id="outline-container-org0f9adaa" class="outline-2">
+<h2 id="org0f9adaa">Projects</h2>
+<div class="outline-text-2" id="text-org0f9adaa">
+<p>
+The ongoing projects: 
+</p>
+<ul class="org-ul">
+<li>FlowCon, ASTRID-DGA-ANR</li>
+<li><a href="https://parsiti.github.io/">Parsiti</a>, ANR project</li>
+<li><a href="http://www.qt21.eu/">QT21</a>, H2020 project</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org606f3b5" class="outline-2">
+<h2 id="org606f3b5">PhD students</h2>
+<div class="outline-text-2" id="text-org606f3b5">
+</div>
+<div id="outline-container-org4bc47e1" class="outline-3">
+<h3 id="org4bc47e1">Current</h3>
+<div class="outline-text-3" id="text-org4bc47e1">
+<ul class="org-ul">
+<li>Syrielle Montariol</li>
+<li>Pooyan Safari</li>
+<li>Margot Lacour</li>
+<li>Aina Gari-Soler</li>
+<li>Kevin Löser</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org938921d" class="outline-3">
+<h3 id="org938921d">Former</h3>
+<div class="outline-text-3" id="text-org938921d">
+<ul class="org-ul">
+<li>Nadi Tomeh</li>
+<li>Le Hai-Son</li>
+<li>Nicolas Pécheux</li>
+<li>Quoc Khanh Do</li>
+<li>Matthieu Labeau</li>
+</ul>
+</div>
+</div>
+</div>

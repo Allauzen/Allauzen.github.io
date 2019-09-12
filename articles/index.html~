@@ -1,0 +1,29 @@
+---
+title: "Articles"
+date: 
+layout: page
+categories: 
+tags: 
+published: true
+comments: 
+---
+<hr>
+
+
+
+{% capture site_tags %}{% for page in site.pages %}  {% for tag in page.tags %}  {{ tag }} , {% endfor %} {% endfor %} {% endcapture %}
+{% assign tags_list = site_tags | strip | rstrip | lstrip | split:',' | sort  | uniq %}
+{% assign tag = "article"%}
+  <h3>{{ tag }}</h3>
+  <ul>
+  {% for page in site.pages %}
+	{%capture bfoo%}{{ page.tags | join: ' ' }}{%endcapture%}
+	{%capture sfoo%}{{ tag | lstrip | rstrip }}{%endcapture%}
+	{% unless  bfoo.size > 1 %}
+		{% assign bfoo = "michelsardou" %}
+	{% endunless%}
+    {% if bfoo contains sfoo %}
+		<li><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }} </a> {{page.date}}</li>
+    {% endif %}
+	{% endfor %}
+  </ul>

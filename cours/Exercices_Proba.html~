@@ -25,7 +25,7 @@ comments:
 </li>
 <li><a href="#org3d637a3">2. Le problèmes des urnes</a>
 <ul>
-<li><a href="#orgc45ce3d">2.1. En théorie</a>
+<li><a href="#orge853e42">2.1. En théorie</a>
 <ul>
 <li><a href="#org0f8ee5a">2.1.1. En pratique</a></li>
 </ul>
@@ -49,7 +49,7 @@ comments:
 </li>
 <li><a href="#org1e3ca17">3.4. Introduction au cas continu</a>
 <ul>
-<li><a href="#orgd4de1a2">3.4.1. En théorie</a></li>
+<li><a href="#orgc45ce3d">3.4.1. En théorie</a></li>
 <li><a href="#orgce6a900">3.4.2. Point de vue empirique</a></li>
 </ul>
 </li>
@@ -160,8 +160,8 @@ expliquez la.</li>
 <h2 id="org3d637a3"><span class="section-number-2">2</span> Le problèmes des urnes</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-orgc45ce3d" class="outline-3">
-<h3 id="orgc45ce3d"><span class="section-number-3">2.1</span> En théorie</h3>
+<div id="outline-container-orge853e42" class="outline-3">
+<h3 id="orge853e42"><span class="section-number-3">2.1</span> En théorie</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 Soient deux urnes \(u_1\) et \(u_2\) contenant respectivement :
@@ -867,8 +867,8 @@ bayésien naïf. On rappelle qu'il y 267 représentants démocrates et
 <h3 id="org1e3ca17"><span class="section-number-3">3.4</span> Introduction au cas continu</h3>
 <div class="outline-text-3" id="text-3-4">
 </div>
-<div id="outline-container-orgd4de1a2" class="outline-4">
-<h4 id="orgd4de1a2"><span class="section-number-4">3.4.1</span> En théorie</h4>
+<div id="outline-container-orgc45ce3d" class="outline-4">
+<h4 id="orgc45ce3d"><span class="section-number-4">3.4.1</span> En théorie</h4>
 <div class="outline-text-4" id="text-3-4-1">
 <p>
 On considère deux populations, les hommes H de taille moyenne 1,74m

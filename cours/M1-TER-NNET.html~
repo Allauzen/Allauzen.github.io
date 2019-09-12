@@ -114,30 +114,30 @@ Correction partielle du TP sur pytorch qui devrait vous permettre de terminer po
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #00ffff;">import</span> torch <span style="color: #00ffff;">as</span> th
 <span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">set the seed (reproductibility)</span>
-torch.manual_seed(1) 
+torch.manual_seed(<span style="color: #ffffff; background-color: #000000;">1</span>) 
 <span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">dimensions of the problem</span>
-<span style="color: #eedd82;">D_in</span> = 2
-<span style="color: #eedd82;">D_out</span>= 1
+<span style="color: #ffffff; background-color: #000000;">D_in</span> = <span style="color: #ffffff; background-color: #000000;">2</span>
+<span style="color: #ffffff; background-color: #000000;">D_out</span>= <span style="color: #ffffff; background-color: #000000;">1</span>
 <span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">Use the nn package to define our model and loss function</span>
-<span style="color: #eedd82;">model</span> = th.nn.Sequential(
+<span style="color: #ffffff; background-color: #000000;">model</span> = th.nn.Sequential(
     th.nn.Linear(D_in, D_out),
     th.nn.Sigmoid()    
 )
-<span style="color: #eedd82;">loss_fn</span> = th.nn.BCELoss()
-<span style="color: #eedd82;">learning_rate</span> = 1e-2
-<span style="color: #eedd82;">optimizer</span> = th.optim.SGD(model.parameters(), lr=learning_rate)
+<span style="color: #ffffff; background-color: #000000;">loss_fn</span> = th.nn.BCELoss()
+<span style="color: #ffffff; background-color: #000000;">learning_rate</span> = 1e-<span style="color: #ffffff; background-color: #000000;">2</span>
+<span style="color: #ffffff; background-color: #000000;">optimizer</span> = th.optim.SGD(model.parameters(), <span style="color: #ffffff; background-color: #000000;">lr</span>=learning_rate)
 
-<span style="color: #00ffff;">for</span> epoch <span style="color: #00ffff;">in</span> <span style="color: #b0c4de;">range</span>(1000):
-    <span style="color: #eedd82;">total</span>=th.zeros([])
-    <span style="color: #00ffff;">for</span> i <span style="color: #00ffff;">in</span> <span style="color: #b0c4de;">range</span>(14):
-        <span style="color: #eedd82;">prediction</span> = model(x[i])    
-        <span style="color: #eedd82;">loss</span> = loss_fn(prediction, y[i])
-        optimizer.zero_grad()  
-        loss.backward()        
-        optimizer.step()
-        <span style="color: #eedd82;">total</span>+=loss
-    <span style="color: #00ffff;">if</span> epoch%50==0:
-        <span style="color: #00ffff;">print</span>(epoch,total)
+<span style="color: #00ffff;">for</span> epoch <span style="color: #00ffff;">in</span> <span style="color: #b0c4de;">range</span>(<span style="color: #ffffff; background-color: #000000;">1000</span>):
+    <span style="color: #ffffff; background-color: #000000;">total</span>=th.zeros([])
+    <span style="color: #00ffff;">for</span> i <span style="color: #00ffff;">in</span> <span style="color: #b0c4de;">range</span>(<span style="color: #ffffff; background-color: #000000;">14</span>):
+    <span style="color: #ffffff; background-color: #000000;">prediction</span> = model(x[i])    
+    <span style="color: #ffffff; background-color: #000000;">loss</span> = loss_fn(prediction, y[i])
+    optimizer.zero_grad()  
+    loss.backward()        
+    optimizer.step()
+    <span style="color: #ffffff; background-color: #000000;">total</span>+=loss
+    <span style="color: #00ffff;">if</span> epoch%<span style="color: #ffffff; background-color: #000000;">50</span>==<span style="color: #ffffff; background-color: #000000;">0</span>:
+    <span style="color: #00ffff;">print</span>(epoch,total)
 </pre>
 </div>
 </div>
@@ -200,14 +200,14 @@ Pour le TP4, voici un début de correction:
 <span style="color: #ffa07a;">    - embedding_dim: size of the word vectors</span>
 <span style="color: #ffa07a;">    """</span>
     <span style="color: #00ffff;">def</span> <span style="color: #87cefa;">__init__</span>(<span style="color: #00ffff;">self</span>, vocab_size, embedding_dim):
-        <span style="color: #b0c4de;">super</span>(CBOW_classifier, <span style="color: #00ffff;">self</span>).__init__()
-        <span style="color: #00ffff;">self</span>.embeddings = nn.Embedding(vocab_size, embedding_dim)
-        <span style="color: #00ffff;">self</span>.linear1 = nn.Linear(embedding_dim, 1)
-        <span style="color: #00ffff;">self</span>.out = nn.Sigmoid()
+    <span style="color: #b0c4de;">super</span>(CBOW_classifier, <span style="color: #00ffff;">self</span>).__init__()
+    <span style="color: #00ffff;">self</span>.embeddings = nn.Embedding(vocab_size, embedding_dim)
+    <span style="color: #00ffff;">self</span>.linear1 = nn.Linear(embedding_dim, <span style="color: #ffffff; background-color: #000000;">1</span>)
+    <span style="color: #00ffff;">self</span>.out = nn.Sigmoid()
 
     <span style="color: #00ffff;">def</span> <span style="color: #87cefa;">forward</span>(<span style="color: #00ffff;">self</span>, inputs):
-        <span style="color: #eedd82;">inp</span> = <span style="color: #00ffff;">self</span>.embeddings(inputs).<span style="color: #b0c4de;">sum</span>(dim=0)
-        <span style="color: #00ffff;">return</span> <span style="color: #00ffff;">self</span>.out(<span style="color: #00ffff;">self</span>.linear1(inp))
+    <span style="color: #ffffff; background-color: #000000;">inp</span> = <span style="color: #00ffff;">self</span>.embeddings(inputs).sum(<span style="color: #ffffff; background-color: #000000;">dim</span>=<span style="color: #ffffff; background-color: #000000;">0</span>)
+    <span style="color: #00ffff;">return</span> <span style="color: #00ffff;">self</span>.out(<span style="color: #00ffff;">self</span>.linear1(inp))
 </pre>
 </div>
 </div>
