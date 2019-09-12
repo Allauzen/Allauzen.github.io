@@ -1,6 +1,6 @@
 ---
 title: "About this site / and more"
-date: 2019-09-12 Jeu 16:27
+date: 2018-10-02 Tue 14:16
 layout: post
 categories: 
 - blog
@@ -46,6 +46,10 @@ comments:
 </div>
 <hr>
 
+<p>
+\(\newcommand{\myvqeqn}{y = 2(x-1)^2+1}\)
+\(\newcommand{\mat}[1]{\mathbf{#1}}\) 
+</p>
 
 
 <p>
@@ -97,8 +101,8 @@ From ox-jekyll, I redefined the function
 <div class="outline-text-4" id="text-2-1-1">
 <pre class="example">
 { { { time(%Y-%m-%d %a %H:%M) } } }
-</pre>
 
+</pre>
 <p>
 Just remove space between brackets 
 </p>
@@ -113,6 +117,7 @@ Start a line with ": "
 </p>
 <pre class="example">
 : Verbatim line 
+
 </pre>
 </div>
 </div>
@@ -132,15 +137,15 @@ To insert template, for instance
 </p>
 <pre class="example">
 #+BEGIN_SRC ... #+END_SRC, 
-</pre>
 
+</pre>
 <p>
 just type 
 </p>
 <pre class="example">
 &lt;s C-i (or tab, M-tab)
-</pre>
 
+</pre>
 <p>
 The full list of built-in template are <a href="http://orgmode.org/manual/Easy-Templates.html">here</a>. 
 </p>
@@ -159,6 +164,7 @@ a 	#+BEGIN_ASCII ... #+END_ASCII
 A 	#+ASCII:
 i 	#+INDEX: line
 I 	#+INCLUDE: line 
+
 </pre>
 </div>
 </div>
@@ -171,8 +177,8 @@ I 	#+INCLUDE: line
 </ul>
 <pre class="example">
 #+OPTIONS: toc:nil
-</pre>
 
+</pre>
 <p>
 See <a href="http://orgmode.org/manual/Table-of-contents.html">this page</a> for more details about table of contents and settings. 
 </p>
@@ -182,8 +188,8 @@ See <a href="http://orgmode.org/manual/Table-of-contents.html">this page</a> for
 </ul>
 <pre class="example">
 #+options: num:nil
-</pre>
 
+</pre>
 
 <ul class="org-ul">
 <li>If you want place the TOC where you want :</li>
@@ -193,13 +199,14 @@ First remove it from option
 </p>
 <pre class="example">
 #+OPTIONS: toc:nil
-</pre>
 
+</pre>
 <p>
 Then add it like that where you want: 
 </p>
 <pre class="example">
 #+TOC: headlines 1
+
 </pre>
 </div>
 </div>
@@ -215,8 +222,8 @@ Then add it like that where you want:
 #+BEGIN_EXPORT html
 &lt;img src="/assets/figs/gauss_err.png" alt="bla" style="width:400px; margin:0px auto;display:block"/&gt;
 #+END_EXPORT 
-</pre>
 
+</pre>
 <p>
 And the image is stored in a subdir of <i>assets</i>. 
 </p>
@@ -236,14 +243,15 @@ Try to reload orgmode:
 </p>
 <pre class="example">
 C-c C-x !
-</pre>
 
+</pre>
 
 <p>
 Or this solution sometimes: 
 </p>
 <pre class="example">
 C-U M-x org-reload
+
 </pre>
 </div>
 </div>
@@ -291,8 +299,8 @@ Then just type :
 </p>
 <pre class="example">
 C-c-e P x aa (where aa is the project name)
-</pre>
 
+</pre>
 <p>
 The code is derived from <a href="http://orgmode.org/worg/org-tutorials/org-jekyll.html">org-jekyll page</a>. 
 </p>
@@ -330,8 +338,8 @@ To use MathJax to export latex equation just add the following option:
 </p>
 <pre class="example">
 #+HTML_MATHJAX: align: left indent: 5em tagside: left font: Neo-Euler
-</pre>
 
+</pre>
 <p>
 Then you can write (and get) things like that: 
 </p>
@@ -351,8 +359,8 @@ To use some latex definition (<i>i.e</i> newcommand), you can download the file 
 </p>
 <pre class="example">
 #+SETUPFILE: /path/to/define.setup
-</pre>
 
+</pre>
 
 <p>
 Then you can define some newcommand like this to get something like: 

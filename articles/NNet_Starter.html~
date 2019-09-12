@@ -1,6 +1,6 @@
 ---
 title: "NNet starter"
-date: 2019-09-12
+date: 2019-06-25
 layout: post
 categories: 
 tags: 
@@ -16,8 +16,8 @@ comments:
 <ul>
 <li><a href="#org667519e">1. Expected road-map</a>
 <ul>
-<li><a href="#org51a92b3">1.1. First day : 01/07, from 9h to 17h (with breaks)</a></li>
-<li><a href="#org71c2246">1.2. Second day : 02/07, from 9h to 17h (with breaks)</a></li>
+<li><a href="#org536aaab">1.1. First day : 01/07, from 9h to 18h30 (with breaks)</a></li>
+<li><a href="#orgac385a0">1.2. Second day : 02/07, from 11h30 to 17h (with breaks)</a></li>
 </ul>
 </li>
 <li><a href="#org97ccf1d">2. NNet basics</a></li>
@@ -31,15 +31,15 @@ comments:
 <p>
 This page is dedicated to a 2-days course on Neural network with
 application to natural language processing (NNet for NLP). The drive
-with all the ressources [[<a href="https://drive.google.com/open?id=1s-ibINXu4wVHTbOHlaFtIjj_ewtSZUUL">https://drive.google.com/open?id=1s-ibINXu4wVHTbOHlaFtIjj_ewtSZUUL</a>][is here]. 
+with all the ressources <a href="https://drive.google.com/drive/folders/1nOxd5ujZeX5k0mm4NUh5nYO9Vm2U7URc?usp=sharing">is here</a>. 
 </p>
 
 <div id="outline-container-org667519e" class="outline-2">
 <h2 id="org667519e"><span class="section-number-2">1</span> Expected road-map</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org51a92b3" class="outline-3">
-<h3 id="org51a92b3"><span class="section-number-3">1.1</span> First day : 01/07, from 9h to 17h (with breaks)</h3>
+<div id="outline-container-org536aaab" class="outline-3">
+<h3 id="org536aaab"><span class="section-number-3">1.1</span> First day : 01/07, from 9h to 18h30 (with breaks)</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 Courses on: 
@@ -60,8 +60,8 @@ And lab sessions on:
 </div>
 </div>
 
-<div id="outline-container-org71c2246" class="outline-3">
-<h3 id="org71c2246"><span class="section-number-3">1.2</span> Second day : 02/07, from 9h to 17h (with breaks)</h3>
+<div id="outline-container-orgac385a0" class="outline-3">
+<h3 id="orgac385a0"><span class="section-number-3">1.2</span> Second day : 02/07, from 11h30 to 17h (with breaks)</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 Courses on: 
@@ -81,7 +81,6 @@ And lab sessions on:
 </div>
 </div>
 </div>
-
 <div id="outline-container-org97ccf1d" class="outline-2">
 <h2 id="org97ccf1d"><span class="section-number-2">2</span> NNet basics</h2>
 <div class="outline-text-2" id="text-2">
