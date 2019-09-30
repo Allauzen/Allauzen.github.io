@@ -47,7 +47,7 @@ la 2.7 qui utilise python 2.7).
 
 
 <p>
-Sur le drive, il y a un script de test, <i>labs\<sub>pytorch</sub>\<sub>test.py</sub></i>, à
+Sur le drive, il y a un script de test, <i>labs<sub>pytorch</sub><sub>test.py</sub></i>, à
 lancer afin de s'assurer que votre configuration fonctionne
 correctement. Il existe aussi en version notebook. 
 </p>
