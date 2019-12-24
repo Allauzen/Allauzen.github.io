@@ -20,13 +20,17 @@ Since November 2019, I'm professor at <a href="https://www.espci.fr">ESPCI (Éco
 <ul class="org-ul">
 <li>Read our paper on <a href="https://arxiv.org/abs/1906.07672">Control of chaotic systems by Deep Reinforcement Learning</a>. Comming soon, the journal version accepted in The Royal Society’s physical sciences research journal.</li>
 </ul>
-
-
+<img src="/assets/figs/ks_h.png" alt="bla" style="width:400px; margin:0px auto;display:block"/>
 
 <ul class="org-ul">
 <li>With Aina Gari Soler and <a href="https://perso.limsi.fr/marianna/">Marianna Apidianaki</a>, we have a paper at
-<i>*Sem 19</i> on <a href="https://www.aclweb.org/anthology/S19-1002Word">Usage Similarity Estimation with Sentence
-Representations and Automatic Substitutes</a>. See also, the paper in the Semantic Deep Learning (SemDeep-5) workshop at IJCAI: <a href="http://www.dfki.de/~declerck/semdeep-5/papers/wic_SemDeep-5_paper_4.pdf">LIMSI-MULTISEM at the IJCAI SemDeep-5 WiC Challenge: Context Representations for Word Usage Similarity Estimation</a>.</li>
+<i>*Sem 19</i> on <a href="https://www.aclweb.org/anthology/S19-1002">Word Usage Similarity Estimation with Sentence
+Representations and Automatic Substitutes</a>.</li>
+
+<li>See also, the paper in
+the Semantic Deep Learning (SemDeep-5) workshop at IJCAI:
+<a href="http://www.dfki.de/~declerck/semdeep-5/papers/wic_SemDeep-5_paper_4.pdf">LIMSI-MULTISEM at the IJCAI SemDeep-5 WiC Challenge: Context
+Representations for Word Usage Similarity Estimation</a>.</li>
 </ul>
 
 
