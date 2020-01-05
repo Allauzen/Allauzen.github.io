@@ -34,7 +34,7 @@ data-driven approach and to be able to efficiently experiment with deep-learning
 <h2 id="orgc8cb670">The resources / drive</h2>
 <div class="outline-text-2" id="text-orgc8cb670">
 <p>
-Look at this drive for the slides and the material of lab sessions.
+<a href="https://drive.google.com/drive/folders/14qRch6tlVatxf7ZidOv_MwwStaQmXagK?usp=sharing">Look at this drive</a> for the slides and the material of lab sessions.
 </p>
 </div>
 </div>
@@ -52,11 +52,29 @@ monday, starting at 8:30 in the morning.
 The first part: 
 </p>
 <ul class="org-ul">
-<li>6/01, course: introduction to the course and basics on machine
-learning</li>
-<li>13/01, <b><b>lab session</b></b> : machine learning and python, first steps</li>
-<li>20/01, course: From linear to non-linear, the feed-forward architecture and the back-propagation algorithm</li>
-<li>27/01, course: deep-learning, some important tricks and pytorch overview</li>
+<li>6/01, course: introduction and basics on machine learning
+<ul class="org-ul">
+<li>The main tasks</li>
+<li>Objective function</li>
+<li>Optimisation with gradient descent</li>
+</ul></li>
+<li>13/01, <b><b>lab session</b></b> : machine learning and python, first steps 
+<ul class="org-ul">
+<li>numpy and matplotlib</li>
+<li>logistic regression by hand</li>
+</ul></li>
+<li>20/01, course on feed-forward neural networks
+<ul class="org-ul">
+<li>Multi-class classification</li>
+<li>From linear to non-linear classification</li>
+<li>The feed-forward architecture and the back-propagation algorithm</li>
+</ul></li>
+<li>27/01, course on  deep-learning
+<ul class="org-ul">
+<li>Deep networks</li>
+<li>Drop out, regularization  and other tricks</li>
+<li>pytorch overview</li>
+</ul></li>
 <li>03/02, <b><b>lab session</b></b> : deep-learning in pytorch</li>
 <li>10/02, course: A first review, good practices in deep-learning, problem design, homework assignments</li>
 </ul>
