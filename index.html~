@@ -18,6 +18,17 @@ Since November 2019, I'm professor at <a href="https://www.espci.fr">ESPCI (Éco
 <h2 id="orgc5e4e3c">News</h2>
 <div class="outline-text-2" id="text-orgc5e4e3c">
 <ul class="org-ul">
+<li><b><b>FlauBERT</b></b> and <b><b>Flue</b></b> are  now available: <a href="https://github.com/getalp/Flaubert">check the github repository</a> or read <a href="https://arxiv.org/abs/1912.05372">our paper</a> on arxiv. 
+<ul class="org-ul">
+<li><b><b>FLauBERT</b></b> is a a French BERT trained on a very large and heterogeneous French corpus</li>
+<li><b><b>Flue</b></b> is an evaluation setup for French NLP systems similar to the popular GLUE benchmark</li>
+</ul></li>
+</ul>
+
+
+
+
+<ul class="org-ul">
 <li>Read our paper on <a href="https://arxiv.org/abs/1906.07672">Control of chaotic systems by Deep Reinforcement Learning</a>. Comming soon, the journal version accepted in The Royal Society’s physical sciences research journal.</li>
 </ul>
 <a href="https://arxiv.org/abs/1906.07672">
@@ -45,7 +56,7 @@ Representations for Word Usage Similarity Estimation</a>.</li>
 
 
 <ul class="org-ul">
-<li>Syrielle Montariol's paper on <a href="https://arxiv.org/abs/1909.01863">Empirical Study of Diachronic Word Embeddings for Scarce Data</a> is available.</li>
+<li>Syrielle Montariol's paper on <a href="https://arxiv.org/abs/1909.01863">Empirigcal Study of Diachronic Word Embeddings for Scarce Data</a> is available.</li>
 </ul>
 
 
