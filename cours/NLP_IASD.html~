@@ -56,9 +56,12 @@ The first part:
 <li>16-jan, course: introduction
 <ul class="org-ul">
 <li>NLP: overview and the main tasks</li>
-<li>Text classification, the basics</li>
 </ul></li>
-<li>23-jan, course: Sequence modelling</li>
+<li>23-jan, course: 
+<ul class="org-ul">
+<li>Text classification, the basics</li>
+<li>Sequence modelling</li>
+</ul></li>
 <li>30-jan, lab sessions and project registration</li>
 <li>06-feb, course: advanced architecture</li>
 <li>13-feb: Postponed</li>
