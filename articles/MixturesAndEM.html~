@@ -29,15 +29,15 @@ comments:
 <li><a href="#orgc68ccae">4. Variational view of EM</a>
 <ul>
 <li><a href="#org1be1ab6">4.1. Remark</a></li>
-<li><a href="#orgdee6547">4.2. E step</a></li>
-<li><a href="#org5593f84">4.3. M step</a></li>
+<li><a href="#org155d201">4.2. E step</a></li>
+<li><a href="#org26b34b2">4.3. M step</a></li>
 <li><a href="#orgee4f0c6">4.4. A summary of EM</a></li>
 </ul>
 </li>
 <li><a href="#org689270a">5. GMM</a>
 <ul>
-<li><a href="#org155d201">5.1. E step</a></li>
-<li><a href="#org26b34b2">5.2. M step</a></li>
+<li><a href="#orgc881850">5.1. E step</a></li>
+<li><a href="#org1946057">5.2. M step</a></li>
 </ul>
 </li>
 <li><a href="#org49eabf6">6. <span class="todo TODO">TODO</span> Online (or incremental version)</a></li>
@@ -207,8 +207,8 @@ So both \(P(\Z|X,\pa)\) and \(P(\X|\pa)\) are untractable. The probabilistic mod
 </div>
 
 
-<div id="outline-container-orgdee6547" class="outline-3">
-<h3 id="orgdee6547"><span class="section-number-3">4.2</span> E step</h3>
+<div id="outline-container-org155d201" class="outline-3">
+<h3 id="org155d201"><span class="section-number-3">4.2</span> E step</h3>
 <div class="outline-text-3" id="text-4-2">
 <p>
 Suppose that the current value of the parameter vector is \(\paold\). In the E step, the lower bound \(\lb\) <b>is maximized with respect to \(q(\Z)\)</b> while holding \(\pa\) fixed to \(\paold\). 
@@ -228,8 +228,8 @@ Since the KL divergence is zero, we have \(\lb=P(\X|\paold)\). In fact, the E-st
 </div>
 </div>
 
-<div id="outline-container-org5593f84" class="outline-3">
-<h3 id="org5593f84"><span class="section-number-3">4.3</span> M step</h3>
+<div id="outline-container-org26b34b2" class="outline-3">
+<h3 id="org26b34b2"><span class="section-number-3">4.3</span> M step</h3>
 <div class="outline-text-3" id="text-4-3">
 <p>
 The distribution \(q(Z)\) is now fixed and the <b>lower bound \(\lb\) is now maximized with respect to \(\pa\)</b>.  The maximization process yields a new value for the parameters \(\panew\) and increases the lower bound (except if we are already at the maximum). Note that \(q(Z)=P(\Z|\X,\paold)\) acts as a constant in the maximization process: 
@@ -281,8 +281,8 @@ Note that for implementation, \(q(\Z)\) does not really exist or is not a quanti
 Application of the EM algorithm to GMM. 
 </p>
 </div>
-<div id="outline-container-org155d201" class="outline-3">
-<h3 id="org155d201"><span class="section-number-3">5.1</span> E step</h3>
+<div id="outline-container-orgc881850" class="outline-3">
+<h3 id="orgc881850"><span class="section-number-3">5.1</span> E step</h3>
 <div class="outline-text-3" id="text-5-1">
 <p>
 Given the current set of parameters \(\pa=\paold\), we set \(q(\Z)=P(\Z|\X,\paold)\). This implies that for each training example \(\X\), we compute the posterior distribution of its associated latent variable \(\Z\)
@@ -299,8 +299,8 @@ q(\Z)&=P(\Z|\X,\paold)\\
 </div>
 </div>
 
-<div id="outline-container-org26b34b2" class="outline-3">
-<h3 id="org26b34b2"><span class="section-number-3">5.2</span> M step</h3>
+<div id="outline-container-org1946057" class="outline-3">
+<h3 id="org1946057"><span class="section-number-3">5.2</span> M step</h3>
 <div class="outline-text-3" id="text-5-2">
 <p>
 The distribution \(q(Z)\) is now fixed and the lower bound \(\lb\) is maximized with respect to \(\pa\).  We optimize a classifier of \(\X\) into \(\Z\), with the supervision of \(P(\Z|\X,\paold)\) that provides the pseudo-affectation.
