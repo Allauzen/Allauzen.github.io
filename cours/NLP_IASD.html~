@@ -1,0 +1,153 @@
+---
+title: "Natural Language Processing, IASD"
+date: 2019-01-16
+layout: page
+categories: 
+tags: 
+- cours 
+- NLP 
+- NNet 
+- iasd
+published: true
+comments: 
+---
+<hr>
+
+
+<p>
+This course is an introduction to Natural Language Processing (with mainly deep-learning approach). The  lab
+sessions use the <a href="https://pytorch.org/">pytorch (python module)</a>.  
+</p>
+
+<div id="outline-container-org9d2490e" class="outline-2">
+<h2 id="org9d2490e">News</h2>
+<div class="outline-text-2" id="text-org9d2490e">
+<ul class="org-ul">
+<li>The project and the reading lists are available, see the drive !</li>
+
+<li>The course starts the 16/01</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org9807acb" class="outline-2">
+<h2 id="org9807acb">The resources / drive</h2>
+<div class="outline-text-2" id="text-org9807acb">
+<p>
+<a href="https://drive.google.com/drive/folders/1CTdAzWc0uX6knP_-cprB3pIWwebYhLBX?usp=sharing">Look at this drive</a> for the slides and the material of lab sessions.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orgf7a3bfb" class="outline-2">
+<h2 id="orgf7a3bfb">Expected schedules</h2>
+<div class="outline-text-2" id="text-orgf7a3bfb">
+<p>
+It starts in january 2020 (the 16th). The course are scheduled on
+Thursay, starting at 8:30 in the morning.
+</p>
+</div>
+
+
+<div id="outline-container-orgfba768d" class="outline-3">
+<h3 id="orgfba768d">16-jan, course: NLP,  overview and the main tasks</h3>
+<div class="outline-text-3" id="text-orgfba768d">
+<ul class="org-ul">
+<li>For the linguistic part you can refer to <a href="https://faculty.washington.edu/ebender/100things-sem_prag.html">https://faculty.washington.edu/ebender/100things-sem_prag.html</a></li>
+<li>For the NLP basics: <a href="https://web.stanford.edu/~jurafsky/slp3/">https://web.stanford.edu/~jurafsky/slp3/</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org5cd671f" class="outline-3">
+<h3 id="org5cd671f">23-jan, course: Text classification, and sequence modelling</h3>
+<div class="outline-text-3" id="text-org5cd671f">
+<p>
+Further and essential readings: 
+</p>
+<ul class="org-ul">
+<li><a href="http://www.jmlr.org/papers/volume12/collobert11a/collobert11a.pdf">Natural Language Processing (Almost) from Scratch</a></li>
+<li><a href="http://www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf">A Neural Probabilistic Language Model</a></li>
+<li><a href="http://u.cs.biu.ac.il/~yogo/nnlp.pdf">A Primer on Neural Network Models for Natural Language Processing</a></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org7648a45" class="outline-3">
+<h3 id="org7648a45">Then  for the first part</h3>
+<div class="outline-text-3" id="text-org7648a45">
+<ul class="org-ul">
+<li>30-jan, lab sessions and project registration</li>
+<li>06-feb, course: advanced architecture</li>
+<li>13-feb: Postponed</li>
+<li>27-feb, course: readings</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orga86df09" class="outline-3">
+<h3 id="orga86df09">The second part:</h3>
+<div class="outline-text-3" id="text-orga86df09">
+<ul class="org-ul">
+<li>03-mar, course: syntax, by B. Crabbé, at 13:30</li>
+<li>05-mar, 12-mar:  Large scale NLP : the business perspective, G. Pitel</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org034be6f" class="outline-2">
+<h2 id="org034be6f">Evaluation</h2>
+<div class="outline-text-2" id="text-org034be6f">
+<p>
+The evaluation is in two parts. For both, first make your team (typically 3 students). 
+</p>
+</div>
+
+<div id="outline-container-orgafc8733" class="outline-3">
+<h3 id="orgafc8733">Reading</h3>
+<div class="outline-text-3" id="text-orgafc8733">
+<p>
+The goal is to read an article an to make a presentation (the 27-feb). A list will be availble soon, but you can also propose one (I must agree beforehand). Select one article per team to read and analyse the paper to make a clear and synthetic presentation. Some questions you may use to guide your reading are (among others):
+</p>
+<ul class="org-ul">
+<li>Did you like the paper? Did you find it interesting? Be honest!</li>
+<li>What are the most important things you learned from the paper? Why are they important?</li>
+<li>Do the lessons learned generalize beyond the specific task? Do they contribute towards building an important system or application?</li>
+<li>Is the experimental setup satisfying? Any experiments missing? Any obvious or important baseline missing?</li>
+<li>Is the problem/approach well motivated?</li>
+<li>Are you convinced by the results? Why?</li>
+<li>Is the writing clear? Is the paper well structured?</li>
+</ul>
+
+<p>
+The important dates are : 
+</p>
+<ul class="org-ul">
+<li>Make up your team and select the paper before the 6-feb</li>
+<li>Presentation: the 23-feb (10 minutes per team)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge62fe4f" class="outline-3">
+<h3 id="orge62fe4f">Project</h3>
+<div class="outline-text-3" id="text-orge62fe4f">
+<p>
+A list will be availble soon, but you can also propose one (I must agree beforehand). 
+</p>
+<ul class="org-ul">
+<li>Team and the project registration : before 6-feb</li>
+<li>Deliverable for 13-feb: 2 pages (pdf only) to describe the data, the task and your plan</li>
+<li>Deliverable for 27-feb: a github/gitlab repository</li>
+<li>Final deliverable: a report in pdf and the code via the git repos</li>
+<li>Final deadline: Comming soon</li>
+</ul>
+</div>
+</div>
+</div>

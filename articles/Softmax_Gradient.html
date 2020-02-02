@@ -1,6 +1,6 @@
 ---
 title: "Softmax Gradient"
-date: 2017-07-26
+date: 2017-07-27
 layout: post
 categories: 
 tags: 
@@ -20,20 +20,23 @@ comments:
 </div>
 </div>
 <hr>
-<p>
-\(\newcommand{\nclasses}{N}\) 
-\(\newcommand{\nfeats}{D}\)
-\(\newcommand{\gold}{\tilde{k}}\)
-</p>
+
 
 <p>
-\(\newcommand{\x}{\mathbf{x}}\)
-\(\newcommand{\w}{\mathbf{w}}\)
-\(\newcommand{\W}{\mathbf{W}}\)
-\(\newcommand{\a}{a}\)
-\(\newcommand{\pa}{\mathbf{\theta}}\)
-\(\newcommand{\loss}{\mathcal{L}(\pa)}\) 
-\(\newcommand{\Z}{Z(\pa)}\)
+<div style="display: none">
+\(
+\global\def\a{a}
+\global\def\nclasses{N}
+\global\def\nfeats{D}
+\global\def\gold{\tilde{k}}
+\global\def\W{\mathbf{W}}
+\global\def\w{\mathbf{w}}
+\global\def\x{\mathbf{x}}
+\global\def\pa{\boldsymbol{\theta}}
+\global\newcommand\loss{\mathcal{L}(\pa)}
+\global\newcommand\Z{Z(\pa)}
+\)
+</div>
 </p>
 
 <p>
