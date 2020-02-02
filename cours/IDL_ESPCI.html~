@@ -84,6 +84,15 @@ The first part:
 <li>pytorch overview</li>
 </ul></li>
 <li>03/02, <b><b>lab session</b></b> : deep-learning in pytorch</li>
+</ul>
+<a href="https://github.com/zalandoresearch/fashion-mnist">
+<img src="/assets/figs/fashion.jpeg" alt="Fashion dataset" style="width:300px; margin:0px auto;display:block"/>
+</a>
+<a href="https://allauzen.github.io/cours/IDL_ESPCI/">
+<img src="/assets/figs/pca-fashion-10-classes.png" alt="Fashion PCA" style="width:300px; margin:0px auto;display:block"/>
+</a>
+
+<ul class="org-ul">
 <li>10/02, course: A first review, good practices in deep-learning, problem design</li>
 </ul>
 
