@@ -12,12 +12,8 @@ comments:
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgc0047d9">Cours 2018-19</a>
-<ul>
-<li><a href="#orgf9bfc19">Master AIC</a></li>
-<li><a href="#orgd104254">M1 Informatique</a></li>
-</ul>
-</li>
+<li><a href="#orgd7e4f98">ESPCI</a></li>
+<li><a href="#org5b6e67e">Dauphine, master IASD</a></li>
 <li><a href="#org8f1513b">Misc</a>
 <ul>
 <li><a href="#org56b0fe7">Python, ipython, notebook, &#x2026;</a></li>
@@ -38,32 +34,22 @@ comments:
 
 
 
-<div id="outline-container-orgc0047d9" class="outline-2">
-<h2 id="orgc0047d9">Cours 2018-19</h2>
-<div class="outline-text-2" id="text-orgc0047d9">
-</div>
-<div id="outline-container-orgf9bfc19" class="outline-3">
-<h3 id="orgf9bfc19">Master AIC</h3>
-<div class="outline-text-3" id="text-orgf9bfc19">
-<ul class="org-ul">
-<li><a href="https://allauzen.github.io/cours/AIC/">"ma" page du master</a></li>
-<li>Cours TC1</li>
-<li><a href="https://allauzen.github.io/cours/TC4_AIC">Cours TC4</a></li>
-<li><a href="https://allauzen.github.io/cours/AIC_Deep/">Deep-Learning</a></li>
-<li><a href="https://allauzen.github.io/cours/AIC_Struct">Apprentissage Structuré et Deep-Learning</a></li>
-</ul>
+<div id="outline-container-orgd7e4f98" class="outline-2">
+<h2 id="orgd7e4f98">ESPCI</h2>
+<div class="outline-text-2" id="text-orgd7e4f98">
+<p>
+<a href="https://allauzen.github.io/cours/IDL_ESPCI">Introduction to Deep-Learning (IDL)</a>, third year: the web page with resources, news, &#x2026; 
+</p>
 </div>
 </div>
 
-<div id="outline-container-orgd104254" class="outline-3">
-<h3 id="orgd104254">M1 Informatique</h3>
-<div class="outline-text-3" id="text-orgd104254">
-<ul class="org-ul">
-<li><a href="https://allauzen.github.io/cours/M1TER/">TER</a></li>
-<li><a href="https://allauzen.github.io/cours/M1-TER-NNET/">TER Réseau de neurones</a></li>
-<li><a href="https://allauzen.github.io/cours/M1-Proba/">Cours Probabilité et Statistique</a></li>
-</ul>
-</div>
+
+<div id="outline-container-org5b6e67e" class="outline-2">
+<h2 id="org5b6e67e">Dauphine, master IASD</h2>
+<div class="outline-text-2" id="text-org5b6e67e">
+<p>
+<a href="https://allauzen.github.io/cours/NLP_IASD">Natural Languaga Processing (NLP) for the IASD master of Dauphine Université</a>: the web page with resources, news, &#x2026; 
+</p>
 </div>
 </div>
 
