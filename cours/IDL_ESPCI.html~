@@ -88,9 +88,8 @@ The first part:
 <a href="https://allauzen.github.io/cours/IDL_ESPCI/">
 <img src="/assets/figs/pca-fashion-10-classes.pdf" alt="PCA on the Fashion-mnist dataset" style="width:200px; margin:0px auto;display:block"/>
 </a>
-
 <ul class="org-ul">
-<li>10/02, course: A first review, good practices in deep-learning, problem design</li>
+<li>10/02, course: Embedding and sequence processing with convolution (part 1)</li>
 </ul>
 
 
@@ -98,7 +97,7 @@ The first part:
 The second part: 
 </p>
 <ul class="org-ul">
-<li>02/03, course: Convolutional and recurrent deep-networks</li>
+<li>02/03, course: Convolutional (part 2)  and recurrent deep-networks</li>
 <li>09/03, <b><b>lab session</b></b>: Image and sequence processing</li>
 <li>23/03, course: Advanced architecture - part 1</li>
 <li>30/03, course: Advanced architecture - part 2</li>

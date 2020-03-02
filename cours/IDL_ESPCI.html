@@ -114,13 +114,16 @@ The second part:
 <p>
 Here, you can find a list of possible projects. Feel free to interact with me. For some of them, just ask me the data, otherwise a link is provided. Of course, you can also propose a project. 
 </p>
+</div>
 
-
+<div id="outline-container-org223e9b5" class="outline-3">
+<h3 id="org223e9b5">Project list</h3>
+<div class="outline-text-3" id="text-org223e9b5">
 <ul class="org-ul">
 <li>Reconstruction of the vorticity field of a flow behind a cylinder from a handful sensors on the cylinder surface</li>
 </ul>
 
-<a href="https://arxiv.org/abs/1906.07672">
+<a href="https://arxiv.org/abs/1902.07358">
 <img src="/assets/figs/cylinder.png" alt="Velocity fields" style="width:300px; margin:0px auto;display:block"/>
 </a>
 
@@ -132,7 +135,9 @@ Here, you can find a list of possible projects. Feel free to interact with me. F
 <a href="https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.html">
 <img src="/assets/figs/sea.png" alt="Sea surface temperature" style="width:300px; margin:0px auto;display:block"/>
 </a>
-
+<p>
+See below for more details
+</p>
 <ul class="org-ul">
 <li>Chemistry: Predict the standard density of pure fluids, using a newly compiled database. From SMILES description, how can we predict density ? Ask me for the data and tools.</li>
 
@@ -158,5 +163,48 @@ fluorescence microscopy images of the bacterium Pseudomonas fluorescens SBW25. E
 
 <li>And one on "de novo peptide sequencing" with neural network</li>
 </ul>
+</div>
+</div>
+
+
+<div id="outline-container-org5ad7927" class="outline-3">
+<h3 id="org5ad7927">Ocean data</h3>
+<div class="outline-text-3" id="text-org5ad7927">
+<p>
+The datasets from <a href="https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.html">this site</a> provide different kind of measures. It is possible to consider different project. 
+The datasets are in special format. You can read them with scipy like this: 
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #00ffff;">from</span> scipy.io <span style="color: #00ffff;">import</span> netcdf
+<span style="color: #eedd82;">nc</span> = netcdf.netcdf_file(<span style="color: #ffa07a;">"./Downloads/sst.wkmean.1981-1989.nc"</span>,<span style="color: #ffa07a;">'r'</span>)
+<span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">Acces to the variable list </span>
+<span style="color: #00ffff;">print</span>(nc.variables)
+Out:   OrderedDict([(<span style="color: #ffa07a;">'lat'</span>, &lt;scipy.io.netcdf.netcdf_variable at 0x10422c208&gt;),
+               (<span style="color: #ffa07a;">'lon'</span>, &lt;scipy.io.netcdf.netcdf_variable at 0x10422c1d0&gt;),
+               (<span style="color: #ffa07a;">'time'</span>, &lt;scipy.io.netcdf.netcdf_variable at 0x10422c4e0&gt;),
+               (<span style="color: #ffa07a;">'time_bnds'</span>, &lt;scipy.io.netcdf.netcdf_variable at 0x10422c550&gt;),
+               (<span style="color: #ffa07a;">'sst'</span>, &lt;scipy.io.netcdf.netcdf_variable at 0x10422c6d8&gt;)])
+<span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">Get the time array </span>
+<span style="color: #eedd82;">time</span> = nc.variables[<span style="color: #ffa07a;">'time'</span>]
+<span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">This is a "netcdf" variable, to access the data as numpy array</span>
+<span style="color: #00ffff;">print</span>(time.data)
+<span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">You can also try with 'sst' to get the temperature</span>
+</pre>
+</div>
+
+<p>
+Several application can be considered as a project: 
+</p>
+<ul class="org-ul">
+<li>Like in <a href="https://arxiv.org/abs/1902.07358">this paper</a>, you can learn to reconstruct the map given some
+known points (for example randomly selected). In the paper they only
+use a "shallow" decoder, of course you can try it, but the project
+should explore a more advanced architecture like convolutional
+network (or in this case: deconvolution).</li>
+<li>For a given number of measures, can we optimize the place of this
+measures to improve the reconstruction ?</li>
+<li>A time prediction can be also an interesting task. This means predicting the sst given the week before.</li>
+</ul>
+</div>
 </div>
 </div>
