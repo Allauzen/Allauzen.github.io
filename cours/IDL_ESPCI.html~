@@ -24,19 +24,12 @@ data-driven approach and to be able to efficiently experiment with deep-learning
 <h2 id="org11d1a21">News</h2>
 <div class="outline-text-2" id="text-org11d1a21">
 <ul class="org-ul">
-<li><b><b>Homework assignement 2</b></b>: see the drive, for the notebooks.
-<ul class="org-ul">
-<li>First follow the notebook called <i>idl-pytorch-starter.ipynb</i></li>
-<li>Then the assignment is also a notebook : <i>hw-2-idl-espci.ipynb</i></li>
-</ul></li>
+<li>Next lab session: the 9th of  March, convolution for text classification</li>
 
-<li><b><b>The deadline is the 3rd of February morning</b></b>, before the lab session.</li>
-
-<li>Next lab session: the 3rd of February, pytorch</li>
+<li>Are you sure you registered your team for the project (see the drive)</li>
 </ul>
 </div>
 </div>
-
 
 <div id="outline-container-orgc8cb670" class="outline-2">
 <h2 id="orgc8cb670">The resources / drive</h2>
@@ -84,27 +77,26 @@ The first part:
 <li>pytorch overview</li>
 </ul></li>
 <li>03/02, <b><b>lab session</b></b> : deep-learning in pytorch</li>
-</ul>
-<a href="https://allauzen.github.io/cours/IDL_ESPCI/">
-<img src="/assets/figs/pca-fashion-10-classes.pdf" alt="PCA on the Fashion-mnist dataset" style="width:200px; margin:0px auto;display:block"/>
-</a>
-<ul class="org-ul">
+
 <li>10/02, course: Embedding and sequence processing with convolution (part 1)</li>
 </ul>
-
 
 <p>
 The second part: 
 </p>
 <ul class="org-ul">
-<li>02/03, course: Convolutional (part 2)  and recurrent deep-networks</li>
-<li>09/03, <b><b>lab session</b></b>: Image and sequence processing</li>
-<li>23/03, course: Advanced architecture - part 1</li>
-<li>30/03, course: Advanced architecture - part 2</li>
+<li>02/03, course: Convolutional (part 2)  and recurrent deep-networks
+<ul class="org-ul">
+<li>reminder on 1D convolution</li>
+<li>2D convolution for image processing</li>
+<li>Recurrent net</li>
+</ul></li>
+<li>09/03, <b><b>lab session</b></b>: Sequence classification with 1D convolution</li>
+<li>23/03, course: TBA</li>
+<li>30/03, course: TBA</li>
 </ul>
 </div>
 </div>
-
 
 
 
@@ -171,8 +163,20 @@ fluorescence microscopy images of the bacterium Pseudomonas fluorescens SBW25. E
 <h3 id="org5ad7927">Ocean data</h3>
 <div class="outline-text-3" id="text-org5ad7927">
 <p>
-The datasets from <a href="https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.html">this site</a> provide different kind of measures. It is possible to consider different project. 
-The datasets are in special format. You can read them with scipy like this: 
+The datasets from <a href="https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.html">this site</a> provide different kind of measures. It is possible to consider different project. The datasets are in special format. To read it in python, you can use two python librairies: 
+</p>
+<ul class="org-ul">
+<li><i>netCDF4</i> is used to read the data</li>
+<li><i>basemap</i> to plot the earth map</li>
+</ul>
+<p>
+If you use anaconda, you can install them with <i>conda install</i>. A notebook (quickly written) is available on the course drive (in datasets/Ocean) to show how to read the data. 
+</p>
+
+
+
+<p>
+You can also read them with scipy as proposed below but I don't understand the resulting data encoding. So I would not recommend it. 
 </p>
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #00ffff;">from</span> scipy.io <span style="color: #00ffff;">import</span> netcdf
