@@ -203,6 +203,7 @@ should explore a more advanced architecture like convolutional
 network (or in this case: deconvolution).</li>
 <li>For a given number of measures, can we optimize the place of this
 measures to improve the reconstruction ?</li>
+<li>And what if the sensors move ?</li>
 <li>A time prediction can be also an interesting task. This means predicting the sst given the week before.</li>
 </ul>
 </div>
