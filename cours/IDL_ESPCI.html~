@@ -24,12 +24,94 @@ data-driven approach and to be able to efficiently experiment with deep-learning
 <h2 id="org11d1a21">News</h2>
 <div class="outline-text-2" id="text-org11d1a21">
 <ul class="org-ul">
-<li>Next lab session: the 9th of  March, convolution for text classification</li>
-
-<li>Are you sure you registered your team for the project (see the drive)</li>
+<li>Course update : "confinement" !</li>
+<li>Are you sure you registered your team for the project (see the drive) ?</li>
 </ul>
 </div>
+
+
+
+<div id="outline-container-org830e0ca" class="outline-3">
+<h3 id="org830e0ca">Modified organisation (in French)</h3>
+<div class="outline-text-3" id="text-org830e0ca">
+<p>
+Suite aux conséquences du Coronavirus, l'organisation du cours
+"Introduction au Deep-Learning" est modifiée.  Nous allons nous
+concentrer sur les projets à rendre. La date est fixée désormais au
+lundi 18/05 au plus tard. Bien sûr vous pouvez le rendre avant la 4
+mai (période de début de stage) mais étant données les circonstances,
+il peut être profitable d'avoir quelques jours en plus pour terminer
+la rédaction ou quelques expériences.
+</p>
+
+<p>
+Sur la feuille partagée
+(<a href="https://docs.google.com/spreadsheets/d/1JGzmMIDMTK_GEKYqC3VqkCOqfHJkTtVqImSHOnZMzoI">https://docs.google.com/spreadsheets/d/1JGzmMIDMTK_GEKYqC3VqkCOqfHJkTtVqImSHOnZMzoI</a>)
+il y a la liste des groupes et des sujets.  Si vous n'êtes pas
+inscrit.e.s sur cette feuille, c'est désormais urgent de le faire.
+</p>
 </div>
+
+
+<div id="outline-container-orgd0ed938" class="outline-4">
+<h4 id="orgd0ed938">Visio-conférence sur le projet le 23/03 matin</h4>
+<div class="outline-text-4" id="text-orgd0ed938">
+<p>
+Lundi 23/03 matin, plusieurs visio-conférences vont être organisées
+pour discuter des projets. Pour cela, nous allons utiliser zoom. C'est
+facile à installer et gratuit: <a href="https://us04web.zoom.us/">https://us04web.zoom.us/</a>. Il y aura une
+réunion zoom par sujet de projet.
+</p>
+
+
+<p>
+L'objectif est d'avoir une réunion zoom avec toutes les personnes
+traitant du même projet pour partager les informations, difficultés et
+solutions. Cela veut dire de votre côté de vous organiser pour être
+connecté.e.s à ce moment là et être à l'heure. Je vais envoyer un
+planning bientôt.
+</p>
+
+<p>
+Chaque réunion commencera par un tour de parole où chaque groupe
+résumera brièvement où il en est, et les questions qu'il souhaite
+aborder.  Pour préparer ces réunions, il est important de préparer une
+liste de questions et de me l'envoyer en avance d'ici vendredi
+(inclus).
+</p>
+
+<p>
+D'ici là, n'hésitez pas à me contacter par mail, et on peut faire une
+visio si besoin.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org13d2948" class="outline-4">
+<h4 id="org13d2948">A rendre pour le 18/05</h4>
+<div class="outline-text-4" id="text-org13d2948">
+<p>
+A rendre, un rapport au format pdf et une archive avec le code. Le
+rapport d'une dizaine de pages, doit décrire:
+</p>
+<ul class="org-ul">
+<li>les données et la tâche abordées, en particulier les hypothèses,
+pré-traitement et quelles sont les entrées et sorties</li>
+<li>les problématiques abordées et les solutions mise en pratique</li>
+<li>les résultats décrits, commentés et analysés.</li>
+</ul>
+
+<p>
+L'archive contenant le code ne doit contenir que le code et pas les
+données. Si vous le jugez nécessaire, il est possible d'échanger les
+données par drive interposé. Une solution est de m'envoyer l'archive
+avec votre rapport par mail, ou de m'envoyer l'adresse d'un dépôt.
+</p>
+</div>
+</div>
+</div>
+</div>
+
 
 <div id="outline-container-orgc8cb670" class="outline-2">
 <h2 id="orgc8cb670">The resources / drive</h2>
