@@ -1,6 +1,6 @@
 ---
 title: "About this site / and more"
-date: 2020-03-29 Dim 18:54
+date: 2019-09-22 Sun 17:39
 layout: post
 categories: 
 - blog
@@ -142,9 +142,8 @@ just type
 </pre>
 
 <p>
-The full list of built-in template are <a href="https://orgmode.org/org.html#Structure-Templates">here</a>. You need for these shortcut the <i>org-tempo</i> module. 
+The full list of built-in template are <a href="http://orgmode.org/manual/Easy-Templates.html">here</a>. 
 </p>
-
 
 <pre class="example">
 s 	#+BEGIN_SRC ... #+END_SRC

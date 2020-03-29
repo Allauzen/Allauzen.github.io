@@ -182,6 +182,7 @@ The second part:
 
 
 
+
 <div id="outline-container-orgdaa1587" class="outline-2">
 <h2 id="orgdaa1587">Projects</h2>
 <div class="outline-text-2" id="text-orgdaa1587">
@@ -292,6 +293,160 @@ measures to improve the reconstruction ?</li>
 <li>And what if the sensors move ?</li>
 <li>A time prediction can be also an interesting task. This means predicting the sst given the week before.</li>
 </ul>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgac51479" class="outline-2">
+<h2 id="orgac51479">Pytorch</h2>
+<div class="outline-text-2" id="text-orgac51479">
+</div>
+<div id="outline-container-orgd8b47d7" class="outline-3">
+<h3 id="orgd8b47d7">How to save a model to share and resume training</h3>
+<div class="outline-text-3" id="text-orgd8b47d7">
+<p>
+The key structure in pytorch is the <b><b>state<sub>dict</sub></b></b>.  The learnable
+parameters (i.e. weights and biases) of an torch.nn.Module model are
+contained in the model’s parameters (accessed with
+model.parameters()). A state<sub>dict</sub> is simply a Python dictionary object
+that maps each layer to its parameter tensor. The basic idea is to
+save and load this dictionnary to easily deal with parameters in a
+consistent way. Note that only layers with learnable parameters
+(convolutional layers, linear layers, etc.) and registered buffers
+(batchnorm’s running<sub>mean</sub>) have entries in the model’s state<sub>dict</sub>.
+</p>
+
+<p>
+To resume a training process you need to restore the model in its full
+state, but also the optimizer. Optimizer objects (torch.optim) also
+have a state<sub>dict</sub>, which contains information about the optimizer’s
+state, as well as the hyperparameters used.
+</p>
+</div>
+
+
+<div id="outline-container-org8e03888" class="outline-4">
+<h4 id="org8e03888">Creating state<sub>dict</sub> a model and an optimizer</h4>
+<div class="outline-text-4" id="text-org8e03888">
+<p>
+Assume you have a model like 
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">Define model</span>
+<span style="color: #00ffff;">class</span> <span style="color: #98fb98;">TheModelClass</span>(nn.Module):
+    <span style="color: #00ffff;">def</span> <span style="color: #87cefa;">__init__</span>(<span style="color: #00ffff;">self</span>):
+        <span style="color: #b0c4de;">super</span>(TheModelClass, <span style="color: #00ffff;">self</span>).__init__()
+        <span style="color: #00ffff;">self</span>.conv1 = nn.Conv2d(3, 6, 5)
+        <span style="color: #00ffff;">self</span>.pool = nn.MaxPool2d(2, 2)
+        <span style="color: #00ffff;">self</span>.conv2 = nn.Conv2d(6, 16, 5)
+        <span style="color: #00ffff;">self</span>.fc1 = nn.Linear(16 * 5 * 5, 120)
+        <span style="color: #00ffff;">self</span>.fc2 = nn.Linear(120, 84)
+        <span style="color: #00ffff;">self</span>.fc3 = nn.Linear(84, 10)
+
+    <span style="color: #00ffff;">def</span> <span style="color: #87cefa;">forward</span>(<span style="color: #00ffff;">self</span>, x):
+        <span style="color: #eedd82;">x</span> = <span style="color: #00ffff;">self</span>.pool(F.relu(<span style="color: #00ffff;">self</span>.conv1(x)))
+        <span style="color: #eedd82;">x</span> = <span style="color: #00ffff;">self</span>.pool(F.relu(<span style="color: #00ffff;">self</span>.conv2(x)))
+        <span style="color: #eedd82;">x</span> = x.view(-1, 16 * 5 * 5)
+        <span style="color: #eedd82;">x</span> = F.relu(<span style="color: #00ffff;">self</span>.fc1(x))
+        <span style="color: #eedd82;">x</span> = F.relu(<span style="color: #00ffff;">self</span>.fc2(x))
+        <span style="color: #eedd82;">x</span> = <span style="color: #00ffff;">self</span>.fc3(x)
+        <span style="color: #00ffff;">return</span> x
+
+<span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">Initialize model</span>
+<span style="color: #eedd82;">model</span> = TheModelClass()
+
+<span style="color: #eedd82;">model_state_d</span> = model.state_dict()
+<span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">iter on the keys of the dictionnary</span>
+<span style="color: #00ffff;">for</span> param_tensor <span style="color: #00ffff;">in</span> model_state_d:
+    <span style="color: #00ffff;">print</span>(param_tensor, <span style="color: #ffa07a;">"\t"</span>, model_state_d[param_tensor].size())
+
+<span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">You want to access to a specific tensor of parameter</span>
+<span style="color: #00ffff;">print</span>(model_state_d[<span style="color: #ffa07a;">"conv1.bias"</span>]) 
+</pre>
+</div>
+
+
+<p>
+You can do the same for the optimizer.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">Initialize optimizer</span>
+<span style="color: #eedd82;">optimizer</span> = optim.SGD(model.parameters(), lr=0.001, momentum=0.9)
+
+<span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">Print optimizer's state_dict</span>
+<span style="color: #00ffff;">print</span>(<span style="color: #ffa07a;">"Optimizer's state_dict:"</span>)
+<span style="color: #00ffff;">for</span> var_name <span style="color: #00ffff;">in</span> optimizer.state_dict():
+    <span style="color: #00ffff;">print</span>(var_name, <span style="color: #ffa07a;">"\t"</span>, optimizer.state_dict()[var_name])
+</pre>
+</div>
+
+<p>
+In general you don't need to look at the details yourself. You may
+want to save these parameters in a single file to restore your
+training session. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org81dc06b" class="outline-4">
+<h4 id="org81dc06b">Saving a training session</h4>
+<div class="outline-text-4" id="text-org81dc06b">
+<p>
+First, we can create an object to gather and store all the necessary
+data (parameters). And then we can write it in a file. Later we will
+be able to reload it.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">Here we create a dictionnary to store what we need: </span>
+<span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">1/ the epoch number</span>
+<span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">2/ the paramters of the model</span>
+<span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">3/ the paramters of the optimizer</span>
+<span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">4/ the loss function we used</span>
+<span style="color: #eedd82;">tosave_data</span> = 
+{
+            <span style="color: #ffa07a;">'epoch'</span>: epoch_counter,
+            <span style="color: #ffa07a;">'model_state_dict'</span>: model.state_dict(),
+            <span style="color: #ffa07a;">'optimizer_state_dict'</span>: optimizer.state_dict(),
+            <span style="color: #ffa07a;">'loss'</span>: loss,
+}
+<span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">Write a pickle file using pytorch </span>
+torch.save(tosave_data, <span style="color: #ffa07a;">"/the/path/to/my/file"</span>)
+</pre>
+</div>
+
+<p>
+And that's it ! 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7c79328" class="outline-4">
+<h4 id="org7c79328">Resume training</h4>
+<div class="outline-text-4" id="text-org7c79328">
+<p>
+Now we can read a file to restore the training session. 
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">First create objects of the good types </span>
+<span style="color: #eedd82;">prev_model</span> = TheModelClass()
+<span style="color: #eedd82;">prev_optimizer</span> = optim.SGD(model.parameters(),lr=0.1)
+
+<span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">Load the pickle file to read the dictionnary from the file</span>
+<span style="color: #eedd82;">checkpoint</span> = torch.load(<span style="color: #ffa07a;">"/the/path/to/my/file"</span>)
+
+<span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">restore the model and optimizer states: </span>
+prev_model.load_state_dict(checkpoint[<span style="color: #ffa07a;">'model_state_dict'</span>])
+prev_optimizer.load_state_dict(checkpoint[<span style="color: #ffa07a;">'optimizer_state_dict'</span>])
+<span style="color: #eedd82;">epoch</span> = checkpoint[<span style="color: #ffa07a;">'epoch'</span>]
+</pre>
+</div>
+</div>
 </div>
 </div>
 </div>

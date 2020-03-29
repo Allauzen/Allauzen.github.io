@@ -17,7 +17,7 @@ comments:
 <li><a href="#org5f0e4cf">Summary</a>
 <ul>
 <li><a href="#org2b9e75b">Generator</a></li>
-<li><a href="#org04863f4">Encoder</a></li>
+<li><a href="#org5e5f29d">Encoder</a></li>
 <li><a href="#org5be0659">Joint optimization</a></li>
 <li><a href="#org84b1bc0">Inference</a></li>
 </ul>
@@ -27,7 +27,7 @@ comments:
 <li><a href="#org4fb73da">Rationale</a></li>
 <li><a href="#org702c869">Training and inference</a></li>
 <li><a href="#org7b4e22b">Attention based model for classification</a></li>
-<li><a href="#org5e5f29d">Encoder</a></li>
+<li><a href="#org4df6fd2">Encoder</a></li>
 <li><a href="#org28b36e9">Loss function etc &#x2026;</a></li>
 </ul>
 </li>
@@ -127,9 +127,9 @@ paper is for me confusing. However&#x2026;<br />
 </div>
 
 
-<div id="outline-container-org04863f4" class="outline-3">
-<h3 id="org04863f4">Encoder</h3>
-<div class="outline-text-3" id="text-org04863f4">
+<div id="outline-container-org5e5f29d" class="outline-3">
+<h3 id="org5e5f29d">Encoder</h3>
+<div class="outline-text-3" id="text-org5e5f29d">
 <p>
 Rationales are defined as the set of \(x_t\) such as \(z_t=1\). Therefore
 the input for the encoder is a <i>selection</i> of \(\X\).  Then you can pick
@@ -277,9 +277,9 @@ point, starting by <a href="https://arxiv.org/abs/1511.05234">this paper on stoc
 
 
 
-<div id="outline-container-org5e5f29d" class="outline-3">
-<h3 id="org5e5f29d">Encoder</h3>
-<div class="outline-text-3" id="text-org5e5f29d">
+<div id="outline-container-org4df6fd2" class="outline-3">
+<h3 id="org4df6fd2">Encoder</h3>
+<div class="outline-text-3" id="text-org4df6fd2">
 <p>
 The encoder is a "simple" rnn and the last hidden state is taken as
 input for classification. While we expect a short sequence after the
