@@ -26,8 +26,7 @@ comments:
 <li><a href="#org304f6e1">2. Variational Bayes: Bayesian "approximate (or not)" inference</a>
 <ul>
 <li><a href="#orgdc611e5">2.1. Variational derivation</a></li>
-<li><a href="#orgc6d88ac">2.2. Evidence Lower Bound, or the ELBO</a></li>
-<li><a href="#orgae0dc76">2.3. Approximate inference</a></li>
+<li><a href="#orgae0dc76">2.2. Approximate inference</a></li>
 </ul>
 </li>
 <li><a href="#org82dc089">3. A special case: EM</a>
@@ -165,22 +164,22 @@ To summarize this distinction:
 Before to read these notes, it is better to be familiar with expectation. Given a random variable \(X\), we define its expectation under the distribution \(p\)
 </p>
 \begin{align}
-E_{X \sim p}[X] &= \sum_{x}  p(X=x) x \\
- &\int_x p(x) x dx
+E_{X \sim p}[X] &= \sum_{x} x p(X=x) \\
+ &\int_x x p(x)dx
 \end{align}
 <p>
 The first line is for discrete RV while the second one is for continuous RV. In this last case, \(p(x)\) denotes the probability density function. If \(X\) is a categorical RV, note it can be meaning less as it is, while for continuous RV it can be interpreted as the mean value. 
 </p>
 
 <p>
-A quantity of interest is the expected value of a function of the RV. For instance, the variance of a continuous RV can be expressed as \(E[(X-E[X])^2]\). In information theory, it is meaningfull to define the expected value of the information quantity as the entropy of the RV \(X\): 
+A quantity of interest is the expected value of a function of the RV. For instance, the variance of a continuous RV can be expressed as \(E[(X-E[X])^2]\). In information theory, it is meaningfull to define the expected value of the information quantity as the entropy the RV: 
 \[
 H(X)=-\sum_x p(X=x)log(p(X=x)) = E_p[-log(p(X))]
 \]
 </p>
 
 <p>
-Now assume two distributions on the same RV, \(q\) and \(p\), we can
+Now assume two distributions on the same RV, \(q\) and \(p\) we can
 measure the Kullback-Leibler divergence between these two
 distributions as :
 </p>
@@ -277,23 +276,13 @@ Two terms appear. The second one is the Kullback-Leibler divergence between  \(q
 \[
 \dkl(q(\Z)||P(\Z|\X,\pa)) = \sum_{\Z} q(\Z) \log(\frac{q(\Z)}{P(\Z|\X)}).
 \]
-And the first term is for the moment denoted by \(\lb\). 
-</p>
-</div>
-</div>
-
-<div id="outline-container-orgc6d88ac" class="outline-3">
-<h3 id="orgc6d88ac"><span class="section-number-3">2.2</span> Evidence Lower Bound, or the ELBO</h3>
-<div class="outline-text-3" id="text-2-2">
-<p>
-We then obtain the following relation: 
+And the first term is for the moment denoted by \(\lb\). We then obtain the following relation: 
 </p>
 \begin{align}
 \log(P(\X|\pa)) &=  \lb + \dkl(q(\Z)||P(\Z|\X,\pa))\\
 \lb &= \sum_{\Z}q(\Z) \log(\frac{P(\X,\Z|\pa)}{q(\Z)}) \\
 &= E_{q}[ \log(\frac{P(\X,\Z|\pa)}{q(\Z)}) ] \\
-&=  E_{q}[ \log(P(\X|\Z, \pa) ] - \dkl(q(\Z)| P(\Z))\\
-&=  E_{q}[ \log(P(\X, \Z | \pa) ] + H(q)
+&=  E_{q}[ \log(P(\X|\Z, \pa) ] - \dkl(q(\Z)| P(\Z))
 \end{align}
 
 <p>
@@ -326,8 +315,8 @@ Although there is nothing intrinsically approximate about variational methods, t
 </div>
 
 <div id="outline-container-orgae0dc76" class="outline-3">
-<h3 id="orgae0dc76"><span class="section-number-3">2.3</span> Approximate inference</h3>
-<div class="outline-text-3" id="text-2-3">
+<h3 id="orgae0dc76"><span class="section-number-3">2.2</span> Approximate inference</h3>
+<div class="outline-text-3" id="text-2-2">
 <p>
 To solve the tractability issue, there are two common approaches: 
 </p>
