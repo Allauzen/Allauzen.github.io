@@ -1,6 +1,6 @@
 ---
 title: "About this site / and more"
-date: 2020-03-29 Dim 18:54
+date: 2020-08-22 Sam 12:25
 layout: post
 categories: 
 - blog
@@ -415,6 +415,7 @@ Add in the <i>.emacs</i> file:
 <div class="outline-text-2" id="text-7">
 <ul class="org-ul">
 <li><a href="http://www.i3s.unice.fr/~malapert/emacs_orgmode.html">http://www.i3s.unice.fr/~malapert/emacs_orgmode.html</a></li>
+<li>a lot of nice org tricks (bibtex, code, &#x2026; ) : <a href="http://cachestocaches.com/series/emacs-productivity/">http://cachestocaches.com/series/emacs-productivity/</a></li>
 </ul>
 </div>
 </div>
