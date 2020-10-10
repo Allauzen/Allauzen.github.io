@@ -15,31 +15,31 @@ comments:
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org1878a02">News et TODO-list</a></li>
-<li><a href="#org09981ac">Contenu</a>
+<li><a href="#org74db75e">News et TODO-list</a></li>
+<li><a href="#orgec1422e">Contenu</a>
 <ul>
-<li><a href="#org6a475c4">Séance 1, le 16/01</a></li>
-<li><a href="#orgea01357">Séance 2, le 06/02</a></li>
-<li><a href="#org65ee742">Séance 3, le 13/02</a></li>
-<li><a href="#orgb301714">Séance 4, le 20/02</a></li>
-<li><a href="#orgcc23b3f">Séance 5, le 27/02</a></li>
-<li><a href="#org6b46271">Séance 6, le 13 mars</a></li>
-<li><a href="#org2419fd2">Séances suivantes</a></li>
+<li><a href="#org7c08dc1">Séance 1, le 16/01</a></li>
+<li><a href="#orgb90c833">Séance 2, le 06/02</a></li>
+<li><a href="#org1d91ccf">Séance 3, le 13/02</a></li>
+<li><a href="#orga43c932">Séance 4, le 20/02</a></li>
+<li><a href="#org4b9a1e7">Séance 5, le 27/02</a></li>
+<li><a href="#org8274d22">Séance 6, le 13 mars</a></li>
+<li><a href="#org3ceab32">Séances suivantes</a></li>
 </ul>
 </li>
-<li><a href="#org712b2a6">Projets</a>
+<li><a href="#orgbcc48b9">Projets</a>
 <ul>
-<li><a href="#org8f27a1e">Notation automatique de réponses courtes à des questions</a></li>
-<li><a href="#orga14bf4a">Notation (et explication) pour les bières</a></li>
-<li><a href="#org94c1afc">Airline Travel Information System (ATIS)</a></li>
-<li><a href="#orgdd213bc">Classification de tweets</a></li>
-<li><a href="#org6f7f160">Conversion graphèmes vers phonèmes</a></li>
-<li><a href="#org25ebbeb">Q&amp;A insurance</a></li>
-<li><a href="#org114beca">Quora Question Pairs</a></li>
-<li><a href="#orga311dc0">Toxic Comment Classification</a></li>
-<li><a href="#org7f656e8">The Fake-news challenge</a></li>
-<li><a href="#orgf7fd91e">Amazon review</a></li>
-<li><a href="#org2d52b11">Hate speech on tweeter</a></li>
+<li><a href="#org41f25c1">Notation automatique de réponses courtes à des questions</a></li>
+<li><a href="#org9fb4977">Notation (et explication) pour les bières</a></li>
+<li><a href="#orgce7bfdf">Airline Travel Information System (ATIS)</a></li>
+<li><a href="#org19a13d8">Classification de tweets</a></li>
+<li><a href="#org7e3493e">Conversion graphèmes vers phonèmes</a></li>
+<li><a href="#org6c36d5a">Q&amp;A insurance</a></li>
+<li><a href="#org71243b9">Quora Question Pairs</a></li>
+<li><a href="#orgd3669ec">Toxic Comment Classification</a></li>
+<li><a href="#orga9eec24">The Fake-news challenge</a></li>
+<li><a href="#org4dae8b4">Amazon review</a></li>
+<li><a href="#orgcbdd21a">Hate speech on tweeter</a></li>
 </ul>
 </li>
 </ul>
@@ -52,9 +52,9 @@ Le <b><b>dossier partagé</b></b> pour ce cours est le <a href="https://drive.go
 les cours et les ressources nécessaires. 
 </p>
 
-<div id="outline-container-org1878a02" class="outline-2">
-<h2 id="org1878a02">News et TODO-list</h2>
-<div class="outline-text-2" id="text-org1878a02">
+<div id="outline-container-org74db75e" class="outline-2">
+<h2 id="org74db75e">News et TODO-list</h2>
+<div class="outline-text-2" id="text-org74db75e">
 <ul class="org-ul">
 <li><b><b>Pour le 13/03: voir plus bas !!</b></b></li>
 <li>Pour le 20/02 : Finir le TP 3</li>
@@ -69,13 +69,13 @@ s'avancer un peu (numpy et torch101)</li>
 
 
 
-<div id="outline-container-org09981ac" class="outline-2">
-<h2 id="org09981ac">Contenu</h2>
-<div class="outline-text-2" id="text-org09981ac">
+<div id="outline-container-orgec1422e" class="outline-2">
+<h2 id="orgec1422e">Contenu</h2>
+<div class="outline-text-2" id="text-orgec1422e">
 </div>
-<div id="outline-container-org6a475c4" class="outline-3">
-<h3 id="org6a475c4">Séance 1, le 16/01</h3>
-<div class="outline-text-3" id="text-org6a475c4">
+<div id="outline-container-org7c08dc1" class="outline-3">
+<h3 id="org7c08dc1">Séance 1, le 16/01</h3>
+<div class="outline-text-3" id="text-org7c08dc1">
 <ul class="org-ul">
 <li>Cours: Classification binaire / Séparation linéaire</li>
 <li>TP : Prise en main python et données imdb</li>
@@ -83,9 +83,9 @@ s'avancer un peu (numpy et torch101)</li>
 </div>
 </div>
 
-<div id="outline-container-orgea01357" class="outline-3">
-<h3 id="orgea01357">Séance 2, le 06/02</h3>
-<div class="outline-text-3" id="text-orgea01357">
+<div id="outline-container-orgb90c833" class="outline-3">
+<h3 id="orgb90c833">Séance 2, le 06/02</h3>
+<div class="outline-text-3" id="text-orgb90c833">
 <ul class="org-ul">
 <li>cours: apprentissage / optimisation</li>
 <li>TP : sur numpy, à faire à la maison</li>
@@ -143,9 +143,9 @@ torch.manual_seed(1)
 </div>
 </div>
 
-<div id="outline-container-org65ee742" class="outline-3">
-<h3 id="org65ee742">Séance 3, le 13/02</h3>
-<div class="outline-text-3" id="text-org65ee742">
+<div id="outline-container-org1d91ccf" class="outline-3">
+<h3 id="org1d91ccf">Séance 3, le 13/02</h3>
+<div class="outline-text-3" id="text-org1d91ccf">
 <ul class="org-ul">
 <li>Cours sur la classification de texte:  représentation sous forme de
 sac d'atributs binaires puis de <i>word embeddings</i>.</li>
@@ -155,9 +155,9 @@ embeddings.</li>
 </div>
 </div>
 
-<div id="outline-container-orgb301714" class="outline-3">
-<h3 id="orgb301714">Séance 4, le 20/02</h3>
-<div class="outline-text-3" id="text-orgb301714">
+<div id="outline-container-orga43c932" class="outline-3">
+<h3 id="orga43c932">Séance 4, le 20/02</h3>
+<div class="outline-text-3" id="text-orga43c932">
 <ul class="org-ul">
 <li>Cours sur la classification multi-classe, et la génération de
 phrase.</li>
@@ -175,9 +175,9 @@ implémentation, même simplifiée.</li>
 </div>
 
 
-<div id="outline-container-orgcc23b3f" class="outline-3">
-<h3 id="orgcc23b3f">Séance 5, le 27/02</h3>
-<div class="outline-text-3" id="text-orgcc23b3f">
+<div id="outline-container-org4b9a1e7" class="outline-3">
+<h3 id="org4b9a1e7">Séance 5, le 27/02</h3>
+<div class="outline-text-3" id="text-org4b9a1e7">
 <ul class="org-ul">
 <li>TP : on reprend le TP 4 et il faut faire le TP5 sur les modèles
 récurrents.</li>
@@ -213,9 +213,9 @@ Pour le TP4, voici un début de correction:
 </div>
 </div>
 
-<div id="outline-container-org6b46271" class="outline-3">
-<h3 id="org6b46271">Séance 6, le 13 mars</h3>
-<div class="outline-text-3" id="text-org6b46271">
+<div id="outline-container-org8274d22" class="outline-3">
+<h3 id="org8274d22">Séance 6, le 13 mars</h3>
+<div class="outline-text-3" id="text-org8274d22">
 <ul class="org-ul">
 <li><b><b>Travail à rendre</b></b>, avant la séance: bilan sur la classification de
 texte: rendre les TP 3,4, et 5. Comme des éléments de corrections existent,
@@ -234,9 +234,9 @@ modèles fonctionnent.  Ce qui est attendu:
 </div>
 
 
-<div id="outline-container-org2419fd2" class="outline-3">
-<h3 id="org2419fd2">Séances suivantes</h3>
-<div class="outline-text-3" id="text-org2419fd2">
+<div id="outline-container-org3ceab32" class="outline-3">
+<h3 id="org3ceab32">Séances suivantes</h3>
+<div class="outline-text-3" id="text-org3ceab32">
 <ul class="org-ul">
 <li>7 : 20/03</li>
 <li>8 : 27/03</li>
@@ -249,9 +249,9 @@ modèles fonctionnent.  Ce qui est attendu:
 
 
 
-<div id="outline-container-org712b2a6" class="outline-2">
-<h2 id="org712b2a6">Projets</h2>
-<div class="outline-text-2" id="text-org712b2a6">
+<div id="outline-container-orgbcc48b9" class="outline-2">
+<h2 id="orgbcc48b9">Projets</h2>
+<div class="outline-text-2" id="text-orgbcc48b9">
 <p>
 <b>Pour le mercredi XXX</b>, vous devez choisir un projet à faire, soit
 parmi ceux listés ci-dessous, soit en proposer un, soit on en discute. Puis vous devez
@@ -284,9 +284,9 @@ obtenus par l'état de l'art.
 </p>
 </div>
 
-<div id="outline-container-org8f27a1e" class="outline-3">
-<h3 id="org8f27a1e">Notation automatique de réponses courtes à des questions</h3>
-<div class="outline-text-3" id="text-org8f27a1e">
+<div id="outline-container-org41f25c1" class="outline-3">
+<h3 id="org41f25c1">Notation automatique de réponses courtes à des questions</h3>
+<div class="outline-text-3" id="text-org41f25c1">
 <p>
 Les données sont <a href="http://web.eecs.umich.edu/~mihalcea/downloads/ShortAnswerGrading_v2.0.zip">ici pour le téléchargement</a> et leur description est
 <a href="http://aclweb.org/anthology/P11-1076">dans cet article</a>. 
@@ -310,9 +310,9 @@ aussi intéressant d'essayer d'apprendre à générer la réponse.
 </div>
 
 
-<div id="outline-container-orga14bf4a" class="outline-3">
-<h3 id="orga14bf4a">Notation (et explication) pour les bières</h3>
-<div class="outline-text-3" id="text-orga14bf4a">
+<div id="outline-container-org9fb4977" class="outline-3">
+<h3 id="org9fb4977">Notation (et explication) pour les bières</h3>
+<div class="outline-text-3" id="text-org9fb4977">
 <p>
 Les données sont disponibles <a href="http://jmcauley.ucsd.edu/cse255/data/beer/beer_50000.json">ici en json</a>. Un exemple d'utilisation de
 ces données est décrit dans <a href="https://people.csail.mit.edu/taolei/papers/emnlp16_rationale.pdf">cet article</a>. Mais on peut envisager des
@@ -326,9 +326,9 @@ choses plus simple:
 </div>
 </div>
 
-<div id="outline-container-org94c1afc" class="outline-3">
-<h3 id="org94c1afc">Airline Travel Information System (ATIS)</h3>
-<div class="outline-text-3" id="text-org94c1afc">
+<div id="outline-container-orgce7bfdf" class="outline-3">
+<h3 id="orgce7bfdf">Airline Travel Information System (ATIS)</h3>
+<div class="outline-text-3" id="text-orgce7bfdf">
 <p>
 Corpus des années 90, il est dédié à la compréhension de la parole. Le
 but est de faire de l'étiquetage de séquence. En entrée, une phrase est
@@ -349,9 +349,9 @@ au lieu de départ, 'B-dept' signifie 'début de départ'; 'York' est
 </div>
 </div>
 
-<div id="outline-container-orgdd213bc" class="outline-3">
-<h3 id="orgdd213bc">Classification de tweets</h3>
-<div class="outline-text-3" id="text-orgdd213bc">
+<div id="outline-container-org19a13d8" class="outline-3">
+<h3 id="org19a13d8">Classification de tweets</h3>
+<div class="outline-text-3" id="text-org19a13d8">
 <p>
 Partant d'un tweet vu comme une séquence de symboles, effectuer une
 classification binaire (positif/négatif). Les données peuvent se
@@ -380,9 +380,9 @@ pour faire de la classification.
 </div>
 </div>
 
-<div id="outline-container-org6f7f160" class="outline-3">
-<h3 id="org6f7f160">Conversion graphèmes vers phonèmes</h3>
-<div class="outline-text-3" id="text-org6f7f160">
+<div id="outline-container-org7e3493e" class="outline-3">
+<h3 id="org7e3493e">Conversion graphèmes vers phonèmes</h3>
+<div class="outline-text-3" id="text-org7e3493e">
 <p>
 Partant d'un mot vue comme une séquence de lettres (les graphèmes), le
 but est de générer une séquence de phonèmes. Les données nettalk sont
@@ -413,9 +413,9 @@ même longueur que la séquence de graphèmes
 </div>
 </div>
 
-<div id="outline-container-org25ebbeb" class="outline-3">
-<h3 id="org25ebbeb">Q&amp;A insurance</h3>
-<div class="outline-text-3" id="text-org25ebbeb">
+<div id="outline-container-org6c36d5a" class="outline-3">
+<h3 id="org6c36d5a">Q&amp;A insurance</h3>
+<div class="outline-text-3" id="text-org6c36d5a">
 <p>
 L'objectif est pouvoir sélectionner une réponse à une question. Les
 données viennent du domaine de l'assurance. Les données brutes viennent
@@ -438,18 +438,18 @@ des modèles performants et qui peuvent donner des idées.
 </div>
 
 
-<div id="outline-container-org114beca" class="outline-3">
-<h3 id="org114beca">Quora Question Pairs</h3>
-<div class="outline-text-3" id="text-org114beca">
+<div id="outline-container-org71243b9" class="outline-3">
+<h3 id="org71243b9">Quora Question Pairs</h3>
+<div class="outline-text-3" id="text-org71243b9">
 <p>
 Le challenge <a href="https://www.kaggle.com/c/quora-question-pairs">https://www.kaggle.com/c/quora-question-pairs</a>
 </p>
 </div>
 </div>
 
-<div id="outline-container-orga311dc0" class="outline-3">
-<h3 id="orga311dc0">Toxic Comment Classification</h3>
-<div class="outline-text-3" id="text-orga311dc0">
+<div id="outline-container-orgd3669ec" class="outline-3">
+<h3 id="orgd3669ec">Toxic Comment Classification</h3>
+<div class="outline-text-3" id="text-orgd3669ec">
 <p>
 <a href="https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge">https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge</a>,
 </p>
@@ -457,27 +457,27 @@ Le challenge <a href="https://www.kaggle.com/c/quora-question-pairs">https://www
 </div>
 
 
-<div id="outline-container-org7f656e8" class="outline-3">
-<h3 id="org7f656e8">The Fake-news challenge</h3>
-<div class="outline-text-3" id="text-org7f656e8">
+<div id="outline-container-orga9eec24" class="outline-3">
+<h3 id="orga9eec24">The Fake-news challenge</h3>
+<div class="outline-text-3" id="text-orga9eec24">
 <p>
 <a href="http://www.fakenewschallenge.org/">http://www.fakenewschallenge.org/</a>
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgf7fd91e" class="outline-3">
-<h3 id="orgf7fd91e">Amazon review</h3>
-<div class="outline-text-3" id="text-orgf7fd91e">
+<div id="outline-container-org4dae8b4" class="outline-3">
+<h3 id="org4dae8b4">Amazon review</h3>
+<div class="outline-text-3" id="text-org4dae8b4">
 <p>
 <a href="https://snap.stanford.edu/data/web-Amazon.html">https://snap.stanford.edu/data/web-Amazon.html</a>
 </p>
 </div>
 </div>
 
-<div id="outline-container-org2d52b11" class="outline-3">
-<h3 id="org2d52b11">Hate speech on tweeter</h3>
-<div class="outline-text-3" id="text-org2d52b11">
+<div id="outline-container-orgcbdd21a" class="outline-3">
+<h3 id="orgcbdd21a">Hate speech on tweeter</h3>
+<div class="outline-text-3" id="text-orgcbdd21a">
 <p>
 <a href="https://www.kaggle.com/vkrahul/twitter-hate-speech">https://www.kaggle.com/vkrahul/twitter-hate-speech</a>
 </p>

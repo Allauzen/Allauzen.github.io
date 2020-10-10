@@ -13,21 +13,21 @@ comments:
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orga4e6a4f">1. Cours 1 : Rappel de probabilité</a>
+<li><a href="#org76bca28">1. Cours 1 : Rappel de probabilité</a>
 <ul>
-<li><a href="#orge401968">1.1. ToDo avant le cours: le cours</a></li>
-<li><a href="#org1e375f0">1.2. ToDo avant le cours: exercices</a></li>
+<li><a href="#orge2f1a2b">1.1. ToDo avant le cours: le cours</a></li>
+<li><a href="#org1b0122e">1.2. ToDo avant le cours: exercices</a></li>
 </ul>
 </li>
-<li><a href="#orgb5c054c">2. Cours 2 : Modèle de Markov Caché ou HMM, introduction</a></li>
-<li><a href="#org4f86d61">3. ToDo pour le 16/10</a></li>
-<li><a href="#org7965e23">4. Cours 3 : Inférence / Viterbi</a></li>
-<li><a href="#orgf7f5fd4">5. Cours 4 : Forward/Backward</a></li>
-<li><a href="#orgff96a80">6. Project: Second-Order HMM for typos correction</a>
+<li><a href="#orgf34c689">2. Cours 2 : Modèle de Markov Caché ou HMM, introduction</a></li>
+<li><a href="#org6994906">3. ToDo pour le 16/10</a></li>
+<li><a href="#org4f55d41">4. Cours 3 : Inférence / Viterbi</a></li>
+<li><a href="#org92ca539">5. Cours 4 : Forward/Backward</a></li>
+<li><a href="#orgb83c8fd">6. Project: Second-Order HMM for typos correction</a>
 <ul>
-<li><a href="#orgf32678a">6.1. TODO:</a></li>
-<li><a href="#org4ca1368">6.2. Submission Checklist</a></li>
-<li><a href="#orgd76f051">6.3. Grading Scheme:</a></li>
+<li><a href="#org40f278d">6.1. TODO:</a></li>
+<li><a href="#orgbc2b718">6.2. Submission Checklist</a></li>
+<li><a href="#org75905ba">6.3. Grading Scheme:</a></li>
 </ul>
 </li>
 </ul>
@@ -39,15 +39,15 @@ comments:
 Cette page contient les informations pour la partie probabiliste de ce cours (Rappel de probabilité et modèle de Markov). L'autre partie est assurée par J-C Janodet. 
 </p>
 
-<div id="outline-container-orga4e6a4f" class="outline-2">
-<h2 id="orga4e6a4f"><span class="section-number-2">1</span> Cours 1 : Rappel de probabilité</h2>
+<div id="outline-container-org76bca28" class="outline-2">
+<h2 id="org76bca28"><span class="section-number-2">1</span> Cours 1 : Rappel de probabilité</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Ce cours servira autant au module TC1 (Apprentissage).
 </p>
 </div>
-<div id="outline-container-orge401968" class="outline-3">
-<h3 id="orge401968"><span class="section-number-3">1.1</span> ToDo avant le cours: le cours</h3>
+<div id="outline-container-orge2f1a2b" class="outline-3">
+<h3 id="orge2f1a2b"><span class="section-number-3">1.1</span> ToDo avant le cours: le cours</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 <b>Avant  le premier cours vous devez lire attentivement</b> les 2 cours suivants (<a href="https://drive.google.com/open?id=0B6bFVfow2ez_MjV3cEszTU05XzQ">sur le drive</a>): 
@@ -66,8 +66,8 @@ objectif est <b>de tout comprendre</b>, et si il y a des points obscures de <b>v
 </div>
 </div>
 
-<div id="outline-container-org1e375f0" class="outline-3">
-<h3 id="org1e375f0"><span class="section-number-3">1.2</span> ToDo avant le cours: exercices</h3>
+<div id="outline-container-org1b0122e" class="outline-3">
+<h3 id="org1b0122e"><span class="section-number-3">1.2</span> ToDo avant le cours: exercices</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 Les exercices "papier" sont disponibles sur <a href="https://allauzen.github.io/cours/Exercices_Proba/">cette page</a>. 
@@ -80,8 +80,8 @@ Les exercices "papier" sont disponibles sur <a href="https://allauzen.github.io/
 
 
 
-<div id="outline-container-orgb5c054c" class="outline-2">
-<h2 id="orgb5c054c"><span class="section-number-2">2</span> Cours 2 : Modèle de Markov Caché ou HMM, introduction</h2>
+<div id="outline-container-orgf34c689" class="outline-2">
+<h2 id="orgf34c689"><span class="section-number-2">2</span> Cours 2 : Modèle de Markov Caché ou HMM, introduction</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li>Cours :  Introduction au HMM.</li>
@@ -89,8 +89,8 @@ Les exercices "papier" sont disponibles sur <a href="https://allauzen.github.io/
 </ul>
 </div>
 </div>
-<div id="outline-container-org4f86d61" class="outline-2">
-<h2 id="org4f86d61"><span class="section-number-2">3</span> ToDo pour le 16/10</h2>
+<div id="outline-container-org6994906" class="outline-2">
+<h2 id="org6994906"><span class="section-number-2">3</span> ToDo pour le 16/10</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li>Faire le TP1 qui familiarise avec avec les données que l'on va
@@ -112,8 +112,8 @@ comprendre comment il opère
 </div>
 </div>
 
-<div id="outline-container-org7965e23" class="outline-2">
-<h2 id="org7965e23"><span class="section-number-2">4</span> Cours 3 : Inférence / Viterbi</h2>
+<div id="outline-container-org4f55d41" class="outline-2">
+<h2 id="org4f55d41"><span class="section-number-2">4</span> Cours 3 : Inférence / Viterbi</h2>
 <div class="outline-text-2" id="text-4">
 <ul class="org-ul">
 <li>Cours sur  Viterbi / forward / backward</li>
@@ -122,8 +122,8 @@ comprendre comment il opère
 </div>
 </div>
 
-<div id="outline-container-orgf7f5fd4" class="outline-2">
-<h2 id="orgf7f5fd4"><span class="section-number-2">5</span> Cours 4 : Forward/Backward</h2>
+<div id="outline-container-org92ca539" class="outline-2">
+<h2 id="org92ca539"><span class="section-number-2">5</span> Cours 4 : Forward/Backward</h2>
 <div class="outline-text-2" id="text-5">
 <ul class="org-ul">
 <li>Cours sur  Viterbi / forward / backward, suite et fin.</li>
@@ -133,8 +133,8 @@ comprendre comment il opère
 </div>
 
 
-<div id="outline-container-orgff96a80" class="outline-2">
-<h2 id="orgff96a80"><span class="section-number-2">6</span> Project: Second-Order HMM for typos correction</h2>
+<div id="outline-container-orgb83c8fd" class="outline-2">
+<h2 id="orgb83c8fd"><span class="section-number-2">6</span> Project: Second-Order HMM for typos correction</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 The goal is to design a model to correct typos in texts without a dictionaries. 
@@ -183,8 +183,8 @@ or errors.
 </p>
 </div>
 
-<div id="outline-container-orgf32678a" class="outline-3">
-<h3 id="orgf32678a"><span class="section-number-3">6.1</span> TODO:</h3>
+<div id="outline-container-org40f278d" class="outline-3">
+<h3 id="org40f278d"><span class="section-number-3">6.1</span> TODO:</h3>
 <div class="outline-text-3" id="text-6-1">
 <ul class="org-ul">
 <li>(3pts) Dry run: Train a first-order HMM using the training data. This
@@ -219,8 +219,8 @@ implementation is not mandatory.
 </div>
 </div>
 
-<div id="outline-container-org4ca1368" class="outline-3">
-<h3 id="org4ca1368"><span class="section-number-3">6.2</span> Submission Checklist</h3>
+<div id="outline-container-orgbc2b718" class="outline-3">
+<h3 id="orgbc2b718"><span class="section-number-3">6.2</span> Submission Checklist</h3>
 <div class="outline-text-3" id="text-6-2">
 <p>
 You can rely on existing libraries such as nltk or sklearn, and you can
@@ -242,8 +242,8 @@ You can of course use a notebook.
 </div>
 </div>
 
-<div id="outline-container-orgd76f051" class="outline-3">
-<h3 id="orgd76f051"><span class="section-number-3">6.3</span> Grading Scheme:</h3>
+<div id="outline-container-org75905ba" class="outline-3">
+<h3 id="org75905ba"><span class="section-number-3">6.3</span> Grading Scheme:</h3>
 <div class="outline-text-3" id="text-6-3">
 <p>
 Just follow the TODO list. Extra points will be given for an

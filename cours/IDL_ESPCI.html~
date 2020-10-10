@@ -307,29 +307,28 @@ measures to improve the reconstruction ?</li>
 <h3 id="orgd8b47d7">How to save a model to share and resume training</h3>
 <div class="outline-text-3" id="text-orgd8b47d7">
 <p>
-The key structure in pytorch is the <b><b>state<sub>dict</sub></b></b>.  The learnable
-parameters (i.e. weights and biases) of an torch.nn.Module model are
-contained in the model’s parameters (accessed with
-model.parameters()). A state<sub>dict</sub> is simply a Python dictionary object
-that maps each layer to its parameter tensor. The basic idea is to
-save and load this dictionnary to easily deal with parameters in a
-consistent way. Note that only layers with learnable parameters
-(convolutional layers, linear layers, etc.) and registered buffers
-(batchnorm’s running<sub>mean</sub>) have entries in the model’s state<sub>dict</sub>.
+The key structure in pytorch is the <b><b>state dict</b></b> for state
+dictionnary.  The learnable parameters (i.e. weights and biases) of an
+torch.nn.Module model are contained in the model’s parameters
+(accessed with model.parameters()). A state dict is simply a Python
+dictionary object that maps each layer to its parameter tensor. The
+basic idea is to save and load this dictionnary to easily deal with
+parameters in a consistent way. Note that only layers with learnable
+parameters (convolutional layers, linear layers, etc.). 
 </p>
 
 <p>
 To resume a training process you need to restore the model in its full
 state, but also the optimizer. Optimizer objects (torch.optim) also
-have a state<sub>dict</sub>, which contains information about the optimizer’s
+have a state dict, which contains information about the optimizer’s
 state, as well as the hyperparameters used.
 </p>
 </div>
 
 
-<div id="outline-container-org8e03888" class="outline-4">
-<h4 id="org8e03888">Creating state<sub>dict</sub> a model and an optimizer</h4>
-<div class="outline-text-4" id="text-org8e03888">
+<div id="outline-container-org5317afb" class="outline-4">
+<h4 id="org5317afb">Creating state dict a model and an optimizer</h4>
+<div class="outline-text-4" id="text-org5317afb">
 <p>
 Assume you have a model like 
 </p>

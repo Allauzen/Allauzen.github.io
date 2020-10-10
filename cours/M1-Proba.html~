@@ -14,25 +14,25 @@ comments:
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org8c9bb3e">Planning des soutenances du 15/04</a></li>
-<li><a href="#org20e9acc">Séance 1</a></li>
-<li><a href="#org460a5da">Séance 2</a></li>
-<li><a href="#orgb44439a">Séance 3</a></li>
-<li><a href="#org8f7d16d">Séance 4</a></li>
-<li><a href="#org3c4ad5d">Séance 5</a></li>
-<li><a href="#orgfef9d58">Séance 6</a></li>
-<li><a href="#orgc1b4f86">Séance 7</a></li>
-<li><a href="#org4e34dd6">Séance 8</a></li>
-<li><a href="#org3dddb66">Séance 9</a></li>
-<li><a href="#org62daecb">Séance 10: Soutenance</a></li>
-<li><a href="#orgf49b5fa">Projet et soutenance</a>
+<li><a href="#orgdf9f5b7">Planning des soutenances du 15/04</a></li>
+<li><a href="#org414f34b">Séance 1</a></li>
+<li><a href="#org3e626f4">Séance 2</a></li>
+<li><a href="#orgab7d3bd">Séance 3</a></li>
+<li><a href="#org46374d7">Séance 4</a></li>
+<li><a href="#orgf4d4926">Séance 5</a></li>
+<li><a href="#orgc0678c3">Séance 6</a></li>
+<li><a href="#org5e8bb6b">Séance 7</a></li>
+<li><a href="#org060ccd0">Séance 8</a></li>
+<li><a href="#org3266900">Séance 9</a></li>
+<li><a href="#orgd47cf5b">Séance 10: Soutenance</a></li>
+<li><a href="#org29a3f89">Projet et soutenance</a>
 <ul>
-<li><a href="#org4f0b4c7">Consignes</a></li>
-<li><a href="#org6ad6a40">Exercices</a>
+<li><a href="#org816ede9">Consignes</a></li>
+<li><a href="#orge2e535c">Exercices</a>
 <ul>
-<li><a href="#org1155d5a">Hypothèse Gaussienne sur MNIST (7 pts)</a></li>
-<li><a href="#org9327aa8">Bayésien Naif de Bernoulli (8 pts)</a></li>
-<li><a href="#orgf2a7812">Clustering: Mélange de Bernoulli (8 pts)</a></li>
+<li><a href="#orgc843dfd">Hypothèse Gaussienne sur MNIST (7 pts)</a></li>
+<li><a href="#org8336092">Bayésien Naif de Bernoulli (8 pts)</a></li>
+<li><a href="#orgbf57880">Clustering: Mélange de Bernoulli (8 pts)</a></li>
 </ul>
 </li>
 </ul>
@@ -52,9 +52,9 @@ Les ressources liées au cours sont accessibles sur <a href="https://drive.googl
 </p>
 
 
-<div id="outline-container-org8c9bb3e" class="outline-2">
-<h2 id="org8c9bb3e">Planning des soutenances du 15/04</h2>
-<div class="outline-text-2" id="text-org8c9bb3e">
+<div id="outline-container-orgdf9f5b7" class="outline-2">
+<h2 id="orgdf9f5b7">Planning des soutenances du 15/04</h2>
+<div class="outline-text-2" id="text-orgdf9f5b7">
 <p>
 Il est prévu 20 minutes par groupe et quelques pauses en fin de chaque
 session. Les 3 séssions prévues sont: 
@@ -96,9 +96,9 @@ session. Les 3 séssions prévues sont:
 </div>
 
 
-<div id="outline-container-org20e9acc" class="outline-2">
-<h2 id="org20e9acc">Séance 1</h2>
-<div class="outline-text-2" id="text-org20e9acc">
+<div id="outline-container-org414f34b" class="outline-2">
+<h2 id="org414f34b">Séance 1</h2>
+<div class="outline-text-2" id="text-org414f34b">
 <p>
 Le 14/01/19: 
 </p>
@@ -120,9 +120,9 @@ l'extension <b><b>.ipynb</b></b> est il se manipule via l'outil
 </div>
 
 
-<div id="outline-container-org460a5da" class="outline-2">
-<h2 id="org460a5da">Séance 2</h2>
-<div class="outline-text-2" id="text-org460a5da">
+<div id="outline-container-org3e626f4" class="outline-2">
+<h2 id="org3e626f4">Séance 2</h2>
+<div class="outline-text-2" id="text-org3e626f4">
 <p>
 Le 21/01/19: 
 </p>
@@ -133,9 +133,9 @@ Le 21/01/19:
 </div>
 </div>
 
-<div id="outline-container-orgb44439a" class="outline-2">
-<h2 id="orgb44439a">Séance 3</h2>
-<div class="outline-text-2" id="text-orgb44439a">
+<div id="outline-container-orgab7d3bd" class="outline-2">
+<h2 id="orgab7d3bd">Séance 3</h2>
+<div class="outline-text-2" id="text-orgab7d3bd">
 <p>
 Le 23/01/19
 </p>
@@ -148,9 +148,9 @@ corrélations</li>
 </div>
 
 
-<div id="outline-container-org8f7d16d" class="outline-2">
-<h2 id="org8f7d16d">Séance 4</h2>
-<div class="outline-text-2" id="text-org8f7d16d">
+<div id="outline-container-org46374d7" class="outline-2">
+<h2 id="org46374d7">Séance 4</h2>
+<div class="outline-text-2" id="text-org46374d7">
 <p>
 Le 04/02/19, TP noté : Recherche Bayesienne. Le notebook associé est
 sur le drive. 
@@ -163,9 +163,9 @@ par mail avant le cours suivant du 11/02.
 </div>
 </div>
 
-<div id="outline-container-org3c4ad5d" class="outline-2">
-<h2 id="org3c4ad5d">Séance 5</h2>
-<div class="outline-text-2" id="text-org3c4ad5d">
+<div id="outline-container-orgf4d4926" class="outline-2">
+<h2 id="orgf4d4926">Séance 5</h2>
+<div class="outline-text-2" id="text-orgf4d4926">
 <p>
 Le 11/02/19
 </p>
@@ -177,9 +177,9 @@ Le 11/02/19
 </div>
 
 
-<div id="outline-container-orgfef9d58" class="outline-2">
-<h2 id="orgfef9d58">Séance 6</h2>
-<div class="outline-text-2" id="text-orgfef9d58">
+<div id="outline-container-orgc0678c3" class="outline-2">
+<h2 id="orgc0678c3">Séance 6</h2>
+<div class="outline-text-2" id="text-orgc0678c3">
 <p>
 Le 18/02/19
 </p>
@@ -190,9 +190,9 @@ Le 18/02/19
 </div>
 </div>
 
-<div id="outline-container-orgc1b4f86" class="outline-2">
-<h2 id="orgc1b4f86">Séance 7</h2>
-<div class="outline-text-2" id="text-orgc1b4f86">
+<div id="outline-container-org5e8bb6b" class="outline-2">
+<h2 id="org5e8bb6b">Séance 7</h2>
+<div class="outline-text-2" id="text-org5e8bb6b">
 <p>
 Le 11/03/19
 </p>
@@ -203,9 +203,9 @@ Le 11/03/19
 </div>
 </div>
 
-<div id="outline-container-org4e34dd6" class="outline-2">
-<h2 id="org4e34dd6">Séance 8</h2>
-<div class="outline-text-2" id="text-org4e34dd6">
+<div id="outline-container-org060ccd0" class="outline-2">
+<h2 id="org060ccd0">Séance 8</h2>
+<div class="outline-text-2" id="text-org060ccd0">
 <p>
 Le 18/03/19 
 </p>
@@ -217,9 +217,9 @@ information mutuelle</li>
 </div>
 </div>
 
-<div id="outline-container-org3dddb66" class="outline-2">
-<h2 id="org3dddb66">Séance 9</h2>
-<div class="outline-text-2" id="text-org3dddb66">
+<div id="outline-container-org3266900" class="outline-2">
+<h2 id="org3266900">Séance 9</h2>
+<div class="outline-text-2" id="text-org3266900">
 <p>
 Le 01/04/19 
 </p>
@@ -230,22 +230,22 @@ Le 01/04/19
 </div>
 
 
-<div id="outline-container-org62daecb" class="outline-2">
-<h2 id="org62daecb">Séance 10: Soutenance</h2>
-<div class="outline-text-2" id="text-org62daecb">
+<div id="outline-container-orgd47cf5b" class="outline-2">
+<h2 id="orgd47cf5b">Séance 10: Soutenance</h2>
+<div class="outline-text-2" id="text-orgd47cf5b">
 <p>
 Le 15/04/19 
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgf49b5fa" class="outline-2">
-<h2 id="orgf49b5fa">Projet et soutenance</h2>
-<div class="outline-text-2" id="text-orgf49b5fa">
+<div id="outline-container-org29a3f89" class="outline-2">
+<h2 id="org29a3f89">Projet et soutenance</h2>
+<div class="outline-text-2" id="text-org29a3f89">
 </div>
-<div id="outline-container-org4f0b4c7" class="outline-3">
-<h3 id="org4f0b4c7">Consignes</h3>
-<div class="outline-text-3" id="text-org4f0b4c7">
+<div id="outline-container-org816ede9" class="outline-3">
+<h3 id="org816ede9">Consignes</h3>
+<div class="outline-text-3" id="text-org816ede9">
 <p>
 Ce travail est à faire en binôme ou trinôme. Ce projet fera objet
 d'une soutenance qui aura lieu lors de la dernière séance de cours, le
@@ -280,13 +280,13 @@ rendus.
 </div>
 </div>
 
-<div id="outline-container-org6ad6a40" class="outline-3">
-<h3 id="org6ad6a40">Exercices</h3>
-<div class="outline-text-3" id="text-org6ad6a40">
+<div id="outline-container-orge2e535c" class="outline-3">
+<h3 id="orge2e535c">Exercices</h3>
+<div class="outline-text-3" id="text-orge2e535c">
 </div>
-<div id="outline-container-org1155d5a" class="outline-4">
-<h4 id="org1155d5a">Hypothèse Gaussienne sur MNIST (7 pts)</h4>
-<div class="outline-text-4" id="text-org1155d5a">
+<div id="outline-container-orgc843dfd" class="outline-4">
+<h4 id="orgc843dfd">Hypothèse Gaussienne sur MNIST (7 pts)</h4>
+<div class="outline-text-4" id="text-orgc843dfd">
 <p>
 Lors d'un TP précédent, nous avons implémenté un classifieur Bayésien
 Naif sur les données MNIST. Deux hypothèses ont alors été  faites: 
@@ -328,9 +328,9 @@ gaussiennes au classifieur Bayésien.</li>
 </div>
 </div>
 
-<div id="outline-container-org9327aa8" class="outline-4">
-<h4 id="org9327aa8">Bayésien Naif de Bernoulli (8 pts)</h4>
-<div class="outline-text-4" id="text-org9327aa8">
+<div id="outline-container-org8336092" class="outline-4">
+<h4 id="org8336092">Bayésien Naif de Bernoulli (8 pts)</h4>
+<div class="outline-text-4" id="text-org8336092">
 <p>
 Dans le TP sur le Bayésien Naif, il y a un exercice sur
 l'implémentation et l'expérimentation d'un classifieur Bayésien Naif,
@@ -352,9 +352,9 @@ Gaussien du TP4.</li>
 
 
 
-<div id="outline-container-orgf2a7812" class="outline-4">
-<h4 id="orgf2a7812">Clustering: Mélange de Bernoulli (8 pts)</h4>
-<div class="outline-text-4" id="text-orgf2a7812">
+<div id="outline-container-orgbf57880" class="outline-4">
+<h4 id="orgbf57880">Clustering: Mélange de Bernoulli (8 pts)</h4>
+<div class="outline-text-4" id="text-orgbf57880">
 <p>
 Repartons sur les données MNIST qu'il est donc possible de
 binariser. Dans ce cas chaque pixel peut être considéré comme la

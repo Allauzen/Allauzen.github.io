@@ -14,26 +14,26 @@ comments:
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgc5ee5f7">1. Les sujets</a>
+<li><a href="#orga10a0b6">1. Les sujets</a>
 <ul>
-<li><a href="#org95f66a9">1.1. TER collectifs</a></li>
-<li><a href="#org319cdc2">1.2. TER individuels</a>
+<li><a href="#orgf124266">1.1. TER collectifs</a></li>
+<li><a href="#orgc847e50">1.2. TER individuels</a>
 <ul>
-<li><a href="#org13f733d">1.2.1. Sujets proposés</a></li>
+<li><a href="#org1efeeb4">1.2.1. Sujets proposés</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgae8c5f4">2. Modalités d'inscription</a></li>
-<li><a href="#org8770a60">3. Déroulement des TER et soutenances</a></li>
-<li><a href="#org280c1e7">4. Les obligations</a>
+<li><a href="#org8b3f9d2">2. Modalités d'inscription</a></li>
+<li><a href="#org5e4e6f9">3. Déroulement des TER et soutenances</a></li>
+<li><a href="#orgd9afcc7">4. Les obligations</a>
 <ul>
-<li><a href="#org5022eba">4.1. Obligations pour les étudiants</a></li>
-<li><a href="#org6ca6896">4.2. Obligations pour les encadrants</a></li>
+<li><a href="#orgf6e1722">4.1. Obligations pour les étudiants</a></li>
+<li><a href="#orgdcde0fb">4.2. Obligations pour les encadrants</a></li>
 </ul>
 </li>
-<li><a href="#org32c76a2">5. Dates importantes</a></li>
-<li><a href="#orgeb59426">6. Contact</a></li>
+<li><a href="#org5de5830">5. Dates importantes</a></li>
+<li><a href="#orgc2ea296">6. Contact</a></li>
 </ul>
 </div>
 </div>
@@ -47,12 +47,12 @@ L'objectif du TER (Travail d'Étude et de Recherche) en M1 est de développer l'
 </p>
 
 
-<div id="outline-container-orgc5ee5f7" class="outline-2">
-<h2 id="orgc5ee5f7"><span class="section-number-2">1</span> Les sujets</h2>
+<div id="outline-container-orga10a0b6" class="outline-2">
+<h2 id="orga10a0b6"><span class="section-number-2">1</span> Les sujets</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org95f66a9" class="outline-3">
-<h3 id="org95f66a9"><span class="section-number-3">1.1</span> TER collectifs</h3>
+<div id="outline-container-orgf124266" class="outline-3">
+<h3 id="orgf124266"><span class="section-number-3">1.1</span> TER collectifs</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 Les étudiants développent par petits groupes un projet informatique
@@ -70,8 +70,8 @@ Alexandre
 </div>
 </div>
 
-<div id="outline-container-org319cdc2" class="outline-3">
-<h3 id="org319cdc2"><span class="section-number-3">1.2</span> TER individuels</h3>
+<div id="outline-container-orgc847e50" class="outline-3">
+<h3 id="orgc847e50"><span class="section-number-3">1.2</span> TER individuels</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 Le travail effectué durant un TER-individuel devra inclure une partie
@@ -100,8 +100,8 @@ laboratoire. Puis rapporter ce formulaire au secrétariat.</li>
 </ul>
 </div>
 
-<div id="outline-container-org13f733d" class="outline-4">
-<h4 id="org13f733d"><span class="section-number-4">1.2.1</span> Sujets proposés</h4>
+<div id="outline-container-org1efeeb4" class="outline-4">
+<h4 id="org1efeeb4"><span class="section-number-4">1.2.1</span> Sujets proposés</h4>
 <div class="outline-text-4" id="text-1-2-1">
 <p>
 <b>En construction</b> 
@@ -129,8 +129,8 @@ la profilométrie de surfaces dynamiques]], L. Martin Witkowski
 
 
 
-<div id="outline-container-orgae8c5f4" class="outline-2">
-<h2 id="orgae8c5f4"><span class="section-number-2">2</span> Modalités d'inscription</h2>
+<div id="outline-container-org8b3f9d2" class="outline-2">
+<h2 id="org8b3f9d2"><span class="section-number-2">2</span> Modalités d'inscription</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Vous devez communiquer votre choix au secrétariat du M1 avant le 14
@@ -164,8 +164,8 @@ mettant en copie l'encadrant du TER.
 </div>
 </div>
 
-<div id="outline-container-org8770a60" class="outline-2">
-<h2 id="org8770a60"><span class="section-number-2">3</span> Déroulement des TER et soutenances</h2>
+<div id="outline-container-org5e4e6f9" class="outline-2">
+<h2 id="org5e4e6f9"><span class="section-number-2">3</span> Déroulement des TER et soutenances</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 L'évaluation est commune entre les TER classiques et des TER
@@ -223,16 +223,16 @@ des perspectives</li>
 </div>
 </div>
 
-<div id="outline-container-org280c1e7" class="outline-2">
-<h2 id="org280c1e7"><span class="section-number-2">4</span> Les obligations</h2>
+<div id="outline-container-orgd9afcc7" class="outline-2">
+<h2 id="orgd9afcc7"><span class="section-number-2">4</span> Les obligations</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 Voici un résumé succinct des obligations de chacun :
 </p>
 </div>
 
-<div id="outline-container-org5022eba" class="outline-3">
-<h3 id="org5022eba"><span class="section-number-3">4.1</span> Obligations pour les étudiants</h3>
+<div id="outline-container-orgf6e1722" class="outline-3">
+<h3 id="orgf6e1722"><span class="section-number-3">4.1</span> Obligations pour les étudiants</h3>
 <div class="outline-text-3" id="text-4-1">
 <ul class="org-ul">
 <li>Rendre (au moins) un rapport de TER à son encadrant, à la date
@@ -255,8 +255,8 @@ binômes, vous devez partager équitablement votre temps de parole.
 </div>
 </div>
 
-<div id="outline-container-org6ca6896" class="outline-3">
-<h3 id="org6ca6896"><span class="section-number-3">4.2</span> Obligations pour les encadrants</h3>
+<div id="outline-container-orgdcde0fb" class="outline-3">
+<h3 id="orgdcde0fb"><span class="section-number-3">4.2</span> Obligations pour les encadrants</h3>
 <div class="outline-text-3" id="text-4-2">
 <ul class="org-ul">
 <li>Relire le rapport de l'étudiant. Évaluer le travail de TER et le
@@ -269,8 +269,8 @@ soutenances de la même session.</li>
 </div>
 </div>
 
-<div id="outline-container-org32c76a2" class="outline-2">
-<h2 id="org32c76a2"><span class="section-number-2">5</span> Dates importantes</h2>
+<div id="outline-container-org5de5830" class="outline-2">
+<h2 id="org5de5830"><span class="section-number-2">5</span> Dates importantes</h2>
 <div class="outline-text-2" id="text-5">
 <ul class="org-ul">
 <li>Début des TERs : Janvier 2019</li>
@@ -280,8 +280,8 @@ soutenances de la même session.</li>
 </div>
 </div>
 
-<div id="outline-container-orgeb59426" class="outline-2">
-<h2 id="orgeb59426"><span class="section-number-2">6</span> Contact</h2>
+<div id="outline-container-orgc2ea296" class="outline-2">
+<h2 id="orgc2ea296"><span class="section-number-2">6</span> Contact</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 Alexandre Allauzen : allauzen[at]limsi.fr-enlever-at

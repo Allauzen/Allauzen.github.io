@@ -12,21 +12,21 @@ comments:
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgde98b5d">Main topics</a></li>
-<li><a href="#org3963099">Projects</a></li>
-<li><a href="#org2022c16">PhD students</a>
+<li><a href="#org74b6ea9">Main topics</a></li>
+<li><a href="#org0f9adaa">Projects</a></li>
+<li><a href="#org606f3b5">PhD students</a>
 <ul>
-<li><a href="#org36038a6">Current</a></li>
-<li><a href="#org44f6317">Former</a></li>
+<li><a href="#org4bc47e1">Current</a></li>
+<li><a href="#org938921d">Former</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgde98b5d" class="outline-2">
-<h2 id="orgde98b5d">Main topics</h2>
-<div class="outline-text-2" id="text-orgde98b5d">
+<div id="outline-container-org74b6ea9" class="outline-2">
+<h2 id="org74b6ea9">Main topics</h2>
+<div class="outline-text-2" id="text-org74b6ea9">
 <p>
 At LIMSI, I'm working in the <a href="https://www.limsi.fr/fr/recherche/tlp">Spoken Language Processing group</a> and more precisely in the topic <a href="https://www.limsi.fr/en/research/tlp/topics/topic5">Machine Learning and Automatic Translation</a>. My main topics are Neural Machine Translation and language modelling. 
 </p>
@@ -39,9 +39,9 @@ On the Machine learning side, I'm interested in Deep-Learning (as quite everyone
 
 
 
-<div id="outline-container-org3963099" class="outline-2">
-<h2 id="org3963099">Projects</h2>
-<div class="outline-text-2" id="text-org3963099">
+<div id="outline-container-org0f9adaa" class="outline-2">
+<h2 id="org0f9adaa">Projects</h2>
+<div class="outline-text-2" id="text-org0f9adaa">
 <p>
 The ongoing projects: 
 </p>
@@ -54,13 +54,13 @@ The ongoing projects:
 </div>
 
 
-<div id="outline-container-org2022c16" class="outline-2">
-<h2 id="org2022c16">PhD students</h2>
-<div class="outline-text-2" id="text-org2022c16">
+<div id="outline-container-org606f3b5" class="outline-2">
+<h2 id="org606f3b5">PhD students</h2>
+<div class="outline-text-2" id="text-org606f3b5">
 </div>
-<div id="outline-container-org36038a6" class="outline-3">
-<h3 id="org36038a6">Current</h3>
-<div class="outline-text-3" id="text-org36038a6">
+<div id="outline-container-org4bc47e1" class="outline-3">
+<h3 id="org4bc47e1">Current</h3>
+<div class="outline-text-3" id="text-org4bc47e1">
 <ul class="org-ul">
 <li>Syrielle Montariol</li>
 <li>Pooyan Safari</li>
@@ -71,9 +71,9 @@ The ongoing projects:
 </div>
 </div>
 
-<div id="outline-container-org44f6317" class="outline-3">
-<h3 id="org44f6317">Former</h3>
-<div class="outline-text-3" id="text-org44f6317">
+<div id="outline-container-org938921d" class="outline-3">
+<h3 id="org938921d">Former</h3>
+<div class="outline-text-3" id="text-org938921d">
 <ul class="org-ul">
 <li>Nadi Tomeh</li>
 <li>Le Hai-Son</li>

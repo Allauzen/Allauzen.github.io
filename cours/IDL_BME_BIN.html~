@@ -1,12 +1,13 @@
 ---
-title: "Introduction to Deep Learning, ESPCI"
-date: 2019-03-06
+title: "Introduction to Deep Learning, Master BME-BIN"
+date: 2020-10-10
 layout: page
 categories: 
 tags: 
 - cours 
 - NNet 
-- espci
+- espci 
+- BME
 published: true
 comments: 
 ---
@@ -14,15 +15,15 @@ comments:
 
 
 <p>
-This course is an introduction to deep-learning approach with lab
+This course is an introduction to deep-learning. 
 sessions in <a href="https://pytorch.org/">pytorch (python module)</a>.  The goal is to understand the
 data-driven approach and to be able to efficiently experiment with deep-learning on real data. 
 </p>
 
 
-<div id="outline-container-org865109a" class="outline-2">
-<h2 id="org865109a">News</h2>
-<div class="outline-text-2" id="text-org865109a">
+<div id="outline-container-org7aa0d90" class="outline-2">
+<h2 id="org7aa0d90">News</h2>
+<div class="outline-text-2" id="text-org7aa0d90">
 <ul class="org-ul">
 <li>Course update : "confinement" !</li>
 <li>Are you sure you registered your team for the project (see the drive) ?</li>
@@ -31,9 +32,9 @@ data-driven approach and to be able to efficiently experiment with deep-learning
 
 
 
-<div id="outline-container-org98c2b9b" class="outline-3">
-<h3 id="org98c2b9b">Modified organisation (in French)</h3>
-<div class="outline-text-3" id="text-org98c2b9b">
+<div id="outline-container-org35b1bf3" class="outline-3">
+<h3 id="org35b1bf3">Modified organisation (in French)</h3>
+<div class="outline-text-3" id="text-org35b1bf3">
 <p>
 Suite aux conséquences du Coronavirus, l'organisation du cours
 "Introduction au Deep-Learning" est modifiée.  Nous allons nous
@@ -53,9 +54,9 @@ inscrit.e.s sur cette feuille, c'est désormais urgent de le faire.
 </div>
 
 
-<div id="outline-container-org467bb2f" class="outline-4">
-<h4 id="org467bb2f">Visio-conférence sur le projet le 23/03 matin</h4>
-<div class="outline-text-4" id="text-org467bb2f">
+<div id="outline-container-org8bf7db5" class="outline-4">
+<h4 id="org8bf7db5">Visio-conférence sur le projet le 23/03 matin</h4>
+<div class="outline-text-4" id="text-org8bf7db5">
 <p>
 Lundi 23/03 matin, plusieurs visio-conférences vont être organisées
 pour discuter des projets. Pour cela, nous allons utiliser zoom. C'est
@@ -87,9 +88,9 @@ visio si besoin.
 </div>
 </div>
 
-<div id="outline-container-org208404d" class="outline-4">
-<h4 id="org208404d">A rendre pour le 18/05</h4>
-<div class="outline-text-4" id="text-org208404d">
+<div id="outline-container-orgd049d06" class="outline-4">
+<h4 id="orgd049d06">A rendre pour le 18/05</h4>
+<div class="outline-text-4" id="text-orgd049d06">
 <p>
 A rendre, un rapport au format pdf et une archive avec le code. Le
 rapport d'une dizaine de pages, doit décrire:
@@ -113,9 +114,9 @@ avec votre rapport par mail, ou de m'envoyer l'adresse d'un dépôt.
 </div>
 
 
-<div id="outline-container-org0883a09" class="outline-2">
-<h2 id="org0883a09">The resources / drive</h2>
-<div class="outline-text-2" id="text-org0883a09">
+<div id="outline-container-org1bdfe96" class="outline-2">
+<h2 id="org1bdfe96">The resources / drive</h2>
+<div class="outline-text-2" id="text-org1bdfe96">
 <p>
 <a href="https://drive.google.com/drive/folders/14qRch6tlVatxf7ZidOv_MwwStaQmXagK?usp=sharing">Look at this drive</a> for the slides and the material of lab sessions.
 </p>
@@ -123,9 +124,9 @@ avec votre rapport par mail, ou de m'envoyer l'adresse d'un dépôt.
 </div>
 
 
-<div id="outline-container-orga58ef05" class="outline-2">
-<h2 id="orga58ef05">Expected schedules</h2>
-<div class="outline-text-2" id="text-orga58ef05">
+<div id="outline-container-org21e9e19" class="outline-2">
+<h2 id="org21e9e19">Expected schedules</h2>
+<div class="outline-text-2" id="text-org21e9e19">
 <p>
 It starts in january 2020 (the 6th). The course are scheduled on
 monday, starting at 8:30 in the morning.
@@ -183,17 +184,17 @@ The second part:
 
 
 
-<div id="outline-container-org48f0a8f" class="outline-2">
-<h2 id="org48f0a8f">Projects</h2>
-<div class="outline-text-2" id="text-org48f0a8f">
+<div id="outline-container-org8982f9b" class="outline-2">
+<h2 id="org8982f9b">Projects</h2>
+<div class="outline-text-2" id="text-org8982f9b">
 <p>
 Here, you can find a list of possible projects. Feel free to interact with me. For some of them, just ask me the data, otherwise a link is provided. Of course, you can also propose a project. 
 </p>
 </div>
 
-<div id="outline-container-org80377b4" class="outline-3">
-<h3 id="org80377b4">Project list</h3>
-<div class="outline-text-3" id="text-org80377b4">
+<div id="outline-container-orga12b6b8" class="outline-3">
+<h3 id="orga12b6b8">Project list</h3>
+<div class="outline-text-3" id="text-orga12b6b8">
 <ul class="org-ul">
 <li>Reconstruction of the vorticity field of a flow behind a cylinder from a handful sensors on the cylinder surface</li>
 </ul>
@@ -242,9 +243,9 @@ fluorescence microscopy images of the bacterium Pseudomonas fluorescens SBW25. E
 </div>
 
 
-<div id="outline-container-org89bc2cd" class="outline-3">
-<h3 id="org89bc2cd">Ocean data</h3>
-<div class="outline-text-3" id="text-org89bc2cd">
+<div id="outline-container-org2e01431" class="outline-3">
+<h3 id="org2e01431">Ocean data</h3>
+<div class="outline-text-3" id="text-org2e01431">
 <p>
 The datasets from <a href="https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.html">this site</a> provide different kind of measures. It is possible to consider different project. The datasets are in special format. To read it in python, you can use two python librairies: 
 </p>
@@ -299,13 +300,13 @@ measures to improve the reconstruction ?</li>
 
 
 
-<div id="outline-container-orga27ee1e" class="outline-2">
-<h2 id="orga27ee1e">Pytorch</h2>
-<div class="outline-text-2" id="text-orga27ee1e">
+<div id="outline-container-org1c90e84" class="outline-2">
+<h2 id="org1c90e84">Pytorch</h2>
+<div class="outline-text-2" id="text-org1c90e84">
 </div>
-<div id="outline-container-orgc5eac98" class="outline-3">
-<h3 id="orgc5eac98">How to save a model to share and resume training</h3>
-<div class="outline-text-3" id="text-orgc5eac98">
+<div id="outline-container-org4525bbb" class="outline-3">
+<h3 id="org4525bbb">How to save a model to share and resume training</h3>
+<div class="outline-text-3" id="text-org4525bbb">
 <p>
 The key structure in pytorch is the <b><b>state dict</b></b> for state
 dictionnary.  The learnable parameters (i.e. weights and biases) of an
@@ -326,9 +327,9 @@ state, as well as the hyperparameters used.
 </div>
 
 
-<div id="outline-container-org8e9691a" class="outline-4">
-<h4 id="org8e9691a">Creating state dict a model and an optimizer</h4>
-<div class="outline-text-4" id="text-org8e9691a">
+<div id="outline-container-org84fcea7" class="outline-4">
+<h4 id="org84fcea7">Creating state dict a model and an optimizer</h4>
+<div class="outline-text-4" id="text-org84fcea7">
 <p>
 Assume you have a model like 
 </p>
@@ -391,9 +392,9 @@ training session.
 </div>
 </div>
 
-<div id="outline-container-org8aa4fc7" class="outline-4">
-<h4 id="org8aa4fc7">Saving a training session</h4>
-<div class="outline-text-4" id="text-org8aa4fc7">
+<div id="outline-container-org80ab192" class="outline-4">
+<h4 id="org80ab192">Saving a training session</h4>
+<div class="outline-text-4" id="text-org80ab192">
 <p>
 First, we can create an object to gather and store all the necessary
 data (parameters). And then we can write it in a file. Later we will
@@ -424,9 +425,9 @@ And that's it !
 </div>
 </div>
 
-<div id="outline-container-org90a2a81" class="outline-4">
-<h4 id="org90a2a81">Resume training</h4>
-<div class="outline-text-4" id="text-org90a2a81">
+<div id="outline-container-org99f9a19" class="outline-4">
+<h4 id="org99f9a19">Resume training</h4>
+<div class="outline-text-4" id="text-org99f9a19">
 <p>
 Now we can read a file to restore the training session. 
 </p>

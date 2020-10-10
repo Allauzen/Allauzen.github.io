@@ -14,14 +14,14 @@ comments:
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org4af2468">1. Expected road-map</a>
+<li><a href="#org667519e">1. Expected road-map</a>
 <ul>
-<li><a href="#org10cb02c">1.1. First day : 01/07, from 9h to 17h (with breaks)</a></li>
-<li><a href="#org371df61">1.2. Second day : 02/07, from 9h to 17h (with breaks)</a></li>
+<li><a href="#org51a92b3">1.1. First day : 01/07, from 9h to 17h (with breaks)</a></li>
+<li><a href="#org71c2246">1.2. Second day : 02/07, from 9h to 17h (with breaks)</a></li>
 </ul>
 </li>
-<li><a href="#org0f963df">2. NNet basics</a></li>
-<li><a href="#org0961acb">3. Pytorch basics</a></li>
+<li><a href="#org97ccf1d">2. NNet basics</a></li>
+<li><a href="#orgd8d261d">3. Pytorch basics</a></li>
 </ul>
 </div>
 </div>
@@ -34,12 +34,12 @@ application to natural language processing (NNet for NLP). The drive
 with all the ressources <a href="https://drive.google.com/open?id=1s-ibINXu4wVHTbOHlaFtIjj_ewtSZUUL">is here</a>. 
 </p>
 
-<div id="outline-container-org4af2468" class="outline-2">
-<h2 id="org4af2468"><span class="section-number-2">1</span> Expected road-map</h2>
+<div id="outline-container-org667519e" class="outline-2">
+<h2 id="org667519e"><span class="section-number-2">1</span> Expected road-map</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org10cb02c" class="outline-3">
-<h3 id="org10cb02c"><span class="section-number-3">1.1</span> First day : 01/07, from 9h to 17h (with breaks)</h3>
+<div id="outline-container-org51a92b3" class="outline-3">
+<h3 id="org51a92b3"><span class="section-number-3">1.1</span> First day : 01/07, from 9h to 17h (with breaks)</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 Courses on: 
@@ -60,8 +60,8 @@ And lab sessions on:
 </div>
 </div>
 
-<div id="outline-container-org371df61" class="outline-3">
-<h3 id="org371df61"><span class="section-number-3">1.2</span> Second day : 02/07, from 9h to 17h (with breaks)</h3>
+<div id="outline-container-org71c2246" class="outline-3">
+<h3 id="org71c2246"><span class="section-number-3">1.2</span> Second day : 02/07, from 9h to 17h (with breaks)</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 Courses on: 
@@ -82,8 +82,8 @@ And lab sessions on:
 </div>
 </div>
 
-<div id="outline-container-org0f963df" class="outline-2">
-<h2 id="org0f963df"><span class="section-number-2">2</span> NNet basics</h2>
+<div id="outline-container-org97ccf1d" class="outline-2">
+<h2 id="org97ccf1d"><span class="section-number-2">2</span> NNet basics</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 To introduce neural networks, start with the <a href="https://www.youtube.com/watch?v=SGZ6BttHMPw&amp;list=PL6Xpj9I5qXYEcOhn7TqghAJ6NAPrNmUBH">videos from Hugo
@@ -96,8 +96,8 @@ Larochelle</a>. The roadmap is
 </div>
 </div>
 
-<div id="outline-container-org0961acb" class="outline-2">
-<h2 id="org0961acb"><span class="section-number-2">3</span> Pytorch basics</h2>
+<div id="outline-container-orgd8d261d" class="outline-2">
+<h2 id="orgd8d261d"><span class="section-number-2">3</span> Pytorch basics</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Download <a href="https://drive.google.com/file/d/11qZE0AcXx6EanJq4wS8bY34PmGhMZX0S/view?usp=sharing">this notebook</a> and run it with jupyter. To get the tools you can install anaconda3 and then pytorch.

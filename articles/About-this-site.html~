@@ -1,6 +1,6 @@
 ---
 title: "About this site / and more"
-date: 2020-08-22 Sam 12:25
+date: 2020-08-23 Dim 13:56
 layout: post
 categories: 
 - blog
@@ -39,8 +39,15 @@ comments:
 <li><a href="#org456c595">5.2. Latex definition (for both html/jekyll and latex export)</a></li>
 </ul>
 </li>
-<li><a href="#org8f35167">6. Setting the path : find the right latex and other useful tools</a></li>
-<li><a href="#org1ad43ec">7. Examples</a></li>
+<li><a href="#org0590ac9">6. Bibtex</a>
+<ul>
+<li><a href="#org434f55d">6.1. The "pdf to latex" process</a></li>
+<li><a href="#orgeaca59e">6.2. in your orgfile</a></li>
+<li><a href="#org6201b87">6.3. export</a></li>
+</ul>
+</li>
+<li><a href="#org8f35167">7. Setting the path : find the right latex and other useful tools</a></li>
+<li><a href="#org1ad43ec">8. Examples</a></li>
 </ul>
 </div>
 </div>
@@ -377,9 +384,106 @@ The solution comes from one answer <a href="https://stackoverflow.com/questions/
 
 
 
-<div id="outline-container-org8f35167" class="outline-2">
-<h2 id="org8f35167"><span class="section-number-2">6</span> Setting the path : find the right latex and other useful tools</h2>
+
+
+
+<div id="outline-container-org0590ac9" class="outline-2">
+<h2 id="org0590ac9"><span class="section-number-2">6</span> Bibtex</h2>
 <div class="outline-text-2" id="text-6">
+<p>
+There are some steps to follow if you want to use bibtex references in
+an org file for a further export. 
+</p>
+</div>
+
+<div id="outline-container-org434f55d" class="outline-3">
+<h3 id="org434f55d"><span class="section-number-3">6.1</span> The "pdf to latex" process</h3>
+<div class="outline-text-3" id="text-6-1">
+<p>
+First in you dot emacs file : 
+</p>
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #00ffff;">setq</span> org-latex-pdf-process (list <span style="color: #ffa07a;">"latexmk -pdf %f"</span>))
+</pre>
+</div>
+<p>
+You can us another tool than latexmf but it is more convenient since it deals with the compilation of bibtex files. But if you really want to go back to bibtex: 
+</p>
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #00ffff;">setq</span> org-latex-pdf-process
+      '(<span style="color: #ffa07a;">"pdflatex -interaction nonstopmode -output-directory %o %f"</span>
+        <span style="color: #ffa07a;">"bibtex %b"</span>
+        <span style="color: #ffa07a;">"pdflatex -interaction nonstopmode -output-directory %o %f"</span>
+        <span style="color: #ffa07a;">"pdflatex -interaction nonstopmode -output-directory %o %f"</span>))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgeaca59e" class="outline-3">
+<h3 id="orgeaca59e"><span class="section-number-3">6.2</span> in your orgfile</h3>
+<div class="outline-text-3" id="text-6-2">
+<p>
+Start with the header: 
+</p>
+<pre class="example">
+#+LATEX_HEADER: \usepackage[natbib=true]{biblatex} \DeclareFieldFormat{apacase}{#1} \addbibresource{/path/my_refs.bib}
+</pre>
+
+
+<p>
+Then add a block anywhere you want in the orgfile 
+:#+begin<sub>src</sub> bibtex :exports none :tangle "/path/my<sub>refs.bib</sub>"
+:@article{Blei03LDA,
+:	Author = {Blei, D. M. and Ng, A. Y. and Jordan, M. I.},
+:	Journal = {Journal of Machine Learning Research},
+:	Pages = {993&#x2013;1022},
+:	Title = {Latent dirichlet allocation},
+:	Volume = {3},
+:	Year = {2003}}
+#:+end<sub>src</sub>
+</p>
+
+<p>
+the important points: 
+</p>
+<ul class="org-ul">
+<li><b><b>:exports none</b></b>: does not export the block of code, so it won't appear in the latex and pdf files</li>
+<li><b><b>:tangle:  "/path/my<sub>refs.bib</sub>"</b></b>: when we will use tangle to extract the bibtex entry, it will be written in the specified file.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org6201b87" class="outline-3">
+<h3 id="org6201b87"><span class="section-number-3">6.3</span> export</h3>
+<div class="outline-text-3" id="text-6-3">
+<p>
+To export the file, we need to first to tangle the bibtex entries: 
+</p>
+<pre class="example">
+C-c C-v t
+</pre>
+
+<p>
+Then run the latex export 
+</p>
+<pre class="example">
+C-c C-e l p 
+</pre>
+
+
+<p>
+The first step is only required when you add/remove/modify the bibtex entries. 
+</p>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-org8f35167" class="outline-2">
+<h2 id="org8f35167"><span class="section-number-2">7</span> Setting the path : find the right latex and other useful tools</h2>
+<div class="outline-text-2" id="text-7">
 <p>
 Add in the <i>.emacs</i> file: 
 </p>
@@ -410,9 +514,12 @@ Add in the <i>.emacs</i> file:
 
 
 
+
+
+
 <div id="outline-container-org1ad43ec" class="outline-2">
-<h2 id="org1ad43ec"><span class="section-number-2">7</span> Examples</h2>
-<div class="outline-text-2" id="text-7">
+<h2 id="org1ad43ec"><span class="section-number-2">8</span> Examples</h2>
+<div class="outline-text-2" id="text-8">
 <ul class="org-ul">
 <li><a href="http://www.i3s.unice.fr/~malapert/emacs_orgmode.html">http://www.i3s.unice.fr/~malapert/emacs_orgmode.html</a></li>
 <li>a lot of nice org tricks (bibtex, code, &#x2026; ) : <a href="http://cachestocaches.com/series/emacs-productivity/">http://cachestocaches.com/series/emacs-productivity/</a></li>

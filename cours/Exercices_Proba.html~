@@ -15,47 +15,47 @@ comments:
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orge7bba1c">1. Exercice d'introduction</a>
+<li><a href="#org1c69a8b">1. Exercice d'introduction</a>
 <ul>
-<li><a href="#org27328e8">1.1. Le problème des anniversaires (ou du conflit dans les tables de hashage)</a></li>
-<li><a href="#orgcc67646">1.2. Critique de film (problème de la recommandation)</a></li>
-<li><a href="#org94d0e6c">1.3. Estimation des paramètres pour une gaussienne</a></li>
-<li><a href="#orgdfd487a">1.4. En passant</a></li>
+<li><a href="#org237d0e9">1.1. Le problème des anniversaires (ou du conflit dans les tables de hashage)</a></li>
+<li><a href="#org482b5f5">1.2. Critique de film (problème de la recommandation)</a></li>
+<li><a href="#org2f8a641">1.3. Estimation des paramètres pour une gaussienne</a></li>
+<li><a href="#org914bb10">1.4. En passant</a></li>
 </ul>
 </li>
-<li><a href="#orgc8cb93c">2. Le problèmes des urnes</a>
+<li><a href="#org3d637a3">2. Le problèmes des urnes</a>
 <ul>
-<li><a href="#org645e074">2.1. En théorie</a>
+<li><a href="#orgc45ce3d">2.1. En théorie</a>
 <ul>
-<li><a href="#org273a154">2.1.1. En pratique</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#orgf89997c">3. Passage à la dimension deux</a>
-<ul>
-<li><a href="#orgeef893d">3.1. Estimation complète</a></li>
-<li><a href="#org036289e">3.2. Estimation avec indépendance conditionnelle</a></li>
-<li><a href="#orgd6f0bec">3.3. Un exemple réaliste</a>
-<ul>
-<li><a href="#orgad07bf8">3.3.1. Présentation des données</a></li>
-<li><a href="#orga89afd4">3.3.2. Les données</a>
-<ul>
-<li><a href="#org0fd3c3f">3.3.2.1. Votes des Républicain</a></li>
-<li><a href="#org8401faf">3.3.2.2. Votes des Démocrates</a></li>
+<li><a href="#org0f8ee5a">2.1.1. En pratique</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orge8f5ed5">3.4. Introduction au cas continu</a>
+<li><a href="#org39466a0">3. Passage à la dimension deux</a>
 <ul>
-<li><a href="#org8c951c6">3.4.1. En théorie</a></li>
-<li><a href="#org8cad59c">3.4.2. Point de vue empirique</a></li>
+<li><a href="#orgf82dec5">3.1. Estimation complète</a></li>
+<li><a href="#orgb6afa57">3.2. Estimation avec indépendance conditionnelle</a></li>
+<li><a href="#org7e14b9d">3.3. Un exemple réaliste</a>
+<ul>
+<li><a href="#org0d737b9">3.3.1. Présentation des données</a></li>
+<li><a href="#org98b632c">3.3.2. Les données</a>
+<ul>
+<li><a href="#org2d69bc6">3.3.2.1. Votes des Républicain</a></li>
+<li><a href="#org35579ac">3.3.2.2. Votes des Démocrates</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org72192f9">4. La file d'attente</a></li>
+<li><a href="#org1e3ca17">3.4. Introduction au cas continu</a>
+<ul>
+<li><a href="#orgd4de1a2">3.4.1. En théorie</a></li>
+<li><a href="#orgce6a900">3.4.2. Point de vue empirique</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org58c5668">4. La file d'attente</a></li>
 </ul>
 </div>
 </div>
@@ -71,12 +71,12 @@ peuvent nécessiter des outils de calcul: pensez à Python.
 </p>
 
 
-<div id="outline-container-orge7bba1c" class="outline-2">
-<h2 id="orge7bba1c"><span class="section-number-2">1</span> Exercice d'introduction</h2>
+<div id="outline-container-org1c69a8b" class="outline-2">
+<h2 id="org1c69a8b"><span class="section-number-2">1</span> Exercice d'introduction</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org27328e8" class="outline-3">
-<h3 id="org27328e8"><span class="section-number-3">1.1</span> Le problème des anniversaires (ou du conflit dans les tables de hashage)</h3>
+<div id="outline-container-org237d0e9" class="outline-3">
+<h3 id="org237d0e9"><span class="section-number-3">1.1</span> Le problème des anniversaires (ou du conflit dans les tables de hashage)</h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
 <li>De combien de personne a-t-on besoin dans cette pièce pour faire le pari "raisonnable" que 2 personnes</li>
@@ -90,8 +90,8 @@ ont la même date d'anniversaire ?
 </div>
 </div>
 
-<div id="outline-container-orgcc67646" class="outline-3">
-<h3 id="orgcc67646"><span class="section-number-3">1.2</span> Critique de film (problème de la recommandation)</h3>
+<div id="outline-container-org482b5f5" class="outline-3">
+<h3 id="org482b5f5"><span class="section-number-3">1.2</span> Critique de film (problème de la recommandation)</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 Pour aller voir un film, dois-je me baser sur l'avis de mon critique préféré (ou ami facebook)
@@ -126,8 +126,8 @@ Pour répondre à cette question:
 </div>
 
 
-<div id="outline-container-org94d0e6c" class="outline-3">
-<h3 id="org94d0e6c"><span class="section-number-3">1.3</span> Estimation des paramètres pour une gaussienne</h3>
+<div id="outline-container-org2f8a641" class="outline-3">
+<h3 id="org2f8a641"><span class="section-number-3">1.3</span> Estimation des paramètres pour une gaussienne</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 Soit \(X\) une VA continue que l'on suppose suivre la loi normale.  On dispose d'un ensemble de N observations \(x_{1:N}\) et nous souhaitons estimer les paramètres de la gaussienne à partir de ces données. 
@@ -142,8 +142,8 @@ cela, il faut suivre les étapes suivantes:
 </div>
 </div>
 
-<div id="outline-container-orgdfd487a" class="outline-3">
-<h3 id="orgdfd487a"><span class="section-number-3">1.4</span> En passant</h3>
+<div id="outline-container-org914bb10" class="outline-3">
+<h3 id="org914bb10"><span class="section-number-3">1.4</span> En passant</h3>
 <div class="outline-text-3" id="text-1-4">
 <ul class="org-ul">
 <li>Quelle est la différence entre une loi de Bernoulli et Binomiale ?</li>
@@ -156,12 +156,12 @@ expliquez la.</li>
 </div>
 </div>
 
-<div id="outline-container-orgc8cb93c" class="outline-2">
-<h2 id="orgc8cb93c"><span class="section-number-2">2</span> Le problèmes des urnes</h2>
+<div id="outline-container-org3d637a3" class="outline-2">
+<h2 id="org3d637a3"><span class="section-number-2">2</span> Le problèmes des urnes</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org645e074" class="outline-3">
-<h3 id="org645e074"><span class="section-number-3">2.1</span> En théorie</h3>
+<div id="outline-container-orgc45ce3d" class="outline-3">
+<h3 id="orgc45ce3d"><span class="section-number-3">2.1</span> En théorie</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 Soient deux urnes \(u_1\) et \(u_2\) contenant respectivement :
@@ -204,8 +204,8 @@ locale définie par le tableau suivant \[
 </div>
 
 
-<div id="outline-container-org273a154" class="outline-4">
-<h4 id="org273a154"><span class="section-number-4">2.1.1</span> En pratique</h4>
+<div id="outline-container-org0f8ee5a" class="outline-4">
+<h4 id="org0f8ee5a"><span class="section-number-4">2.1.1</span> En pratique</h4>
 <div class="outline-text-4" id="text-2-1-1">
 <p>
 On observe maintenant les tirages sous forme de réalisation des couples
@@ -304,8 +304,8 @@ tableau.</li>
 </div>
 
 
-<div id="outline-container-orgf89997c" class="outline-2">
-<h2 id="orgf89997c"><span class="section-number-2">3</span> Passage à la dimension deux</h2>
+<div id="outline-container-org39466a0" class="outline-2">
+<h2 id="org39466a0"><span class="section-number-2">3</span> Passage à la dimension deux</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 On étudie un problème de classement entre deux classes 1 et 2
@@ -319,8 +319,8 @@ pour des objets caractérisés par deux variables :
 </ul>
 </div>
 
-<div id="outline-container-orgeef893d" class="outline-3">
-<h3 id="orgeef893d"><span class="section-number-3">3.1</span> Estimation complète</h3>
+<div id="outline-container-orgf82dec5" class="outline-3">
+<h3 id="orgf82dec5"><span class="section-number-3">3.1</span> Estimation complète</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 On observe des exemples d'objets de chaque classe selon le tableau
@@ -427,8 +427,8 @@ suivant (les données d'apprentissage) :
 </div>
 </div>
 
-<div id="outline-container-org036289e" class="outline-3">
-<h3 id="org036289e"><span class="section-number-3">3.2</span> Estimation avec indépendance conditionnelle</h3>
+<div id="outline-container-orgb6afa57" class="outline-3">
+<h3 id="orgb6afa57"><span class="section-number-3">3.2</span> Estimation avec indépendance conditionnelle</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 On fait maintenant l'hypothèse d'indépendance conditionnelle du
@@ -442,12 +442,12 @@ classifieur bayesien naïf.
 </div>
 
 
-<div id="outline-container-orgd6f0bec" class="outline-3">
-<h3 id="orgd6f0bec"><span class="section-number-3">3.3</span> Un exemple réaliste</h3>
+<div id="outline-container-org7e14b9d" class="outline-3">
+<h3 id="org7e14b9d"><span class="section-number-3">3.3</span> Un exemple réaliste</h3>
 <div class="outline-text-3" id="text-3-3">
 </div>
-<div id="outline-container-orgad07bf8" class="outline-4">
-<h4 id="orgad07bf8"><span class="section-number-4">3.3.1</span> Présentation des données</h4>
+<div id="outline-container-org0d737b9" class="outline-4">
+<h4 id="org0d737b9"><span class="section-number-4">3.3.1</span> Présentation des données</h4>
 <div class="outline-text-4" id="text-3-3-1">
 <p>
 On considère la base de données des votes effectués par les membres de
@@ -461,12 +461,12 @@ prennent les valeurs OUI, NON et NSP (pour une absence de vote). Il y a
 </div>
 </div>
 
-<div id="outline-container-orga89afd4" class="outline-4">
-<h4 id="orga89afd4"><span class="section-number-4">3.3.2</span> Les données</h4>
+<div id="outline-container-org98b632c" class="outline-4">
+<h4 id="org98b632c"><span class="section-number-4">3.3.2</span> Les données</h4>
 <div class="outline-text-4" id="text-3-3-2">
 </div>
-<div id="outline-container-org0fd3c3f" class="outline-5">
-<h5 id="org0fd3c3f"><span class="section-number-5">3.3.2.1</span> Votes des Républicain</h5>
+<div id="outline-container-org2d69bc6" class="outline-5">
+<h5 id="org2d69bc6"><span class="section-number-5">3.3.2.1</span> Votes des Républicain</h5>
 <div class="outline-text-5" id="text-3-3-2-1">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -606,8 +606,8 @@ prennent les valeurs OUI, NON et NSP (pour une absence de vote). Il y a
 </div>
 
 
-<div id="outline-container-org8401faf" class="outline-5">
-<h5 id="org8401faf"><span class="section-number-5">3.3.2.2</span> Votes des Démocrates</h5>
+<div id="outline-container-org35579ac" class="outline-5">
+<h5 id="org35579ac"><span class="section-number-5">3.3.2.2</span> Votes des Démocrates</h5>
 <div class="outline-text-5" id="text-3-3-2-2">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -863,12 +863,12 @@ bayésien naïf. On rappelle qu'il y 267 représentants démocrates et
 </div>
 
 
-<div id="outline-container-orge8f5ed5" class="outline-3">
-<h3 id="orge8f5ed5"><span class="section-number-3">3.4</span> Introduction au cas continu</h3>
+<div id="outline-container-org1e3ca17" class="outline-3">
+<h3 id="org1e3ca17"><span class="section-number-3">3.4</span> Introduction au cas continu</h3>
 <div class="outline-text-3" id="text-3-4">
 </div>
-<div id="outline-container-org8c951c6" class="outline-4">
-<h4 id="org8c951c6"><span class="section-number-4">3.4.1</span> En théorie</h4>
+<div id="outline-container-orgd4de1a2" class="outline-4">
+<h4 id="orgd4de1a2"><span class="section-number-4">3.4.1</span> En théorie</h4>
 <div class="outline-text-4" id="text-3-4-1">
 <p>
 On considère deux populations, les hommes H de taille moyenne 1,74m
@@ -899,8 +899,8 @@ choisie au hasard. Donner la densité de T.</li>
 </div>
 
 
-<div id="outline-container-org8cad59c" class="outline-4">
-<h4 id="org8cad59c"><span class="section-number-4">3.4.2</span> Point de vue empirique</h4>
+<div id="outline-container-orgce6a900" class="outline-4">
+<h4 id="orgce6a900"><span class="section-number-4">3.4.2</span> Point de vue empirique</h4>
 <div class="outline-text-4" id="text-3-4-2">
 <p>
 On observe maintenant des exemples de la population considérée, décrits
@@ -1057,8 +1057,8 @@ par la table ci-dessous.
 </div>
 </div>
 
-<div id="outline-container-org72192f9" class="outline-2">
-<h2 id="org72192f9"><span class="section-number-2">4</span> La file d'attente</h2>
+<div id="outline-container-org58c5668" class="outline-2">
+<h2 id="org58c5668"><span class="section-number-2">4</span> La file d'attente</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 Un poste de péage d'une autoroute possède plusieurs guichets. En période de pointe et dans la tranche horaire 7h-9h, on compte 6300 véhicules par heure.

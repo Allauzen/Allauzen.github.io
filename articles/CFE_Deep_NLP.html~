@@ -15,16 +15,16 @@ comments:
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org2d4bd32">1. Recommandation avant la formation</a></li>
-<li><a href="#org48cf303">2. Expected road-map</a>
+<li><a href="#org4bc48d2">1. Recommandation avant la formation</a></li>
+<li><a href="#org5a85b26">2. Expected road-map</a>
 <ul>
-<li><a href="#org3e74e32">2.1. Day 1,  The basics</a></li>
-<li><a href="#orgb2294fc">2.2. Day 2, Text classification with NNet</a></li>
-<li><a href="#org5aeb67d">2.3. Day 3, Sequence processing</a></li>
+<li><a href="#orgc2d3bb8">2.1. Day 1,  The basics</a></li>
+<li><a href="#org06a96b9">2.2. Day 2, Text classification with NNet</a></li>
+<li><a href="#org59baa65">2.3. Day 3, Sequence processing</a></li>
 </ul>
 </li>
-<li><a href="#org9287588">3. Python refresher</a></li>
-<li><a href="#org7875c77">4. NNet basics</a></li>
+<li><a href="#org1fa6d65">3. Python refresher</a></li>
+<li><a href="#org291242b">4. NNet basics</a></li>
 </ul>
 </div>
 </div>
@@ -42,8 +42,8 @@ Les ressources nécessaires à la formation sont disponible sur <a href="https:/
 </p>
 
 
-<div id="outline-container-org2d4bd32" class="outline-2">
-<h2 id="org2d4bd32"><span class="section-number-2">1</span> Recommandation avant la formation</h2>
+<div id="outline-container-org4bc48d2" class="outline-2">
+<h2 id="org4bc48d2"><span class="section-number-2">1</span> Recommandation avant la formation</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Le plus simple pour avoir une installation de pytorch qui fonctionne
@@ -66,12 +66,12 @@ Si vous avez besoin de vous mettre en jambe en python voir la section plus bas.
 </div>
 
 
-<div id="outline-container-org48cf303" class="outline-2">
-<h2 id="org48cf303"><span class="section-number-2">2</span> Expected road-map</h2>
+<div id="outline-container-org5a85b26" class="outline-2">
+<h2 id="org5a85b26"><span class="section-number-2">2</span> Expected road-map</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org3e74e32" class="outline-3">
-<h3 id="org3e74e32"><span class="section-number-3">2.1</span> Day 1,  The basics</h3>
+<div id="outline-container-orgc2d3bb8" class="outline-3">
+<h3 id="orgc2d3bb8"><span class="section-number-3">2.1</span> Day 1,  The basics</h3>
 <div class="outline-text-3" id="text-2-1">
 <ul class="org-ul">
 <li>Machine Learning basics (logistic regression, gradient descent)</li>
@@ -81,8 +81,8 @@ Si vous avez besoin de vous mettre en jambe en python voir la section plus bas.
 </div>
 </div>
 
-<div id="outline-container-orgb2294fc" class="outline-3">
-<h3 id="orgb2294fc"><span class="section-number-3">2.2</span> Day 2, Text classification with NNet</h3>
+<div id="outline-container-org06a96b9" class="outline-3">
+<h3 id="org06a96b9"><span class="section-number-3">2.2</span> Day 2, Text classification with NNet</h3>
 <div class="outline-text-3" id="text-2-2">
 <ul class="org-ul">
 <li>Text classification, introducing word embeddings</li>
@@ -92,8 +92,8 @@ Si vous avez besoin de vous mettre en jambe en python voir la section plus bas.
 </div>
 </div>
 
-<div id="outline-container-org5aeb67d" class="outline-3">
-<h3 id="org5aeb67d"><span class="section-number-3">2.3</span> Day 3, Sequence processing</h3>
+<div id="outline-container-org59baa65" class="outline-3">
+<h3 id="org59baa65"><span class="section-number-3">2.3</span> Day 3, Sequence processing</h3>
 <div class="outline-text-3" id="text-2-3">
 <ul class="org-ul">
 <li>Sequence models (ngram, recurrent and LSTM)</li>
@@ -105,8 +105,8 @@ Si vous avez besoin de vous mettre en jambe en python voir la section plus bas.
 </div>
 </div>
 
-<div id="outline-container-org9287588" class="outline-2">
-<h2 id="org9287588"><span class="section-number-2">3</span> Python refresher</h2>
+<div id="outline-container-org1fa6d65" class="outline-2">
+<h2 id="org1fa6d65"><span class="section-number-2">3</span> Python refresher</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 PyTorch is python module. If you need a python refresher: 
@@ -144,8 +144,8 @@ IDE : <a href="https://www.jetbrains.com/pycharm-edu/">https://www.jetbrains.com
 
 
 
-<div id="outline-container-org7875c77" class="outline-2">
-<h2 id="org7875c77"><span class="section-number-2">4</span> NNet basics</h2>
+<div id="outline-container-org291242b" class="outline-2">
+<h2 id="org291242b"><span class="section-number-2">4</span> NNet basics</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 To introduce neural networks, start with the <a href="https://www.youtube.com/watch?v=SGZ6BttHMPw&amp;list=PL6Xpj9I5qXYEcOhn7TqghAJ6NAPrNmUBH">videos from Hugo
