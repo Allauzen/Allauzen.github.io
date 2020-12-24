@@ -1,6 +1,6 @@
 ---
 title: "Natural Language Processing, IASD"
-date: 2021-01-04
+date: 2019-01-16
 layout: page
 categories: 
 tags: 
@@ -23,6 +23,15 @@ sessions use the <a href="https://pytorch.org/">pytorch (python module)</a>.
 <h2 id="org4ed00a3">News</h2>
 <div class="outline-text-2" id="text-org4ed00a3">
 <ul class="org-ul">
+<li>The course of Guillaume Pitel: slides are on the drive !</li>
+
+<li><b><b>Deadline for the project</b></b>: May the 15th</li>
+
+<li>For project and reading, team and selection: <b><b>deadline Thursday the
+6th of February</b></b></li>
+
+<li>The project and the reading lists are available, see the drive !</li>
+
 <li>The course starts the 16/01</li>
 </ul>
 </div>
@@ -44,14 +53,14 @@ sessions use the <a href="https://pytorch.org/">pytorch (python module)</a>.
 <div class="outline-text-2" id="text-org47d5102">
 <p>
 It starts in january 2020 (the 16th). The course are scheduled on
-Tuesday, starting at 8:30 in the morning.
+Thursay, starting at 8:30 in the morning.
 </p>
 </div>
 
 
-<div id="outline-container-org912c8ef" class="outline-3">
-<h3 id="org912c8ef">12-jan, course: NLP,  overview and the main tasks</h3>
-<div class="outline-text-3" id="text-org912c8ef">
+<div id="outline-container-orgdb822b4" class="outline-3">
+<h3 id="orgdb822b4">16-jan, course: NLP,  overview and the main tasks</h3>
+<div class="outline-text-3" id="text-orgdb822b4">
 <ul class="org-ul">
 <li>For the linguistic part you can refer to <a href="https://faculty.washington.edu/ebender/100things-sem_prag.html">https://faculty.washington.edu/ebender/100things-sem_prag.html</a></li>
 <li>For the NLP basics: <a href="https://web.stanford.edu/~jurafsky/slp3/">https://web.stanford.edu/~jurafsky/slp3/</a></li>
@@ -59,9 +68,9 @@ Tuesday, starting at 8:30 in the morning.
 </div>
 </div>
 
-<div id="outline-container-org9a3185c" class="outline-3">
-<h3 id="org9a3185c">19-jan, course: Text classification</h3>
-<div class="outline-text-3" id="text-org9a3185c">
+<div id="outline-container-org05df88e" class="outline-3">
+<h3 id="org05df88e">23-jan, course: Text classification</h3>
+<div class="outline-text-3" id="text-org05df88e">
 <p>
 Further and essential readings: 
 </p>
@@ -73,9 +82,9 @@ Further and essential readings:
 </div>
 </div>
 
-<div id="outline-container-org279283f" class="outline-3">
-<h3 id="org279283f">26-jan, lab session</h3>
-<div class="outline-text-3" id="text-org279283f">
+<div id="outline-container-org87a5649" class="outline-3">
+<h3 id="org87a5649">30-jan, lab session</h3>
+<div class="outline-text-3" id="text-org87a5649">
 <p>
 Two notebooks for two parts (see the drive)
 </p>
@@ -90,9 +99,9 @@ Further work: text classification with convolution
 </div>
 </div>
 
-<div id="outline-container-orgbe99f27" class="outline-3">
-<h3 id="orgbe99f27">2-feb, course: sequence models</h3>
-<div class="outline-text-3" id="text-orgbe99f27">
+<div id="outline-container-org07309a5" class="outline-3">
+<h3 id="org07309a5">6-feb, course: sequence models</h3>
+<div class="outline-text-3" id="text-org07309a5">
 <ul class="org-ul">
 <li>ngram language model</li>
 <li>recurrent and LSTM network</li>
@@ -101,30 +110,29 @@ Further work: text classification with convolution
 </div>
 
 
-<div id="outline-container-orga482b2d" class="outline-3">
-<h3 id="orga482b2d">9-feb, course Advanced models</h3>
+
+<div id="outline-container-org6e902b5" class="outline-3">
+<h3 id="org6e902b5">Then  for the first part</h3>
+<div class="outline-text-3" id="text-org6e902b5">
+<ul class="org-ul">
+<li>13-feb: Postponed</li>
+<li>27-feb, course: readings</li>
+</ul>
+</div>
 </div>
 
-<div id="outline-container-org1212483" class="outline-3">
-<h3 id="org1212483">16-feb, TBA</h3>
+
+<div id="outline-container-org2a5683c" class="outline-3">
+<h3 id="org2a5683c">The second part:</h3>
+<div class="outline-text-3" id="text-org2a5683c">
+<ul class="org-ul">
+<li>03-mar, course: syntax, by B. Crabbé, at 13:30</li>
+<li>05-mar, 12-mar:  Large scale NLP : the business perspective, G. Pitel</li>
+</ul>
+</div>
+</div>
 </div>
 
-<div id="outline-container-org845d9db" class="outline-3">
-<h3 id="org845d9db">23-feb, off</h3>
-</div>
-
-<div id="outline-container-org6f537c0" class="outline-3">
-<h3 id="org6f537c0">2-march, TBA</h3>
-</div>
-
-<div id="outline-container-orgb120be2" class="outline-3">
-<h3 id="orgb120be2">9-march, TBA</h3>
-</div>
-
-<div id="outline-container-org56d0650" class="outline-3">
-<h3 id="org56d0650">16-march, TBA</h3>
-</div>
-</div>
 
 <div id="outline-container-org3b965ce" class="outline-2">
 <h2 id="org3b965ce">Evaluation</h2>
@@ -154,8 +162,8 @@ The goal is to read an article an to make a presentation (the 27-feb). A list wi
 The important dates are : 
 </p>
 <ul class="org-ul">
-<li>Make up your team and select the paper before the XXX</li>
-<li>Presentation: the XXX (10 minutes per team)</li>
+<li>Make up your team and select the paper before the 6-feb</li>
+<li>Presentation: the 23-feb (10 minutes per team)</li>
 </ul>
 </div>
 </div>
@@ -168,10 +176,10 @@ A list will be availble soon, but you can also propose one (I must agree beforeh
 </p>
 <ul class="org-ul">
 <li>Team and the project registration : before 6-feb</li>
-<li>Deliverable for XXX: 2 pages (pdf only) to describe the data, the task and your plan</li>
-<li>Deliverable for XXX: a github/gitlab repository</li>
+<li>Deliverable for 13-feb: 2 pages (pdf only) to describe the data, the task and your plan</li>
+<li>Deliverable for 27-feb: a github/gitlab repository</li>
 <li>Final deliverable: a report in pdf and the code via the git repos</li>
-<li>Final deadline: XXX of May</li>
+<li>Final deadline: 15th of May</li>
 </ul>
 </div>
 </div>
