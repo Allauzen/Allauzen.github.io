@@ -24,11 +24,13 @@ data-driven approach and to be able to efficiently experiment with deep-learning
 <h2 id="org865109a">News</h2>
 <div class="outline-text-2" id="text-org865109a">
 <ul class="org-ul">
+<li>The first lab session is next monday (January the 18th): 
+<b><b>TODO:</b></b> go through  the notebook in the drive (in the lab repository): <i>lab-1<sub>numpy</sub>-basics.ipynb</i>. Be sure (see below) how to use it.</li>
+
 <li>The first homework is available on the drive <a href="https://drive.google.com/file/d/1RKGGoqFoFtPt6A_uU9B05cfXl39iM_Ir/view?usp=sharing">following this link</a>. 
 <b><b>The deadline is the 11th of january morning</b></b>, before the course.</li>
 
 <li>First course: January the 4th. Early in the morning and remote.</li>
-<li>First lab session, January the 18th</li>
 </ul>
 </div>
 </div>
@@ -42,6 +44,27 @@ data-driven approach and to be able to efficiently experiment with deep-learning
 </p>
 </div>
 </div>
+
+
+<div id="outline-container-org7e2b235" class="outline-2">
+<h2 id="org7e2b235">python and Notebooks: how to</h2>
+<div class="outline-text-2" id="text-org7e2b235">
+<p>
+We will use python 3 (plus pytorch library) and notebooks. If you need to work with own computer, there are 2 ways: 
+</p>
+<ul class="org-ul">
+<li>install anaconda 3 on your computer: <a href="https://www.anaconda.com/products/individual">see this page</a>.</li>
+<li>use <a href="https://colab.research.google.com/">colab</a> with a google account (the easiest, nothing todo)</li>
+</ul>
+
+
+<p>
+If you are not familiar with python notebooks, see <a href="https://realpython.com/jupyter-notebook-introduction/">this page</a>. 
+</p>
+</div>
+</div>
+
+
 
 
 <div id="outline-container-orga58ef05" class="outline-2">
