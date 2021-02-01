@@ -146,3 +146,56 @@ The second part:
 </ul>
 </div>
 </div>
+
+
+<div id="outline-container-orgcf3b3c0" class="outline-2">
+<h2 id="orgcf3b3c0">Projects</h2>
+<div class="outline-text-2" id="text-orgcf3b3c0">
+<p>
+Here, you can find a list of possible projects. Feel free to interact with me. For some of them, just ask me the data, otherwise a link is provided. Of course, you can also propose a project. 
+This section is under construction and maybe some projects will be added as soon as I will have more feedbacks from my colleagues. 
+</p>
+
+
+<ul class="org-ul">
+<li>Reconstruction of the vorticity field of a flow behind a cylinder from a handful sensors on the cylinder surface</li>
+</ul>
+
+<a href="https://arxiv.org/abs/1906.07672">
+<img src="/assets/figs/cylinder.png" alt="Velocity fields" style="width:300px; margin:0px auto;display:block"/>
+</a>
+
+
+<ul class="org-ul">
+<li>The mean sea surface temperature reconstruction <a href="https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.html">from weekly sea surface temperatures for the last 26 years</a>. You can also have access to other measures.</li>
+</ul>
+
+<a href="https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.html">
+<img src="/assets/figs/sea.png" alt="Sea surface temperature" style="width:300px; margin:0px auto;display:block"/>
+</a>
+
+<ul class="org-ul">
+<li>Chemistry: Predict the standard density of pure fluids, using a newly compiled database. From SMILES description, how can we predict density ? Ask me for the data and tools.</li>
+
+<li>Classify sleep and arousal stages from physiological signals including: electroencephalography (EEG), electrooculography (EOG), electromyography (EMG), electrocardiology (EKG), and oxygen saturation (SaO2). <a href="https://physionet.org/content/challenge-2018/1.0.0/">See the challenge page for more details</a></li>
+
+<li>Classify, from a single short ECG lead recording (between 30 s and 60 s in length), whether the recording shows normal sinus rhythm, atrial fibrillation (AF), an alternative rhythm, or is too noisy to be classified: <a href="https://physionet.org/content/challenge-2017/1.0.0/">The challenge page</a>.</li>
+
+<li><a href="https://www.kaggle.com/c/LANL-Earthquake-Prediction/data">Using seismic signals to predict the timing of laboratory earthquakes</a>.</li>
+
+<li>Quantum-mechanical molecular energies prediction from the raw molecular geometry: <a href="http://moleculenet.ai/datasets-1">see the QM7 database</a>.</li>
+
+<li>Classify Molecule polarization: the data comes from time-lapse
+fluorescence microscopy images of the bacterium Pseudomonas fluorescens SBW25. Each image is an individual bacterial cell. These bacteria produce a molecule called pyoverdin which is naturally fluorescent, so the images show the distribution of this molecule inside the cells. We have discovered that there are two distribution patterns of this molecule: homogeneous, or accumulated at the cell pole ("polarized").</li>
+</ul>
+
+
+<ul class="org-ul">
+<li>Jet Flavor Classification in High-Energy Physics: <a href="http://mlphysics.ics.uci.edu/">http://mlphysics.ics.uci.edu/</a></li>
+
+<li>Recognize decays in real high energy physics experiment: <a href="https://www.kaggle.com/c/beta-beta-decay-identification/data">https://www.kaggle.com/c/beta-beta-decay-identification/data</a></li>
+
+<li>A project associated with the course of statistical physics</li>
+</ul>
+</div>
+</div>
