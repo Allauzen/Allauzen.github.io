@@ -24,8 +24,19 @@ data-driven approach and to be able to efficiently experiment with deep-learning
 <h2 id="org865109a">News</h2>
 <div class="outline-text-2" id="text-org865109a">
 <ul class="org-ul">
+<li>The next lab session will be the 1st of February. The topic is
+pytorch and deep-learning. The notebook is <i>lab-fashion-mnist</i>.</li>
+
+<li><b><b>Homework assignement 2</b></b>: see the drive, for the notebooks.  
+<ul class="org-ul">
+<li>First follow the notebook called <i>idl-pytorch-starter.ipynb</i></li>
+<li>Then the assignment is also a notebook : <i>hw-2-idl-espci.ipynb</i></li>
+</ul></li>
+<li><b><b>The deadline is the 1st of February morning</b></b>, before the lab
+session of course.</li>
+
 <li>The first lab session is next monday (January the 18th): 
-<b><b>TODO:</b></b> go through  the notebook in the drive (in the lab repository): <i>lab-1<sub>numpy</sub>-basics.ipynb</i>. Be sure (see below) how to use it.</li>
+<b><b>TODO:</b></b> go through  the notebook in the drive (in the lab repository): <i>lab-1-numpy-basics.ipynb</i>. Be sure (see below) how to use it.</li>
 
 <li>The first homework is available on the drive <a href="https://drive.google.com/file/d/1RKGGoqFoFtPt6A_uU9B05cfXl39iM_Ir/view?usp=sharing">following this link</a>. 
 <b><b>The deadline is the 11th of january morning</b></b>, before the course.</li>
@@ -56,6 +67,19 @@ We will use python 3 (plus pytorch library) and notebooks. If you need to work w
 <li>install anaconda 3 on your computer: <a href="https://www.anaconda.com/products/individual">see this page</a>.</li>
 <li>use <a href="https://colab.research.google.com/">colab</a> with a google account (the easiest, nothing todo)</li>
 </ul>
+
+<p>
+To use files stored on your google drive you can add in your colab notebook: 
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #00ffff;">from</span> google.colab <span style="color: #00ffff;">import</span> drive
+
+drive.mount(<span style="color: #ffa07a;">'/content/gdrive'</span>)
+<span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">in my drive, I have a directory "Colab Notebooks"</span>
+<span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">the dataset is uploaded there</span>
+<span style="color: #eedd82;">root_path</span> = <span style="color: #ffa07a;">'gdrive/My Drive/Colab Notebooks/'</span>
+</pre>
+</div>
 
 
 <p>
