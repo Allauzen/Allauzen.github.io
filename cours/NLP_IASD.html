@@ -1,6 +1,6 @@
 ---
 title: "Natural Language Processing, IASD"
-date: 2021-01-04
+date: 2021-02-06
 layout: page
 categories: 
 tags: 
@@ -23,7 +23,8 @@ sessions use the <a href="https://pytorch.org/">pytorch (python module)</a>.
 <h2 id="org4ed00a3">News</h2>
 <div class="outline-text-2" id="text-org4ed00a3">
 <ul class="org-ul">
-<li>The course starts the 16/01</li>
+<li><b><b>TODO</b></b> : Check the list of projects, make up a team and select one. (more than one team can select the same project).</li>
+<li><b><b>DONE</b></b> : Check the list of articles, make up a team and pick a paper.</li>
 <li>Starter notebooks are available in the drive.</li>
 </ul>
 </div>
@@ -52,11 +53,24 @@ We will use python 3 (plus pytorch library) and notebooks. If you need to work w
 
 
 <p>
+To use files stored on your google drive you can add in your colab notebook: 
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #00ffff;">from</span> google.colab <span style="color: #00ffff;">import</span> drive
+
+drive.mount(<span style="color: #ffa07a;">'/content/gdrive'</span>)
+<span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">in my drive, I have a directory "Colab Notebooks"</span>
+<span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">the dataset is uploaded there</span>
+<span style="color: #eedd82;">root_path</span> = <span style="color: #ffa07a;">'gdrive/My Drive/Colab Notebooks/'</span>
+</pre>
+</div>
+
+
+<p>
 If you are not familiar with python notebooks, see <a href="https://realpython.com/jupyter-notebook-introduction/">this page</a>. 
 </p>
 </div>
 </div>
-
 
 
 
@@ -84,6 +98,10 @@ Tuesday, starting at 8:30 in the morning.
 <h3 id="org9a3185c">19-jan, course: Text classification</h3>
 <div class="outline-text-3" id="text-org9a3185c">
 <p>
+The basics and a first NNet with W2V
+</p>
+
+<p>
 Further and essential readings: 
 </p>
 <ul class="org-ul">
@@ -91,8 +109,18 @@ Further and essential readings:
 <li><a href="http://www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf">A Neural Probabilistic Language Model</a></li>
 <li><a href="http://u.cs.biu.ac.il/~yogo/nnlp.pdf">A Primer on Neural Network Models for Natural Language Processing</a></li>
 </ul>
+
+<p>
+For word2vec and fasttext: 
+</p>
+<ul class="org-ul">
+<li><a href="https://arxiv.org/abs/1310.4546">the original paper</a></li>
+<li><a href="https://arxiv.org/abs/1402.3722">word2vec explained</a></li>
+<li><a href="https://arxiv.org/abs/1607.04606">fasttext</a></li>
+</ul>
 </div>
 </div>
+
 
 <div id="outline-container-org279283f" class="outline-3">
 <h3 id="org279283f">26-jan, lab session</h3>
@@ -115,8 +143,19 @@ Further work: text classification with convolution
 <h3 id="orgbe99f27">2-feb, course: sequence models</h3>
 <div class="outline-text-3" id="text-orgbe99f27">
 <ul class="org-ul">
+<li>Language modelling</li>
 <li>ngram language model</li>
-<li>recurrent and LSTM network</li>
+<li>recurrent model</li>
+</ul>
+
+<p>
+Some interesting readings: 
+</p>
+<ul class="org-ul">
+<li><a href="https://www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf">The seminal paper on ngram neural language model</a></li>
+<li><a href="https://www.jmlr.org/papers/volume13/gutmann12a/gutmann12a.pdf">The long paper on Noise Contrastive Estimation (NCE)</a></li>
+<li>and its <a href="https://www.cs.toronto.edu/~amnih/papers/ncelm.pdf">application to language modelling</a></li>
+<li><a href="http://www.projectsgoal.com/download_projects/natural-language-processing/natural-language-processing-projects-GNLP00074.pdf">LSTM language models</a></li>
 </ul>
 </div>
 </div>
@@ -124,26 +163,59 @@ Further work: text classification with convolution
 
 <div id="outline-container-orga482b2d" class="outline-3">
 <h3 id="orga482b2d">9-feb, course Advanced models</h3>
+<div class="outline-text-3" id="text-orga482b2d">
+<ul class="org-ul">
+<li>The end of recurrent model, with LSTM</li>
+<li>Bi-LSTM, Attention</li>
+<li>Transformer</li>
+</ul>
+
+<p>
+Some readings: 
+</p>
+<ul class="org-ul">
+<li><a href="https://arxiv.org/abs/1802.05365">ELMO paper</a></li>
+<li><a href="https://arxiv.org/abs/1801.06146">ULMFit paper</a></li>
+<li>You can also look at the BERT paper and Transformer paper, even I found them not very easy to read.</li>
+</ul>
+</div>
 </div>
 
-<div id="outline-container-org1212483" class="outline-3">
-<h3 id="org1212483">16-feb, TBA</h3>
+<div id="outline-container-orga26e352" class="outline-3">
+<h3 id="orga26e352">16-feb, off</h3>
 </div>
 
 <div id="outline-container-org845d9db" class="outline-3">
 <h3 id="org845d9db">23-feb, off</h3>
 </div>
 
-<div id="outline-container-org6f537c0" class="outline-3">
-<h3 id="org6f537c0">2-march, TBA</h3>
+
+<div id="outline-container-orgeb37f55" class="outline-3">
+<h3 id="orgeb37f55">2-march, Reading session</h3>
+<div class="outline-text-3" id="text-orgeb37f55">
+<p>
+Schedules and guidelines under construction
+(prepare a 10 min. presentation per article)
+</p>
+</div>
 </div>
 
-<div id="outline-container-orgb120be2" class="outline-3">
-<h3 id="orgb120be2">9-march, TBA</h3>
+<div id="outline-container-org9d5972a" class="outline-3">
+<h3 id="org9d5972a">9-march, Benoit Crabbé</h3>
+<div class="outline-text-3" id="text-org9d5972a">
+<p>
+Syntax ! 
+</p>
+</div>
 </div>
 
-<div id="outline-container-org56d0650" class="outline-3">
-<h3 id="org56d0650">16-march, TBA</h3>
+<div id="outline-container-org2c4042a" class="outline-3">
+<h3 id="org2c4042a">16-march, Guillaume Wisniewski</h3>
+<div class="outline-text-3" id="text-org2c4042a">
+<p>
+Model probing
+</p>
+</div>
 </div>
 </div>
 

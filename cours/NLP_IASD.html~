@@ -24,10 +24,10 @@ sessions use the <a href="https://pytorch.org/">pytorch (python module)</a>.
 <div class="outline-text-2" id="text-org4ed00a3">
 <ul class="org-ul">
 <li>The course starts the 16/01</li>
+<li>Starter notebooks are available in the drive.</li>
 </ul>
 </div>
 </div>
-
 
 <div id="outline-container-orgd6b132d" class="outline-2">
 <h2 id="orgd6b132d">The resources / drive</h2>
@@ -37,6 +37,27 @@ sessions use the <a href="https://pytorch.org/">pytorch (python module)</a>.
 </p>
 </div>
 </div>
+
+
+<div id="outline-container-orgc400568" class="outline-2">
+<h2 id="orgc400568">python and Notebooks: how to</h2>
+<div class="outline-text-2" id="text-orgc400568">
+<p>
+We will use python 3 (plus pytorch library) and notebooks. If you need to work with own computer, there are 2 ways: 
+</p>
+<ul class="org-ul">
+<li>install anaconda 3 on your computer: <a href="https://www.anaconda.com/products/individual">see this page</a>.</li>
+<li>use <a href="https://colab.research.google.com/">colab</a> with a google account (the easiest, nothing todo)</li>
+</ul>
+
+
+<p>
+If you are not familiar with python notebooks, see <a href="https://realpython.com/jupyter-notebook-introduction/">this page</a>. 
+</p>
+</div>
+</div>
+
+
 
 
 <div id="outline-container-org47d5102" class="outline-2">
