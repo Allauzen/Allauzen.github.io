@@ -174,7 +174,10 @@ This section is under construction and maybe some projects will be added as soon
 <img src="/assets/figs/sea.png" alt="Sea surface temperature" style="width:300px; margin:0px auto;display:block"/>
 </a>
 
+
 <ul class="org-ul">
+<li>Deep sequence models for protein classification: there is a <a href="https://academic.oup.com/bioinformatics/article/36/8/2401/5698270">recent paper on this topic</a> and data can be available. We can try different models (maybe simpler) for the same task.</li>
+
 <li>Chemistry: Predict the standard density of pure fluids, using a newly compiled database. From SMILES description, how can we predict density ? Ask me for the data and tools.</li>
 
 <li>Classify sleep and arousal stages from physiological signals including: electroencephalography (EEG), electrooculography (EOG), electromyography (EMG), electrocardiology (EKG), and oxygen saturation (SaO2). <a href="https://physionet.org/content/challenge-2018/1.0.0/">See the challenge page for more details</a></li>
