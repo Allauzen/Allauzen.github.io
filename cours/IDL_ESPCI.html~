@@ -90,6 +90,14 @@ drive.mount(<span style="color: #ffa07a;">'/content/gdrive'</span>)
 <span style="color: #eedd82;">root_path</span> = <span style="color: #ffa07a;">'gdrive/My Drive/Colab Notebooks/'</span>
 </pre>
 </div>
+<p>
+You can also upload files from your device: 
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #00ffff;">from</span> google.colab <span style="color: #00ffff;">import</span> files
+<span style="color: #eedd82;">upl</span> = files.upload()
+</pre>
+</div>
 
 
 <p>
