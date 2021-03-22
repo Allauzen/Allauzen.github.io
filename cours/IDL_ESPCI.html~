@@ -156,10 +156,24 @@ The first part:
 The second part: 
 </p>
 <ul class="org-ul">
-<li>08/02, course: Sequence processing with convolutional deep-networks</li>
-<li>15/02, course: Recurrent net, and convolution for images</li>
+<li>08/02, course: Sequence processing with convolutional deep-networks
+<ul class="org-ul">
+<li>sequence processing, classification and generation</li>
+<li>Case study: sentence classification with 1D convolution</li>
+</ul></li>
+<li>15/02, course: Recurrent net, and convolution for images
+<ul class="org-ul">
+<li>Convolution 1D and 2D</li>
+<li>Sequence generation</li>
+<li>Recurrent architecture</li>
+</ul></li>
 <li>01/03, <b><b>lab sesion</b></b>: convolutional net</li>
-<li>22/03, course: Advanced architecture - part 1 / Project</li>
+<li>22/03, course: Advanced architecture 
+<ul class="org-ul">
+<li>From reccurent to LSTM architecture</li>
+<li>Sequence to Sequence model</li>
+<li>Transformer overview</li>
+</ul></li>
 <li>29/03, course: Advanced architecture - part 2 / Project</li>
 </ul>
 </div>
