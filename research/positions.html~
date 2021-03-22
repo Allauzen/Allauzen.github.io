@@ -87,11 +87,11 @@ underlying invariances.
 </p>
 
 <p>
-The recent work of [1,2] proposes an interesting mathematical tool to
+The recent work of [1] proposes an interesting mathematical tool to
 charaterize the stability and the generalization capacity of
 convolutional network. This paper is important to better explain the
 lack of robustness of the DL models to some kind of examples like
-adversarial ones [3].
+adversarial ones [2].
 </p>
 
 <p>
@@ -137,18 +137,13 @@ the candidate
 
 
 <p>
-[1] <a href="https://arxiv.org/abs/1601.04920">Understanding Deep Convolutional Networks</a>, S. Mallat, in
-Phil. Trans. R. Soc. A., 2016.
-</p>
-
-<p>
-[2] A. Bietti and J. Mairal, Group Invariance, Stability to
+[1] A. Bietti and J. Mairal, Group Invariance, Stability to
 Deformations,and Complexity of Deep Convolutional Representations, in
 JMLR 2019. <a href="http://www.jmlr.org/papers/volume20/18-190/18-190.pdf">http://www.jmlr.org/papers/volume20/18-190/18-190.pdf</a>
 </p>
 
 <p>
-[3] Szegedy et al, Intriguing properties of neural networks,
+[2] Szegedy et al, Intriguing properties of neural networks,
 <a href="https://arxiv.org/abs/1312.6199">https://arxiv.org/abs/1312.6199</a>, 2013
 </p>
 </div>
