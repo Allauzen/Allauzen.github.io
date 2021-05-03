@@ -12,7 +12,6 @@ comments:
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org746e793">Executive master IASD: Natural Language Processing</a></li>
 <li><a href="#org6e0a85e">ESPCI</a></li>
 <li><a href="#orgad5b0da">Dauphine, master IASD</a></li>
 <li><a href="#orgfbc2876">Past year (partial archive)</a>
@@ -39,29 +38,6 @@ comments:
 </div>
 <hr>
 
-
-
-<div id="outline-container-org746e793" class="outline-2">
-<h2 id="org746e793">Executive master IASD: Natural Language Processing</h2>
-<div class="outline-text-2" id="text-org746e793">
-<p>
-<b><b>The <a href="https://drive.google.com/drive/folders/1-HuDgWFJc81aVP80YQ7jkFKv8G7R8sGw?usp=sharing">link for the drive</a>  with all the resources!</b></b>
-</p>
-
-
-<p>
-Expected roadmap: 
-</p>
-<ul class="org-ul">
-<li>3/05: intro and text classification</li>
-<li>12/05: text classification (part 2) and pytorch introduction</li>
-<li>25/05: lab session on text classification</li>
-<li>26/05: Sequence models</li>
-</ul>
-</div>
-</div>
-
-
 <div id="outline-container-org6e0a85e" class="outline-2">
 <h2 id="org6e0a85e">ESPCI</h2>
 <div class="outline-text-2" id="text-org6e0a85e">
@@ -75,7 +51,7 @@ Expected roadmap:
 <h2 id="orgad5b0da">Dauphine, master IASD</h2>
 <div class="outline-text-2" id="text-orgad5b0da">
 <p>
-<a href="https://allauzen.github.io/cours/NLP_IASD">Natural Language Processing (NLP) for the IASD master of Dauphine Université</a>: the web page with resources, news, &#x2026; 
+<a href="https://allauzen.github.io/cours/NLP_IASD">Natural Languaga Processing (NLP) for the IASD master of Dauphine Université</a>: the web page with resources, news, &#x2026; 
 </p>
 </div>
 </div>
