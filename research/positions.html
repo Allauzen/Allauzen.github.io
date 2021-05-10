@@ -11,19 +11,22 @@ comments:
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org5183d16">1. Master internship</a></li>
-<li><a href="#org5f80259">2. PhD position</a>
+<li><a href="#org912624f">1. PhD position for fall 2021</a>
 <ul>
-<li><a href="#orgfbcbe91">2.1. Stability and robustness of Deep Learning models to process video from thermal cameras (CIFRE)</a></li>
-<li><a href="#org81580cc">2.2. Machine Learning and Physics (ANR Funded position)</a>
+<li><a href="#org549125e">1.1. Machine Learning and Physics (ANR fully funded position)</a>
 <ul>
-<li><a href="#orga018214">2.2.1. Noisy, scarce and partial observation</a></li>
-<li><a href="#org35c265c">2.2.2. Training algorithm to enforce physical properties</a></li>
-<li><a href="#org97aff74">2.2.3. Neural Ordinary Differential Equations</a></li>
+<li><a href="#org1935dcb">1.1.1. Aims and scope</a></li>
+<li><a href="#orga018214">1.1.2. Noisy, scarce and partial observation</a></li>
+<li><a href="#org35c265c">1.1.3. Training algorithm to enforce physical properties</a></li>
+<li><a href="#org97aff74">1.1.4. Neural Ordinary Differential Equations</a></li>
+<li><a href="#orgebb1fe0">1.1.5. Application and contacts</a></li>
+<li><a href="#org397deef">1.1.6. Some References</a></li>
 </ul>
 </li>
+<li><a href="#orgfbcbe91">1.2. Stability and robustness of Deep Learning models to process video from thermal cameras (CIFRE)</a></li>
 </ul>
 </li>
+<li><a href="#org6b940b7">2. Master internship 2021 (Closed for this spring and summer)</a></li>
 </ul>
 </div>
 </div>
@@ -36,33 +39,175 @@ topics related to my research interests.
 
 
 
-<div id="outline-container-org5183d16" class="outline-2">
-<h2 id="org5183d16"><span class="section-number-2">1</span> Master internship</h2>
+<div id="outline-container-org912624f" class="outline-2">
+<h2 id="org912624f"><span class="section-number-2">1</span> PhD position for fall 2021</h2>
 <div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org549125e" class="outline-3">
+<h3 id="org549125e"><span class="section-number-3">1.1</span> Machine Learning and Physics (ANR fully funded position)</h3>
+<div class="outline-text-3" id="text-1-1">
 <p>
-The following topics are proposed for funded internship positions. 
-Most of them can also be extended by a funded PhD position. 
+We invite applications for a fullu-funded PhD position on the topic of
+"Deep Learning for physical systems modelling".
+</p>
+
+<p>
+This is a 3-year position funded by the ANR project SPEED and it will
+start next fall (as soon as possible). The whole project is a
+collaboration between the IJLRA, the LAMSADE and the new LISN Lab in
+Orsay where many other students work on the same subject. Frequent
+scientific discussions and meetings are planed. The position will
+start as soon as possible in fall 2021. Contact me if you are
+interested in.
+</p>
+</div>
+
+<div id="outline-container-org1935dcb" class="outline-4">
+<h4 id="org1935dcb"><span class="section-number-4">1.1.1</span> Aims and scope</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<p>
+The interaction between machine learning and Physics has recently
+emerged as a new and important research area. Some illustrations are
+simulations of complex physical systems with machine learning models,
+or at the opposite, the introduction of numerical methods in machine
+learning. 
+</p>
+
+<p>
+At the interfaces of artificial and Physics, different tracks
+described below can be explored depending on the skills of the
+candidate.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orga018214" class="outline-4">
+<h4 id="orga018214"><span class="section-number-4">1.1.2</span> Noisy, scarce and partial observation</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<p>
+In modern machine learning, the cornerstone is to let the model learn
+its own representation of the process from data observation. While,
+for many applications, data are readily available (computer vision,
+natural language processing, . . . ), some requirements are not met in
+the case of complex physical systems. Without loss of generality, let
+us consider the example of a turbulent flow field or the prediction of
+the sea surface temperature. The corresponding dataset is really small
+and scarce compared with usual machine learning applications.  More
+importantly, the state cannot be fully observed in many situations and
+the data acquisition step often introduces noise.  
 </p>
 
 
+<p>
+The issues raised by noisy and scarce dataset are not new in the
+machine learning domain and there is, for instance, a long history of
+research in the field of generative models and how to represent high
+dimensional datasets in a compressed mathematical model. However, in
+the context of Physics, we can leverage some important properties like
+symmetries and invariances to address these challenges.  
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org35c265c" class="outline-4">
+<h4 id="org35c265c"><span class="section-number-4">1.1.3</span> Training algorithm to enforce physical properties</h4>
+<div class="outline-text-4" id="text-1-1-3">
+<p>
+In some cases, a mathematical model for the system at hand is
+available, for instance: dynamical systems such as the Lorentz (63
+and 93) attractors, Kuramoto-Sivashinsky and Kardar-Parisi-Zhang.
+With these case studies, this step includes the important definitions
+of the physical properties we want to introduce in the machine
+learning models.
+</p>
+
+<p>
+Two approaches can be considered:
+</p>
+
 <ul class="org-ul">
-<li><a href="https://allauzen.github.io/assets/docs/deep_biology.pdf">Prediction of genetic traits with deep neural networks:  how to consider epistasis ?</a>, in collaboration with Philippe Nghe of ESPCI</li>
-<li><a href="https://allauzen.github.io/assets/docs/Adversarial_and_Stability.pdf">Adversarial attacks in the light of stability of ResNets</a> in collaboration with Laurent Meunier</li>
-<li><a href="https://allauzen.github.io/assets/docs/en_neural_ode.pdf">Neural ODE</a></li>
-<li><a href="https://allauzen.github.io/assets/docs/foxstream.pdf">Stability and robustness of Deep Learning models to process video from thermal cameras</a> in collaboration with <a href="https://www.foxstream.fr/">foxstream</a></li>
-<li><a href="https://allauzen.github.io/assets/docs/dynamic_topic_models.pdf">Dynamic topic models: from text to physics</a></li>
+<li><b><b>Physical regularization</b></b>: the loss function optimized during the
+training process can be augmented with tailored regularization
+terms. As an example, optimal transport-based (OT) loss definitions
+are often more relevant for physical systems featuring significant
+structure. This will be made computationaly tractable with the
+convolutional Wasserstein flavor of OT, e.g., see <a href="https://hal.archives-ouvertes.fr/hal-01188953">this paper</a>.</li>
+
+<li><b><b>Adversarial training</b></b>: the second approach relies on the recent
+adversarial learning trend to guide the model during the training
+process toward solutions that exhibit the desired properties.  Early
+efforts are reported in <a href="https://math.gsu.edu/xye/papers/ZBYZ19_WAN.pdf">this paper</a> where the solution and the test
+functions in the weak formulation of high-dimensional linear and
+nonlinear PDE problems are parameterized as a primal and adversarial
+networks respectively.</li>
 </ul>
 </div>
 </div>
 
 
-<div id="outline-container-org5f80259" class="outline-2">
-<h2 id="org5f80259"><span class="section-number-2">2</span> PhD position</h2>
-<div class="outline-text-2" id="text-2">
+
+
+<div id="outline-container-org97aff74" class="outline-4">
+<h4 id="org97aff74"><span class="section-number-4">1.1.4</span> Neural Ordinary Differential Equations</h4>
+<div class="outline-text-4" id="text-1-1-4">
+<p>
+The relationship between neural networks and differential equations has been studied in several recent works <a href="https://arxiv.org/abs/1710.10121">Lu et al. (2018)</a>; <a href="https://arxiv.org/abs/1806.07366">Chen et al. (2018)</a>.  In particular, the very efficient neural architecture
+ResNet (or Residual Network), He et al. (2016), can be interpreted as discretized ordinary differential equations. This kind of architectures leads to a very large number of parameters. Hence, while
+the idea is really appealing in our context, architectures like ResNet are suitable for applications beyond our scope, where the data availability is not an issue.  Pushing the discretization step towards its limit of zero, along with parameters tying, have given rise to a new family of models called Neural Ordinary Differential Equations (or Neural ODEs). In these recent papers and their extension, <a href="https://arxiv.org/abs/1904.01681">Dupont et al. (2019)</a>, the experimental setup mainly relies on conventional datasets used in image classification (MNIST or CIFAR10). Preliminary work on this new type of neural networks has demonstrated its parameter efficiency for supervised learning task which can be of a great importance in our case.
+</p>
 </div>
+</div>
+
+
+<div id="outline-container-orgebb1fe0" class="outline-4">
+<h4 id="orgebb1fe0"><span class="section-number-4">1.1.5</span> Application and contacts</h4>
+<div class="outline-text-4" id="text-1-1-5">
+<p>
+Applications can be sent electronically and should include a cover
+letter, full CV, and eventually references. A first round of
+interviews will start in first week of June 2021 so please submit as
+soon as possible.  Feel free to contact us if you have questions on
+the topic and the position. 
+</p>
+
+<p>
+Alexandre Allauzen: alexandre.allauzen@dauphine.psl.eu
+Sergio Chibbaro:    sergio.chibbaro@sorbonne-universite.fr
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org397deef" class="outline-4">
+<h4 id="org397deef"><span class="section-number-4">1.1.6</span> Some References</h4>
+<div class="outline-text-4" id="text-1-1-6">
+<p>
+"When deep learning meets ergodic theory", 
+M.A Bucci, O.S emeraro, S. Chibbaro, A. Allauzen, L. Mathelin, in 
+<a href="https://hal.archives-ouvertes.fr/LIMSI/hal-03101431v1">https://hal.archives-ouvertes.fr/LIMSI/hal-03101431v1</a>
+</p>
+
+<p>
+"Control of chaotic systems by deep reinforcement learning", 
+M.A Bucci, O.S emeraro, S. Chibbaro, A. Allauzen, et al. 
+<a href="https://hal.archives-ouvertes.fr/LIMSI/hal-02406677v1">https://hal.archives-ouvertes.fr/LIMSI/hal-02406677v1</a>
+</p>
+
+<p>
+"Hamiltonian Neural Networks", Samuel Greydanus, Misko Dzamba, Jason Yosinski, 
+NeurIPS 2019 proceedings. 
+<a href="https://papers.nips.cc/paper/2019/hash/26cd8ecadce0d4efd6cc8a8725cbd1f8-Abstract.html">https://papers.nips.cc/paper/2019/hash/26cd8ecadce0d4efd6cc8a8725cbd1f8-Abstract.html</a>
+</p>
+</div>
+</div>
+</div>
+
+
 <div id="outline-container-orgfbcbe91" class="outline-3">
-<h3 id="orgfbcbe91"><span class="section-number-3">2.1</span> Stability and robustness of Deep Learning models to process video from thermal cameras (CIFRE)</h3>
-<div class="outline-text-3" id="text-2-1">
+<h3 id="orgfbcbe91"><span class="section-number-3">1.2</span> Stability and robustness of Deep Learning models to process video from thermal cameras (CIFRE)</h3>
+<div class="outline-text-3" id="text-1-2">
 <p>
 The PhD position is funded by Foxstream, a software company, founded
 in 2004, that specializes in real-time automated processing of video
@@ -153,110 +298,25 @@ JMLR 2019. <a href="http://www.jmlr.org/papers/volume20/18-190/18-190.pdf">http:
 </p>
 </div>
 </div>
-
-
-<div id="outline-container-org81580cc" class="outline-3">
-<h3 id="org81580cc"><span class="section-number-3">2.2</span> Machine Learning and Physics (ANR Funded position)</h3>
-<div class="outline-text-3" id="text-2-2">
-<p>
-The position will start as soon as possible, and the subject is under construction. It will be funded by the ANR project called Speed. Contact me if you are interested in. 
-</p>
-
-
-<p>
-The interaction between machine learning and Physics has transformed
-the methodology in many research areas. Simulations of complex
-physical systems provide an illustration of such recent de-
-velopment. While computer simulations are invaluable tools for
-scientific discovery and forecasting systems, the cost of accurate
-simulations limits in many cases their applicability and the capacity
-to explore a wide range of physical parameters or to quantify
-uncertainty in the prediction. In the last decades, data-driven
-approaches have offered an efficient workaround. For instance a
-deep-learning model can be learned to emulate the physical
-model. Then, its computational efficiency makes it an efficient proxy
-that can be integrated in a forecasting system or a control loop.
-Depending on your skills different tracks can be explored. 
-</p>
 </div>
 
 
-<div id="outline-container-orga018214" class="outline-4">
-<h4 id="orga018214"><span class="section-number-4">2.2.1</span> Noisy, scarce and partial observation</h4>
-<div class="outline-text-4" id="text-2-2-1">
+
+<div id="outline-container-org6b940b7" class="outline-2">
+<h2 id="org6b940b7"><span class="section-number-2">2</span> Master internship 2021 (Closed for this spring and summer)</h2>
+<div class="outline-text-2" id="text-2">
 <p>
-In modern machine learning, the cornerstone is to let the model learn
-its own representation of the process from data observation. While,
-for many applications, data are readily available (computer vision,
-natural language processing, . . . ), some requirements are not met in
-the case of complex physical systems. Without loss of generality, let
-us consider the example of a turbulent flow field or the prediction of
-the sea surface temperature. The corresponding dataset is really small
-and scarce compared with usual machine learning applications.  More
-importantly, the state cannot be fully observed in many situations and
-the data acquisition step often introduces noise.  
+The following topics are proposed for funded internship positions. 
+Most of them can also be extended by a funded PhD position. 
 </p>
 
-
-<p>
-The issues raised by noisy and scarce dataset are not new in the
-machine learning domain and there is, for instance, a long history of
-research in the field of generative models and how to represent high
-dimensional datasets in a compressed mathematical model. However, in
-the context of Physics, we can leverage some important properties like
-symmetries and invariances to address these challenges.  
-</p>
-</div>
-</div>
-
-
-<div id="outline-container-org35c265c" class="outline-4">
-<h4 id="org35c265c"><span class="section-number-4">2.2.2</span> Training algorithm to enforce physical properties</h4>
-<div class="outline-text-4" id="text-2-2-2">
-<p>
-In some cases, a mathematical model for the system at hand is
-available, for instance: dynamical systems such as the Lorentz (63
-and 93) attractors, Kuramoto-Sivashinsky and Kardar-Parisi-Zhang.
-With these case studies, this step includes the important definitions
-of the physical properties we want to introduce in the machine
-learning models.
-</p>
-
-<p>
-Two approaches can be considered:
-</p>
 
 <ul class="org-ul">
-<li><b><b>Physical regularization</b></b>: the loss function optimized during the
-training process can be augmented with tailored regularization
-terms. As an example, optimal transport-based (OT) loss definitions
-are often more relevant for physical systems featuring significant
-structure. This will be made computationaly tractable with the
-convolutional Wasserstein flavor of OT, e.g., see <a href="https://hal.archives-ouvertes.fr/hal-01188953">this paper</a>.</li>
-
-<li><b><b>Adversarial training</b></b>: the second approach relies on the recent
-adversarial learning trend to guide the model during the training
-process toward solutions that exhibit the desired properties.  Early
-efforts are reported in <a href="https://math.gsu.edu/xye/papers/ZBYZ19_WAN.pdf">this paper</a> where the solution and the test
-functions in the weak formulation of high-dimensional linear and
-nonlinear PDE problems are parameterized as a primal and adversarial
-networks respectively.</li>
+<li><a href="https://allauzen.github.io/assets/docs/deep_biology.pdf">Prediction of genetic traits with deep neural networks:  how to consider epistasis ?</a>, in collaboration with Philippe Nghe of ESPCI</li>
+<li><a href="https://allauzen.github.io/assets/docs/Adversarial_and_Stability.pdf">Adversarial attacks in the light of stability of ResNets</a> in collaboration with Laurent Meunier</li>
+<li><a href="https://allauzen.github.io/assets/docs/en_neural_ode.pdf">Neural ODE</a></li>
+<li><a href="https://allauzen.github.io/assets/docs/foxstream.pdf">Stability and robustness of Deep Learning models to process video from thermal cameras</a> in collaboration with <a href="https://www.foxstream.fr/">foxstream</a></li>
+<li><a href="https://allauzen.github.io/assets/docs/dynamic_topic_models.pdf">Dynamic topic models: from text to physics</a></li>
 </ul>
-</div>
-</div>
-
-
-
-
-<div id="outline-container-org97aff74" class="outline-4">
-<h4 id="org97aff74"><span class="section-number-4">2.2.3</span> Neural Ordinary Differential Equations</h4>
-<div class="outline-text-4" id="text-2-2-3">
-<p>
-The relationship between neural networks and differential equations has been studied in several recent works <a href="https://arxiv.org/abs/1710.10121">Lu et al. (2018)</a>; <a href="https://arxiv.org/abs/1806.07366">Chen et al. (2018)</a>.  In particular, the very efficient neural architecture
-ResNet (or Residual Network), He et al. (2016), can be interpreted as discretized ordinary differential equations. This kind of architectures leads to a very large number of parameters. Hence, while
-the idea is really appealing in our context, architectures like ResNet are suitable for applications beyond our scope, where the data availability is not an issue.  Pushing the discretization step towards its limit of zero, along with parameters tying, have given rise to a new family of models called Neural Ordinary Differential Equations (or Neural ODEs). In these recent papers and their extension, <a href="https://arxiv.org/abs/1904.01681">Dupont et al. (2019)</a>, the experimental setup mainly relies on conventional datasets used in image classification (MNIST or CIFAR10). Preliminary work on this new type of neural networks has demonstrated its parameter efficiency for supervised learning task which can be of a great importance in our case.
-</p>
-</div>
-</div>
 </div>
 </div>
