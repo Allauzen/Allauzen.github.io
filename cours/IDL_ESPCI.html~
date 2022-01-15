@@ -1,6 +1,6 @@
 ---
 title: "Introduction to Deep Learning, ESPCI"
-date: 2021-01-04
+date: 2022-01-02
 layout: page
 categories: 
 tags: 
@@ -24,34 +24,10 @@ data-driven approach and to be able to efficiently experiment with deep-learning
 <h2 id="org865109a">News</h2>
 <div class="outline-text-2" id="text-org865109a">
 <ul class="org-ul">
-<li>Registration for the project: make up your team and add a line in this</li>
-</ul>
-<p>
-<a href="https://docs.google.com/spreadsheets/d/1kIfY6G_TtT3F2SSnunLJcjgS2YegKNb1Fr-B_johhag/edit?usp=sharing">form</a>. Deadline for registration: 8/03/2021 ! 
-</p>
+<li>The first homework is available on the drive. 
+<b><b>The deadline is the 10th of january morning</b></b>, before the course.</li>
 
-<ul class="org-ul">
-<li>The next lab session will be the 1st of March. The topic is
-Convolution for text classification. The notebook is <i>lab-imdb-text-convolution</i>.</li>
-
-<li>The next lab session will be the 1st of February. The topic is
-pytorch and deep-learning. The notebook is <i>lab-fashion-mnist</i>.</li>
-
-<li><b><b>Homework assignement 2</b></b>: see the drive, for the notebooks.  
-<ul class="org-ul">
-<li>First follow the notebook called <i>idl-pytorch-starter.ipynb</i></li>
-<li>Then the assignment is also a notebook : <i>hw-2-idl-espci.ipynb</i></li>
-</ul></li>
-<li><b><b>The deadline is the 1st of February morning</b></b>, before the lab
-session of course.</li>
-
-<li>The first lab session is next monday (January the 18th): 
-<b><b>TODO:</b></b> go through  the notebook in the drive (in the lab repository): <i>lab-1-numpy-basics.ipynb</i>. Be sure (see below) how to use it.</li>
-
-<li>The first homework is available on the drive <a href="https://drive.google.com/file/d/1RKGGoqFoFtPt6A_uU9B05cfXl39iM_Ir/view?usp=sharing">following this link</a>. 
-<b><b>The deadline is the 11th of january morning</b></b>, before the course.</li>
-
-<li>First course: January the 4th. Early in the morning and remote.</li>
+<li>First course: January the 3th. Early in the morning and on site (Amphi IPGG).</li>
 </ul>
 </div>
 </div>
@@ -61,7 +37,7 @@ session of course.</li>
 <h2 id="org0883a09">The resources / drive</h2>
 <div class="outline-text-2" id="text-org0883a09">
 <p>
-<a href="https://drive.google.com/drive/folders/14qRch6tlVatxf7ZidOv_MwwStaQmXagK?usp=sharing">Look at this drive</a> for the slides and the material of lab sessions.
+<a href="https://drive.google.com/drive/folders/1G8It4N3Wlxp6kXzVKwmQ8wCZ-rIdROGG?usp=sharing">Look at this drive</a> for the slides, the material of lab sessions, homework, &#x2026; 
 </p>
 </div>
 </div>
@@ -71,7 +47,7 @@ session of course.</li>
 <h2 id="org7e2b235">python and Notebooks: how to</h2>
 <div class="outline-text-2" id="text-org7e2b235">
 <p>
-We will use python 3 (plus pytorch library) and notebooks. If you need to work with own computer, there are 2 ways: 
+We will use python 3,  pytorch and notebooks. If you need to work with own computer, there are 2 ways: 
 </p>
 <ul class="org-ul">
 <li>install anaconda 3 on your computer: <a href="https://www.anaconda.com/products/individual">see this page</a>.</li>
@@ -90,15 +66,6 @@ drive.mount(<span style="color: #ffa07a;">'/content/gdrive'</span>)
 <span style="color: #eedd82;">root_path</span> = <span style="color: #ffa07a;">'gdrive/My Drive/Colab Notebooks/'</span>
 </pre>
 </div>
-<p>
-You can also upload files from your device: 
-</p>
-<div class="org-src-container">
-<pre class="src src-python"><span style="color: #00ffff;">from</span> google.colab <span style="color: #00ffff;">import</span> files
-<span style="color: #eedd82;">upl</span> = files.upload()
-</pre>
-</div>
-
 
 <p>
 If you are not familiar with python notebooks, see <a href="https://realpython.com/jupyter-notebook-introduction/">this page</a>. 
@@ -107,13 +74,11 @@ If you are not familiar with python notebooks, see <a href="https://realpython.c
 </div>
 
 
-
-
 <div id="outline-container-orga58ef05" class="outline-2">
 <h2 id="orga58ef05">Expected schedules</h2>
 <div class="outline-text-2" id="text-orga58ef05">
 <p>
-It starts in january 2021 (the 4th). The course is scheduled on
+It starts in january 2021 (the 3th). The course is scheduled on
 monday, starting at 8:30 in the morning.
 </p>
 
@@ -121,60 +86,52 @@ monday, starting at 8:30 in the morning.
 The first part: 
 </p>
 <ul class="org-ul">
-<li>4/01, course: introduction and basics on machine learning
-<ul class="org-ul">
-<li>The main tasks</li>
-<li>Objective function</li>
-<li>Optimisation with gradient descent</li>
-</ul></li>
+<li>3/01, course: introduction, reminder and basics</li>
 
-<li>11/01, course on feed-forward neural networks
+<li>10/01, course on feed-forward neural networks
 <ul class="org-ul">
 <li>Multi-class classification</li>
-<li>From linear to non-linear classification</li>
 <li>The feed-forward architecture and the back-propagation algorithm</li>
+<li>Pytorch</li>
 </ul></li>
 
-<li>18/01, <b><b>lab session</b></b> : machine learning and python, first steps 
+<li>17/01, <b><b>lab session</b></b> 
 <ul class="org-ul">
 <li>numpy and matplotlib</li>
 <li>logistic regression by hand</li>
 <li>Non-linear cases</li>
 </ul></li>
 
-<li>25/01, course on  deep-learning
+<li>24/01, course on deep-learning and sequence processing
 <ul class="org-ul">
 <li>Deep networks</li>
 <li>Drop out, regularization  and other tricks</li>
-<li>pytorch overview</li>
+<li>Convolution</li>
 </ul></li>
 
-<li>01/02, <b><b>lab session</b></b> : deep-learning in pytorch</li>
+<li>31/01, course on Convolution and deep architecture
+<ul class="org-ul">
+<li>Convolution for images (2D)</li>
+<li>ResNet</li>
+<li>Recurrent Net</li>
+</ul></li>
 </ul>
+
 
 <p>
 The second part: 
 </p>
+
 <ul class="org-ul">
-<li>08/02, course: Sequence processing with convolutional deep-networks
+<li>07/02, <b><b>lab session</b></b>
 <ul class="org-ul">
-<li>sequence processing, classification and generation</li>
-<li>Case study: sentence classification with 1D convolution</li>
+<li>2D convolution</li>
+<li>ResNet with convolution</li>
 </ul></li>
-<li>15/02, course: Recurrent net, and convolution for images
-<ul class="org-ul">
-<li>Convolution 1D and 2D</li>
-<li>Sequence generation</li>
-<li>Recurrent architecture</li>
-</ul></li>
-<li>01/03, <b><b>lab sesion</b></b>: convolutional net</li>
-<li>22/03, course: Advanced architecture 
-<ul class="org-ul">
-<li>From reccurent to LSTM architecture</li>
-<li>Sequence to Sequence model</li>
-<li>Transformer overview</li>
-</ul></li>
-<li>29/03, course: Advanced architecture - part 2 / Project</li>
+<li>14/02, course: Sequence processing</li>
+<li>21/02, <b><b>lab sesion</b></b>: recurrent net</li>
+<li>21/03, course: Advanced architecture - part 1 / Project</li>
+<li>28/03, course: Advanced architecture - part 2 / Project</li>
 </ul>
 </div>
 </div>
@@ -193,7 +150,7 @@ This section is under construction and maybe some projects will be added as soon
 <li>Reconstruction of the vorticity field of a flow behind a cylinder from a handful sensors on the cylinder surface</li>
 </ul>
 
-<a href="https://hal.archives-ouvertes.fr/hal-03059296/document">
+<a href="https://arxiv.org/abs/1906.07672">
 <img src="/assets/figs/cylinder.png" alt="Velocity fields" style="width:300px; margin:0px auto;display:block"/>
 </a>
 
