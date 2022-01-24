@@ -39,39 +39,6 @@ sessions use the <a href="https://pytorch.org/">pytorch (python module)</a>.
 </div>
 
 
-<div id="outline-container-orgc400568" class="outline-2">
-<h2 id="orgc400568">python and Notebooks: how to</h2>
-<div class="outline-text-2" id="text-orgc400568">
-<p>
-We will use python 3 (plus pytorch library) and notebooks. If you need to work with own computer, there are 2 ways: 
-</p>
-<ul class="org-ul">
-<li>install anaconda 3 on your computer: <a href="https://www.anaconda.com/products/individual">see this page</a>.</li>
-<li>use <a href="https://colab.research.google.com/">colab</a> with a google account (the easiest, nothing todo)</li>
-</ul>
-
-
-<p>
-To use files stored on your google drive you can add in your colab notebook: 
-</p>
-<div class="org-src-container">
-<pre class="src src-python"><span style="color: #00ffff;">from</span> google.colab <span style="color: #00ffff;">import</span> drive
-
-drive.mount(<span style="color: #ffa07a;">'/content/gdrive'</span>)
-<span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">in my drive, I have a directory "Colab Notebooks"</span>
-<span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">the dataset is uploaded there</span>
-<span style="color: #eedd82;">root_path</span> = <span style="color: #ffa07a;">'gdrive/My Drive/Colab Notebooks/'</span>
-</pre>
-</div>
-
-
-<p>
-If you are not familiar with python notebooks, see <a href="https://realpython.com/jupyter-notebook-introduction/">this page</a>. 
-</p>
-</div>
-</div>
-
-
 <div id="outline-container-org47d5102" class="outline-2">
 <h2 id="org47d5102">Expected schedules</h2>
 <div class="outline-text-2" id="text-org47d5102">
@@ -121,9 +88,9 @@ For word2vec and fasttext:
 
 
 
-<div id="outline-container-orgcdd36c3" class="outline-3">
-<h3 id="orgcdd36c3">1-feb, course: sequence models</h3>
-<div class="outline-text-3" id="text-orgcdd36c3">
+<div id="outline-container-org1d9ae6a" class="outline-3">
+<h3 id="org1d9ae6a">1-feb, course: Sequence models</h3>
+<div class="outline-text-3" id="text-org1d9ae6a">
 <ul class="org-ul">
 <li>Language modelling</li>
 <li>ngram language model</li>
@@ -143,9 +110,9 @@ Some interesting readings:
 </div>
 
 
-<div id="outline-container-orgbaf671c" class="outline-3">
-<h3 id="orgbaf671c">8-feb, course Advanced models</h3>
-<div class="outline-text-3" id="text-orgbaf671c">
+<div id="outline-container-org394cfbe" class="outline-3">
+<h3 id="org394cfbe">8-feb, course: Advanced models</h3>
+<div class="outline-text-3" id="text-org394cfbe">
 <ul class="org-ul">
 <li>The end of recurrent model, with LSTM</li>
 <li>Bi-LSTM, Attention</li>
@@ -164,22 +131,71 @@ Some readings:
 </div>
 
 
-<div id="outline-container-org9cce674" class="outline-3">
-<h3 id="org9cce674">15-feb</h3>
+<div id="outline-container-org3e125e4" class="outline-3">
+<h3 id="org3e125e4">15-feb, course: Contrastive Learning or text representation</h3>
+<div class="outline-text-3" id="text-org3e125e4">
+<p>
+by <a href="https://www.telecom-paris.fr/matthieu-labeau">Matthieu Labeau</a>
+</p>
+</div>
 </div>
 
-<div id="outline-container-orgaf1ed43" class="outline-3">
-<h3 id="orgaf1ed43">22-feb</h3>
+<div id="outline-container-org113547f" class="outline-3">
+<h3 id="org113547f">22-feb Course: Syntax !</h3>
+<div class="outline-text-3" id="text-org113547f">
+<p>
+by <a href="http://www.linguist.univ-paris-diderot.fr/~bcrabbe/">Benoit Crabbé</a>
+</p>
+</div>
 </div>
 
-<div id="outline-container-org30fe086" class="outline-3">
-<h3 id="org30fe086">8-march</h3>
+<div id="outline-container-orgaf11785" class="outline-3">
+<h3 id="orgaf11785">8-march, course: model probing</h3>
+<div class="outline-text-3" id="text-orgaf11785">
+<p>
+by <a href="https://gw17.github.io/">Guillaume Wisnewski</a>
+</p>
+</div>
 </div>
 
 <div id="outline-container-orge38a891" class="outline-3">
 <h3 id="orge38a891">15-march</h3>
 </div>
 </div>
+
+
+<div id="outline-container-orgc400568" class="outline-2">
+<h2 id="orgc400568">python and Notebooks: how to</h2>
+<div class="outline-text-2" id="text-orgc400568">
+<p>
+We will use python 3 (plus pytorch library) and notebooks. If you need to work with own computer, there are 2 ways: 
+</p>
+<ul class="org-ul">
+<li>install anaconda 3 on your computer: <a href="https://www.anaconda.com/products/individual">see this page</a>.</li>
+<li>use <a href="https://colab.research.google.com/">colab</a> with a google account (the easiest, nothing todo)</li>
+</ul>
+
+
+<p>
+To use files stored on your google drive you can add in your colab notebook: 
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #00ffff;">from</span> google.colab <span style="color: #00ffff;">import</span> drive
+
+drive.mount(<span style="color: #ffa07a;">'/content/gdrive'</span>)
+<span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">in my drive, I have a directory "Colab Notebooks"</span>
+<span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">the dataset is uploaded there</span>
+<span style="color: #eedd82;">root_path</span> = <span style="color: #ffa07a;">'gdrive/My Drive/Colab Notebooks/'</span>
+</pre>
+</div>
+
+
+<p>
+If you are not familiar with python notebooks, see <a href="https://realpython.com/jupyter-notebook-introduction/">this page</a>. 
+</p>
+</div>
+</div>
+
 
 <div id="outline-container-org7353b78" class="outline-2">
 <h2 id="org7353b78">Lab sessions</h2>
