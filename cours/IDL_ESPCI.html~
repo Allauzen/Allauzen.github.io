@@ -81,27 +81,24 @@ The first part:
 <li>idl<sub>fashion</sub><sub>mnist.ipynb</sub> (your first NNet on a image classification task)</li>
 </ul></li>
 
-<li>24/01, course on deep-learning and sequence processing
+<li>24/01, course on deep-learning and Image processing processing
 <ul class="org-ul">
 <li>Deep networks</li>
 <li>Drop out, regularization  and other tricks</li>
-<li>Convolution</li>
+<li>Convolution 2D for image processing</li>
 </ul></li>
 
-<li>31/01, course on Convolution and deep architecture
+<li>31/01, course on Sequence processing
 <ul class="org-ul">
-<li>Convolution for images (2D)</li>
-<li>ResNet</li>
+<li>Convolution for sequences (1D)</li>
 <li>Recurrent Net</li>
+<li>LSTM</li>
 </ul></li>
-</ul>
 
-
-<ul class="org-ul">
 <li>07/02, <b><b>lab session</b></b>
 <ul class="org-ul">
+<li>Image classification</li>
 <li>2D convolution</li>
-<li>ResNet with convolution</li>
 </ul></li>
 <li>14/02, course: Sequence processing</li>
 <li>21/02, <b><b>lab sesion</b></b>: recurrent net</li>
