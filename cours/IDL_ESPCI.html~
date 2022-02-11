@@ -24,7 +24,7 @@ data-driven approach and to be able to efficiently experiment with deep-learning
 <h2 id="org865109a">News</h2>
 <div class="outline-text-2" id="text-org865109a">
 <ul class="org-ul">
-<li>The next lab session is <b><b>the 8th of Feb</b></b></li>
+<li>The next lab session is <b><b>the 7th of Feb</b></b></li>
 
 <li>The second homework is available on the drive. It is a notebook. <b><b>The deadline is the 7th of February</b></b></li>
 
@@ -65,9 +65,7 @@ It starts in january 2021 (the 3th). The course is scheduled on
 monday, starting at 8:30 in the morning.
 </p>
 
-<p>
-The first part: 
-</p>
+
 <ul class="org-ul">
 <li>3/01, course: introduction, reminder and basics</li>
 
@@ -80,41 +78,52 @@ The first part:
 
 <li>17/01, <b><b>lab session</b></b> : 3 notebooks to do in the following order (see the drive to get the files):
 <ul class="org-ul">
-<li>idl<sub>numpy</sub><sub>starter.ipynb</sub> (intro to numpy)</li>
-<li>idl<sub>pytorch</sub><sub>starter.ipynb</sub> (intro to pytorch)</li>
-<li>idl<sub>fashion</sub><sub>mnist.ipynb</sub> (your first NNet on a image classification task)</li>
+<li>intro to numpy</li>
+<li>intro to pytorch</li>
+<li>your first NNet on a image classification task (Fashion MNIST)</li>
 </ul></li>
 
 <li>24/01, course on deep-learning and Image processing processing
 <ul class="org-ul">
 <li>Deep networks</li>
-<li>Drop out, regularization  and other tricks</li>
+<li>Drop out</li>
 <li>Convolution 2D for image processing</li>
 </ul></li>
 
-<li>31/01, course on Sequence processing
+<li>31/01, course on Sequence classification
 <ul class="org-ul">
-<li>Convolution for sequences (1D)</li>
-<li>Recurrent Net</li>
-<li>LSTM</li>
+<li>End of tricks (init. and normalization)</li>
+<li>Sequence classification with 1D convolution</li>
+<li>Two examples: text classification and DNA/RNA classification</li>
+<li>Few words on the project</li>
 </ul></li>
 
 <li>07/02, <b><b>lab session</b></b>
 <ul class="org-ul">
 <li>Image classification</li>
 <li>2D convolution</li>
+<li>Case study : NMT</li>
 </ul></li>
-<li>14/02, course: Sequence processing</li>
+
+<li>14/02, course on sequence model
+<ul class="org-ul">
+<li>Sequence processing with recurrent networks</li>
+<li>LSTM and GRU</li>
+</ul></li>
+
 <li>21/02, <b><b>lab sesion</b></b>: recurrent net</li>
-<li>21/03, course: Advanced architecture - part 1 / Project</li>
+
+<li>21/03, course: Advanced architecture - part 1 / Project
+<ul class="org-ul">
+<li>Tranformers, BERT and so on &#x2026;</li>
+</ul></li>
+
 <li>28/03, course: Advanced architecture - part 2 / Project</li>
 </ul>
+</div>
+</div>
 
-<p>
-The second part: 
-</p>
-</div>
-</div>
+
 
 
 <div id="outline-container-org7e2b235" class="outline-2">
