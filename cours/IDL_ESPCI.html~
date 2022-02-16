@@ -177,7 +177,7 @@ This section is under construction and maybe some projects will be added as soon
 <li>Reconstruction of the vorticity field of a flow behind a cylinder from a handful sensors on the cylinder surface</li>
 </ul>
 
-<a href="https://arxiv.org/abs/1906.07672">
+<a href="https://hal.archives-ouvertes.fr/hal-03059296/document">
 <img src="/assets/figs/cylinder.png" alt="Velocity fields" style="width:300px; margin:0px auto;display:block"/>
 </a>
 
@@ -192,6 +192,8 @@ This section is under construction and maybe some projects will be added as soon
 
 
 <ul class="org-ul">
+<li><a href="https://arxiv.org/pdf/2110.05266.pdf">Chaos as an interpretable benchmark for forecasting and data-driven modelling</a></li>
+
 <li>Predicting the sequence specificities of DNA- and RNA-binding proteins. We can use datasets from <a href="https://github.com/jisraeli/DeepBind">Deep-bind</a>.</li>
 
 <li>Deep sequence models for protein classification: there is a <a href="https://academic.oup.com/bioinformatics/article/36/8/2401/5698270">recent paper on this topic</a> and data can be available. We can try different models (maybe simpler) for the same task.</li>
