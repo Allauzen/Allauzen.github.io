@@ -68,8 +68,7 @@ Contacts: alexandre.allauzen [at] dauphine.psl.eu
 This is a 3-year position funded by the ANR project ACDC and it will
 start next fall (2022). The whole project is a collaboration between
 the <a href="https://www.isir.upmc.fr/equipes/mlia/">MLIA</a> at ISIR, the <a href="https://www.lamsade.dauphine.fr/wp/miles/">MILES team</a> at LAMSADE, <a href="https://www.mnhn.fr/">Muséum national
-d'Histoire naturelle</a> and RECITAL. Frequent scientific discussions and
-meetings are planed. In addition to this position, another PhD will be
+d'Histoire naturelle</a> and RECITAL. In addition to this position, another PhD will be
 hired more or less at the same time but on a different topic (how to
 learn operators to describe tables and generate text). Both of these
 positions will be supervised by the academic teams (MLIA and MILES) in
@@ -80,7 +79,7 @@ a tight collaboration (hopefully all the partners work side by side).
 Data2Text (or Data-to-Text) is a new rising task in NLP. The goal is
 to automatically generate fluent and fact-based descriptions or
 utterances given data tables. Many applications can be build upon this
-kind of approach: generation of financial and sp orts news stories, of
+kind of approach: generation of financial and sports news stories, of
 product descriptions, the analysis and interpretation of reports, of
 IoT data, etc. In general, the goal is to generate narrative summaries
 of complex and structured data sets. 
