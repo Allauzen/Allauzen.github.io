@@ -1,6 +1,6 @@
 ---
 title: "Softmax Gradient"
-date: 2017-07-27 (last update 2022-05-09)
+date: 2017-07-27
 layout: post
 categories: 
 tags: 
@@ -73,7 +73,7 @@ With several training examples, just take the sum of their log probabilities.
 </p>
 
 <p>
-This loss function that we want to minimize has been called the log-loss or the cross-entropy loss. This loss function is simply the negative log-likelihood. Its minimization is equivalent to maximize the likelihood of the paramaters on a given training set.  When considering the whole training set, there is no closed solution for this optimization problem and therefore the gradient descent is an efficient solution.  In an online training scenario, the parameters are therefore updated to increase the log-likelihood for a given training example.
+This loss function that we want to minimize has been called the log-loss of the cross-entropy loss. It's just because the trend is to forget the well known past. This loss function is simply the minus log-likelihood. Its minimization is equivalent to maximize the likelihood of the paramaters on a given training set.  When considering the whole training set, there is no closed solution for this optimization problem and therefore the gradient descent is an efficient solution.  In an online training scenario, the parameters are therefore updated to increase the log-likelihood for a given training example.
 </p>
 </div>
 </div>
@@ -82,7 +82,7 @@ This loss function that we want to minimize has been called the log-loss or the 
 <h2 id="org757c62b"><span class="section-number-2">2</span> Gradient of the softmax function w.r.t to parameters</h2>
 <div class="outline-text-2" id="text-2">
 <p>
-The parameter set \(\pa\) gathers all the vectors \(\w_k\). This is a matrix \(\W\) in which \(w_{kj}\) is the cell of row \(k\) and column \(j\), a.k.a the component \(j\) of the vector associated to the class \(k\). Let consider the gradient of the loss function w.r.t to one parameter value \(w_{kj}\):
+The parameter set \(\pa\) gathers all the vectors \(\w_k\). This is a matrix \(\W\) in which \(\w_{kj}\) is the cell of row \(k\) and column \(j\) and also the component \(j\) of the vector associated to the class \(k\). Let consider the gradient of the loss function w.r.t \(w_{kj}\):
 </p>
 <div class="org-center">
 \begin{align}
@@ -92,14 +92,14 @@ The parameter set \(\pa\) gathers all the vectors \(\w_k\). This is a matrix \(\
 \end{align}
 </div>
 <p>
-Note that for a given \(k\) and \(\forall j\), only \(a_k\) depends on \(k\), so for the first term there are two cases:
+Note that for a given \(k\) and \(\forall j\), only \(a_k\) depends on \(k\), so for the first there are two cases:
 </p>
 <ul class="org-ul">
-<li>\(k=\gold\): \(\frac{\partial a_{\gold}}{\partial w_{kj}} = x_j\) because \(\w_k^t \x  = \sum_{j'} w_{kj} x_{j'}\)</li>
+<li>\(k=\gold\): \(\frac{\partial a_{\gold}}{\partial w_{kj}} = \x_j\) because \(\w_k^t \x  = \sum_{j'} w_{kj} x_{j'}\)</li>
 <li>\(k\ne\gold\): \(\frac{\partial a_{\gold}}{\partial w_{kj}} = 0\)</li>
 </ul>
 <p>
-Let us define the Kronecker delta function \(\delta_{k,k'}\) as: 
+Let define the Kronecker delta function \(\delta_{k,k'}\) as: 
 </p>
 <ul class="org-ul">
 <li>\(\delta_{k,k'}= 1\) if and only if \(k=k'\),</li>
@@ -107,11 +107,10 @@ Let us define the Kronecker delta function \(\delta_{k,k'}\) as:
 </ul>
 
 <p>
-Then we can compactly write: \[ \frac{\partial a_{\gold}}{\partial w_{kj}} = \delta_{k,\gold}x_j.\] 
-Now, consider the derivative of the log-partition term.
+Then we can compactly write: \[ \frac{\partial a_{\gold}}{\partial w_{kj}} = \delta_{k,\gold}x_j \] Now let process the derivative of the log-partition term.
 </p>
 \begin{align}
-\frac{\partial log(\Z)}{\partial w_{kj}}&= \frac{\partial log(\Z)}{\partial \Z}\frac{\Z}{\partial w_{kj}} = \frac{1}{\Z}  \frac{\partial \Z}{\partial w_{kj}} \\
+\frac{\partial log(\Z)}{\partial w_{kj}}&= \frac{1}{\Z}  \frac{\partial \Z}{\partial w_{kj}} \\
 \frac{\partial \Z}{\partial w_{kj}}  &= \frac{\partial\sum_{k'} exp(\a_{k'})}{\partial w_{kj}} = \frac{\partial exp(\a_{k})}{\partial w_{kj}} =  exp(\a_{k})\frac{\partial \a_{k}}{\partial w_{kj}} \\
 &= x_j exp(\a_{k}) \\
 \frac{\partial log(\Z)}{\partial w_{kj}}&= \frac{exp(\a_{k})}{\Z}x_j = x_j P(k|\x)
@@ -119,13 +118,10 @@ Now, consider the derivative of the log-partition term.
 
 <p>
 Now, we merge the two terms, rearrange a bit to get : 
-\[\frac{\partial \loss}{\partial w_{kj}} = - (\delta_{k,\gold} - P(k|\x))x_j\]
-Note that the term \((\delta_{k,\gold} - P(k|\x))\) can be interpreted as the prediction error made by the model \((P(k|\x)\) knowing the expected answer \((delta_{k,\gold})\). 
-The form of the gradient is very similar to the one  of the logistic regression. 
 </p>
 
 <p>
-The Maximum-Likelihood estimate of the parameters \(\W\) acts as a memorization of the dataset: for a given class \(k\) the weight vector of the class \(\w_k\) is a weighted sum of the training examples, weighted by the error. 
+\[\frac{\partial \loss}{\partial w_{kj}} = - (\delta_{k,\gold} - P(k|\x))x_j\]
 </p>
 </div>
 </div>
