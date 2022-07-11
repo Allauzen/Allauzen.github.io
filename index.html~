@@ -18,6 +18,21 @@ Since November 2019, I'm professor at <a href="https://www.espci.fr">ESPCI (Éco
 <h2 id="org7a58cf1">News</h2>
 <div class="outline-text-2" id="text-org7a58cf1">
 <ul class="org-ul">
+<li>With Alexis Cvetkov and Gaël Varoquaux from the DirtyData team, we have a paper on <a href="https://hal.archives-ouvertes.fr/hal-03647434/file/final.pdf">Analytics on Non-Normalized Data Sources: More Learning, Rather Than More Cleaning</a>.</li>
+</ul>
+<a href="https://hal.archives-ouvertes.fr/hal-03647434/file/final.pdf">
+<img src="/assets/figs/entity.png" alt="Entity matching" style="width:400px; margin:0px auto;display:block"/>
+</a>
+
+
+<ul class="org-ul">
+<li>The E-SSL ANR Project is accepted. E-SSL stands for "Efficient Self-Supervised Learning for Inclusive and Innovative Speech Technologies". Bravo to Titouan Parcollet, the LIA and the LIG !</li>
+</ul>
+<p>
+A PhD on  "Fair and Inclusive Self-Supervised Learning for Speech" will be co-supervised between Paris (LAMSADE) and Grenoble (LIG). 
+</p>
+
+<ul class="org-ul">
 <li><b><b><a href="https://allauzen.github.io/research/positions">One PhD position is still available for Fall 2022</a></b></b>: Narrative planning for Data2Text generative models</li>
 </ul>
 
