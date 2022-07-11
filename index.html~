@@ -17,12 +17,14 @@ Since November 2019, I'm professor at <a href="https://www.espci.fr">ESPCI (Éco
 <div id="outline-container-org7a58cf1" class="outline-2">
 <h2 id="org7a58cf1">News</h2>
 <div class="outline-text-2" id="text-org7a58cf1">
-<ul class="org-ul">
-<li>With Alexis Cvetkov and Gaël Varoquaux from the DirtyData team, we have a paper on <a href="https://hal.archives-ouvertes.fr/hal-03647434/file/final.pdf">Analytics on Non-Normalized Data Sources: More Learning, Rather Than More Cleaning</a>.</li>
-</ul>
 <a href="https://hal.archives-ouvertes.fr/hal-03647434/file/final.pdf">
 <img src="/assets/figs/entity.png" alt="Entity matching" style="width:400px; margin:0px auto;display:block"/>
 </a>
+
+
+<ul class="org-ul">
+<li>With Alexis Cvetkov and Gaël Varoquaux from the DirtyData team, we have a paper on <a href="https://hal.archives-ouvertes.fr/hal-03647434/file/final.pdf">Analytics on Non-Normalized Data Sources: More Learning, Rather Than More Cleaning</a>.</li>
+</ul>
 
 
 <ul class="org-ul">
