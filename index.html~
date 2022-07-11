@@ -9,6 +9,9 @@ published: true
 comments: 
 ---
 <p>
+g#+TITLE: 
+</p>
+<p>
 Since November 2019, I'm professor at <a href="https://www.espci.fr">ESPCI (École Supérieure de Physique et de Chimie Industrielles de la Ville de Paris)</a> and my research affiliation is in the <a href="https://www.lamsade.dauphine.fr/wp/miles/">Miles project</a> of the <a href="https://www.lamsade.dauphine.fr/">LAMSADE (Laboratoire d'Analyse et de Modélisation de Systèmes pour l’Aide à la Décision)</a> in <a href="https://www.dauphine.psl.eu/">Paris-Dauphine University</a> and <a href="https://www.psl.eu/">PSL (Paris Sciences &amp; Lettres)</a>. 
 </p>
 
@@ -17,12 +20,9 @@ Since November 2019, I'm professor at <a href="https://www.espci.fr">ESPCI (Éco
 <div id="outline-container-org7a58cf1" class="outline-2">
 <h2 id="org7a58cf1">News</h2>
 <div class="outline-text-2" id="text-org7a58cf1">
-<a href="https://hal.archives-ouvertes.fr/hal-03647434/file/final.pdf">
-<img src="/assets/figs/entity.png" alt="Entity matching" style="width:200px; margin:0px auto;display:block"/>
-</a>
-
-
 <ul class="org-ul">
+<li><b><b><a href="https://allauzen.github.io/research/positions">Research positions are available for 2022</a>: 1 PhD positions</b></b> on Discourse planning for data2text</li>
+
 <li>With Alexis Cvetkov and Gaël Varoquaux from the DirtyData team, we have a paper on <a href="https://hal.archives-ouvertes.fr/hal-03647434/file/final.pdf">Analytics on Non-Normalized Data Sources: More Learning, Rather Than More Cleaning</a>.</li>
 </ul>
 
@@ -43,29 +43,8 @@ A PhD on  "Fair and Inclusive Self-Supervised Learning for Speech" will be co-su
 <li>With Laurent Meunier, Blaise Delattre et Alex Araujo, we have a paper at ICML 2022:  <a href="https://arxiv.org/abs/2110.12690">A Dynamical System Perspective for Lipschitz Neural Networks</a>.</li>
 
 <li>with the incredible team of LeBenchmark (from Grenoble and Avignon), we have a paper at <b>NeurIPS 2021</b> in the <i>datasets and benchmarks track</i> ! Visit  <a href="https://github.com/LeBenchmark/github">our repos</a>.</li>
-
-<li>With <a href="https://smontariol.github.io/">Syrielle Montariol</a>, we have a paper at ACL 2021: <i>Measure and Evaluation of Semantic Divergence across Two Languages</i>. The camera ready version will be soon available.</li>
-
-<li><a href="https://gdr-tal.ls2n.fr/etal-2021/">The summer school ETAL</a> (from the GDR TAL of CNRS) will take place in Lannion (14 to 18 of June 2021). I'm very happy to teach two courses. Check out the program.</li>
-
-<li><a href="https://arxiv.org/abs/2104.11462">LeBenchmark</a> is out:  A Reproducible Framework for Assessing Self-Supervised Representation Learning from Speech. Comming soon at Interspeech 2021.</li>
-
-<li><b><b>FlauBERT</b></b> and <b><b>Flue</b></b> are  now available: <a href="https://github.com/getalp/Flaubert">check the github repository</a> or read <a href="https://arxiv.org/abs/1912.05372">our paper</a> on arxiv. 
-<ul class="org-ul">
-<li><b><b>FLauBERT</b></b> is a a French BERT trained on a very large and heterogeneous French corpus</li>
-<li><b><b>Flue</b></b> is an evaluation setup for French NLP systems similar to the popular GLUE benchmark</li>
-</ul></li>
 </ul>
 
-
-
-
-<ul class="org-ul">
-<li>Read our paper on <a href="https://arxiv.org/abs/1906.07672">Control of chaotic systems by Deep Reinforcement Learning</a>. Comming soon, the journal version accepted in The Royal Society’s physical sciences research journal. The journal page is <a href="https://royalsocietypublishing.org/doi/10.1098/rspa.2019.0351">this one</a>.</li>
-</ul>
-<a href="https://arxiv.org/abs/1906.07672">
-<img src="/assets/figs/ks_h.png" alt="Kuramoto-Sivashinski" style="width:400px; margin:0px auto;display:block"/>
-</a>
 
 
 
@@ -109,6 +88,31 @@ Professor at ESPCI and Researcher in MILES Team of the LAMSADE, my research topi
 <div id="outline-container-org47aacac" class="outline-2">
 <h2 id="org47aacac">Older news</h2>
 <div class="outline-text-2" id="text-org47aacac">
+<ul class="org-ul">
+<li>With <a href="https://smontariol.github.io/">Syrielle Montariol</a>, we have a paper at ACL 2021: <i>Measure and Evaluation of Semantic Divergence across Two Languages</i>. The camera ready version will be soon available.</li>
+
+<li><a href="https://gdr-tal.ls2n.fr/etal-2021/">The summer school ETAL</a> (from the GDR TAL of CNRS) will take place in Lannion (14 to 18 of June 2021). I'm very happy to teach two courses. Check out the program.</li>
+
+<li><a href="https://arxiv.org/abs/2104.11462">LeBenchmark</a> is out:  A Reproducible Framework for Assessing Self-Supervised Representation Learning from Speech. Comming soon at Interspeech 2021.</li>
+
+<li><b><b>FlauBERT</b></b> and <b><b>Flue</b></b> are  now available: <a href="https://github.com/getalp/Flaubert">check the github repository</a> or read <a href="https://arxiv.org/abs/1912.05372">our paper</a> on arxiv. 
+<ul class="org-ul">
+<li><b><b>FLauBERT</b></b> is a a French BERT trained on a very large and heterogeneous French corpus</li>
+<li><b><b>Flue</b></b> is an evaluation setup for French NLP systems similar to the popular GLUE benchmark</li>
+</ul></li>
+</ul>
+
+
+
+
+<ul class="org-ul">
+<li>Read our paper on <a href="https://arxiv.org/abs/1906.07672">Control of chaotic systems by Deep Reinforcement Learning</a>. Comming soon, the journal version accepted in The Royal Society’s physical sciences research journal. The journal page is <a href="https://royalsocietypublishing.org/doi/10.1098/rspa.2019.0351">this one</a>.</li>
+</ul>
+<a href="https://arxiv.org/abs/1906.07672">
+<img src="/assets/figs/ks_h.png" alt="Kuramoto-Sivashinski" style="width:400px; margin:0px auto;display:block"/>
+</a>
+
+
 <ul class="org-ul">
 <li><b><b><a href="https://allauzen.github.io/research/positions">Research positions are available for 2021</a>: 2 PhD positions</b></b>. Coming soon a postdoc position (closed for PhD)</li>
 </ul>
