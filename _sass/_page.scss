@@ -46,11 +46,12 @@
 	text-transform: uppercase;
 	@include font-size(16);
 	font-weight: 600;
-
-  a {
-    color: $text-color;
-    padding: 0 5px;
-  }
+a {
+    color: DarkRed;
+}
+a:link {
+  color: DarkRed;
+}
 
   li {
     display: inline-block;
