@@ -26,6 +26,10 @@ Since November 2019, I'm professor at <a href="https://www.espci.fr">ESPCI (Éco
 <li>With Alexis Cvetkov and Gaël Varoquaux from the DirtyData team, we have a paper on <a href="https://hal.archives-ouvertes.fr/hal-03647434/file/final.pdf">Analytics on Non-Normalized Data Sources: More Learning, Rather Than More Cleaning</a>.</li>
 </ul>
 
+<a href="https://hal.archives-ouvertes.fr/hal-03647434/file/final.pdf">
+<img src="/assets/figs/entity.png" alt="Entity mapping" style="width:300px; margin:0px auto;display:block"/>
+</a>
+
 
 <ul class="org-ul">
 <li>The E-SSL ANR Project is accepted. E-SSL stands for "Efficient Self-Supervised Learning for Inclusive and Innovative Speech Technologies". Bravo to Titouan Parcollet, the LIA and the LIG !</li>
