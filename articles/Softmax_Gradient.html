@@ -10,12 +10,12 @@ tags:
 published: true
 comments: 
 ---
-<div id="table-of-contents">
+<div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
-<div id="text-table-of-contents">
+<div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org9134a58">1. Conditional maximum likelihood</a></li>
-<li><a href="#org757c62b">2. Gradient of the softmax function w.r.t to parameters</a></li>
+<li><a href="#orgd76444a">1. Conditional maximum likelihood</a></li>
+<li><a href="#org61cadd1">2. Gradient of the softmax function w.r.t to parameters</a></li>
 </ul>
 </div>
 </div>
@@ -54,8 +54,8 @@ log P(C=k|\x) &= \a_k - log(\Z), \textrm{ in its log form}.
 \end{align}
 </div>
 
-<div id="outline-container-org9134a58" class="outline-2">
-<h2 id="org9134a58"><span class="section-number-2">1</span> Conditional maximum likelihood</h2>
+<div id="outline-container-orgd76444a" class="outline-2">
+<h2 id="orgd76444a"><span class="section-number-2">1.</span> Conditional maximum likelihood</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 First, let us define the loss function for one training example:
@@ -78,8 +78,8 @@ This loss function that we want to minimize has been called the log-loss or the 
 </div>
 </div>
 
-<div id="outline-container-org757c62b" class="outline-2">
-<h2 id="org757c62b"><span class="section-number-2">2</span> Gradient of the softmax function w.r.t to parameters</h2>
+<div id="outline-container-org61cadd1" class="outline-2">
+<h2 id="org61cadd1"><span class="section-number-2">2.</span> Gradient of the softmax function w.r.t to parameters</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 The parameter set \(\pa\) gathers all the vectors \(\w_k\). This is a matrix \(\W\) in which \(w_{kj}\) is the cell of row \(k\) and column \(j\), a.k.a the component \(j\) of the vector associated to the class \(k\). Let consider the gradient of the loss function w.r.t to one parameter value \(w_{kj}\):

@@ -8,25 +8,25 @@ tags:
 published: true
 comments: 
 ---
-<div id="table-of-contents" role="doc-toc">
+<div id="table-of-contents">
 <h2>Table of Contents</h2>
-<div id="text-table-of-contents" role="doc-toc">
+<div id="text-table-of-contents">
 <ul>
-<li><a href="#org97aaa4e">Main topics</a></li>
-<li><a href="#org92185de">Projects</a></li>
-<li><a href="#org3e99e5b">PhD students</a>
+<li><a href="#orgde98b5d">Main topics</a></li>
+<li><a href="#org3963099">Projects</a></li>
+<li><a href="#org2022c16">PhD students</a>
 <ul>
-<li><a href="#orgd6d69b4">Current</a></li>
-<li><a href="#org04df89b">Former</a></li>
+<li><a href="#org36038a6">Current</a></li>
+<li><a href="#org44f6317">Former</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org97aaa4e" class="outline-2">
-<h2 id="org97aaa4e">Main topics</h2>
-<div class="outline-text-2" id="text-org97aaa4e">
+<div id="outline-container-orgde98b5d" class="outline-2">
+<h2 id="orgde98b5d">Main topics</h2>
+<div class="outline-text-2" id="text-orgde98b5d">
 <p>
 I moved to ESPCI and LAMSADE in november 2019.
 </p>
@@ -43,9 +43,9 @@ On the Machine learning side, I'm interested in Deep-Learning (as quite everyone
 
 
 
-<div id="outline-container-org92185de" class="outline-2">
-<h2 id="org92185de">Projects</h2>
-<div class="outline-text-2" id="text-org92185de">
+<div id="outline-container-org3963099" class="outline-2">
+<h2 id="org3963099">Projects</h2>
+<div class="outline-text-2" id="text-org3963099">
 <p>
 The ongoing projects: 
 </p>
@@ -58,13 +58,13 @@ The ongoing projects:
 </div>
 
 
-<div id="outline-container-org3e99e5b" class="outline-2">
-<h2 id="org3e99e5b">PhD students</h2>
-<div class="outline-text-2" id="text-org3e99e5b">
+<div id="outline-container-org2022c16" class="outline-2">
+<h2 id="org2022c16">PhD students</h2>
+<div class="outline-text-2" id="text-org2022c16">
 </div>
-<div id="outline-container-orgd6d69b4" class="outline-3">
-<h3 id="orgd6d69b4">Current</h3>
-<div class="outline-text-3" id="text-orgd6d69b4">
+<div id="outline-container-org36038a6" class="outline-3">
+<h3 id="org36038a6">Current</h3>
+<div class="outline-text-3" id="text-org36038a6">
 <ul class="org-ul">
 <li>Iskander Legheraba (with <a href="https://www.lamsade.dauphine.fr/~croyer/">Clément Royer</a>), start September 2020</li>
 <li>Alexis Cvetkov-Iliev (with <a href="http://gael-varoquaux.info/">Gaël Varoquaux</a>)</li>
@@ -74,9 +74,9 @@ The ongoing projects:
 </div>
 </div>
 
-<div id="outline-container-org04df89b" class="outline-3">
-<h3 id="org04df89b">Former</h3>
-<div class="outline-text-3" id="text-org04df89b">
+<div id="outline-container-org44f6317" class="outline-3">
+<h3 id="org44f6317">Former</h3>
+<div class="outline-text-3" id="text-org44f6317">
 <ul class="org-ul">
 <li>Nadi Tomeh</li>
 <li>Le Hai-Son</li>

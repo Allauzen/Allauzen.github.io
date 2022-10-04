@@ -183,7 +183,7 @@ This section is under construction and maybe some projects will be added as soon
 
 
 <ul class="org-ul">
-<li>The mean sea surface temperature reconstruction <a href="https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.html">from weekly sea surface temperatures for the last 26 years</a>. You can also have access to other measures.</li>
+<li>The mean sea surface temperature reconstruction <a href="https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.html">from weekly sea surface temperatures for the last 26 years</a>. You can also have access to other measures. For this project, you can read the paper associated with the previous project or also look at <a href="https://gmd.copernicus.org/articles/13/1609/2020/">this recent paper</a>.</li>
 </ul>
 
 <a href="https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.html">
