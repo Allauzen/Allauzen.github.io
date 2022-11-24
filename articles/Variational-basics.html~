@@ -514,7 +514,7 @@ In a lot of papers and books on variational inference, the elbo is  derived thro
 \end{align}
 
 <p>
-See the swap between the \(\log\) function (which is convex) and the expectation: this is the application fof the Jensen's inequality. 
+See the swap between the \(\log\) function (which is convex) and the expectation: this is the application of the Jensen's inequality. 
 </p>
 </div>
 </div>
