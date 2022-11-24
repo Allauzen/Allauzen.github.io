@@ -39,7 +39,7 @@ comments:
 </li>
 <li><a href="#org4348d71">4. The problem of approximate inference in general</a>
 <ul>
-<li><a href="#org865b008">4.1. The evidence lower bound (ELBO)</a></li>
+<li><a href="#org96ae4e6">4.1. The evidence lower bound (ELBO).</a></li>
 <li><a href="#orgbf3fdd2">4.2. ELBO : some comments</a></li>
 <li><a href="#org260aa1c">4.3. <span class="todo TODO">TODO</span> Example of variational inference</a></li>
 </ul>
@@ -453,8 +453,8 @@ This is not of a great help since the denominator is the evidence and is also un
 </p>
 </div>
 
-<div id="outline-container-org865b008" class="outline-3">
-<h3 id="org865b008"><span class="section-number-3">4.1.</span> The evidence lower bound (ELBO)</h3>
+<div id="outline-container-org96ae4e6" class="outline-3">
+<h3 id="org96ae4e6"><span class="section-number-3">4.1.</span> The evidence lower bound (ELBO).</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 Given a family of distribution, we are looking for one its member \(q(\Z)\) that best approximates the conditional distribution \(p(Z|X)\). The criterion is the Kullback-Leibler divergence :
@@ -503,8 +503,9 @@ For further insight, the elbo can be rewritten as:
 The first term is an expected log likelihood under the \(q\) distribution and the second is the divergence between the variational density and the prior. Therefore maximizing \(\elbo(q)\) resorts to maximizing the expected log likelihood under the \(q\) distribution, while keeping \(q\) as close as possible to the prior \(p(\Z)\). 
 </p>
 
+
 <p>
-In a lot of papers and books on variational inference, the elbo is  derived through Jensen's inequality. See the <a href="https://people.eecs.berkeley.edu/~jordan/papers/variational-intro.pdf">Jordan's paper in 1999</a> for instance. 
+<b><b>Second derivation of the ELBO:</b></b> In a lot of papers and books on variational inference, the elbo is  derived through Jensen's inequality. See the <a href="https://people.eecs.berkeley.edu/~jordan/papers/variational-intro.pdf">Jordan's paper in 1999</a> for instance. 
 </p>
 \begin{align}
 \log p(\X) &= \log \sum_{\Z} p(\X,\Z) = \log \sum_{\Z} \Big[ p(\X,\Z)\frac{q(\Z)}{q(\Z)}\Big] \\
@@ -514,7 +515,16 @@ In a lot of papers and books on variational inference, the elbo is  derived thro
 \end{align}
 
 <p>
-See the swap between the \(\log\) function (which is convex) and the expectation: this is the application of the Jensen's inequality. 
+See the swap between the \(\log\) function and the expectation: this is
+the application of the Jensen's inequality.
+</p>
+
+
+<p>
+<b><b>Remark:</b></b> The Jensen equality states that for a convex function,
+while the \(\log\) function is concave ! But some books and papers,
+"convex" is used for both convex and concave, adding an adjective
+"upward" or "downward" (can be confusing).
 </p>
 </div>
 </div>

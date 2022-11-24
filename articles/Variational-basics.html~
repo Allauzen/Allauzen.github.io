@@ -533,10 +533,10 @@ Variational inference aims at maximizing the ELBO. This means that we indirectly
 The elbo term can be  written as: 
 </p>
 \begin{align} 
-\lb &= E_{q}[log p(\X,\Z|\pa)]- E_{q}[log q(\Z)] .
+\lb &= E_{q}[\log p(\X,\Z|\pa)]- E_{q}[\log q(\Z)] .
 \end{align} 
 <p>
-Maximizing the ELBO, means thus to jointly maximize \(E_{q}[log p(\X,\Z|\pa)]\) and the entropy of the distribution \(q\).  With the first term, \(q\) should put probability mass on \(\Z\) to explain the data. The second term favours otherwise uniform distribution.
+Maximizing the ELBO, means thus to jointly maximize \(E_{q}[\log p(\X,\Z|\pa)]\) and the entropy of the distribution \(q\).  With the first term, \(q\) should put probability mass on \(\Z\) to explain the data. The second term favours otherwise uniform distribution.
 </p>
 
 
@@ -545,9 +545,9 @@ Maximizing the ELBO, means thus to jointly maximize \(E_{q}[log p(\X,\Z|\pa)]\) 
 However we can further decompose the joint distribution: 
 </p>
 \begin{align} 
-\lb &= E_{q}[log p(\X|,\Z,\pa) p(\Z|\pa)]- E_{q}[log q(\Z)] \\
-&= E_{q}[log p(\X|,\Z,\pa)] + E_{q}[p(\Z|\pa)-log q(\Z)] \\
-&= E_{q}[log p(\X|,\Z,\pa)] - \dkl( q(\Z)||p(\Z|\pa) ).
+\lb &= E_{q}[\log p(\X|,\Z,\pa) p(\Z|\pa)]- E_{q}[\log q(\Z)] \\
+&= E_{q}[\log p(\X|,\Z,\pa)] + E_{q}[p(\Z|\pa)-\log q(\Z)] \\
+&= E_{q}[\log p(\X|,\Z,\pa)] - \dkl( q(\Z)||p(\Z|\pa) ).
 \end{align} 
 <p>
 With the first term, \(q\) will tend to place probability mass on configurations of the latent variables that explain the observed data. For example, if you compute the first term with Monte-Carlo methods, the density \(q\) should propose values of \(\Z\), for which \(p(\X|\Z,\pa)\) is high. The second term is the negative KL divergence between the \(q\) and the prior distribution.  It favors distributions close to the prior. Therefore the second term can be interpreted as a régularization term on \(q\).
