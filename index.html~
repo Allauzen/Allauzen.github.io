@@ -14,14 +14,11 @@ Since November 2019, I'm professor at <a href="https://www.espci.fr">ESPCI (Éco
 
 
 
-<div id="outline-container-org7a58cf1" class="outline-2">
-<h2 id="org7a58cf1">News</h2>
-<div class="outline-text-2" id="text-org7a58cf1">
+<div id="outline-container-org6000ff2" class="outline-2">
+<h2 id="org6000ff2">News</h2>
+<div class="outline-text-2" id="text-org6000ff2">
 <ul class="org-ul">
-<li><b><b>URGENT: <a href="https://allauzen.github.io/research/positions">One PhD position is still available for Fall 2022</a></b></b>:
-Narrative planning for Data2Text generative models</li>
-
-<li><a href="https://allauzen.github.io/research/positions">Research positions for 2022 and later</a>: 2 PhD positions</li>
+<li><a href="https://allauzen.github.io/research/positions">Research positions for 2022 and later</a>: 1 PhD position for September 2023</li>
 
 <li>With Alexis Cvetkov and Gaël Varoquaux from the DirtyData team, we
 have a paper on <a href="https://hal.archives-ouvertes.fr/hal-03647434/file/final.pdf">Analytics on Non-Normalized Data Sources: More
@@ -52,16 +49,16 @@ Paris (LAMSADE) and Grenoble (LIG).</li>
 
 
 
-<div id="table-of-contents">
+<div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
-<div id="text-table-of-contents">
+<div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org7a58cf1">News</a></li>
-<li><a href="#orgd58b0f6">Publication</a></li>
-<li><a href="#orgc54fd50">Main research interest</a></li>
-<li><a href="#org47aacac">Older news</a></li>
-<li><a href="#org885410b">Talks on deep-learning for NLP</a></li>
-<li><a href="#orgbc2ddb7">Contact</a></li>
+<li><a href="#org6000ff2">News</a></li>
+<li><a href="#org0befa5c">Publication</a></li>
+<li><a href="#orgf8d1728">Main research interest</a></li>
+<li><a href="#org1e50265">Older news</a></li>
+<li><a href="#org3715ab8">Talks on deep-learning for NLP</a></li>
+<li><a href="#org58727e3">Contact</a></li>
 </ul>
 </div>
 </div>
@@ -69,18 +66,18 @@ Paris (LAMSADE) and Grenoble (LIG).</li>
 </div>
 
 
-<div id="outline-container-orgd58b0f6" class="outline-2">
-<h2 id="orgd58b0f6">Publication</h2>
-<div class="outline-text-2" id="text-orgd58b0f6">
+<div id="outline-container-org0befa5c" class="outline-2">
+<h2 id="org0befa5c">Publication</h2>
+<div class="outline-text-2" id="text-org0befa5c">
 <p>
 See <a href="http://scholar.google.com/citations?hl=en&amp;user=B2-gXkkAAAAJ">my Google Scholar page</a>
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgc54fd50" class="outline-2">
-<h2 id="orgc54fd50">Main research interest</h2>
-<div class="outline-text-2" id="text-orgc54fd50">
+<div id="outline-container-orgf8d1728" class="outline-2">
+<h2 id="orgf8d1728">Main research interest</h2>
+<div class="outline-text-2" id="text-orgf8d1728">
 <p>
 Professor at ESPCI and Researcher in MILES Team of the LAMSADE, my research topics are Natural Language Processing and  Deep learning for physical data
 </p>
@@ -89,9 +86,9 @@ Professor at ESPCI and Researcher in MILES Team of the LAMSADE, my research topi
 
 
 
-<div id="outline-container-org47aacac" class="outline-2">
-<h2 id="org47aacac">Older news</h2>
-<div class="outline-text-2" id="text-org47aacac">
+<div id="outline-container-org1e50265" class="outline-2">
+<h2 id="org1e50265">Older news</h2>
+<div class="outline-text-2" id="text-org1e50265">
 <ul class="org-ul">
 <li>With <a href="https://smontariol.github.io/">Syrielle Montariol</a>, we have a paper at ACL 2021: <i>Measure and Evaluation of Semantic Divergence across Two Languages</i>. The camera ready version will be soon available.</li>
 
@@ -278,9 +275,9 @@ for Machine Translation</i> with <a href="http://scholar.google.com/citations?hl
 </div>
 
 
-<div id="outline-container-org885410b" class="outline-2">
-<h2 id="org885410b">Talks on deep-learning for NLP</h2>
-<div class="outline-text-2" id="text-org885410b">
+<div id="outline-container-org3715ab8" class="outline-2">
+<h2 id="org3715ab8">Talks on deep-learning for NLP</h2>
+<div class="outline-text-2" id="text-org3715ab8">
 <ul class="org-ul">
 <li>Opening talk at <a href="http://seminaire-dga.gforge.inria.fr/2016/DeuxiemeJourneedefistechnologiquesdelacybersecurite_fr.html">the DGA/IRISA seminar on Artificial Intelligence and Security</a>, 25/04/17. The slides are available <a href="https://perso.limsi.fr/Individu/allauzen/doc/aa_rennes17.pdf">here</a>.</li>
 
@@ -294,9 +291,9 @@ for Machine Translation</i> with <a href="http://scholar.google.com/citations?hl
 </div>
 </div>
 
-<div id="outline-container-orgbc2ddb7" class="outline-2">
-<h2 id="orgbc2ddb7">Contact</h2>
-<div class="outline-text-2" id="text-orgbc2ddb7">
+<div id="outline-container-org58727e3" class="outline-2">
+<h2 id="org58727e3">Contact</h2>
+<div class="outline-text-2" id="text-org58727e3">
 <p>
 My postmail address (email prefered): 
 </p>

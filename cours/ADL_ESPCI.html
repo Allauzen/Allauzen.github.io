@@ -1,0 +1,192 @@
+---
+title: "Advanced topics in Deep Learning, ESPCI"
+date: 2023-01-09
+layout: page
+categories: 
+tags: 
+- cours 
+- NNet 
+- espci
+published: true
+comments: 
+---
+<hr>
+
+
+
+<p>
+This 3rd-year course is a follow up of an introduction to deep-learning in 2nd year. It covers some advanced topics in deep-learning with guest lectures and lab sessions in <a href="https://pytorch.org/">pytorch (python module)</a>.  The plenary session include exercises ( or TD).  
+</p>
+
+<div id="outline-container-org6c0ebaf" class="outline-2">
+<h2 id="org6c0ebaf">News</h2>
+<div class="outline-text-2" id="text-org6c0ebaf">
+<ul class="org-ul">
+<li>First course: January the 9th. Early in the morning !</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org5c7d426" class="outline-2">
+<h2 id="org5c7d426">The resources / drive</h2>
+<div class="outline-text-2" id="text-org5c7d426">
+<p>
+See the dedicated moodle site or ask me. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org911da7a" class="outline-2">
+<h2 id="org911da7a">Expected schedules</h2>
+<div class="outline-text-2" id="text-org911da7a">
+<p>
+It starts in january 2023 (the 9th). The course is scheduled on
+monday, starting at 8:30 in the morning.
+</p>
+
+
+<ul class="org-ul">
+<li>9/01, course: introduction, reminder and exercises</li>
+
+<li>16/01, course: 
+<ul class="org-ul">
+<li>Adversarial attack and defense</li>
+<li>Recurrent Net</li>
+<li>Pytorch</li>
+</ul></li>
+
+<li>23/01, <b><b>lab session 1</b></b>
+<ul class="org-ul">
+<li>Refresher on pytorch</li>
+<li>Adversarial attacks and defense</li>
+</ul></li>
+
+<li>30/01, <b><b>lab session 2</b></b>
+<ul class="org-ul">
+<li>Recurrent network</li>
+</ul></li>
+
+<li>06/02, course: Generative models, Transformers</li>
+
+<li>13/02, <b><b>lab session 3</b></b>
+<ul class="org-ul">
+<li>Generative models</li>
+</ul></li>
+
+<li>20/02, course: TBA</li>
+
+<li>13/03, guest course:  TBA</li>
+
+<li>20/03, guest course:  TBA</li>
+
+<li>27/03, guest course:  TBA</li>
+</ul>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-orgb02a212" class="outline-2">
+<h2 id="orgb02a212">python and Notebooks: how to</h2>
+<div class="outline-text-2" id="text-orgb02a212">
+<p>
+We will use python 3,  pytorch and notebooks. If you need to work with own computer, there are 2 ways: 
+</p>
+<ul class="org-ul">
+<li>install anaconda 3 on your computer: <a href="https://www.anaconda.com/products/individual">see this page</a>.</li>
+<li>use <a href="https://colab.research.google.com/">colab</a> with a google account (the easiest, nothing todo)</li>
+</ul>
+
+<p>
+To use files stored on your google drive you can add in your colab notebook: 
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #00ffff;">from</span> google.colab <span style="color: #00ffff;">import</span> drive
+
+drive.mount(<span style="color: #ffa07a;">'/content/gdrive'</span>)
+<span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">in my drive, I have a directory "Colab Notebooks"</span>
+<span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">the dataset is uploaded there</span>
+<span style="color: #eedd82;">root_path</span> = <span style="color: #ffa07a;">'gdrive/My Drive/Colab Notebooks/'</span>
+</pre>
+</div>
+
+<p>
+If you are not familiar with python notebooks, see <a href="https://realpython.com/jupyter-notebook-introduction/">this page</a>. 
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orgbf765c6" class="outline-2">
+<h2 id="orgbf765c6">Projects</h2>
+<div class="outline-text-2" id="text-orgbf765c6">
+<p>
+Here, you can find a list of possible projects. Feel free to interact with me. For some of them, just ask me the data, otherwise a link is provided. Of course, you can also propose a project. 
+This section is under construction and maybe some projects will be added as soon as I will have more feedbacks from my colleagues. 
+</p>
+
+
+<ul class="org-ul">
+<li>Reconstruction of the vorticity field of a flow behind a cylinder from a handful sensors on the cylinder surface</li>
+</ul>
+
+<a href="https://hal.archives-ouvertes.fr/hal-03059296/document">
+<img src="/assets/figs/cylinder.png" alt="Velocity fields" style="width:300px; margin:0px auto;display:block"/>
+</a>
+
+
+<ul class="org-ul">
+<li>The mean sea surface temperature reconstruction <a href="https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.html">from weekly sea surface temperatures for the last 26 years</a>. You can also have access to other measures. For this project, you can read the paper associated with the previous project or also look at <a href="https://gmd.copernicus.org/articles/13/1609/2020/">this recent paper</a>.</li>
+</ul>
+
+<a href="https://www.esrl.noaa.gov/psd/data/gridded/data.noaa.oisst.v2.html">
+<img src="/assets/figs/sea.png" alt="Sea surface temperature" style="width:300px; margin:0px auto;display:block"/>
+</a>
+
+
+<ul class="org-ul">
+<li><a href="https://arxiv.org/pdf/2110.05266.pdf">Chaos as an interpretable benchmark for forecasting and data-driven modelling</a></li>
+
+<li>Predicting the sequence specificities of DNA- and RNA-binding proteins. We can use datasets from <a href="https://github.com/jisraeli/DeepBind">Deep-bind</a>.</li>
+
+<li>Deep sequence models for protein classification: there is a <a href="https://academic.oup.com/bioinformatics/article/36/8/2401/5698270">recent paper on this topic</a> and data can be available. We can try different models (maybe simpler) for the same task.</li>
+
+<li>Chemistry: Predict the standard density of pure fluids, using a newly compiled database. From SMILES description, how can we predict density ? Ask me for the data and tools.</li>
+
+<li>Classify sleep and arousal stages from physiological signals including: electroencephalography (EEG), electrooculography (EOG), electromyography (EMG), electrocardiology (EKG), and oxygen saturation (SaO2). <a href="https://physionet.org/content/challenge-2018/1.0.0/">See the challenge page for more details</a></li>
+
+<li>Classify, from a single short ECG lead recording (between 30 s and 60 s in length), whether the recording shows normal sinus rhythm, atrial fibrillation (AF), an alternative rhythm, or is too noisy to be classified: <a href="https://physionet.org/content/challenge-2017/1.0.0/">The challenge page</a>. Other datasets can be nice: 
+<ul class="org-ul">
+<li><a href="https://mimic.physionet.org/">https://mimic.physionet.org/</a></li>
+<li><a href="https://www.physionet.org/data/">https://www.physionet.org/data/</a></li>
+<li><a href="https://outbox.eait.uq.edu.au/uqdliu3/uqvitalsignsdataset/index.html">https://outbox.eait.uq.edu.au/uqdliu3/uqvitalsignsdataset/index.html</a></li>
+</ul></li>
+</ul>
+
+
+
+<ul class="org-ul">
+<li><a href="https://www.kaggle.com/c/LANL-Earthquake-Prediction/data">Using seismic signals to predict the timing of laboratory earthquakes</a>.</li>
+
+<li>Quantum-mechanical molecular energies prediction from the raw molecular geometry: <a href="http://moleculenet.ai/datasets-1">see the QM7 database</a>.</li>
+
+<li>Classify Molecule polarization: the data comes from time-lapse
+fluorescence microscopy images of the bacterium Pseudomonas fluorescens SBW25. Each image is an individual bacterial cell. These bacteria produce a molecule called pyoverdin which is naturally fluorescent, so the images show the distribution of this molecule inside the cells. We have discovered that there are two distribution patterns of this molecule: homogeneous, or accumulated at the cell pole ("polarized").</li>
+</ul>
+
+
+<ul class="org-ul">
+<li>Jet Flavor Classification in High-Energy Physics: <a href="http://mlphysics.ics.uci.edu/">http://mlphysics.ics.uci.edu/</a></li>
+
+<li>Recognize decays in real high energy physics experiment: <a href="https://www.kaggle.com/c/beta-beta-decay-identification/data">https://www.kaggle.com/c/beta-beta-decay-identification/data</a></li>
+
+<li>A project associated with the course of statistical physics on the XY-model</li>
+
+<li>Simple Recurrent network for language modelling, coupled with adaptive stepsize</li>
+
+<li>1-Lipschitz recurrent networks : language model and DNA sequence analysis</li>
+</ul>
+</div>
+</div>
