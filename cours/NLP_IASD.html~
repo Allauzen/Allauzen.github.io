@@ -1,5 +1,5 @@
 ---
-title: "Natural Language Processing, IASD"
+title: "Deep-Learning and Natural Language Processing, IASD"
 date: 
 layout: page
 categories: 
@@ -15,8 +15,7 @@ comments:
 
 
 <p>
-This course is an introduction to Natural Language Processing (with deep-learning methods). The lab
-sessions use the <a href="https://pytorch.org/">pytorch (python module)</a>.  
+This course is an introduction to Natural Language Processing (with deep-learning methods).
 </p>
 
 <div id="outline-container-orgdb8a4a2" class="outline-2">
@@ -28,8 +27,6 @@ sessions use the <a href="https://pytorch.org/">pytorch (python module)</a>.
 </ul>
 </div>
 </div>
-
-
 
 
 <div id="outline-container-org1c10acd" class="outline-2">
@@ -122,8 +119,10 @@ Some interesting readings:
 Some readings: 
 </p>
 <ul class="org-ul">
+<li><a href="http://proceedings.mlr.press/v28/pascanu13.pdf">Vanishing Gradient</a></li>
 <li><a href="https://arxiv.org/abs/1802.05365">ELMO paper</a></li>
 <li><a href="https://arxiv.org/abs/1801.06146">ULMFit paper</a></li>
+<li><a href="https://arxiv.org/pdf/1409.0473.pdf">The paper that introduced attention</a></li>
 <li>You can also look at the BERT paper and Transformer paper, even I found them not very easy to read.</li>
 </ul>
 </div>
@@ -150,6 +149,10 @@ by Benoit Crabbé
 </div>
 
 
+<div id="outline-container-org927ab61" class="outline-3">
+<h3 id="org927ab61">14-feb, Readings</h3>
+</div>
+
 <div id="outline-container-org4c6295e" class="outline-3">
 <h3 id="org4c6295e">14-march, course on model probing</h3>
 <div class="outline-text-3" id="text-org4c6295e">
@@ -166,7 +169,7 @@ by Guillaume Wisniewski
 <h2 id="org7877bdc">Evaluation</h2>
 <div class="outline-text-2" id="text-org7877bdc">
 <p>
-The evaluation is in two parts. For both, first make your team (typically 3 students). 
+The evaluation is in two parts. For both, first make your team (typically 2/3 students). 
 </p>
 </div>
 
@@ -174,7 +177,7 @@ The evaluation is in two parts. For both, first make your team (typically 3 stud
 <h3 id="org0885d71">Reading</h3>
 <div class="outline-text-3" id="text-org0885d71">
 <p>
-The goal is to read an article an to make a presentation (the 27-feb). A list will be availble soon, but you can also propose one (I must agree beforehand). Select one article per team to read and analyse the paper to make a clear and synthetic presentation. Some questions you may use to guide your reading are (among others):
+The goal is to read an article an to make a presentation (the 14-feb). A list will be availble soon, but you can also propose one (I must agree beforehand). Select one article per team to read and analyse the paper to make a clear and synthetic presentation. Some questions you may use to guide your reading are (among others):
 </p>
 <ul class="org-ul">
 <li>Did you like the paper? Did you find it interesting? Be honest!</li>
@@ -191,7 +194,7 @@ The important dates are :
 </p>
 <ul class="org-ul">
 <li>Make up your team and select the paper <b><b>before the 1-February</b></b></li>
-<li>Report due date: <b><b>XXX</b></b></li>
+<li>Presentation: the 14-February</li>
 </ul>
 </div>
 </div>
