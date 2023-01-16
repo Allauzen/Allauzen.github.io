@@ -9,16 +9,22 @@ published: true
 comments: 
 ---
 <p>
-Since November 2019, I'm professor at <a href="https://www.espci.fr">ESPCI (École Supérieure de Physique et de Chimie Industrielles de la Ville de Paris)</a> and my research affiliation is in the <a href="https://www.lamsade.dauphine.fr/wp/miles/">Miles project</a> of the <a href="https://www.lamsade.dauphine.fr/">LAMSADE (Laboratoire d'Analyse et de Modélisation de Systèmes pour l’Aide à la Décision)</a> in <a href="https://www.dauphine.psl.eu/">Paris-Dauphine University</a> and <a href="https://www.psl.eu/">PSL (Paris Sciences &amp; Lettres)</a>. 
+Since November 2019, I'm professor at <a href="https://www.espci.fr">ESPCI (École Supérieure de Physique et de Chimie Industrielles de la Ville de Paris)</a> and
 </p>
-
+<ul class="org-ul">
+<li>my research affiliation is in the <a href="https://www.lamsade.dauphine.fr/wp/miles/">Miles project</a> of the <a href="https://www.lamsade.dauphine.fr/">LAMSADE (Laboratoire d'Analyse et de Modélisation de Systèmes pour l’Aide à la Décision)</a> in <a href="https://www.dauphine.psl.eu/">Paris-Dauphine University</a> and <a href="https://www.psl.eu/">PSL (Paris Sciences &amp; Lettres)</a>.</li>
+<li>I supervise the <a href="https://psl.eu/en/programmes-gradues/programme-data">DATA program of PSL</a>.</li>
+<li>Head of the <a href="https://www.lamsade.dauphine.fr/en/research/groups/data-science.html">Data Science group of the LAMSADE</a>.</li>
+</ul>
 
 
 <div id="outline-container-org6000ff2" class="outline-2">
 <h2 id="org6000ff2">News</h2>
 <div class="outline-text-2" id="text-org6000ff2">
 <ul class="org-ul">
-<li><a href="https://allauzen.github.io/research/positions">Research positions for 2022 and later</a>: 1 PhD position for September 2023</li>
+<li><a href="https://allauzen.github.io/research/positions">Research positions</a>: 1 PhD position for September 2023</li>
+
+<li>Comming soon : the PhD Defense of Alexis Cvetkov (should be the 25th of January 2023) !</li>
 
 <li>With Alexis Cvetkov and Gaël Varoquaux from the DirtyData team, we
 have a paper on <a href="https://hal.archives-ouvertes.fr/hal-03647434/file/final.pdf">Analytics on Non-Normalized Data Sources: More
@@ -37,10 +43,7 @@ Innovative Speech Technologies"</b></b>. Bravo to Titouan Parcollet, the
 LIA and the LIG ! <b><b>A funded PhD position on "Fair and Inclusive
 Self-Supervised Learning for Speech"</b></b> will be co-supervised between
 Paris (LAMSADE) and Grenoble (LIG).</li>
-</ul>
 
-
-<ul class="org-ul">
 <li>With Laurent Meunier, Blaise Delattre et Alex Araujo, we have a paper at ICML 2022:  <a href="https://arxiv.org/abs/2110.12690">A Dynamical System Perspective for Lipschitz Neural Networks</a>.</li>
 
 <li>with the incredible team of LeBenchmark (from Grenoble and Avignon), we have a paper at <b>NeurIPS 2021</b> in the <i>datasets and benchmarks track</i> ! Visit  <a href="https://github.com/LeBenchmark/github">our repos</a>.</li>
