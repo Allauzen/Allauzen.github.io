@@ -50,32 +50,51 @@ monday, starting at 8:30 in the morning.
 <li>23/01, <b><b>lab session 1</b></b>
 <ul class="org-ul">
 <li>Refresher on pytorch</li>
-<li>Adversarial attacks and defense</li>
+<li>Convolution on CIFAR10</li>
 </ul></li>
 
 <li>30/01, <b><b>lab session 2</b></b>
 <ul class="org-ul">
-<li>TBA</li>
+<li>ResNet</li>
+<li>Adversarial attacks and defense</li>
 </ul></li>
 
-<li>06/02, course: Generative models, Transformers</li>
+<li>06/02, course:
+<ul class="org-ul">
+<li>Sequence and convolution 1D</li>
+<li>Recurrent Network</li>
+<li>Project</li>
+</ul></li>
 
 <li>13/02, <b><b>lab session 3</b></b>
 <ul class="org-ul">
 <li>Recurrent Network</li>
 </ul></li>
 
-<li>20/02, course: TBA</li>
+<li>20/02, course:
+<ul class="org-ul">
+<li>Generative models (TBC)</li>
+</ul></li>
 
-<li>13/03, guest course:  TBA</li>
-
-<li>20/03, guest course:  TBA</li>
-
-<li>27/03, guest course:  TBA</li>
+<li>13/03, guest course:  Applications to Biology</li>
 </ul>
+<p>
+Vaitea Opuu
+</p>
+<ul class="org-ul">
+<li>20/03, guest course:  Deep Learning for Astro-Physics</li>
+</ul>
+<p>
+David Cornu
+</p>
+<ul class="org-ul">
+<li>27/03, guest course:  Machine Learning, Physics and Fluid Mechanics</li>
+</ul>
+<p>
+Lionel Mathelin
+</p>
 </div>
 </div>
-
 
 
 
