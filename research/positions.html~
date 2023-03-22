@@ -13,14 +13,16 @@ comments:
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org8b8a5d1">1. Coming soon: PhD position on "Fair and Inclusive Self-Supervised Learning for Speech"**</a></li>
-<li><a href="#org85c944f">2. Master internship 2022   (CLOSED)</a></li>
-<li><a href="#org28a0d5e">3. PhD on Narrative planning for Data2Text generative models (CLOSED)</a></li>
-<li><a href="#orgaaeba92">4. PhD: Learning Genetic interactions with Deep neural Networks (CLOSED)</a></li>
-<li><a href="#org19d27ea">5. Research engineer (3 month open-position)  (CLOSED)</a></li>
-<li><a href="#orge415c54">6. PhD: Machine Learning and Physics  (CLOSED)</a></li>
-<li><a href="#org475f487">7. PhD: Stability and robustness of vision Transformers   (CLOSED)</a></li>
-<li><a href="#orge2cac39">8. Master internship 2021 (Closed for this spring and summer)</a></li>
+<li><a href="#org0fa1cfd">1. <b><b>2-year post-doc Position in the MILES Team on the frugality in machine learning</b></b></a></li>
+<li><a href="#orgb7e288f">2. <b><b>3 Phd Positions in the MILES Team on the frugality in machine learning</b></b></a></li>
+<li><a href="#org9b35550">3. <b><b>PhD position on "Fair and Inclusive Self-Supervised Learning for Speech"</b></b></a></li>
+<li><a href="#org85c944f">4. Master internship 2022   (CLOSED)</a></li>
+<li><a href="#org28a0d5e">5. PhD on Narrative planning for Data2Text generative models (CLOSED)</a></li>
+<li><a href="#orgaaeba92">6. PhD: Learning Genetic interactions with Deep neural Networks (CLOSED)</a></li>
+<li><a href="#org19d27ea">7. Research engineer (3 month open-position)  (CLOSED)</a></li>
+<li><a href="#orge415c54">8. PhD: Machine Learning and Physics  (CLOSED)</a></li>
+<li><a href="#org475f487">9. PhD: Stability and robustness of vision Transformers   (CLOSED)</a></li>
+<li><a href="#orge2cac39">10. Master internship 2021 (Closed for this spring and summer)</a></li>
 </ul>
 </div>
 </div>
@@ -31,17 +33,89 @@ free to also get in touch if you want to work with on nice other
 topics related to my research interests. 
 </p>
 
-
-
-
-<div id="outline-container-org8b8a5d1" class="outline-2">
-<h2 id="org8b8a5d1"><span class="section-number-2">1.</span> Coming soon: PhD position on "Fair and Inclusive Self-Supervised Learning for Speech"**</h2>
+<div id="outline-container-org0fa1cfd" class="outline-2">
+<h2 id="org0fa1cfd"><span class="section-number-2">1.</span> <b><b>2-year post-doc Position in the MILES Team on the frugality in machine learning</b></b></h2>
 <div class="outline-text-2" id="text-1">
+<p>
+The position can start in fall 2023. It is part of a French nationwide
+project on Frugality in AI. The projects involves many partners (ENS
+Lyon with the OCKHAM team, MLIA at Sorbonne Université, CEA List,
+IRISA at Rennes, École des Ponts ParisTech with the LIGM, the GENESIS
+INRIA team).
+</p>
+
+<p>
+The candidate is expected to lead research on "fast and frugal
+adaptation of foundation models". The position includes the
+participation to project (scientific meetings and collaboration
+nationwide). It can also involve the co-supervision of PhD students.
+</p>
+
+<p>
+Located in Paris (PariSanté Campus and Dauphine University-PSL), the
+MILES team focuses its research on the trustworthy Machine
+Learning. The team covers a wide spectrum of skills and possible
+collaboration. See <a href="https://www.lamsade.dauphine.fr/wp/miles/members/">the website</a> for more information.
+</p>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgb7e288f" class="outline-2">
+<h2 id="orgb7e288f"><span class="section-number-2">2.</span> <b><b>3 Phd Positions in the MILES Team on the frugality in machine learning</b></b></h2>
+<div class="outline-text-2" id="text-2">
+<p>
+These positions can start in fall 2023. They are part of a French nationwide  project on Frugality in AI. The projects involves many partners (ENS Lyon with the OCKHAM team, MLIA at Sorbonne Université, CEA List, IRISA at Rennes, École des Ponts ParisTech with the LIGM, the GENESIS INRIA team).
+The topics includes (but are not restricted to):
+</p>
+
+<ul class="org-ul">
+<li>Foundations of physics-driven learning: to incorporate physical
+knowledge in learning via conservation laws, PDEs, graphs and
+optimization. For the simulation or prediction of complex systems
+from Physics, how to leverage prior knowledge to develop frugal and
+lighter models.</li>
+
+<li>Fast and frugal adaptation of foundation models: explore the scarce
+data regime with few (zero) shot learning and adapter-based
+approaches, focusing for instance on speech processing as a concrete
+challenging testcase.</li>
+
+<li>Diffusion models as adapters for generation tasks in text and speech
+processing, to finely control the generation process and cope with
+diversity.</li>
+</ul>
+
+
+<p>
+The expected profile includes: 
+</p>
+<ul class="org-ul">
+<li>An outstanding master's degree (or an equivalent university degree) in computer science or other related disciplines (as e.g. mathematics, information sciences, computer engineering, etc.)</li>
+<li>Strong skills in machine learning (theoritical and/or practical)</li>
+<li>Depending on the topic: proficiency in NLP and speech processing</li>
+<li>Fluency in spoken and written English is required</li>
+<li>Background in deep-learning with pytorch</li>
+</ul>
+
+<p>
+If you are interested in contact me with a CV by email.
+</p>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-org9b35550" class="outline-2">
+<h2 id="org9b35550"><span class="section-number-2">3.</span> <b><b>PhD position on "Fair and Inclusive Self-Supervised Learning for Speech"</b></b></h2>
+<div class="outline-text-2" id="text-3">
 <p>
 This position is funded by the ANR project E-SSL: Efficient
   Self-Supervised Learning for Inclusive and Innovative Speech
-  Technologies. It will be co-supervised between Paris (LAMSADE) and
-  Grenoble (LIG). The position can start this year or the next. 
+  Technologies. It will be co-supervised between Paris (LAMSADE, MILES team) and
+  Grenoble (LIG). The position will start before november 2023
 </p>
 </div>
 </div>
@@ -49,8 +123,8 @@ This position is funded by the ANR project E-SSL: Efficient
 
 
 <div id="outline-container-org85c944f" class="outline-2">
-<h2 id="org85c944f"><span class="section-number-2">2.</span> Master internship 2022   (CLOSED)</h2>
-<div class="outline-text-2" id="text-2">
+<h2 id="org85c944f"><span class="section-number-2">4.</span> Master internship 2022   (CLOSED)</h2>
+<div class="outline-text-2" id="text-4">
 <p>
 The following topics are proposed for funded internship positions. 
 Most of them can also be extended by a funded PhD position. 
@@ -71,8 +145,8 @@ If you are interested in, feel free to contact me.
 
 
 <div id="outline-container-org28a0d5e" class="outline-2">
-<h2 id="org28a0d5e"><span class="section-number-2">3.</span> PhD on Narrative planning for Data2Text generative models (CLOSED)</h2>
-<div class="outline-text-2" id="text-3">
+<h2 id="org28a0d5e"><span class="section-number-2">5.</span> PhD on Narrative planning for Data2Text generative models (CLOSED)</h2>
+<div class="outline-text-2" id="text-5">
 <p>
 This is a 3-year position funded by the ANR project ACDC and it will
 start next fall (2022). The whole project is a collaboration between
@@ -137,8 +211,8 @@ To apply, please email alexandre.allauzen [at] dauphine.psl.eu with:
 
 
 <div id="outline-container-orgaaeba92" class="outline-2">
-<h2 id="orgaaeba92"><span class="section-number-2">4.</span> PhD: Learning Genetic interactions with Deep neural Networks (CLOSED)</h2>
-<div class="outline-text-2" id="text-4">
+<h2 id="orgaaeba92"><span class="section-number-2">6.</span> PhD: Learning Genetic interactions with Deep neural Networks (CLOSED)</h2>
+<div class="outline-text-2" id="text-6">
 <p>
 This is a 3-year position funded by the CNRS it will start next fall (2022). This is a co-surpevised PhD between <a href="https://www.lbe.espci.fr/home/">Philippe Nghe</a> and me. We both work at ESPCI. 
 </p>
@@ -177,8 +251,8 @@ Contacts: alexandre.allauzen [at] dauphine.psl.eu
 
 
 <div id="outline-container-org19d27ea" class="outline-2">
-<h2 id="org19d27ea"><span class="section-number-2">5.</span> Research engineer (3 month open-position)  (CLOSED)</h2>
-<div class="outline-text-2" id="text-5">
+<h2 id="org19d27ea"><span class="section-number-2">7.</span> Research engineer (3 month open-position)  (CLOSED)</h2>
+<div class="outline-text-2" id="text-7">
 <p>
 We invite applications for a Research engineer position (3
 months). This position is funded by the ANR project SPEED (started in fall 2021). The whole project is a
@@ -190,8 +264,8 @@ interested in.
 </div>
 
 <div id="outline-container-orgaa9679a" class="outline-3">
-<h3 id="orgaa9679a"><span class="section-number-3">5.1.</span> Aims and scope of the project</h3>
-<div class="outline-text-3" id="text-5-1">
+<h3 id="orgaa9679a"><span class="section-number-3">7.1.</span> Aims and scope of the project</h3>
+<div class="outline-text-3" id="text-7-1">
 <p>
 The interaction between machine learning and Physics has recently
 emerged as a new and important research area. Some illustrations are
@@ -209,12 +283,12 @@ candidate.
 </div>
 
 <div id="outline-container-org3e89c89" class="outline-3">
-<h3 id="org3e89c89"><span class="section-number-3">5.2.</span> Stability and robustness of deep learning architectures in light of dynamical systems</h3>
-<div class="outline-text-3" id="text-5-2">
+<h3 id="org3e89c89"><span class="section-number-3">7.2.</span> Stability and robustness of deep learning architectures in light of dynamical systems</h3>
+<div class="outline-text-3" id="text-7-2">
 </div>
 <div id="outline-container-orgf8c2a6c" class="outline-4">
-<h4 id="orgf8c2a6c"><span class="section-number-4">5.2.1.</span> Context</h4>
-<div class="outline-text-4" id="text-5-2-1">
+<h4 id="orgf8c2a6c"><span class="section-number-4">7.2.1.</span> Context</h4>
+<div class="outline-text-4" id="text-7-2-1">
 <p>
 Within the LAMSADE, we have started to work on the study of stability
 and robustness of neural network architectures.  Deep learning
@@ -242,8 +316,8 @@ ResNet.
 
 
 <div id="outline-container-orge3ed09f" class="outline-4">
-<h4 id="orge3ed09f"><span class="section-number-4">5.2.2.</span> Goals</h4>
-<div class="outline-text-4" id="text-5-2-2">
+<h4 id="orge3ed09f"><span class="section-number-4">7.2.2.</span> Goals</h4>
+<div class="outline-text-4" id="text-7-2-2">
 <p>
 The goal of this 3 months is to develop a new kind of architecture,
 based on either the recurrent models or the transformers.  The goal is
@@ -259,8 +333,8 @@ NLP or image classification) and datasets from Physics.
 
 
 <div id="outline-container-orgcd82134" class="outline-3">
-<h3 id="orgcd82134"><span class="section-number-3">5.3.</span> Application</h3>
-<div class="outline-text-3" id="text-5-3">
+<h3 id="orgcd82134"><span class="section-number-3">7.3.</span> Application</h3>
+<div class="outline-text-3" id="text-7-3">
 <p>
 Requirements:
 </p>
@@ -287,8 +361,8 @@ To apply, please email alexandre.allauzen [at] dauphine.psl.eu with:
 
 
 <div id="outline-container-orge415c54" class="outline-2">
-<h2 id="orge415c54"><span class="section-number-2">6.</span> PhD: Machine Learning and Physics  (CLOSED)</h2>
-<div class="outline-text-2" id="text-6">
+<h2 id="orge415c54"><span class="section-number-2">8.</span> PhD: Machine Learning and Physics  (CLOSED)</h2>
+<div class="outline-text-2" id="text-8">
 <p>
 We invite applications for a fully-funded PhD position on the topic of
 "Deep Learning for physical systems modelling". This is a 3-year
@@ -302,8 +376,8 @@ fall 2021. Contact me if you are interested in.
 </div>
 
 <div id="outline-container-org2a47cff" class="outline-3">
-<h3 id="org2a47cff"><span class="section-number-3">6.1.</span> Aims and scope</h3>
-<div class="outline-text-3" id="text-6-1">
+<h3 id="org2a47cff"><span class="section-number-3">8.1.</span> Aims and scope</h3>
+<div class="outline-text-3" id="text-8-1">
 <p>
 The interaction between machine learning and Physics has recently
 emerged as a new and important research area. Some illustrations are
@@ -321,8 +395,8 @@ candidate.
 
 
 <div id="outline-container-org59a6794" class="outline-4">
-<h4 id="org59a6794"><span class="section-number-4">6.1.1.</span> Noisy, scarce and partial observation</h4>
-<div class="outline-text-4" id="text-6-1-1">
+<h4 id="org59a6794"><span class="section-number-4">8.1.1.</span> Noisy, scarce and partial observation</h4>
+<div class="outline-text-4" id="text-8-1-1">
 <p>
 In modern machine learning, the cornerstone is to let the model learn
 its own representation of the process from data observation. While,
@@ -350,8 +424,8 @@ symmetries and invariances to address these challenges.
 
 
 <div id="outline-container-org56124c0" class="outline-4">
-<h4 id="org56124c0"><span class="section-number-4">6.1.2.</span> Training algorithm to enforce physical properties</h4>
-<div class="outline-text-4" id="text-6-1-2">
+<h4 id="org56124c0"><span class="section-number-4">8.1.2.</span> Training algorithm to enforce physical properties</h4>
+<div class="outline-text-4" id="text-8-1-2">
 <p>
 In some cases, a mathematical model for the system at hand is
 available, for instance: dynamical systems such as the Lorentz (63
@@ -388,8 +462,8 @@ networks respectively.</li>
 
 
 <div id="outline-container-org6de749c" class="outline-4">
-<h4 id="org6de749c"><span class="section-number-4">6.1.3.</span> Neural Ordinary Differential Equations</h4>
-<div class="outline-text-4" id="text-6-1-3">
+<h4 id="org6de749c"><span class="section-number-4">8.1.3.</span> Neural Ordinary Differential Equations</h4>
+<div class="outline-text-4" id="text-8-1-3">
 <p>
 The relationship between neural networks and differential equations
 has been studied in several recent works <a href="https://arxiv.org/abs/1710.10121">Lu et al. (2018)</a>; <a href="https://arxiv.org/abs/1806.07366">Chen et
@@ -415,8 +489,8 @@ case.
 
 
 <div id="outline-container-org9ffdf5c" class="outline-3">
-<h3 id="org9ffdf5c"><span class="section-number-3">6.2.</span> Application and contacts</h3>
-<div class="outline-text-3" id="text-6-2">
+<h3 id="org9ffdf5c"><span class="section-number-3">8.2.</span> Application and contacts</h3>
+<div class="outline-text-3" id="text-8-2">
 <p>
 Applications can be sent electronically and should include a cover
 letter, full CV, and eventually references. A first round of
@@ -434,8 +508,8 @@ Sergio Chibbaro:    sergio.chibbaro@sorbonne-universite.fr
 
 
 <div id="outline-container-orgb6bacc3" class="outline-3">
-<h3 id="orgb6bacc3"><span class="section-number-3">6.3.</span> Some References</h3>
-<div class="outline-text-3" id="text-6-3">
+<h3 id="orgb6bacc3"><span class="section-number-3">8.3.</span> Some References</h3>
+<div class="outline-text-3" id="text-8-3">
 <p>
 "When deep learning meets ergodic theory", 
 M.A Bucci, O.S emeraro, S. Chibbaro, A. Allauzen, L. Mathelin, in 
@@ -459,8 +533,8 @@ NeurIPS 2019 proceedings.
 
 
 <div id="outline-container-org475f487" class="outline-2">
-<h2 id="org475f487"><span class="section-number-2">7.</span> PhD: Stability and robustness of vision Transformers   (CLOSED)</h2>
-<div class="outline-text-2" id="text-7">
+<h2 id="org475f487"><span class="section-number-2">9.</span> PhD: Stability and robustness of vision Transformers   (CLOSED)</h2>
+<div class="outline-text-2" id="text-9">
 <p>
 This is a 3-year PhD position, funded by Foxstream, a software company
 (since 2004), specialized in real-time automated processing of video
@@ -544,8 +618,8 @@ Pre-training for French, LREC
 
 
 <div id="outline-container-orge2cac39" class="outline-2">
-<h2 id="orge2cac39"><span class="section-number-2">8.</span> Master internship 2021 (Closed for this spring and summer)</h2>
-<div class="outline-text-2" id="text-8">
+<h2 id="orge2cac39"><span class="section-number-2">10.</span> Master internship 2021 (Closed for this spring and summer)</h2>
+<div class="outline-text-2" id="text-10">
 <p>
 The following topics are proposed for funded internship positions. 
 Most of them can also be extended by a funded PhD position. 
