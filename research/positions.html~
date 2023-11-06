@@ -106,11 +106,123 @@ If you are interested in contact me with a CV by email.
 <h2 id="org293749d">PhD position on "Fair and Inclusive Self-Supervised Learning for Speech"</h2>
 <div class="outline-text-2" id="text-org293749d">
 <p>
-This position is funded by the ANR project E-SSL: Efficient
-  Self-Supervised Learning for Inclusive and Innovative Speech
+This position is funded by the ANR project E-SSL: Efficient Self-Supervised Learning for Inclusive and Innovative Speech
   Technologies. It will be co-supervised between Paris (LAMSADE, MILES team) and
   Grenoble (LIG). The position will start before november 2023
 </p>
+
+<ul class="org-ul">
+<li>Starting date: before November 2023</li>
+<li>Application deadline: June  9th, 2023</li>
+<li>Interviews (tentative): June 14th, 2023</li>
+<li>Salary: ~2000€ gross/month (social security included)</li>
+<li>Mission: research oriented (teaching possible but not mandatory)</li>
+</ul>
+
+
+<p>
+Keywords: speech processing, fairness, bias, self-supervised learning, evaluation metrics 
+</p>
+</div>
+
+<div id="outline-container-orgce9b044" class="outline-3">
+<h3 id="orgce9b044">CONTEXT</h3>
+<div class="outline-text-3" id="text-orgce9b044">
+<p>
+The ANR project E-SSL (Efficient Self-Supervised Learning for
+Inclusive and Innovative Speech Technologies) has started this
+year. Self-supervised learning (SSL) has recently emerged as one of
+the most promising artificial intelligence (AI) methods as it becomes
+now feasible to take advantage of the colossal amounts of existing
+unlabeled data to significantly improve the performances of various
+speech processing tasks.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org6966ca2" class="outline-3">
+<h3 id="org6966ca2">PROJECT OBJECTIVES</h3>
+<div class="outline-text-3" id="text-org6966ca2">
+<p>
+Speech technologies are widely used in our daily life and are
+expanding the scope of our action, with decision-making systems,
+including in critical areas such as health or legal aspects. In these
+societal applications, the question of the use of these tools raises
+the issue of the possible discrimination of people according to
+criteria for which society requires equal treatment, such as gender,
+origin, religion or disability&#x2026;  Recently, the machine learning
+community has been confronted with the need to work on the possible
+biases of algorithms, and many works have shown that the search for
+the best performance is not the only goal to pursue [1]. For instance,
+recent evaluations of ASR systems have shown that performances can
+vary according to the gender but these variations depend both on data
+used for learning and on models [2]. Therefore such systems are
+increasingly scrutinized for being biased while trustworthy speech
+technologies definitely represents a crucial expectation. Both the
+question of bias and the concept of fairness have now become important
+aspects of AI, and we now have to find the right threshold between
+accuracy and the measure of fairness. Unfortunately, these notions of
+fairness and bias are challenging to define and their meanings can
+greatly differ [3].
+</p>
+
+<p>
+The goals of this PhD position are threefold:
+</p>
+
+<ul class="org-ul">
+<li>First make a survey on the many definitions of robustness, fairness and bias with the aim of coming up with definitions and metrics fit for speech SSL models</li>
+<li>Then gather speech datasets with high amount of well-described metadata</li>
+<li>Setup an evaluation protocol for SSL models and analyzing the results.</li>
+</ul>
+</div>
+</div>
+
+
+
+<div id="outline-container-org86e2005" class="outline-3">
+<h3 id="org86e2005">SKILLS</h3>
+<div class="outline-text-3" id="text-org86e2005">
+<ul class="org-ul">
+<li>Master 2 in Natural Language Processing, Speech Processing, computer science or data science</li>
+<li>Good mastering of Python programming and deep learning framework.</li>
+<li>Previous experience in bias, fairness and privacy in machine learning would be a plus</li>
+<li>Very good communication skills in English</li>
+<li>Good command of French would be a plus but is not mandatory</li>
+</ul>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgae57c3e" class="outline-3">
+<h3 id="orgae57c3e">SCIENTIFIC ENVIRONMENT</h3>
+<div class="outline-text-3" id="text-orgae57c3e">
+<p>
+The PhD position will be co-supervised by Alexandre Allauzen (Dauphine Université PSL, Paris) and Solange Rossato and François Portet
+(Université Grenoble Alpes). Joint meetings are planned on a regular basis and the student is expected to spend time in both places.
+Moreover, two other PhD positions are open in this project.  The students, along with the partners will closely collaborate. For instance,
+specific SSL models along with evaluation criteria will be developed by the other PhD students. Moreover, the PhD student will collaborate
+with several team members involved in the project in particular the two other PhD candidates who will be recruited  and the partners from
+LIA, LIG and Dauphine Université PSL, Paris. The means to carry out the PhD will be provided both in terms of missions in France and
+abroad and in terms of equipment. The candidate will have access to the cluster of GPUs of both the LIG and Dauphine Université PSL.
+Furthermore, access to the National supercomputer Jean-Zay will enable to run large scale experiments.
+</p>
+</div>
+</div>
+
+
+
+<div id="outline-container-org52e3e1d" class="outline-3">
+<h3 id="org52e3e1d">INSTRUCTIONS FOR APPLYING</h3>
+<div class="outline-text-3" id="text-org52e3e1d">
+<p>
+Applications must contain: CV + letter/message of motivation + master notes + be ready to provide letter(s) of recommendation; and be
+addressed to Alexandre Allauzen (alexandre.allauzen@espci.psl.eu), Solange Rossato (Solange.Rossato@imag.fr) and François Portet
+(francois.Portet@imag.fr). We celebrate diversity and are committed to creating an inclusive environment for all employees.
+</p>
+</div>
 </div>
 </div>
 
@@ -280,9 +392,6 @@ candidate.
 </div>
 </div>
 
-<div id="outline-container-org3e89c89" class="outline-4">
-<h4 id="org3e89c89">Stability and robustness of deep learning architectures in light of dynamical systems</h4>
-</div>
 <div id="outline-container-orgf8c2a6c" class="outline-4">
 <h4 id="orgf8c2a6c">Context</h4>
 <div class="outline-text-4" id="text-orgf8c2a6c">
