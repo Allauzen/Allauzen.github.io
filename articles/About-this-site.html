@@ -1,17 +1,234 @@
----
-title: "About this site / and more"
-date: 2022-10-04 mar. 11:29
-layout: post
-categories: 
-- blog
-tags: 
-- article 
-- jekyll 
-- emacs 
-- orgmode
-published: true
-comments: 
----
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2024-06-24 lun. 17:13 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>About this site / and more</title>
+<meta name="author" content="A. Allauzen" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'left',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'left',
+      displayIndent: '5em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'left',
+      displayIndent: '5em'
+    },
+    output: {
+      font: 'mathjax-euler',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">About this site / and more</h1>
 <div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
@@ -68,24 +285,24 @@ From ox-jekyll, I redefined the function
 </p>
 
 <div class="org-src-container">
-<pre class="src src-lisp">(<span style="color: #00ffff;">defun</span> <span style="color: #87cefa;">post</span>
-  (<span style="color: #98fb98;">&amp;optional</span> title date setupfile categories tags published layout)
-  <span style="color: #ffa07a;">"Insert a settings template for Jekyll exporter."</span>
+<pre class="src src-lisp">(<span style="color: #FFA070;">defun</span> <span style="color: #8AAFFA;">post</span>
+  (<span style="color: #EF5C5F;">&amp;optional</span> title date setupfile categories tags published layout)
+  <span style="color: #868B44;">"Insert a settings template for Jekyll exporter."</span>
   (interactive)
-  (<span style="color: #00ffff;">let</span> ((layout     (or layout org-jekyll-layout))
+  (<span style="color: #FFA070;">let</span> ((layout     (or layout org-jekyll-layout))
         (published  (or published org-jekyll-published))
         (tags       (or tags org-jekyll-tags))
         (categories (or categories org-jekyll-categories)))
     (save-excursion
       (insert (format (concat
-                       <span style="color: #ffa07a;">"#+TITLE: "</span>             title
-                       <span style="color: #ffa07a;">"\n#+DATE: "</span>              date
-                       <span style="color: #ffa07a;">"\n#+SETUPFILE: "</span>         setupfile
-                       <span style="color: #ffa07a;">"\n#+JEKYLL_LAYOUT: "</span>     layout
-                       <span style="color: #ffa07a;">"\n#+JEKYLL_CATEGORIES: "</span> categories
-                       <span style="color: #ffa07a;">"\n#+JEKYLL_TAGS: "</span>       tags
-                       <span style="color: #ffa07a;">"\n#+JEKYLL_PUBLISHED: "</span>  published
-                       <span style="color: #ffa07a;">"\n\n* \n\n"</span>))))))
+                       <span style="color: #868B44;">"#+TITLE: "</span>             title
+                       <span style="color: #868B44;">"\n#+DATE: "</span>              date
+                       <span style="color: #868B44;">"\n#+SETUPFILE: "</span>         setupfile
+                       <span style="color: #868B44;">"\n#+JEKYLL_LAYOUT: "</span>     layout
+                       <span style="color: #868B44;">"\n#+JEKYLL_CATEGORIES: "</span> categories
+                       <span style="color: #868B44;">"\n#+JEKYLL_TAGS: "</span>       tags
+                       <span style="color: #868B44;">"\n#+JEKYLL_PUBLISHED: "</span>  published
+                       <span style="color: #868B44;">"\n\n* \n\n"</span>))))))
 </pre>
 </div>
 </div>
@@ -268,28 +485,28 @@ In the .emacs file I added the following code:
 <pre class="src src-lisp">(setq org-publish-project-alist
       '(
 
-  (<span style="color: #ffa07a;">"org-alex"</span>
-          <span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">Path to your org files.</span>
-          <span style="color: #b0c4de;">:base-directory</span> <span style="color: #ffa07a;">"~/Sites/org/homepages"</span>
-          <span style="color: #b0c4de;">:base-extension</span> <span style="color: #ffa07a;">"org"</span>
+  (<span style="color: #868B44;">"org-alex"</span>
+          <span style="color: #637579;">;; </span><span style="color: #637579;">Path to your org files.</span>
+          <span style="color: #8fbfdc;">:base-directory</span> <span style="color: #868B44;">"~/Sites/org/homepages"</span>
+          <span style="color: #8fbfdc;">:base-extension</span> <span style="color: #868B44;">"org"</span>
 
-          <span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">Path to your Jekyll project.</span>
-          <span style="color: #b0c4de;">:publishing-directory</span> <span style="color: #ffa07a;">"~/Sites/jekyll/homepages"</span>
-          <span style="color: #b0c4de;">:recursive</span> t
-          <span style="color: #b0c4de;">:publishing-function</span> org-jekyll-publish-to-html
-          <span style="color: #b0c4de;">:headline-levels</span> 4 
-          <span style="color: #b0c4de;">:html-extension</span> <span style="color: #ffa07a;">"html"</span>
+          <span style="color: #637579;">;; </span><span style="color: #637579;">Path to your Jekyll project.</span>
+          <span style="color: #8fbfdc;">:publishing-directory</span> <span style="color: #868B44;">"~/Sites/jekyll/homepages"</span>
+          <span style="color: #8fbfdc;">:recursive</span> t
+          <span style="color: #8fbfdc;">:publishing-function</span> org-jekyll-publish-to-html
+          <span style="color: #8fbfdc;">:headline-levels</span> 4 
+          <span style="color: #8fbfdc;">:html-extension</span> <span style="color: #868B44;">"html"</span>
     )
 
 
-    (<span style="color: #ffa07a;">"org-static-alex"</span>
-          <span style="color: #b0c4de;">:base-directory</span> <span style="color: #ffa07a;">"~/Sites/org/homepages"</span>
-          <span style="color: #b0c4de;">:base-extension</span> <span style="color: #ffa07a;">"css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf\\|php"</span>
-          <span style="color: #b0c4de;">:publishing-directory</span> <span style="color: #ffa07a;">"~/Sites/jekyll"</span>
-          <span style="color: #b0c4de;">:recursive</span> t
-          <span style="color: #b0c4de;">:publishing-function</span> org-publish-attachment)
+    (<span style="color: #868B44;">"org-static-alex"</span>
+          <span style="color: #8fbfdc;">:base-directory</span> <span style="color: #868B44;">"~/Sites/org/homepages"</span>
+          <span style="color: #8fbfdc;">:base-extension</span> <span style="color: #868B44;">"css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf\\|php"</span>
+          <span style="color: #8fbfdc;">:publishing-directory</span> <span style="color: #868B44;">"~/Sites/jekyll"</span>
+          <span style="color: #8fbfdc;">:recursive</span> t
+          <span style="color: #8fbfdc;">:publishing-function</span> org-publish-attachment)
 
-    (<span style="color: #ffa07a;">"aa"</span> <span style="color: #b0c4de;">:components</span> (<span style="color: #ffa07a;">"org-alex"</span> <span style="color: #ffa07a;">"org-static-alex"</span>))
+    (<span style="color: #868B44;">"aa"</span> <span style="color: #8fbfdc;">:components</span> (<span style="color: #868B44;">"org-alex"</span> <span style="color: #868B44;">"org-static-alex"</span>))
 
 ))
 </pre>
@@ -310,12 +527,12 @@ The code is derived from <a href="http://orgmode.org/worg/org-tutorials/org-jeky
 Then just another shortcut : 
 </p>
 <div class="org-src-container">
-<pre class="src src-lisp">(<span style="color: #00ffff;">defun</span> <span style="color: #87cefa;">sdf</span>
+<pre class="src src-lisp">(<span style="color: #FFA070;">defun</span> <span style="color: #8AAFFA;">sdf</span>
   ()
-<span style="color: #ffa07a;">"Insert a settings template for Jekyll exporter."</span>
+<span style="color: #868B44;">"Insert a settings template for Jekyll exporter."</span>
 (interactive)
-(org-publish-project <span style="color: #ffa07a;">"aa"</span> )
-(compile <span style="color: #ffa07a;">"cd ~/Sites/jekyll/homepages; bundle exec jekyll build; "</span>)
+(org-publish-project <span style="color: #868B44;">"aa"</span> )
+(compile <span style="color: #868B44;">"cd ~/Sites/jekyll/homepages; bundle exec jekyll build; "</span>)
 )  
 </pre>
 </div>
@@ -403,18 +620,18 @@ an org file for a further export.
 First in you dot emacs file : 
 </p>
 <div class="org-src-container">
-<pre class="src src-elisp">(<span style="color: #00ffff;">setq</span> org-latex-pdf-process (list <span style="color: #ffa07a;">"latexmk -pdf %f"</span>))
+<pre class="src src-elisp">(<span style="color: #FFA070;">setq</span> org-latex-pdf-process (list <span style="color: #868B44;">"latexmk -pdf %f"</span>))
 </pre>
 </div>
 <p>
 You can us another tool than latexmf but it is more convenient since it deals with the compilation of bibtex files. But if you really want to go back to bibtex: 
 </p>
 <div class="org-src-container">
-<pre class="src src-elisp">(<span style="color: #00ffff;">setq</span> org-latex-pdf-process
-      '(<span style="color: #ffa07a;">"pdflatex -interaction nonstopmode -output-directory %o %f"</span>
-        <span style="color: #ffa07a;">"bibtex %b"</span>
-        <span style="color: #ffa07a;">"pdflatex -interaction nonstopmode -output-directory %o %f"</span>
-        <span style="color: #ffa07a;">"pdflatex -interaction nonstopmode -output-directory %o %f"</span>))
+<pre class="src src-elisp">(<span style="color: #FFA070;">setq</span> org-latex-pdf-process
+      '(<span style="color: #868B44;">"pdflatex -interaction nonstopmode -output-directory %o %f"</span>
+        <span style="color: #868B44;">"bibtex %b"</span>
+        <span style="color: #868B44;">"pdflatex -interaction nonstopmode -output-directory %o %f"</span>
+        <span style="color: #868B44;">"pdflatex -interaction nonstopmode -output-directory %o %f"</span>))
 </pre>
 </div>
 </div>
@@ -489,14 +706,14 @@ Add in the <i>.emacs</i> file:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-lisp"><span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">to find the right latex install </span>
-(<span style="color: #00ffff;">defun</span> <span style="color: #87cefa;">set-exec-path-from-shell-PATH</span> ()
-  <span style="color: #ffa07a;">"Sets the exec-path to the same value used by the user shell"</span>
-  (<span style="color: #00ffff;">let</span> ((path-from-shell
+<pre class="src src-lisp"><span style="color: #637579;">;; </span><span style="color: #637579;">to find the right latex install </span>
+(<span style="color: #FFA070;">defun</span> <span style="color: #8AAFFA;">set-exec-path-from-shell-PATH</span> ()
+  <span style="color: #868B44;">"Sets the exec-path to the same value used by the user shell"</span>
+  (<span style="color: #FFA070;">let</span> ((path-from-shell
          (replace-regexp-in-string
-          <span style="color: #ffa07a;">"[[:space:]\n]*$"</span> <span style="color: #ffa07a;">""</span>
-          (shell-command-to-string <span style="color: #ffa07a;">"$SHELL -l -c 'echo $PATH'"</span>))))
-    (setenv <span style="color: #ffa07a;">"PATH"</span> path-from-shell)
+          <span style="color: #868B44;">"[[:space:]\n]*$"</span> <span style="color: #868B44;">""</span>
+          (shell-command-to-string <span style="color: #868B44;">"$SHELL -l -c 'echo $PATH'"</span>))))
+    (setenv <span style="color: #868B44;">"PATH"</span> path-from-shell)
     (setq exec-path (split-string path-from-shell path-separator))))
 
 (set-exec-path-from-shell-PATH)
@@ -526,3 +743,12 @@ Add in the <i>.emacs</i> file:
 </ul>
 </div>
 </div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2024-06-24 lun. 17:13</p>
+<p class="author">Author: A. Allauzen</p>
+<p class="date">Created: 2024-06-24 lun. 17:13</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
